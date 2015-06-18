@@ -2,11 +2,37 @@
 
 // web/index.php
 require_once __DIR__.'/../vendor/autoload.php';
+use GuzzleHttp\Client;
 
 $app = new Silex\Application();
 
-$app->get('/hello/{name}', function ($name) use ($app) {
-    return 'Hello '.$app->escape($name);
+
+function queryFDA($med,$sym){
+  $client = new Client([
+      // Base URI is used with relative requests
+      'base_uri' => 'https://api.fda.gov/',
+      // You can set any number of default request options.
+      'timeout'  => 2.0,
+  ]);
+
+  $response = $client->get('https://api.fda.gov/drug/event.json', [
+    'query' => [
+      'search' => $med,
+      'count' => 'patient.reaction.reactionmeddrapt.exact']
+  ]);
+  $data = $response->json();
+  
+  foreach($data['results'] as $result){
+    if(strtolower($result['term']) == strtolower($sym)){
+      $html .= '<div><b>Symptom:</b> ' . ucwords(strtolower($result['term'])) . '</div>';
+      $html .= '<div><b>Reports:</b> ' . $result['count'] . '</div>';
+    }
+  }
+return $html;
+}
+
+$app->get('/drug/{med}/{sym}', function ($med,$sym) use ($app) {
+    return queryFDA($med,$sym);
 });
 
 $app->run();
