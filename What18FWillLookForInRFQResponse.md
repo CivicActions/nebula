@@ -6,7 +6,7 @@
 I wanted to share the below thoughts on the Agile BPA based on the rules of evaluating solicitation responses and what I know about 18F. 
 
 
-1) Quoters will scored against the checklists and questions in the US Digital Services Playbook. 
+**1) Quoters will scored against the checklists and questions in the US Digital Services Playbook. **
 
 
 My bet is the Selection Committee is going to score the Technical Responses as "Exceptional", "Acceptable", "Non-Acceptable" against each and every checklist item and question in the US Digital Services Playbook. 
@@ -18,7 +18,7 @@ The Selection Committee will score each Quoter (vendor) against each checklist i
 It is procurement law to have an objective process, using objective criteria that is communicated to public. There is surprisingly little detail about the criteria in the proposal except, "the Quoter must demonstrate that they followed the U.S. Digital Services Playbook by providing evidence in the repository." 
 
 
-2) Quoters demonstrating a user-driven build will score higher than any features or execution.
+**2) Quoters demonstrating a user-driven build will score higher than any features or execution.**
 
 
 The biggest critique of government IT is that it builds the wrong things, that are not useful to real users.
@@ -36,7 +36,7 @@ It is the classic government IT fail to say, "We don't have time to spend a lot 
 Selection Committee will be looking to see in the repo if and how end-users drove the MVP core feature(s) and there was actual testing and iteration.
 
 
-3) The Git Repo needs to have as much detail as a traditional proposal
+**3) The Git Repo needs to have as much detail as a traditional proposal**
 
 
 The RFQ emphasizes continually how the repo should demonstrate how the organization follows the playbook.
@@ -45,7 +45,7 @@ The RFQ emphasizes continually how the repo should demonstrate how the organizat
 The actual MVP code should only be one part of the repo. Much of the repo should reflect the agile process and assets demonstrating how the MVP grew out of a collaboration and iteration with target users.
 
 
-4) Assign a Budget and demonstrate how we stuck to it
+**4) Assign a Budget and demonstrate how we stuck to it**
 
 
 CivicActions should have a budget for this project and stick to it. 
@@ -60,7 +60,7 @@ Quoters providing evidence of assigning a budget and managing the project to con
 There’s clearly an implied budget of 10 days in the project. I think a firm can demonstrate within the repo  structuring budgets and contracts to support delivery by showing how we selected a team, a leader, stuck with that team, had structured hours when work was done, made choices, etc. Even better if we show time boxing for different activities and our internal interactions with our own executives to meet the “budget.”
 
 
-5) Working software is a must.
+**5) Working software is a must.**
 
 
 It doesn’t have to set the world on file, but Dave Zvenyach has [tweeted](https://twitter.com/vdavez/status/610944595002847233) as saying working software is needed.  Agile Methodologies promote the idea of Always Being Releasable.  You should document when you got the MVP done and how you iterated on it.
