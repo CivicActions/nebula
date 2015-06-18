@@ -15,9 +15,13 @@ We began studying the data sets as a prelude to Ideation and Story writing meeti
 
 We had an Ideation meeting using Trello in which we collected ideas.
 
-We performed a simple "JK" exercise to vote on the various ideas.
+We performed a simple "JK" exercise to vote on the various ideas. Started formulating problem statement for top idea.
 
-1:00 AM Pacific
+1:00 PM Pacific
 
 We broke for research and story writing to reconvene shortly.
+
+2:00 PM Pacific
+
+Met with Martha Oglive, researcher at Oklahoma health science center, previously at NIH. Martha validated problem statement and provided input and prioritization on user stories. Also discussed next steps for UX as well as technical architecture questions.
 
