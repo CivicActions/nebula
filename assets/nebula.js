@@ -4,7 +4,19 @@
 	    $('#text').empty();
 	    var drug = $('#drug').val();
 	    var symptom = $('#symptom').val();
-   	    var url = 'https://api.fda.gov/drug/event.json?api_key=rv4OOon6fPJOHBbFHClUOs3BRGSbAEUdg3ACp2pu&search="' + drug + '"&count=patient.reaction.reactionmeddrapt.exact';
+	    var url;
+	    
+	    if(drug.length){
+		url = 'https://api.fda.gov/drug/event.json?api_key=rv4OOon6fPJOHBbFHClUOs3BRGSbAEUdg3ACp2pu&search="' + drug + '"&count=patient.reaction.reactionmeddrapt.exact';
+	    }
+	    
+	    if(symptom.length){
+		url = 'https://api.fda.gov/drug/event.json?api_key=rv4OOon6fPJOHBbFHClUOs3BRGSbAEUdg3ACp2pu&search="' + symptom + '"&count=patient.drug.medicinalproduct.exact';
+	    }
+	    
+	    if(drug.length && symptom.length){
+		url = 'https://api.fda.gov/drug/event.json?api_key=rv4OOon6fPJOHBbFHClUOs3BRGSbAEUdg3ACp2pu&search="' + drug + '"&count=patient.reaction.reactionmeddrapt.exact&"' + symptom + '"&count=patient.drug.medicinalproduct.exact';
+	    }	    
 	    
 	    $.get(
 		url,
