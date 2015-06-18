@@ -3,7 +3,7 @@
 -- *Greg Elin - 06.17.2015*
 
 
-I wanted to share the below thoughts on the Agile BPA based on the rules of evaluating solicitation responses what I know about 18F. 
+I wanted to share the below thoughts on the Agile BPA based on the rules of evaluating solicitation responses and what I know about 18F. 
 
 
 1) Quoters will scored against the checklists and questions in the US Digital Services Playbook. 
