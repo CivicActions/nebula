@@ -25,3 +25,10 @@ We broke for research and story writing to reconvene shortly.
 
 Met with Martha Oglive, researcher at Oklahoma health science center, previously at NIH. Martha validated problem statement and provided input and prioritization on user stories. Also discussed next steps for UX as well as technical architecture questions.
 
+Thursday June 18, early
+
+Developed spikes and stories on Trello board.  Prep for estimation meeting and Design Studio.  Probably Ethan was working on spikes as well.
+
+9:00 AM Pacific
+
+Stand-up scrum meeting.
