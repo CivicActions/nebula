@@ -1,0 +1,829 @@
+
+<!-- saved from url=(0043)http://connie-clark.github.io/print-trello/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Print Trello Lists/Cards/...</title>
+
+
+<link rel="stylesheet" type="text/css" href="./trello_files/style.css">
+
+<script src="./trello_files/board.js"></script>
+<script src="./trello_files/pref.js"></script>
+<script src="./trello_files/layout.js"></script>
+<script src="./trello_files/showdown.js"></script>
+
+</head>
+<body class=" hasGoogleVoiceExt">
+<div id="HOWTO" class="noprint">
+<div align="right"><a href="http://connie-clark.github.io/print-trello/about.htm">about ...</a></div>
+<p>
+This page will give you a printable copy of your Trello Board, lists - cards - labels - desc - comments - votes. This is helpful even when you just want to be able to scan quickly, without having to turn each card over.
+</p><p>
+You may safely use this for private/proprietary data
+as no information leaves this browser page.
+</p>
+<fieldset><legend>Step.1 - Import your Trello Board contents</legend>
+<ol>
+<li>in another window or tab, access your Trello Board
+</li><li>click show sidebar (top-right)
+</li><li>right sidebar -&gt; Menu -&gt; Share,Print,Export -&gt; Export JSON
+</li><li>after the new JSON data appears, use Ctrl-A, Ctrl-C to copy the entire page contents
+</li><li>use Ctrl-V to paste your Trello Board's JSON into this box:
+<br><textarea id="TA" rows="2" cols="80" nowrap="" style="background-image: none; background-position: 0% 0%; background-repeat: repeat;"></textarea>
+<br><input type="button" value="READY" onclick="step1()">
+</li></ol>
+</fieldset>
+
+
+
+<div id="prefDiv" style="display: block;">
+<fieldset><legend>Step.2 - review/set your printing preferences</legend>
+
+<div id="PREF_FORM"><form><fieldset><legend>Board</legend><p><input type="checkbox" name="showBoardTitle" checked="">&nbsp;Show Board Title</p></fieldset><fieldset><legend>Lists</legend><p><input type="checkbox" name="numberLists">&nbsp;Sequentially number lists</p><p><input type="checkbox" name="showListTitle" checked="">&nbsp;Show List Title</p><p><input type="checkbox" name="startListOnNewPage" checked="">&nbsp;Start each list on new page</p><p><input type="checkbox" name="prefaceListNameWithBoard">&nbsp;Repeat board name when showing list name</p><p><input type="checkbox" name="showSingleList" checked="">&nbsp;Show option to print list by itself</p><p><input type="checkbox" name="showClosedLists">&nbsp;Show closed lists</p></fieldset><fieldset><legend>Cards</legend><p><input type="checkbox" name="numberCardsInList">&nbsp;Sequentially number cards within each list</p><p><input type="checkbox" name="showCardTitle" checked="">&nbsp;Show Card Title</p><p><input type="checkbox" name="showCardNumber" checked="">&nbsp;Show Card Id #</p><p> &nbsp; Show Card Label <select name="showCardLabels"><option>do-not-show</option><option>show-color-block</option><option selected="">colored-text</option><option>text-in-colored-block</option></select></p><p><input type="checkbox" name="showVoteCount" checked="">&nbsp;Show vote count</p><p><input type="checkbox" name="showDueDate" checked="">&nbsp;Show Due Date</p><p><input type="checkbox" name="showCardCreator" checked="">&nbsp;Show Card Creator</p><p><input type="checkbox" name="showCardDesc" checked="">&nbsp;Show Card Description</p><p><input type="checkbox" name="showClosedCards">&nbsp;Show Closed Cards</p></fieldset><fieldset><legend>Checklists</legend><p><input type="checkbox" name="showChecklists" checked="">&nbsp;Show Checklists</p><p><input type="checkbox" name="showChecklistTitle" checked="">&nbsp;Show Checklist Title</p><p> &nbsp; Which Checklist Items to show <select name="showChecklistItems"><option>none</option><option selected="">all</option><option>unchecked-only</option><option>checked-only</option></select></p></fieldset><fieldset><legend>Comments</legend><p><input type="checkbox" name="showComments" checked="">&nbsp;Show Comments</p><p><input type="checkbox" name="showCommentCreator" checked="">&nbsp;Show Comment Creator</p></fieldset><fieldset><legend>People</legend><p> &nbsp; When showing people, use <select name="showPersonAs"><option selected="">initials</option><option>fullname</option></select></p></fieldset><input type="button" onclick="savePref(this.form)" value=" Save Preferences &amp; Create the Report"></form></div>
+
+<p></p>
+<div id="prefJsonDiv" style="display: block;">
+<fieldset><legend>Saving your printing preferences</legend>
+You may save these printing preferences with your Trello board:
+<ul class="mini">
+<li>Create a card with title: 
+<script>document.write(prefCardTitle)</script>MY~PRINT~PREFERENCES
+</li><li>Add the json below as a COMMENT, and change the nickname field to something meaningful to you.
+<textarea id="prefJsonOUT" nowrap="" rows="2" cols="80"></textarea>
+</li></ul>
+</fieldset>
+<p class="hilite">Note: when you print this page - only the report below will be printed</p>
+
+</div>
+
+</fieldset>
+</div>
+
+<hr>
+</div>	<!-- end of HOWTO -->
+
+<div id="MAIN"><h2>Nebula<span class="asof"> - last activity - 6/17/2015, 3:47:13 PM</span></h2><h3><hr> :: About this Project&nbsp; &nbsp; &nbsp;<span class="small-menu"><a href="javascript:JS.printList(0,0)">print just this list</a> : <a href="javascript:JS.printList(0,1)">print just this list expanded</a></span><hr></h3><div class="card-div "> <span class="card-title">Action items</span> (#89) - <i>SC</i><p class="checklist">6/17<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> Coordinate with Martha and define her role<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> Confirm roles / participation of full team<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> Get a handle on what "documentation" is and how we want to capture it</p><div id="xrefDiv89"></div></div><div class="card-div "> <span class="card-title">Process documentation</span> (#88) - <i>SC</i><div id="xrefDiv88"></div></div><div class="card-div "> <span class="card-title">Github</span> (#81) - <i>SC</i><div id="xrefDiv81"></div></div><div class="card-div "> <span class="card-title">Personnel, roles, schedules</span> (#82) - <i>SC</i><div id="xrefDiv82"></div></div><div class="card-div "> <span class="card-title">Labor category mapping doc</span> (#83) - <i>SC</i><div id="xrefDiv83"></div></div><div class="card-div "> <span class="card-title">Price quote sheet</span> (#84) - <i>SC</i><div id="xrefDiv84"></div></div><div class="card-div "> <span class="card-title">Criteria template</span> (#85) - <i>SC</i><div id="xrefDiv85"></div></div><div class="card-div "> <span class="card-title">Compliance review checklist</span> (#86) - <i>SC</i><p>https://docs.google.com/a/civicactions.com/forms/d/10gQ0TzzjZD68y-rg5jmAmLTslVoeeu9tCr9lidOgBz0/viewform</p><div id="xrefDiv86"></div></div><h3 style="page-break-before:always"><hr> :: Criteria&nbsp; &nbsp; &nbsp;<span class="small-menu"><a href="javascript:JS.printList(1,0)">print just this list</a> : <a href="javascript:JS.printList(1,1)">print just this list expanded</a></span><hr></h3><div class="card-div "> <span class="card-title">Be useful to FDA data users</span> (#1) - <i>OB</i><div id="xrefDiv1"></div></div><div class="card-div "> <span class="card-title">Be cool</span> (#2) - <i>OB</i><div id="xrefDiv2"></div></div><div class="card-div "> <span class="card-title">used at least five modern and open-source technologies, regardless of architectural layer (frontend, backend etc)</span> (#3) - <i>OB</i>  <i style="color:green">Criteria from RFQ</i><div id="xrefDiv3"></div></div><div class="card-div "> <span class="card-title">Uses FDA data</span> (#6) - <i>OB</i><p>Rob: Adverse drug events database, largest and most recently made available. For 20 years FDA has recorded every adverse reaction to a drug. Valuable to many people - drug producers (pro vs con), healthcare advocates (con vs pro), researchers (discovering interactions).</p>
+
+<p>API data structure is moderately complex. Not very approachable for consumers. Developed by presidential IT fellow.</p>
+
+<p>JSON based API - example:
+Date: ...
+Person (no name)
+Outcome:
+Event:
+Where:
+Drug:</p>
+
+<p>Some fields are structured, some are free text. Some other tables to detail/embellish standardized fields (Drugs etc).</p><div id="xrefDiv6"></div></div><div class="card-div "> <span class="card-title">One leader</span> (#4) - <i>SC</i>  <i style="color:green">Criteria from RFQ</i><p>assigned one leader, gave that person authority and responsibility, and held that person accountable for the quality of the prototype submitted</p><div id="xrefDiv4"></div></div><div class="card-div "> <span class="card-title">Clearly valuable to consumers (either doctors or consumers), ideally have an easy step-through or video showing how to use.</span> (#5) - <i>RR</i><div id="xrefDiv5"></div></div><div class="card-div "> <span class="card-title">Multidisciplinary Team</span> (#7) - <i>SC</i>  <i style="color:green">Criteria from RFQ</i><p>assembled a multidisciplinary and collaborative team including a minimum of 5 labor categories from the Development Pool labor categories to design and develop the prototype</p><div id="xrefDiv7"></div></div><div class="card-div "> <span class="card-title">Include "people" in the process</span> (#8) - <i>SC</i>  <i style="color:green">Criteria from RFQ</i><p>understand what people need, by including people in the prototype development and design process</p><div id="xrefDiv8"></div></div><div class="card-div "> <span class="card-title">At least 3 human centered design techniques</span> (#9) - <i>SC</i>  <i style="color:green">Criteria from RFQ</i>  <i style="color:purple">UX</i><p>used at least three "human-centered design" techniques or tools</p><ul style="list-style-type: lower-alpha"><li><i><p>some general techniques INPO:
+- task analysis- how does someone do what they do?
+- contextual inquiry- what environmental/contextual factors affect use?
+- card sort - how do people sort and organize stuff?
+- interviews/surveys
+- personae - <i>RA</i></p></i></li></ul><div id="xrefDiv9"></div></div><div class="card-div "> <span class="card-title">Uses style guide</span> (#10) - <i>SC</i>  <i style="color:green">Criteria from RFQ</i><p>created or used a design style guide and/or a pattern library</p><div id="xrefDiv10"></div></div><div class="card-div "> <span class="card-title">Perform usability tests with people</span> (#11) - <i>SC</i>  <i style="color:green">Criteria from RFQ</i>  <i style="color:purple">UX</i><div id="xrefDiv11"></div></div><div class="card-div "> <span class="card-title">Iterative approach</span> (#12) - <i>SC</i>  <i style="color:green">Criteria from RFQ</i><p>used an iterative approach, where feedback informed subsequent work or versions of the prototype</p><div id="xrefDiv12"></div></div><div class="card-div "> <span class="card-title">Multi-device, responsive</span> (#13) - <i>SC</i>  <i style="color:green">Criteria from RFQ</i>  <i style="color:purple">UX</i><div id="xrefDiv13"></div></div><div class="card-div "> <span class="card-title">Iaas or PaaS</span> (#14) - <i>SC</i>  <i style="color:green">Criteria from RFQ</i><p>deployed the prototype on an Infrastructure as a Service (IaaS) or Platform as a Service (PaaS) provider, and indicated which provider they used</p><div id="xrefDiv14"></div></div><div class="card-div "> <span class="card-title">Write unit tests for code</span> (#15) - <i>SC</i>  <i style="color:green">Criteria from RFQ</i><div id="xrefDiv15"></div></div><div class="card-div "> <span class="card-title">Continuous integration; automated testing</span> (#16) - <i>SC</i>  <i style="color:green">Criteria from RFQ</i><p>set up or used a continuous integration system to automate the running of tests and continuously deployed their code to their IaaS or PaaS provider</p><div id="xrefDiv16"></div></div><div class="card-div "> <span class="card-title">Set up or use configuration management</span> (#17) - <i>SC</i>  <i style="color:green">Criteria from RFQ</i><div id="xrefDiv17"></div></div><div class="card-div "> <span class="card-title">Set up or use continuous monitoring</span> (#18) - <i>SC</i>  <i style="color:green">Criteria from RFQ</i><div id="xrefDiv18"></div></div><div class="card-div "> <span class="card-title">Software deployed in container</span> (#19) - <i>SC</i>  <i style="color:green">Criteria from RFQ</i><div id="xrefDiv19"></div></div><div class="card-div "> <span class="card-title">API</span> (#20) - <i>SC</i>  <i style="color:green">Criteria from RFQ</i><p>Make use of a API, by either consuming or providing one RESTfully.</p><div id="xrefDiv20"></div></div><div class="card-div "> <span class="card-title">Installation documentation</span> (#21) - <i>SC</i>  <i style="color:green">Criteria from RFQ</i><p>provided sufficient documentation to install and run their prototype on another machine</p><div id="xrefDiv21"></div></div><div class="card-div "> <span class="card-title">Open license</span> (#22) - <i>SC</i>  <i style="color:green">Criteria from RFQ</i><p>prototype and underlying platforms used to create and run the prototype are openly licensed and free of charge</p><div id="xrefDiv22"></div></div><h3 style="page-break-before:always"><hr> :: Digital Services Playbook - Checklists&nbsp; &nbsp; &nbsp;<span class="small-menu"><a href="javascript:JS.printList(2,0)">print just this list</a> : <a href="javascript:JS.printList(2,1)">print just this list expanded</a></span><hr></h3><div class="card-div "> <span class="card-title">1. Understand what people need</span> (#95) - <i>OB</i><p class="checklist">Checklist<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> Early in the project, spend time with current and prospective users of the service<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> Use a range of qualitative and quantitative research methods to determine people’s goals, needs, and behaviors; be thoughtful about the time spent<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> Test prototypes of solutions with real people, in the field if possible<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> Document the findings about user goals, needs, behaviors, and preferences<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> Share findings with the team and agency leadership<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> Create a prioritized list of tasks the user is trying to accomplish, also known as "user stories"<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> As the digital service is being built, regularly test it with potential users to ensure it meets people’s needs</p><div id="xrefDiv95"></div></div><div class="card-div "> <span class="card-title">2. Address the whole experience, from start to finish</span> (#96) - <i>AP</i><p>We need to understand the different ways people will interact with our services, including the actions they take online, through a mobile application, on a phone, or in person. Every encounter — whether it's online or offline — should move the user closer towards their goal.</p><p class="checklist">Checklist<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> Understand the different points at which people will interact with the service – both online and in person<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> Identify pain points in the current way users interact with the service, and prioritize these according to user needs<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> Design the digital parts of the service so that they are integrated with the offline touch points people use to interact with the service<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> Develop metrics that will measure how well the service is meeting user needs at each step of the service</p><div id="xrefDiv96"></div></div><div class="card-div "> <span class="card-title">3. Make it simple and intuitive</span> (#97) - <i>AP</i><p>Using a government service shouldn’t be stressful, confusing, or daunting. It’s our job to build services that are simple and intuitive enough that users succeed the first time, unaided.</p><p class="checklist">Checklist<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> Create or use an existing, simple, and flexible design style guide for the service<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> Use the design style guide consistently for related digital services<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> Give users clear information about where they are in each step of the process<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> Follow accessibility best practices to ensure all people can use the service<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> Provide users with a way to exit and return later to complete the process<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> Use language that is familiar to the user and easy to understand<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> Use language and design consistently throughout the service, including online and offline touch points</p><div id="xrefDiv97"></div></div><div class="card-div "> <span class="card-title">4. Build the service using agile and iterative practices</span> (#98) - <i>AP</i><p>We should use an incremental, fast-paced style of software development to reduce the risk of failure. We want to get working software into users’ hands as early as possible to give the design and development team opportunities to adjust based on user feedback about the service. A critical capability is being able to automatically test and deploy the service so that new features can be added often and be put into production easily.</p><p class="checklist">Checklist<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> Ship a functioning “minimum viable product” (MVP) that solves a core user need as soon as possible, no longer than three months from the beginning of the project, using a “beta” or “test” period if needed<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> Run usability tests frequently to see how well the service works and identify improvements that should be made<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> Ensure the individuals building the service communicate closely using techniques such as launch meetings, war rooms, daily standups, and team chat tools<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> Keep delivery teams small and focused; limit organizational layers that separate these teams from the business owners<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> Release features and improvements multiple times each month<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> Create a prioritized list of features and bugs, also known as the “feature backlog” and “bug backlog”<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> Use a source code version control system<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> Give the entire project team access to the issue tracker and version control system<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> Use code reviews to ensure quality</p><div id="xrefDiv98"></div></div><div class="card-div "> <span class="card-title">5. Structure budgets and contracts to support delivery</span> (#99) - <i>AP</i><p>To improve our chances of success when contracting out development work, we need to work with experienced budgeting and contracting officers. In cases where we use third parties to help build a service, a well-defined contract can facilitate good development practices like conducting a research and prototyping phase, refining product requirements as the service is built, evaluating open source alternatives, ensuring frequent delivery milestones, and allowing the flexibility to purchase cloud computing resources.</p>
+
+<p>The TechFAR Handbook provides a detailed explanation of the flexibilities in the Federal Acquisition Regulation (FAR) that can help agencies implement this play.</p><p class="checklist">Checklist<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> Budget includes research, discovery, and prototyping activities<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> Contract is structured to request frequent deliverables, not multi-month milestones<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> Contract is structured to hold vendors accountable to deliverables<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> Contract gives the government delivery team enough flexibility to adjust feature prioritization and delivery schedule as the project evolves<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> Contract ensures open source solutions are evaluated when technology choices are made<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> Contract specifies that software and data generated by third parties remains under our control, and can be reused and released to the public as appropriate and in accordance with the law<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> Contract allows us to use tools, services, and hosting from vendors with a variety of pricing models, including fixed fees and variable models like “pay-for-what-you-use” services<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> Contract specifies a warranty period where defects uncovered by the public are addressed by the vendor at no additional cost to the government<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> Contract includes a transition of services period and transition-out plan</p><div id="xrefDiv99"></div></div><div class="card-div "> <span class="card-title">6. Assign one leader and hold that person accountable</span> (#100) - <i>AP</i><p>There must be a single product owner who has the authority and responsibility to assign tasks and work elements; make business, product, and technical decisions; and be accountable for the success or failure of the overall service. This product owner is ultimately responsible for how well the service meets needs of its users, which is how a service should be evaluated. The product owner is responsible for ensuring that features are built and managing the feature and bug backlogs.</p><p class="checklist">Checklist<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> A product owner has been identified<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> All stakeholders agree that the product owner has the authority to assign tasks and make decisions about features and technical implementation details<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> The product owner has a product management background with technical experience to assess alternatives and weigh tradeoffs<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> The product owner has a work plan that includes budget estimates and identifies funding sources<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> The product owner has a strong relationship with the contracting officer</p><div id="xrefDiv100"></div></div><div class="card-div "> <span class="card-title">7. Bring in experienced teams</span> (#101) - <i>AP</i><p>We need talented people working in government who have experience creating modern digital services. This includes bringing in seasoned product managers, engineers, and designers. When outside help is needed, our teams should work with contracting officers who understand how to evaluate third-party technical competency so our teams can be paired with contractors who are good at both building and delivering effective digital services. The makeup and experience requirements of the team will vary depending on the scope of the project.</p><p class="checklist">Checklist<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> Member(s) of the team have experience building popular, high-traffic digital services<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> Member(s) of the team have experience designing mobile and web applications<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> Member(s) of the team have experience using automated testing frameworks<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> Member(s) of the team have experience with modern development and operations (DevOps) techniques like continuous integration and continuous deployment<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> Member(s) of the team have experience securing digital services<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> A Federal contracting officer is on the internal team if a third party will be used for development work<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> A Federal budget officer is on the internal team or is a partner<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> The appropriate privacy, civil liberties, and/or legal advisor for the department or agency is a partner</p><div id="xrefDiv101"></div></div><div class="card-div "> <span class="card-title">8. Choose a modern technology stack</span> (#102) - <i>AP</i><p>The technology decisions we make need to enable development teams to work efficiently and enable services to scale easily and cost-effectively. Our choices for hosting infrastructure, databases, software frameworks, programming languages and the rest of the technology stack should seek to avoid vendor lock-in and match what successful modern consumer and enterprise software companies would choose today. In particular, digital services teams should consider using open source, cloud-based, and commodity solutions across the technology stack, because of their widespread adoption and support by successful consumer and enterprise technology companies in the private sector.</p><p class="checklist">Checklist<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> Choose software frameworks that are commonly used by private-sector companies creating similar services<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> Whenever possible, ensure that software can be deployed on a variety of commodity hardware types<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> Ensure that each project has clear, understandable instructions for setting up a local development environment, and that team members can be quickly added or removed from projects<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> Consider open source software solutions at every layer of the stack</p><div id="xrefDiv102"></div></div><div class="card-div "> <span class="card-title">9. Deploy in a flexible hosting environment</span> (#103) - <i>AP</i><p>Our services should be deployed on flexible infrastructure, where resources can be provisioned in real-time to meet spikes traffic and user demand. Our digital services are crippled when we host them in data centers that market themselves as “cloud hosting” but require us to manage and maintain hardware directly. This outdated practice wastes time, weakens our disaster recovery plans, and results in significantly higher costs.</p><p class="checklist">Checklist<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> Resources are provisioned on demand<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> Resources scale based on real-time user demand<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> Resources are provisioned through an API<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> Resources are available in multiple regions<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> We only pay for resources we use<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> Static assets are served through a content delivery network<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> Application is hosted on commodity hardware</p><div id="xrefDiv103"></div></div><div class="card-div "> <span class="card-title">10. Automate testing and deployments</span> (#104) - <i>AP</i><p>Today, developers write automated scripts that can verify thousands of scenarios in minutes and then deploy updated code into production environments multiple times a day. They use automated performance tests which simulate surges in traffic to identify performance bottlenecks. While manual tests and quality assurance are still necessary, automated tests provide consistent and reliable protection against unintentional regressions, and make it possible for developers to confidently release frequent updates to the service.</p><p class="checklist">Checklist<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> Create automated tests that verify all user-facing functionality<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> Create unit and integration tests to verify modules and components<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> Run tests automatically as part of the build process<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> Perform deployments automatically with deployment scripts, continuous delivery services, or similar techniques<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> Conduct load and performance tests at regular intervals, including before public launch</p><div id="xrefDiv104"></div></div><div class="card-div "> <span class="card-title">11. Manage security and privacy through reusable processes</span> (#105) - <i>AP</i><p>Our digital services have to protect sensitive information and keep systems secure. This is typically a process of continuous review and improvement which should be built into the development and maintenance of the service. At the start of designing a new service or feature, the team lead should engage the appropriate privacy, security, and legal officer(s) to discuss the type of information collected, how it should be secured, how long it is kept, and how it may be used and shared. The sustained engagement of a privacy specialist helps ensure that personal data is properly managed. In addition, a key process to building a secure service is comprehensively testing and certifying the components in each layer of the technology stack for security vulnerabilities, and then to re-use these same pre-certified components for multiple services.The following checklist provides a starting point, but teams should work closely with their privacy specialist and security engineer to meet the needs of the specific service.</p><p class="checklist">Checklist<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> Contact the appropriate privacy or legal officer of the department or agency to determine whether a System of Records Notice (SORN), Privacy Impact Assessment, or other review should be conducted<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> Determine, in consultation with a records officer, what data is collected and why, how it is used or shared, how it is stored and secured, and how long it is kept<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> Determine, in consultation with a privacy specialist, whether and how users are notified about how personal information is collected and used, including whether a privacy policy is needed and where it should appear, and how users will be notified in the event of a security breach<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> Consider whether the user should be able to access, delete, or remove their information from the service<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> “Pre-certify” the hosting infrastructure used for the project using FedRAMP<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> Use deployment scripts to ensure configuration of production environment remains consistent and controllable</p><div id="xrefDiv105"></div></div><div class="card-div "> <span class="card-title">12. Use data to drive decisions</span> (#106) - <i>AP</i><p>At every stage of a project, we should measure how well our service is working for our users. This includes measuring how well a system performs and how people are interacting with it in real-time. Our teams and agency leadership should carefully watch these metrics to find issues and identify which bug fixes and improvements should be prioritized. Along with monitoring tools, a feedback mechanism should be in place for people to report issues directly.</p><p class="checklist">Checklist<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> Monitor system-level resource utilization in real time<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> Monitor system performance in real-time (e.g. response time, latency, throughput, and error rates)<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> Ensure monitoring can measure median, 95th percentile, and 98th percentile performance<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> Create automated alerts based on this monitoring<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> Track concurrent users in real-time, and monitor user behaviors in the aggregate to determine how well the service meets user needs<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> Publish metrics internally<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> Publish metrics externally<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> Use an experimentation tool that supports multivariate testing in production</p><div id="xrefDiv106"></div></div><div class="card-div "> <span class="card-title">13. Default to open</span> (#107) - <i>AP</i><p>When we collaborate in the open and publish our data publicly, we can improve Government together. By building services more openly and publishing open data, we simplify the public’s access to government services and information, allow the public to contribute easily, and enable reuse by entrepreneurs, nonprofits, other agencies, and the public.</p><p class="checklist">Checklist<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> Offer users a mechanism to report bugs and issues, and be responsive to these reports<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> Provide datasets to the public, in their entirety, through bulk downloads and APIs (application programming interfaces)<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> Ensure that data from the service is explicitly in the public domain, and that rights are waived globally via an international public domain dedication, such as the “Creative Commons Zero” waiver<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> Catalog data in the agency’s enterprise data inventory and add any public datasets to the agency’s public data listing<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> Ensure that we maintain the rights to all data developed by third parties in a manner that is releasable and reusable at no cost to the public<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> Ensure that we maintain contractual rights to all custom software developed by third parties in a manner that is publishable and reusable at no cost<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> When appropriate, create an API for third parties and internal users to interact with the service directly<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> When appropriate, publish source code of projects or components online<br>&nbsp;&nbsp;<tt>[&nbsp;]</tt> When appropriate, share your development process and progress publicly</p><div id="xrefDiv107"></div></div><h3 style="page-break-before:always"><hr> :: Ideas&nbsp; &nbsp; &nbsp;<span class="small-menu"><a href="javascript:JS.printList(3,0)">print just this list</a> : <a href="javascript:JS.printList(3,1)">print just this list expanded</a></span><hr></h3><div class="card-div "> <span class="card-title">Enter symptom, and medications taking, to show which medication are known to cause symptom.</span> (#32) - <i>AR</i> (5&nbsp;votes)<div id="xrefDiv32"></div></div><div class="card-div "> <span class="card-title">Grandparent Guardian: Enter your dependents medicines and review all possible adverse events aggregated for the set of medicines. See this as a function of time vs number of people prescribed those meds. Tie in to other information about those meds. Focus on drug interaction possibilities. This is a side affect management system.</span> (#39) - <i>RR</i> (4&nbsp;votes)<div id="xrefDiv39"></div></div><div class="card-div "> <span class="card-title">An app that a doctor (or patient) could use prior to prescribing multiple drugs to validate if there are adverse effects with each other.</span> (#26) - <i>OB</i> (3&nbsp;votes)<ul style="list-style-type: lower-alpha"><li><i><p>This one seems pretty doable to me. Patient drug interactions are pretty well documented, and easy to grab from the fda json stream. https://open.fda.gov/drug/event/reference/ I can see us creating something nifty with chart.js (or another js lib) for this app. - <i>E</i></p></i></li></ul><div id="xrefDiv26"></div></div><div class="card-div "> <span class="card-title">Citizen science to find potential correlations etc</span> (#24) - <i>OB</i> (2&nbsp;votes)<div id="xrefDiv24"></div></div><div class="card-div "> <span class="card-title">Build a visual map of all drug events, and be able to replay them across time. Show a blinking map of your city to show the events.</span> (#35) - <i>RR</i> (2&nbsp;votes)<div id="xrefDiv35"></div></div><div class="card-div "> <span class="card-title">Prescription tool for adults caring for elderly parents</span> (#40) - <i>RA</i> (1&nbsp;vote)<div id="xrefDiv40"></div></div><div class="card-div "> <span class="card-title">Food alert similar to CityGram</span> (#41) - <i>LF</i> (1&nbsp;vote)<ul style="list-style-type: lower-alpha"><li><i><p>See: https://www.citygram.nyc/ - <i>LF</i></p></i></li></ul><div id="xrefDiv41"></div></div><div class="card-div "> <span class="card-title">Community like stack exchange</span> (#23) - <i>OB</i><div id="xrefDiv23"></div></div><div class="card-div "> <span class="card-title">Look up reactions to drugs I am taking</span> (#25) - <i>OB</i><ul style="list-style-type: lower-alpha"><li><i><p>Can this be refined (i.e. are facets available in the data?)
+That is, I select Male, Age group, and then the list of side effects changes based on those factors? - <i>RA</i></p></i></li></ul><div id="xrefDiv25"></div></div><div class="card-div "> <span class="card-title">Walled-garden community in which only professionals can play --- we can make our github repo workable for that purpose.  Using Drupal and virtualization should be possible.</span> (#28) - <i>RR</i><div id="xrefDiv28"></div></div><div class="card-div "> <span class="card-title">User takes a picture with their mobile phone (or enters pill identifying information) to quickly retrieve the adverse effects.</span> (#31) - <i>AP</i><ul style="list-style-type: lower-alpha"><li><i><p>I like this idea (a lot) @pava , I just don't know what technology we would use to do this. - <i>E</i></p></i></li></ul><div id="xrefDiv31"></div></div><div class="card-div "> <span class="card-title">look-ahead type search, where I start typing "hyper..." and it automatically starts showing me medications prescribed for hypertension and hyperactivity.  Gogglize the database.</span> (#33) - <i>RR</i><div id="xrefDiv33"></div></div><div class="card-div "> <span class="card-title">Use the UNII to find a way to search for gluten-free, vegan, etc. medicines, and look for reactions based on incredients rather than drug.</span> (#36) - <i>RR</i><div id="xrefDiv36"></div></div><div class="card-div "> <span class="card-title">Create an adverse alert system in which you customize the drugs of interest to you, and receive alerts on conditions.</span> (#37) - <i>RR</i><div id="xrefDiv37"></div></div><div class="card-div "> <span class="card-title">Find people whose loved ones are taking a similar profile to your meds.</span> (#43) - <i>RR</i><div id="xrefDiv43"></div></div><h3 style="page-break-before:always"><hr> :: Problem statement&nbsp; &nbsp; &nbsp;<span class="small-menu"><a href="javascript:JS.printList(4,0)">print just this list</a> : <a href="javascript:JS.printList(4,1)">print just this list expanded</a></span><hr></h3><div class="card-div "> <span class="card-title">Problem statement</span> (#44) - <i>OB</i><p>As a user I am having a particular symptom, and I want to consider what drug (or drugs) might be causing that symptom</p>
+
+<p>Taking multiple drugs and trying to figure out the interactions between those</p>
+
+<p>"Want to visualize the impact of taking multiple drugs and their possible adverse events".</p>
+
+<p>"Which drug is most likely causing an adverse effect."</p>
+
+<p>I am a patient/or guardian taking multiple medications and don't which one to start looking at.</p><div id="xrefDiv44"></div></div><h3 style="page-break-before:always"><hr> :: Persona notes&nbsp; &nbsp; &nbsp;<span class="small-menu"><a href="javascript:JS.printList(5,0)">print just this list</a> : <a href="javascript:JS.printList(5,1)">print just this list expanded</a></span><hr></h3><div class="card-div "> <span class="card-title">An advanced practice nurse/prescriber specialty family practice and clinical education.  I use this site to determine clearance for medical devices (CLIA waived), product safety, etc.</span> (#27) - <i>RA</i><div id="xrefDiv27"></div></div><div class="card-div "> <span class="card-title">Justice advocate seeking to demonstrate that most drug testing being done on white males leads to more side effects for women and minority genetic groups.</span> (#29) - <i>RR</i><div id="xrefDiv29"></div></div><div class="card-div "> <span class="card-title">Advocate of natural healing seeking to emphasize danger of prescribed drugs over natural remedies.</span> (#30) - <i>RR</i><div id="xrefDiv30"></div></div><div class="card-div "> <span class="card-title">Adult caring for elderly parent(s) and managing their prescriptions.</span> (#38) - <i>RA</i><div id="xrefDiv38"></div></div><h3 style="page-break-before:always"><hr> :: Questions&nbsp; &nbsp; &nbsp;<span class="small-menu"><a href="javascript:JS.printList(6,0)">print just this list</a> : <a href="javascript:JS.printList(6,1)">print just this list expanded</a></span><hr></h3><div class="card-div "> <span class="card-title">I still don't quite know how one discovers the various vocablulaires in the system. I think we as a team need to know how to get the list of all known adverse events, and the list of all known drugs, etc.</span> (#34) - <i>RR</i><div id="xrefDiv34"></div></div><div class="card-div "> <span class="card-title">Does the database include all the drugs that a person is taking when a reaction is reported? - Ethan answered: Yes it Does!</span> (#42) - <i>RR</i><ul style="list-style-type: lower-alpha"><li><i><p>Example result set showing multiple medications taken by user:</p>
+
+<p><code>{
+  "meta": {
+    "disclaimer": "openFDA is a beta research project and not for clinical use. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated.",
+    "license": "http://open.fda.gov/license",
+    "last_updated": "2015-01-21",
+    "results": {
+      "skip": 0,
+      "limit": 1,
+      "total": 4161849
+    }
+  },
+  "results": [
+    {
+      "safetyreportid": "4322505-4",
+      "fulfillexpeditecriteria": "1",
+      "receiver": null,
+      "receivedateformat": "102",
+      "receiptdateformat": "102",
+      "primarysource": null,
+      "receivedate": "20040319",
+      "seriousnessother": "1",
+      "sender": {
+        "senderorganization": "FDA-Public Use"
+      },
+      "@epoch": 1417048845.306429,
+      "patient": {
+        "reaction": [
+          {
+            "reactionmeddrapt": "ARTHRALGIA"
+          },
+          {
+            "reactionmeddrapt": "OEDEMA PERIPHERAL"
+          },
+          {
+            "reactionmeddrapt": "PURPURA"
+          }
+        ],
+        "patientonsetage": "56",
+        "patientonsetageunit": "801",
+        "drug": [
+          {
+            "drugtreatmentdurationunit": "804",
+            "drugauthorizationnumb": "50621",
+            "drugtreatmentduration": "4",
+            "drugstartdateformat": "102",
+            "drugcharacterization": "1",
+            "drugindication": "PYELONEPHRITIS",
+            "medicinalproduct": "OROKEN (CEFIXIME, UNSPEC)",
+            "drugadministrationroute": "048",
+            "drugdosagetext": "ORAL",
+            "drugstartdate": "20031227",
+            "drugenddate": "20031230",
+            "drugenddateformat": "102"
+          },
+          {
+            "drugcharacterization": "2",
+            "medicinalproduct": "PYOSTACINE (PRISTINAMYCIN)"
+          },
+          {
+            "drugcharacterization": "2",
+            "medicinalproduct": "ROCEPHIN",
+            "openfda": {
+              "unii": [
+                "75J73V1629"
+              ],
+              "spl_id": [
+                "86e3103c-9d8b-4693-b5db-3fd62330c754"
+              ],
+              "product_ndc": [
+                "0004-1963",
+                "0004-1964"
+              ],
+              "substance_name": [
+                "CEFTRIAXONE SODIUM"
+              ],
+              "rxcui": [
+                "204871",
+                "105212"
+              ],
+              "spl_set_id": [
+                "9467f6c9-3e59-45c6-a1be-77200f2d4554"
+              ],
+              "product_type": [
+                "HUMAN PRESCRIPTION DRUG"
+              ],
+              "pharm_class_cs": [
+                "Cephalosporins [Chemical/Ingredient]"
+              ],
+              "manufacturer_name": [
+                "Genentech, Inc."
+              ],
+              "brand_name": [
+                "ROCEPHIN"
+              ],
+              "route": [
+                "INTRAMUSCULAR",
+                "INTRAVENOUS"
+              ],
+              "nui": [
+                "N0000011161",
+                "N0000175488"
+              ],
+              "package_ndc": [
+                "0004-1964-04",
+                "0004-1963-02",
+                "0004-1963-01",
+                "0004-1964-01"
+              ],
+              "pharm_class_epc": [
+                "Cephalosporin Antibacterial [EPC]"
+              ],
+              "generic_name": [
+                "CEFTRIAXONE SODIUM"
+              ],
+              "application_number": [
+                "ANDA063239"
+              ]
+            }
+          },
+          {
+            "drugcharacterization": "2",
+            "medicinalproduct": "OFLOXACIN",
+            "openfda": {
+              "unii": [
+                "A4P49JAZ9H"
+              ],
+              "spl_id": [
+                "b2235a46-f526-471e-8a9c-62f943ef6f7b",
+                "1419e0b7-cb1e-48fd-ab83-edfa70ddd693",
+                "4ebe9909-6509-ab0a-931c-e70bd210125f",
+                "4d4af447-be12-4ca8-89ce-4393ee8bcc9e",
+                "10d0fd2b-81f4-4836-b279-cf2b17813eb5",
+                "8ec38b43-795a-45ba-bbd3-8ebd6e1fcdf2",
+                "243c0b7c-8011-4a94-8b25-0329de936439",
+                "52572d94-d47b-428f-acc7-67147c5b0681",
+                "0095d1d6-d83e-4e22-aa61-3b4753f0753b",
+                "349789cb-da00-4eeb-88fa-a949263c1618",
+                "c3b5609c-3d6a-4c9a-8f81-611d0fa19180",
+                "3665d266-c322-45b4-9e56-caa6035b092c",
+                "568bf875-beda-4425-b175-decd86dcae12",
+                "7bc4742b-6f34-2c2d-95b9-d70f8358e55f",
+                "abfa4cd4-5c6d-62cd-3d3a-ff5a393b8301",
+                "1f88e5a7-78c8-4f48-81bd-5fd664cee9c8"
+              ],
+              "product_ndc": [
+                "55111-160",
+                "55111-161",
+                "55111-162",
+                "16571-130",
+                "60505-0560",
+                "65691-0105",
+                "65691-0104",
+                "65691-0106",
+                "11980-779",
+                "61314-015",
+                "50383-025",
+                "50383-024",
+                "61314-012",
+                "0093-7181",
+                "60505-0363",
+                "40042-049",
+                "0093-7180",
+                "59390-140",
+                "0093-7182",
+                "24208-434",
+                "17478-713",
+                "24208-410"
+              ],
+              "substance_name": [
+                "OFLOXACIN"
+              ],
+              "rxcui": [
+                "207202",
+                "312075",
+                "198048",
+                "198049",
+                "198050",
+                "242446"
+              ],
+              "spl_set_id": [
+                "8db221b1-32f3-f6ca-e404-71f56a860d08",
+                "1d19a6db-6da5-e7de-f929-2d18bdfa2cf5",
+                "95b9fc17-9c94-4762-910c-df0bb0b2aa85",
+                "7aab4449-3dda-4e2c-8e40-b3244a548bf5",
+                "81e8ece1-ab0b-4deb-8f84-79f21419b328",
+                "2ec6bd57-96df-47ac-b218-1469801868b7",
+                "7882f70e-d228-4c52-9390-0d927c51af1f",
+                "93a464f1-6b54-4f4e-8b71-fa781e2964e6",
+                "fe564e33-8f5d-4b57-87a9-7afae02eaf97",
+                "ad40954d-0b1d-47c5-8bd5-8a1efd9a7153",
+                "8b73d354-4631-40e8-b187-e8b0580bd6ea",
+                "749177b8-1c9e-4bc2-81fd-27d7e88cf9b8",
+                "b199f48d-647c-4041-a3ee-33737c515152",
+                "5117d567-2004-c5ed-1391-f8831864696f",
+                "c5484f1a-2321-453f-9469-dfcf709e2e2e",
+                "33ad989c-f551-4c57-a4e3-b607686206fa"
+              ],
+              "product_type": [
+                "HUMAN PRESCRIPTION DRUG"
+              ],
+              "pharm_class_cs": [
+                "Quinolones [Chemical/Ingredient]"
+              ],
+              "manufacturer_name": [
+                "Akorn, Inc.",
+                "Altaire Pharmaceuticals Inc.",
+                "Dr. Reddy's Laboratories Limited",
+                "Pack Pharmaceuticals, LLC",
+                "Hi-Tech Pharmacal Co., Inc.",
+                "Allergan, Inc.",
+                "Bausch &amp; Lomb Incorporated",
+                "Apotex Corp.",
+                "Cadila Pharmaceuticals Limited",
+                "PharmaForce, Inc.",
+                "Falcon Pharmaceuticals, Ltd.",
+                "Teva Pharmaceuticals USA Inc"
+              ],
+              "brand_name": [
+                "OFLOXACIN OTIC",
+                "OFLOXACIN OPHTHALMIC",
+                "OFLOXACIN",
+                "OCUFLOX"
+              ],
+              "route": [
+                "AURICULAR (OTIC)",
+                "ORAL",
+                "OPHTHALMIC"
+              ],
+              "nui": [
+                "N0000175937",
+                "N0000007606"
+              ],
+              "package_ndc": [
+                "16571-130-50",
+                "55111-161-50",
+                "61314-012-05",
+                "17478-713-11",
+                "17478-713-10",
+                "55111-160-78",
+                "55111-161-78",
+                "55111-162-78",
+                "55111-160-30",
+                "0093-7181-01",
+                "65691-0106-2",
+                "65691-0106-1",
+                "50383-024-10",
+                "65691-0105-1",
+                "65691-0105-3",
+                "65691-0105-2",
+                "0093-7182-01",
+                "60505-0363-1",
+                "24208-434-05",
+                "0093-7180-01",
+                "61314-015-05",
+                "55111-161-01",
+                "65691-0104-1",
+                "65691-0104-2",
+                "65691-0104-3",
+                "55111-161-05",
+                "50383-025-10",
+                "40042-049-10",
+                "55111-162-01",
+                "50383-025-05",
+                "55111-162-05",
+                "61314-012-10",
+                "16571-130-11",
+                "55111-160-01",
+                "55111-160-05",
+                "50383-024-05",
+                "55111-162-30",
+                "60505-0363-2",
+                "24208-410-10",
+                "55111-162-50",
+                "24208-434-10",
+                "24208-410-05",
+                "60505-0560-1",
+                "60505-0560-0",
+                "61314-015-10",
+                "59390-140-05",
+                "40042-049-05",
+                "55111-161-30",
+                "55111-160-50",
+                "11980-779-05"
+              ],
+              "pharm_class_epc": [
+                "Quinolone Antimicrobial [EPC]"
+              ],
+              "generic_name": [
+                "OFLOXACIN",
+                "OFLOXAXIN"
+              ],
+              "application_number": [
+                "ANDA076407",
+                "ANDA076182",
+                "NDA019921",
+                "ANDA091656",
+                "ANDA076128",
+                "ANDA078222",
+                "ANDA090395",
+                "ANDA076527",
+                "ANDA076622",
+                "ANDA076513",
+                "ANDA076616",
+                "ANDA202692",
+                "ANDA078559",
+                "ANDA076615",
+                "ANDA076231",
+                "ANDA077098"
+              ]
+            }
+          }
+        ],
+        "patientsex": "1"
+      },
+      "receiptdate": "20040315",
+      "transmissiondate": "20041129",
+      "transmissiondateformat": "102",
+      "seriousnesshospitalization": "1",
+      "serious": "1",
+      "companynumb": "HQWYE821915MAR04"
+    }
+  ]
+}
+</code> - <i>E</i></p></i></li></ul><div id="xrefDiv42"></div></div><div class="card-div "> <span class="card-title">How can we see all the fields? Seems like what's available will influence what we may do.</span> (#46) - <i>RA</i><ul style="list-style-type: lower-alpha"><li><i><p>@readrobert Are you asking how do we see all possible items that can be returned in the fda JSON array, or something else? - <i>E</i></p></i></li><li><i><p>@ethant1 @ethant1 I think Ron added this card.   Nonetheless I think this page: https://open.fda.gov/api/reference/#query-syntax partially describes the fields - <i>RR</i></p></i></li></ul><div id="xrefDiv46"></div></div><div class="card-div "> <span class="card-title">How can we correlate a drug with the number of times it is likely to be used? Can we find out that Tylenol is used 100M times with 1K serious affects, but something else is used 10K times with 10 serious effects, which is actually 10 times more likely to cause an effect?</span> (#75) - <i>RR</i><ul style="list-style-type: lower-alpha"><li><i><p>@readrobert, we can:</p>
+
+<p><code>{
+   meta: {
+      disclaimer: "openFDA is a beta research project and not for clinical use. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated.",
+      license: "http://open.fda.gov/license",
+      last_updated: "2015-01-21"
+   },
+   results: [
+      {
+         term: "NAUSEA",
+         count: 19190
+      },
+      {
+         term: "DRUG INEFFECTIVE",
+         count: 17377
+      },
+      {
+         term: "DYSPNOEA",
+         count: 17115
+      },
+      {
+         term: "PAIN",
+         count: 16689
+      },
+      {
+         term: "DIZZINESS",
+         count: 15254
+      },
+      {
+         term: "MYOCARDIAL INFARCTION",
+         count: 14536
+      },
+      {
+         term: "FATIGUE",
+         count: 14146
+      },
+      {
+         term: "HEADACHE",
+         count: 14108
+      },
+      {
+         term: "DIARRHOEA",
+         count: 12628
+      },
+      {
+         term: "VOMITING",
+         count: 12556
+      },
+      {
+         term: "FLUSHING",
+         count: 11750
+      },
+      {
+         term: "ASTHENIA",
+         count: 11262
+      },
+      {
+         term: "ARTHRALGIA",
+         count: 10687
+      },
+      {
+         term: "CHEST PAIN",
+         count: 10252
+      },
+      {
+         term: "CEREBROVASCULAR ACCIDENT",
+         count: 10156
+      },
+      {
+         term: "PRURITUS",
+         count: 10124
+      },
+      {
+         term: "FALL",
+         count: 9858
+      },
+      {
+         term: "PAIN IN EXTREMITY",
+         count: 9707
+      },
+      {
+         term: "ANXIETY",
+         count: 8916
+      },
+      {
+         term: "PYREXIA",
+         count: 8884
+      },
+      {
+         term: "MALAISE",
+         count: 8416
+      },
+      {
+         term: "OEDEMA PERIPHERAL",
+         count: 8388
+      },
+      {
+         term: "RASH",
+         count: 8171
+      },
+      {
+         term: "HYPERTENSION",
+         count: 8171
+      },
+      {
+         term: "DEPRESSION",
+         count: 8129
+      },
+      {
+         term: "ANAEMIA",
+         count: 8011
+      },
+      {
+         term: "BACK PAIN",
+         count: 7948
+      },
+      {
+         term: "RENAL FAILURE ACUTE",
+         count: 7857
+      },
+      {
+         term: "PNEUMONIA",
+         count: 7552
+      },
+      {
+         term: "WEIGHT DECREASED",
+         count: 7176
+      },
+      {
+         term: "ABDOMINAL PAIN",
+         count: 7119
+      },
+      {
+         term: "HYPOTENSION",
+         count: 7088
+      },
+      {
+         term: "INSOMNIA",
+         count: 6985
+      },
+      {
+         term: "PARAESTHESIA",
+         count: 6514
+      },
+      {
+         term: "GASTROINTESTINAL HAEMORRHAGE",
+         count: 6429
+      },
+      {
+         term: "ABDOMINAL PAIN UPPER",
+         count: 6395
+      },
+      {
+         term: "COUGH",
+         count: 6087
+      },
+      {
+         term: "DRUG INTERACTION",
+         count: 5937
+      },
+      {
+         term: "BLOOD GLUCOSE INCREASED",
+         count: 5881
+      },
+      {
+         term: "MYALGIA",
+         count: 5770
+      },
+      {
+         term: "FEELING ABNORMAL",
+         count: 5623
+      },
+      {
+         term: "ERYTHEMA",
+         count: 5568
+      },
+      {
+         term: "CONSTIPATION",
+         count: 5456
+      },
+      {
+         term: "PULMONARY EMBOLISM",
+         count: 5409
+      },
+      {
+         term: "DEHYDRATION",
+         count: 5357
+      },
+      {
+         term: "RENAL FAILURE",
+         count: 5344
+      },
+      {
+         term: "DEATH",
+         count: 5274
+      },
+      {
+         term: "CONFUSIONAL STATE",
+         count: 5231
+      },
+      {
+         term: "SOMNOLENCE",
+         count: 5228
+      },
+      {
+         term: "CARDIAC FAILURE CONGESTIVE",
+         count: 5107
+      },
+      {
+         term: "HAEMOGLOBIN DECREASED",
+         count: 5073
+      },
+      {
+         term: "HYPOAESTHESIA",
+         count: 4920
+      },
+      {
+         term: "MUSCLE SPASMS",
+         count: 4913
+      },
+      {
+         term: "ATRIAL FIBRILLATION",
+         count: 4910
+      },
+      {
+         term: "GAIT DISTURBANCE",
+         count: 4882
+      },
+      {
+         term: "WEIGHT INCREASED",
+         count: 4825
+      },
+      {
+         term: "BLOOD PRESSURE INCREASED",
+         count: 4770
+      },
+      {
+         term: "DEEP VEIN THROMBOSIS",
+         count: 4755
+      },
+      {
+         term: "CONDITION AGGRAVATED",
+         count: 4721
+      },
+      {
+         term: "HYPERHIDROSIS",
+         count: 4702
+      },
+      {
+         term: "INJURY",
+         count: 4677
+      },
+      {
+         term: "LOSS OF CONSCIOUSNESS",
+         count: 4658
+      },
+      {
+         term: "DECREASED APPETITE",
+         count: 4571
+      },
+      {
+         term: "URINARY TRACT INFECTION",
+         count: 4510
+      },
+      {
+         term: "TREMOR",
+         count: 4438
+      },
+      {
+         term: "INJECTION SITE PAIN",
+         count: 4319
+      },
+      {
+         term: "HYPERSENSITIVITY",
+         count: 4114
+      },
+      {
+         term: "SYNCOPE",
+         count: 4059
+      },
+      {
+         term: "FEELING HOT",
+         count: 4043
+      },
+      {
+         term: "DRUG HYPERSENSITIVITY",
+         count: 3982
+      },
+      {
+         term: "DYSPEPSIA",
+         count: 3940
+      },
+      {
+         term: "VISION BLURRED",
+         count: 3907
+      },
+      {
+         term: "URTICARIA",
+         count: 3879
+      },
+      {
+         term: "CONVULSION",
+         count: 3862
+      },
+      {
+         term: "PALPITATIONS",
+         count: 3848
+      },
+      {
+         term: "CORONARY ARTERY DISEASE",
+         count: 3831
+      },
+      {
+         term: "ABDOMINAL DISCOMFORT",
+         count: 3766
+      },
+      {
+         term: "MUSCULAR WEAKNESS",
+         count: 3757
+      },
+      {
+         term: "GASTROOESOPHAGEAL REFLUX DISEASE",
+         count: 3619
+      },
+      {
+         term: "BLOOD CREATININE INCREASED",
+         count: 3448
+      },
+      {
+         term: "ARTHRITIS",
+         count: 3412
+      },
+      {
+         term: "CONTUSION",
+         count: 3377
+      },
+      {
+         term: "DIABETES MELLITUS",
+         count: 3369
+      },
+      {
+         term: "CHEST DISCOMFORT",
+         count: 3351
+      },
+      {
+         term: "OFF LABEL USE",
+         count: 3348
+      },
+      {
+         term: "HAEMORRHAGE",
+         count: 3325
+      },
+      {
+         term: "CHILLS",
+         count: 3322
+      },
+      {
+         term: "OVERDOSE",
+         count: 3239
+      },
+      {
+         term: "CARDIAC ARREST",
+         count: 3235
+      },
+      {
+         term: "CARDIAC DISORDER",
+         count: 3215
+      },
+      {
+         term: "HEART RATE INCREASED",
+         count: 3098
+      },
+      {
+         term: "SEPSIS",
+         count: 2849
+      },
+      {
+         term: "EMOTIONAL DISTRESS",
+         count: 2792
+      },
+      {
+         term: "TRANSIENT ISCHAEMIC ATTACK",
+         count: 2741
+      },
+      {
+         term: "ALANINE AMINOTRANSFERASE INCREASED",
+         count: 2735
+      },
+      {
+         term: "THROMBOCYTOPENIA",
+         count: 2411
+      },
+      {
+         term: "JOINT SWELLING",
+         count: 2147
+      },
+      {
+         term: "DYSPHAGIA",
+         count: 2080
+      },
+      {
+         term: "GENERAL PHYSICAL HEALTH DETERIORATION",
+         count: 1493
+      },
+      {
+         term: "BLOOD CHOLESTEROL INCREASED",
+         count: 1192
+      }
+   ]
+}</code> - <i>E</i></p></i></li></ul><div id="xrefDiv75"></div></div><h3 style="page-break-before:always"><hr> :: User stories&nbsp; &nbsp; &nbsp;<span class="small-menu"><a href="javascript:JS.printList(7,0)">print just this list</a> : <a href="javascript:JS.printList(7,1)">print just this list expanded</a></span><hr></h3><div class="card-div "> <span class="card-title">"As a <user> I want to <do somthing=""> so that <achieve objective="" motivation="">"</achieve></do></user></span> (#45) - <i>OB</i><div id="xrefDiv45"></div></div><div class="card-div "> <span class="card-title">As a consumer, I want to enter my medicines and my affects and see how often others have experienced them to give me peace of mind.</span> (#49) - <i>RR</i><div id="xrefDiv49"></div></div><div class="card-div "> <span class="card-title">As a person who is taking multiple drugs and is having an adverse affect, I would like to see a visualization of the adverse events associated with my drug regime to understand and perhaps decrease them.</span> (#47) - <i>RR</i><div id="xrefDiv47"></div></div><div class="card-div "> <span class="card-title">As a consumer, I want to be able to easily enter my drug regime with typeahead based on multiple names to get the benefits of the system.</span> (#51) - <i>RR</i><div id="xrefDiv51"></div></div><div class="card-div "> <span class="card-title">As a caregiver, I am caring for someone and I know what drugs they take, but they are having side effects and I want to understand how they may be related to the drugs they are taking and consider the impact of changes to there regime.</span> (#48) - <i>RR</i><div id="xrefDiv48"></div></div><div class="card-div "> <span class="card-title">As a consumer, I want to store and consider multiple drug regimes to be able to compare them.</span> (#50) - <i>RR</i><div id="xrefDiv50"></div></div><div class="card-div "> <span class="card-title">As a consumer, I want to enter my ailments in the language of the database so that I can easily get the benefits of the system.</span> (#52) - <i>RR</i><div id="xrefDiv52"></div></div><div class="card-div "> <span class="card-title">As a consumer, I want to understand the benefits that your system offers to that i can decide whether or not to use it.</span> (#53) - <i>RR</i><div id="xrefDiv53"></div></div><div class="card-div "> <span class="card-title">As a consumer, I want to test your system without giving any personal information, and then later associate my searches with my identity if I choose to.</span> (#54) - <i>RR</i><div id="xrefDiv54"></div></div><div class="card-div "> <span class="card-title">As a caregiver, I want my parent to enter their drug regime so that I can present it to the doctor, make sure they take it, and understand the side effects.</span> (#55) - <i>RR</i><div id="xrefDiv55"></div></div><div class="card-div "> <span class="card-title">As a doctor, I want to see how the adverse drug effect events change when I make different treatment decisions for a patient.</span> (#56) - <i>RR</i><div id="xrefDiv56"></div></div><div class="card-div "> <span class="card-title">As a consumer, I want to easily find alternative treatments and understand them.</span> (#57) - <i>RR</i><div id="xrefDiv57"></div></div><div class="card-div "> <span class="card-title">As a consumer I want to enter basic characteristics (e.g. gender and age) to see how the drug might affect someone like me.</span> (#59) - <i>RA</i><div id="xrefDiv59"></div></div><div class="card-div "> <span class="card-title">As a nursing mother I want to know which drugs to avoid so that I can have a health pregnancy</span> (#63) - <i>RA</i><div id="xrefDiv63"></div></div><div class="card-div "> <span class="card-title">As an FDA researcher I want system users to vote on which symptoms they've experienced so that I can understand drug interactions better.</span> (#65) - <i>RA</i><div id="xrefDiv65"></div></div><div class="card-div "> <span class="card-title">As a senior citizen with multiple health conditions I want to know which medications to avoid so I don't exacerbate my condition.</span> (#68) - <i>RA</i><div id="xrefDiv68"></div></div><div class="card-div "> <span class="card-title">As a senior citizen I want a clear and easy to read interface so that I can use the application successfully.</span> (#71) - <i>RA</i><div id="xrefDiv71"></div></div><div class="card-div "> <span class="card-title">As a person who has entered his prescriptions into the app I want a way to set a password so that my personal data is protected.</span> (#73) - <i>RA</i><div id="xrefDiv73"></div></div><div class="card-div "> <span class="card-title">As a nurse practitioner I want to know the dates when the patient started taking the drug and in what does so that I can give her the right advice.</span> (#74) - <i>RA</i><div id="xrefDiv74"></div></div><div class="card-div "> <span class="card-title">As a parent of three children I want to have three separate lists for each child so that I can manage their individual information clearly.</span> (#76) - <i>RA</i><div id="xrefDiv76"></div></div><div class="card-div "> <span class="card-title">As a Doctor or a caregiver, I want to set up a drug regime and share it with a patient so that the patient can understand when to report a side effect and so that we can both understand it.</span> (#60) - <i>RR</i><div id="xrefDiv60"></div></div><div class="card-div "> <span class="card-title">As a professional advocate, I want people to share their regimes with me, but I want them to be able to unsure this data to me to preserve their privacy if our relationship ends.</span> (#61) - <i>RR</i><div id="xrefDiv61"></div></div><div class="card-div "> <span class="card-title">As a sufferer of a symptom, I want to understand how likely it is that my symptom is caused by my drug regime.</span> (#66) - <i>RR</i><div id="xrefDiv66"></div></div><div class="card-div "> <span class="card-title">As a caregiver to a person experiencing a problem, I want to explore what drugs might be causing the problem.</span> (#67) - <i>RR</i><div id="xrefDiv67"></div></div><div class="card-div "> <span class="card-title">As a researcher, I want to look for unexpected adverse effects when drugs are taken together rather than singly in to identify new drug interactions.</span> (#64) - <i>RR</i><div id="xrefDiv64"></div></div><div class="card-div "> <span class="card-title">As a caregiver, I want to understand is an adverse effect is likely to be caused by a drug interaction, or is simply a common adverse effect of the drugs taken singly.</span> (#62) - <i>RR</i><div id="xrefDiv62"></div></div><div class="card-div "> <span class="card-title">As a consumer, I want to know if this adverse effect is common or rare, so that I can decide if I need to take action.</span> (#58) - <i>RR</i><p>This is the "more detail than the list of possible adverse reactions on the medication bottle" story.</p><div id="xrefDiv58"></div></div><div class="card-div "> <span class="card-title">As an open-source hacker, I want to be able to use and build upon your system without having to install anything.</span> (#69) - <i>RR</i><div id="xrefDiv69"></div></div><div class="card-div "> <span class="card-title">As an evaluator at the GSA, I want to see that you can build very light-weight systems quickly.</span> (#72) - <i>RR</i><div id="xrefDiv72"></div></div><div class="card-div "> <span class="card-title">As an open-source hacker, I want to be able to copy your work and install it easily.</span> (#70) - <i>RR</i><div id="xrefDiv70"></div></div><div class="card-div "> <span class="card-title">As a young person who mostly uses my phone, I want to use your system in a mobile-friendly way.</span> (#77) - <i>RR</i><div id="xrefDiv77"></div></div><div class="card-div "> <span class="card-title">As an old person with a lot of problems, I want to know that you understand 508 compliance and are make the site easy for the disabled to use.</span> (#78) - <i>RR</i><div id="xrefDiv78"></div></div><div class="card-div "> <span class="card-title">As a consumer with an ailment, I want to know how many people had the same ailment, even if they aren't taking the same medicine as me, and I want to know what medicines they are taking (in aggregation), to see what my options are.</span> (#79) - <i>RR</i><div id="xrefDiv79"></div></div><div class="card-div "> <span class="card-title">As Martha, I want to see mockup ASAP in order to understand what y'all are gibbering about.</span> (#80) - <i>RR</i><div id="xrefDiv80"></div></div><div class="card-div "> <span class="card-title">As a consumer without a science/stats background I want data to be presented accurately and fairly so that I can make good decisions.</span> (#87) - <i>OB</i><div id="xrefDiv87"></div></div><div class="card-div "> <span class="card-title">As a doctor I want a graphical representation of the occurrences of side effects.</span> (#90) - <i>AR</i><div id="xrefDiv90"></div></div><div class="card-div "> <span class="card-title">As a researcher I want to see aggregate counts of what drugs+symptoms are searched for, so I can get more data about potential interactions</span> (#91) - <i>OB</i><div id="xrefDiv91"></div></div><div class="card-div "> <span class="card-title">As a busy physician in an rural community, I want to be able to compare likely side affects between 2 possible regimes</span> (#92) - <i>OB</i><div id="xrefDiv92"></div></div><div class="card-div "> <span class="card-title">As a primary care provider in a rural community, I would also like to know the date drugs were approved in case there are newer ones I was not aware of.</span> (#93) - <i>MO</i><div id="xrefDiv93"></div></div><div class="card-div "> <span class="card-title">small town pharmacists play a huge role in patient care</span> (#94) - <i>MO</i><div id="xrefDiv94"></div></div><hr></div>
+
+<div id="fpme-share-photo" style="cursor: pointer; position: absolute; display: none; z-index: 2147483647; opacity: 0.9; width: 38px; height: 38px; background-image: url(chrome-extension://bnibclkcmchpmfgnpnpnhanmfapffcjn/images/icon-38.png); background-size: 38px 38px;"></div><script id="hiddenlpsubmitdiv" style="display: none;"></script><script>try{for(var lastpass_iter=0; lastpass_iter < document.forms.length; lastpass_iter++){ var lastpass_f = document.forms[lastpass_iter]; if(typeof(lastpass_f.lpsubmitorig2)=="undefined"){ lastpass_f.lpsubmitorig2 = lastpass_f.submit; if (typeof(lastpass_f.lpsubmitorig2)=='object'){ continue;}lastpass_f.submit = function(){ var form=this; var customEvent = document.createEvent("Event"); customEvent.initEvent("lpCustomEvent", true, true); var d = document.getElementById("hiddenlpsubmitdiv"); if (d) {for(var i = 0; i < document.forms.length; i++){ if(document.forms[i]==form){ if (typeof(d.innerText) != 'undefined') { d.innerText=i.toString(); } else { d.textContent=i.toString(); } } } d.dispatchEvent(customEvent); }form.lpsubmitorig2(); } } }}catch(e){}</script><div id="naptha_container0932014_0707"></div></body></html>
