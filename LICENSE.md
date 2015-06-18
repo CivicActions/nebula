@@ -27,4 +27,5 @@ For more information, please refer to <http://unlicense.org>
 Libraries
 ---------
 The chart.js library is licenced under an MIT licence, for more details refer to /chart/LICENSE.md
-
+The Silex framework and it's libraries are licenced under an MIT licence, for more details refer to /backend/vendor/silex/silex/LICENSE.
+The Guzzle library is licenced under an MIT licence, for more details refer to /backend/vendor/guzzlehttp/guzzle/LICENSE.
