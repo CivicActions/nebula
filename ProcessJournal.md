@@ -29,6 +29,20 @@ Thursday June 18, early
 
 Developed spikes and stories on Trello board.  Prep for estimation meeting and Design Studio.  Probably Ethan was working on spikes as well.
 
-9:00 AM Pacific
+8:45 AM Pacific
 
 Stand-up scrum meeting.
+
+9:15 AM Pacific
+
+Begin story-wrting, estimationg, and backlog grooming session.  Identified highest-priority spikes and reduced redundancy on stories.  Estimated highest-priority stories.
+
+10:00 AM Pacific
+
+Begin ["Design Studio"](http://www.willowtreeapps.com/blog/3-steps-to-running-design-studio-workshops-best-practices-tips/), that lasted an hour and 20 minutes. Worked really well thanks to off-team UX expert.  Interesting designs were discovered and prioritized.
+
+11:25 AM Pacific 
+
+Split into three sub-teams to work on deployment, design wirefames, and spiking the API.
+
+
