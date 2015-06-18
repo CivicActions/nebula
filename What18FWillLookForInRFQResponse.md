@@ -6,7 +6,7 @@
 I wanted to share the below thoughts on the Agile BPA based on the rules of evaluating solicitation responses and what I know about 18F. 
 
 
-**1) Quoters will scored against the checklists and questions in the US Digital Services Playbook. **
+**1) Quoters will scored against the checklists and questions in the US Digital Services Playbook.**
 
 
 My bet is the Selection Committee is going to score the Technical Responses as "Exceptional", "Acceptable", "Non-Acceptable" against each and every checklist item and question in the US Digital Services Playbook. 
