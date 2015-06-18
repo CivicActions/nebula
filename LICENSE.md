@@ -1,4 +1,4 @@
-This is free and unencumbered software released into the public domain.
+Except where otherwise noted for libraries below, this is free and unencumbered software released into the public domain.
 
 Anyone is free to copy, modify, publish, use, compile, sell, or
 distribute this software, either in source code form or as a compiled
@@ -22,3 +22,7 @@ ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 OTHER DEALINGS IN THE SOFTWARE.
 
 For more information, please refer to <http://unlicense.org>
+
+Libraries
+---------
+The chart.js library is licenced under an MIT licence, for more details refer to /chart/LICENSE.md
