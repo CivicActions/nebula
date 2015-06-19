@@ -3,3 +3,9 @@ body {
   margin:0 auto;
   padding:25px;
 }
+#error {
+  color:#f00;
+  padding:10px 0;
+  font-weight:bold;
+  font-size:115%;
+}
