@@ -1,4 +1,4 @@
-# Journal of our Meetings and Ceremony
+# Journal of our Meetings, Ceremony, Milestones
 
 Wednesday June 17, 9:00 AM Pacific
 
@@ -49,15 +49,43 @@ Split into three sub-teams to work on deployment, design wirefames, and spiking 
 
 Have first "round-trip" prototype working. Reviewed Ron's wirefames, and made adjustments informed by our limited experience with the data.
 
+3:15 PM Pacific
+
+Team publishes CivicActions team member Greg Elin's thoughts on how bidders might successfully approach this RFQ, adding it to our github repo: "What 18F will look for in RFQ response". 
+
 4:00 PM Pacific
 
+Wireframes team has completed clickable prototypes for basic screens of "symptoms by drug" interface, in preparation for user testing 6/19.
+
 Made the entire Repo public, including Greg Elin's article on what we believe 18F will be expecting, which we hope will enlighten other would-be quoters.
+
+5:00 PM Pacific
+
+Dev team has completed first pass of working "search by symptom" prototype, returning search specific report totals through the API. 
+
+6:20 PM PT
+
+Pharaceutical industry test users (team connection from Harvard Medical School) confirmed to participate in MVP feedback from 6/19. 
 
 Friday June 19th
 
 8:45 Pacific
 
 Morning scrum.  Learned that we had deployment done, first unit tests, and progress on GUI. Attempting to schedule second usability test with our user.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,0 +1,2 @@
+#!/bin/sh
+docker-compose run testing /usr/src/nebula/vendor/bin/phpunit --log-junit /usr/src/nebula/report.xml $@ /usr/src/nebula/tests/
