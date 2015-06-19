@@ -1,41 +1,152 @@
 (function($){
   $(document).ready(function(){
-    $('#submit').click(function() {
-      $('#text, #error').empty();
+    $('#add-to-list').click(function() {
+
+      $('#added-meds').append('<input type="checkbox" checked="checked" value="' + $('#drug').val() + '" class="added-drug ' + $('#drug').val() + '">' + $('#drug').val());
+    })
+
+    $('#my-symptom').click(function() {
+      $('#error').empty();
       var drug = $('#drug').val();
       var symptom = $('#symptom').val();
       var url;
       
-      if(drug.length){
-	url = 'https://api.fda.gov/drug/event.json?api_key=rv4OOon6fPJOHBbFHClUOs3BRGSbAEUdg3ACp2pu&search="' + drug + '"&count=patient.reaction.reactionmeddrapt.exact';
-      }
+      //if(drug.length) {
       
-      if(symptom.length){
-	url = 'https://api.fda.gov/drug/event.json?api_key=rv4OOon6fPJOHBbFHClUOs3BRGSbAEUdg3ACp2pu&search="' + symptom + '"&count=patient.drug.medicinalproduct.exact';
-      }
+      var addedDrug = $('.added-drug');
+      var drugArray = [];
+      var mapDrugs = [];
+      var mapNumbers = [];
       
-      if(drug.length && symptom.length){
-	url = 'https://api.fda.gov/drug/event.json?api_key=rv4OOon6fPJOHBbFHClUOs3BRGSbAEUdg3ACp2pu&search="' + drug + '"+AND+"' + symptom + '"&count=patient.drug.medicinalproduct.exact';
-      }	    
+      $.each(addedDrug, function() {
+	// drugArray.push($(this).val() + '+');
+	
 
-      $.ajax({
-	url: url,
-	type: 'GET',
-	success: function(data) { 
-	  var reactions = data.results		
-	  for (i = 0; i < reactions.length; i++) {
-	    $('#text').append('<div id="drug-' + i + '">' + reactions[i]['term'] + ' |  Reports: ' + reactions[i]['count'] +'</div>');
+	
+	var drugStringRaw = drugArray.join();
+	var drugString = drugStringRaw.replace(',', '');
+	var drugFinal = drugString.substring(0, drugString.length - 1);
+	
+	//	url = 'https://api.fda.gov/drug/event.json?api_key=rv4OOon6fPJOHBbFHClUOs3BRGSbAEUdg3ACp2pu&search="' + drug + '"&count=patient.reaction.reactionmeddrapt.exact';
+	
+	/*if (drugFinal.length){
+	  url = 'https://api.fda.gov/drug/event.json?api_key=rv4OOon6fPJOHBbFHClUOs3BRGSbAEUdg3ACp2pu&search="' + drug + '+' + drugFinal + '"&count=patient.reaction.reactionmeddrapt.exact';
+	  }*/
+
+	//  }
+	
+	/*if(symptom.length){
+	  url = 'https://api.fda.gov/drug/event.json?api_key=rv4OOon6fPJOHBbFHClUOs3BRGSbAEUdg3ACp2pu&search="' + symptom + '"&count=patient.drug.medicinalproduct.exact';
 	  }
-	},
-	error: function(data) {
-	  $('#error').append('No results.');
-	}
-      });
-    })
+	  
+	  
+	  if(drug.length && symptom.length){
+	  url = 'https://api.fda.gov/drug/event.json?api_key=rv4OOon6fPJOHBbFHClUOs3BRGSbAEUdg3ACp2pu&search="' + drug + '"+AND+"' + symptom + '"&count=patient.drug.medicinalproduct.exact';
+	  }	  */
 
-    $('#add-to-list').click(function() {
-      $('#error').empty();
-      $('#added-meds').append('<input type="checkbox" value="' + $('#drug').val() + '" class="added-drug ' + $('#drug').val() + '">' + $('#drug').val());
+	// if(drug.length && symptom.length){
+	url = 'https://api.fda.gov/drug/event.json?api_key=rv4OOon6fPJOHBbFHClUOs3BRGSbAEUdg3ACp2pu&search=' + $(this).val() + '+AND+' + symptom + '&count=patient.drug.medicinalproduct.exact';
+	console.log(url);
+	
+	//}
+	
+	$.ajax({
+	  url: url,
+	  type: 'GET',
+	  success: function(data) { 
+	    var reactions = data.results
+	    console.log(data);
+	    var drugStrToArray1 = drugFinal.toUpperCase();
+	    
+	    var drugStrToArray2 = drugStrToArray1.split("+");
+	    
+	    for (i = 0; i < reactions.length; i++) {
+
+	      if ($.inArray(reactions[i]['term'].toUpperCase(), drugStrToArray2)) {
+		
+		$('#text').append('<div id="drug-' + i + '">' + reactions[i]['term'] + ' ' +  symptom +' reports: ' + reactions[i]['count'] +'</div>');
+
+		mapDrugs.push(reactions[i]['term']);
+		mapNumbers.push(reactions[i]['count']);
+	      }
+	      
+	    }
+	    console.log(mapDrugs);
+	    console.log(mapNumbers);
+	    
+	    
+	  },
+	  error: function(data) {
+	    $('#error').append('No results.');
+	  }
+	});
+	 });
+	var color = 220;
+
+	var datamap = {
+	  labels: [1,2],
+	  datasets: [
+	    {
+	      label: "My First dataset",
+	      fillColor: 'rgba(' + color +', '+ color + ',' + color + ', 2)',
+	      strokeColor: 'rgba(' + color +', '+ color + ',' + color + ', 1)',
+	      pointColor: 'rgba(' + color +', '+ color + ',' + color + ', 1)',
+	      pointStrokeColor: "#fff",
+	      pointHighlightFill: "#fff",
+	      pointHighlightStroke: 'rgba(' + color +', '+ color + ',' + color + ', 1)',
+	      data: [3,4,5],
+	    },
+
+	  ]
+	};
+
+	console.log(datamap);
+	
+
+	var options = {
+	  //Boolean - Whether the scale should start at zero, or an order of magnitude down from the lowest value
+	  scaleBeginAtZero : true,
+
+	  //Boolean - Whether grid lines are shown across the chart
+	  scaleShowGridLines : true,
+
+	  //String - Colour of the grid lines
+	  scaleGridLineColor : "rgba(0,0,0,.05)",
+
+	  //Number - Width of the grid lines
+	  scaleGridLineWidth : 1,
+
+	  //Boolean - Whether to show horizontal lines (except X axis)
+	  scaleShowHorizontalLines: true,
+
+	  //Boolean - Whether to show vertical lines (except Y axis)
+	  scaleShowVerticalLines: true,
+
+	  //Boolean - If there is a stroke on each bar
+	  barShowStroke : true,
+
+	  //Number - Pixel width of the bar stroke
+	  barStrokeWidth : 2,
+
+	  //Number - Spacing between each of the X value sets
+	  barValueSpacing : 5,
+
+	  //Number - Spacing between data sets within X values
+	  barDatasetSpacing : 1,
+
+	  //String - A legend template
+	  legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<datasets.length; i++){%><li><span style=\"background-color:<%=datasets[i].fillColor%>\"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>"
+
+	};
+	
+
+	/*
+	 * Get our Chart.js chart
+	 */
+	var ctx = document.getElementById("drug-chart").getContext("2d");
+	var drugChart = new Chart(ctx).Bar(datamap, options);
+	
+     
     })
     
   })

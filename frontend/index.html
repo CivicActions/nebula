@@ -4,24 +4,27 @@
     <meta charset="UTF-8">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="assets/nebula.js"></script>
+    <script src="chart/Chart.js"></script>
     <link rel="stylesheet" type="text/css" href="assets/style.css">
     <title>Nebula</title>
   </head>
   <body>
 
     <div id="info">
-      <div id="label"> Input drug name:</div>
+      <div id="label"> Find Drug</div>
       <input type="text" name="drug" id="drug" placeholder="Enter drug name"> <button id="add-to-list">Add to list</button>
-      <br /><br />
-      <div id="label"> Input symptom:</div>
+      <br />
+      <div id="description">		  
+      </div>
+      <br />
       <input type="text" name="symptom" id="symptom" placeholder="Enter symptom">
-      <br /><br />
-      <button id="submit">Click Me</button>
+      <button id="my-symptom">My Symptom</button>
     </div>
     <div id="error">		  
     </div>
     <div id="added-meds">		  
     </div>
+    <canvas id="drug-chart" width="400" height="400"></canvas>
     <div id="text">
     </div>
 
