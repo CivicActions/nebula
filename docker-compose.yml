@@ -14,8 +14,15 @@ backendweb:
   links:
    - backendphp
 backendphp:
-  command: php-fpm --allow-to-run-as-root
   image: php:5.6-fpm
+  command: php-fpm --allow-to-run-as-root
   volumes:
     - backend:/var/www/nebula
     - backend/configuration/php-fpm.conf:/usr/local/etc/php-fpm.conf
+testing:
+  image: php:5.6-cli
+  volumes:
+    - testing:/usr/src/nebula
+  links:
+    - frontendweb
+    - backendweb

@@ -1,3 +1,5 @@
+# Licence
+
 Except where otherwise noted for libraries below, this is free and unencumbered software released into the public domain.
 
 Anyone is free to copy, modify, publish, use, compile, sell, or
@@ -24,8 +26,12 @@ OTHER DEALINGS IN THE SOFTWARE.
 For more information, please refer to <http://unlicense.org>
 
 
-Libraries
----------
-The chart.js library is licenced under an MIT licence, for more details refer to /frontend/chart/LICENSE.md
-The Silex framework and it's libraries are licenced under an MIT licence, for more details refer to /backend/vendor/silex/silex/LICENSE.
-The Guzzle library is licenced under an MIT licence, for more details refer to /backend/vendor/guzzlehttp/guzzle/LICENSE.
+## Free and Open Source software and library licences
+
+Free and Open Source project inclusions:
+* The chart.js library is licenced under an MIT licence, for more details refer to /frontend/chart/LICENSE.md
+* The Silex framework and it's libraries are licenced under an MIT licence, for more details refer to /backend/vendor/silex/silex/LICENSE.
+* The Guzzle library is licenced under an MIT licence, for more details refer to /backend/vendor/guzzlehttp/guzzle/LICENSE and /testing/vendor/guzzlehttp/guzzle/LICENSE.
+* The PHPUnit test framework and libraries are licenced under a BSD 3 Clause license, for more details refer to /testing/vendor/phpunit/phpunit/LICENSE.
+
+Some libraries may include or depend on other projects not specifically listed above, please refer to README and LICENCE files within those project directories for details.
