@@ -13,3 +13,4 @@ She confirmed:
 * She believes seeing the adverse events is a valuable starting point, but that doctors will not follow it blindly.
 * Doctors want to be able to play with drug regimes.
 * Interacting with Medicare and Medicaid supported medicines could be very valuable.
+* She validated our hypothesis that clear visualization of drug effect data would be a leading factor in our tool's effectiveness, especially when considering the general public's adoption of the tool. 
