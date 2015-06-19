@@ -23,14 +23,19 @@ git clone git@github.com:CivicActions/nebula.git
 cd nebula
 ```
 
-Start docker containers:
-```
-docker-compose up
-```
-The first run will take a while. Leave this terminal running so you can review server logs as you develop.
+If you are using boot2docker, make sure it is started up and it's shell environment variable are available before continuing.
 
-The frontend component will be available on port 2086 http://localhost:2086
-The backend component will be available on port 2095 http://localhost:2095
+To start docker containers, initiate database schemas and import:
+```
+./bin/build
+```
+The first run will take a while. Use this command to restart containers if you reboot your workstation.
+
+* The frontend component will be available on port 2086 http://localhost:2086 (if on boot2docker it will be on your boot2docker IP).
+* The backend component will be available on port 2095 http://localhost:2095 (if on boot2docker it will be on your boot2docker IP).
+* To view logs run `docker-compose logs`.
+* To stop the containers run `docker-compose stop`.
+* If the backendphp container is modified, rebuild the containers using `docker-compose rm` followed by `./bin/build`.
 
 ## Testing
 
