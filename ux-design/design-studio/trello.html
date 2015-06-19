@@ -1,0 +1,122 @@
+
+<!-- saved from url=(0043)http://connie-clark.github.io/print-trello/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Print Trello Lists/Cards/...</title>
+
+
+<link rel="stylesheet" type="text/css" href="./trello_files/style.css">
+
+<script src="./trello_files/board.js"></script>
+<script src="./trello_files/pref.js"></script>
+<script src="./trello_files/layout.js"></script>
+<script src="./trello_files/showdown.js"></script>
+
+</head>
+<body class=" hasGoogleVoiceExt">
+<div id="HOWTO" class="noprint">
+<div align="right"><a href="http://connie-clark.github.io/print-trello/about.htm">about ...</a></div>
+<p>
+This page will give you a printable copy of your Trello Board, lists - cards - labels - desc - comments - votes. This is helpful even when you just want to be able to scan quickly, without having to turn each card over.
+</p><p>
+You may safely use this for private/proprietary data
+as no information leaves this browser page.
+</p>
+<fieldset><legend>Step.1 - Import your Trello Board contents</legend>
+<ol>
+<li>in another window or tab, access your Trello Board
+</li><li>click show sidebar (top-right)
+</li><li>right sidebar -&gt; Menu -&gt; Share,Print,Export -&gt; Export JSON
+</li><li>after the new JSON data appears, use Ctrl-A, Ctrl-C to copy the entire page contents
+</li><li>use Ctrl-V to paste your Trello Board's JSON into this box:
+<br><textarea id="TA" rows="2" cols="80" nowrap="" style="background-image: none; background-position: 0% 0%; background-repeat: repeat;"></textarea>
+<br><input type="button" value="READY" onclick="step1()">
+</li></ol>
+</fieldset>
+
+
+
+<div id="prefDiv" style="display: block;">
+<fieldset><legend>Step.2 - review/set your printing preferences</legend>
+
+<div id="PREF_FORM"><form><fieldset><legend>Board</legend><p><input type="checkbox" name="showBoardTitle" checked="">&nbsp;Show Board Title</p></fieldset><fieldset><legend>Lists</legend><p><input type="checkbox" name="numberLists">&nbsp;Sequentially number lists</p><p><input type="checkbox" name="showListTitle" checked="">&nbsp;Show List Title</p><p><input type="checkbox" name="startListOnNewPage" checked="">&nbsp;Start each list on new page</p><p><input type="checkbox" name="prefaceListNameWithBoard">&nbsp;Repeat board name when showing list name</p><p><input type="checkbox" name="showSingleList" checked="">&nbsp;Show option to print list by itself</p><p><input type="checkbox" name="showClosedLists">&nbsp;Show closed lists</p></fieldset><fieldset><legend>Cards</legend><p><input type="checkbox" name="numberCardsInList">&nbsp;Sequentially number cards within each list</p><p><input type="checkbox" name="showCardTitle" checked="">&nbsp;Show Card Title</p><p><input type="checkbox" name="showCardNumber" checked="">&nbsp;Show Card Id #</p><p> &nbsp; Show Card Label <select name="showCardLabels"><option>do-not-show</option><option>show-color-block</option><option selected="">colored-text</option><option>text-in-colored-block</option></select></p><p><input type="checkbox" name="showVoteCount" checked="">&nbsp;Show vote count</p><p><input type="checkbox" name="showDueDate" checked="">&nbsp;Show Due Date</p><p><input type="checkbox" name="showCardCreator" checked="">&nbsp;Show Card Creator</p><p><input type="checkbox" name="showCardDesc" checked="">&nbsp;Show Card Description</p><p><input type="checkbox" name="showClosedCards">&nbsp;Show Closed Cards</p></fieldset><fieldset><legend>Checklists</legend><p><input type="checkbox" name="showChecklists" checked="">&nbsp;Show Checklists</p><p><input type="checkbox" name="showChecklistTitle" checked="">&nbsp;Show Checklist Title</p><p> &nbsp; Which Checklist Items to show <select name="showChecklistItems"><option>none</option><option selected="">all</option><option>unchecked-only</option><option>checked-only</option></select></p></fieldset><fieldset><legend>Comments</legend><p><input type="checkbox" name="showComments" checked="">&nbsp;Show Comments</p><p><input type="checkbox" name="showCommentCreator" checked="">&nbsp;Show Comment Creator</p></fieldset><fieldset><legend>People</legend><p> &nbsp; When showing people, use <select name="showPersonAs"><option selected="">initials</option><option>fullname</option></select></p></fieldset><input type="button" onclick="savePref(this.form)" value=" Save Preferences &amp; Create the Report"></form></div>
+
+<p></p>
+<div id="prefJsonDiv" style="display: block;">
+<fieldset><legend>Saving your printing preferences</legend>
+You may save these printing preferences with your Trello board:
+<ul class="mini">
+<li>Create a card with title: 
+<script>document.write(prefCardTitle)</script>MY~PRINT~PREFERENCES
+</li><li>Add the json below as a COMMENT, and change the nickname field to something meaningful to you.
+<textarea id="prefJsonOUT" nowrap="" rows="2" cols="80"></textarea>
+</li></ul>
+</fieldset>
+<p class="hilite">Note: when you print this page - only the report below will be printed</p>
+
+</div>
+
+</fieldset>
+</div>
+
+<hr>
+</div>	<!-- end of HOWTO -->
+
+<div id="MAIN"><h2>Agile-GSA Design Studio<span class="asof"> - last activity - 6/18/2015, 11:15:38 AM</span></h2><h3><hr> :: Process&nbsp; &nbsp; &nbsp;<span class="small-menu"><a href="javascript:JS.printList(0,0)">print just this list</a> : <a href="javascript:JS.printList(0,1)">print just this list expanded</a></span><hr></h3><div class="card-div "> <span class="card-title">Review Problem:  As a person interested in the effects of multiple drugs,  I would like to see a visualization of an adverse event associated with a drug regime and be able to play with it to gain an understanding.</span> (#1)<p>We need to design two things (could be one page, or two, or....):</p>
+
+<ul>
+<li>User input piece</li>
+<li>Output of results</li>
+</ul>
+
+<hr>
+
+<p>From this trello card: https://trello.com/c/0UVj4Gjc/44-problem-statement</p>
+
+<hr>
+
+<p>As a user I am having a particular symptom, and I want to consider what drug (or drugs) might be causing that symptom</p>
+
+<p>Taking multiple drugs and trying to figure out the interactions between those</p>
+
+<p>"Want to visualize the impact of taking multiple drugs and their possible adverse events".</p>
+
+<p>"Which drug is most likely causing an adverse effect."</p>
+
+<p>I am a patient/or guardian taking multiple medications and don't which one to start looking at.</p><div id="xrefDiv1"></div></div><div class="card-div "> <span class="card-title">Individual Idea generation (8 minutes) (.13)</span> (#2)<ul>
+<li><p>Draw some lines on your blank paper to create a template like the one attached</p></li>
+<li><p>Spend 5 minutes generating low-fi sketches of solutions for the org homepage, keeping in mind the different personas, stories and hypotheses already generated</p></li>
+<li><p>These sketches should be visual articulations: UI sketches, workflows, diagrams, etc. Use simple shapes like circles, squares and triangles!</p></li>
+</ul><div id="xrefDiv2"></div></div><div class="card-div "> <span class="card-title">Upload sketches (5 min) (.083)</span> (#5)<div id="xrefDiv5"></div></div><div class="card-div "> <span class="card-title">Presentation / Critique (2 min/person) (.3)</span> (#3)<ul>
+<li><p>Give each participant 2 minutes to present her/his sketches to the team</p></li>
+<li><p>State which persona/audience you were solving a problem for, which hypotheses, explain the sketch</p></li>
+<li><p>Team members should provide feedback to the presenter - focus on clarifying the presenter's intentions</p></li>
+</ul><div id="xrefDiv3"></div></div><div class="card-div "> <span class="card-title">Decide what to move forward with</span> (#39) - <i>JH</i><div id="xrefDiv39"></div></div><h3 style="page-break-before:always"><hr> :: Personas to keep in mind&nbsp; &nbsp; &nbsp;<span class="small-menu"><a href="javascript:JS.printList(1,0)">print just this list</a> : <a href="javascript:JS.printList(1,1)">print just this list expanded</a></span><hr></h3><div class="card-div "> <span class="card-title">An advanced practice nurse/prescriber specialty family practice and clinical education.  I use this site to determine clearance for medical devices (CLIA waived), product safety, etc.</span> (#19)<div id="xrefDiv19"></div></div><div class="card-div "> <span class="card-title">Justice advocate seeking to demonstrate that most drug testing being done on white males leads to more side effects for women and minority genetic groups.</span> (#22)<div id="xrefDiv22"></div></div><div class="card-div "> <span class="card-title">Advocate of natural healing seeking to emphasize danger of prescribed drugs over natural remedies.</span> (#21)<div id="xrefDiv21"></div></div><div class="card-div "> <span class="card-title">Adult caring for elderly parent(s) and managing their prescriptions.</span> (#20)<div id="xrefDiv20"></div></div><h3 style="page-break-before:always"><hr> :: Idea Sketches&nbsp; &nbsp; &nbsp;<span class="small-menu"><a href="javascript:JS.printList(4,0)">print just this list</a> : <a href="javascript:JS.printList(4,1)">print just this list expanded</a></span><hr></h3><div class="card-div "> <span class="card-title">Ron</span> (#10) - <i>JH</i><div id="xrefDiv10"></div></div><div class="card-div "> <span class="card-title">Owen</span> (#11) - <i>JH</i><ul style="list-style-type: lower-alpha"><li><i><p>Kev: Here's a better (and Drupal!) example of the Chosen autocomplete/selector https://s3.amazonaws.com/ww-static/images/article-61/chosen-fig1-2-hi.png - <i>OB</i></p></i></li></ul><div id="xrefDiv11"></div></div><div class="card-div "> <span class="card-title">Steve</span> (#12) - <i>JH</i><ul style="list-style-type: lower-alpha"><li><i><p>Rob: thinks people would like the list (as opposed to the graph) - <i>JH</i></p></i></li></ul><div id="xrefDiv12"></div></div><div class="card-div "> <span class="card-title">Ethan</span> (#13) - <i>JH</i><div id="xrefDiv13"></div></div><div class="card-div "> <span class="card-title">Rob</span> (#14) - <i>JH</i><ul style="list-style-type: lower-alpha"><li><i><p>bottom center idea addresses scientific researcher persona - <i>JH</i></p></i></li></ul><div id="xrefDiv14"></div></div><div class="card-div "> <span class="card-title">April</span> (#15) - <i>JH</i><div id="xrefDiv15"></div></div><div class="card-div "> <span class="card-title">Dan</span> (#42) - <i>DG</i><ul style="list-style-type: lower-alpha"><li><i><p>Enter drugs first; then see symptoms - <i>JH</i></p></i></li></ul><div id="xrefDiv42"></div></div><div class="card-div "> <span class="card-title">Alaine</span> (#43) - <i>Alaine Karoleff</i><div id="xrefDiv43"></div></div><div class="card-div "> <span class="card-title">Kevin</span> (#44) - <i>KW</i><div id="xrefDiv44"></div></div><h3 style="page-break-before:always"><hr> :: MVP - what does it include?&nbsp; &nbsp; &nbsp;<span class="small-menu"><a href="javascript:JS.printList(6,0)">print just this list</a> : <a href="javascript:JS.printList(6,1)">print just this list expanded</a></span><hr></h3><div class="card-div "> <span class="card-title">User enters drugs</span> (#46) - <i>JH</i><div id="xrefDiv46"></div></div><div class="card-div "> <span class="card-title">User is presented with common symptoms for their drug(s)</span> (#47) - <i>JH</i><div id="xrefDiv47"></div></div><div class="card-div "> <span class="card-title">Second level MVP would be adding a symptom field and seeing chart with interactions</span> (#48) - <i>JH</i><div id="xrefDiv48"></div></div><div class="card-div "> <span class="card-title">Second level: Hover over entered drugs to see a modal with some additional data about that drug?</span> (#49) - <i>JH</i><ul style="list-style-type: lower-alpha"><li><i><p>validate with user testing/feedback. - <i>JH</i></p></i></li></ul><div id="xrefDiv49"></div></div><h3 style="page-break-before:always"><hr> :: Notes&nbsp; &nbsp; &nbsp;<span class="small-menu"><a href="javascript:JS.printList(7,0)">print just this list</a> : <a href="javascript:JS.printList(7,1)">print just this list expanded</a></span><hr></h3><div class="card-div "> <span class="card-title">Notes</span> (#45) - <i>JH</i><h3 id="notes">Notes:</h3>
+
+<ul>
+<li>Let's stay as simple as we can</li>
+<li>Great to be able to do comparisons but too broad a use case will be too challenging - we can always further develop a simple idea later if we have time</li>
+<li>Characteristics of the MVP: get connected to data, show data related to adverse affects; Nice to have would be to normalize the data and then look at combinations of drugs</li>
+<li>Is there a sub-MVP that would deliver value? Reverse the order of operations: enter drugs in first, see most common symptoms (see Dan's sketches)</li>
+<li>Could this be a widget that could be embedded into another website?</li>
+<li>Three cases:</li>
+</ul>
+
+<p>1 just list drugs
+2 just enter symptom (not as useful)
+3 enter drugs and symptoms</p>
+
+<ul>
+<li>Do we want to have a gender select field?</li>
+</ul>
+
+<h3 id="ideastomoveforwardwith">Ideas to move forward with:</h3>
+
+<ul>
+<li>Start with Owen's as a base (considering last three years)</li>
+<li>Enter drugs first (multiple drugs)</li>
+<li>Use autocomplete fields</li>
+<li>See a list of suggested common symptoms to choose from (or add ones that are not included in an autocomplete), see :https://trello.com/c/1v3i5BQ9/11-owen</li>
+<li>Treat time as a secondary consideration after MVP is done</li>
+</ul><div id="xrefDiv45"></div></div><hr></div>
+
+<div id="fpme-share-photo" style="cursor: pointer; position: absolute; display: none; z-index: 2147483647; opacity: 0.9; width: 38px; height: 38px; background-image: url(chrome-extension://bnibclkcmchpmfgnpnpnhanmfapffcjn/images/icon-38.png); background-size: 38px 38px;"></div><script id="hiddenlpsubmitdiv" style="display: none;"></script><script>try{for(var lastpass_iter=0; lastpass_iter < document.forms.length; lastpass_iter++){ var lastpass_f = document.forms[lastpass_iter]; if(typeof(lastpass_f.lpsubmitorig2)=="undefined"){ lastpass_f.lpsubmitorig2 = lastpass_f.submit; if (typeof(lastpass_f.lpsubmitorig2)=='object'){ continue;}lastpass_f.submit = function(){ var form=this; var customEvent = document.createEvent("Event"); customEvent.initEvent("lpCustomEvent", true, true); var d = document.getElementById("hiddenlpsubmitdiv"); if (d) {for(var i = 0; i < document.forms.length; i++){ if(document.forms[i]==form){ if (typeof(d.innerText) != 'undefined') { d.innerText=i.toString(); } else { d.textContent=i.toString(); } } } d.dispatchEvent(customEvent); }form.lpsubmitorig2(); } } }}catch(e){}</script></body></html>
