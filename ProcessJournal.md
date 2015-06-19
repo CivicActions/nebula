@@ -1,4 +1,4 @@
-# Journal of our Meetings and Ceremony
+# Journal of our Meetings, Ceremony, Milestones
 
 Wednesday June 17, 9:00 AM Pacific
 
