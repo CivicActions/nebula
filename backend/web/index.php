@@ -28,7 +28,11 @@ function queryFDA($med,$sym){
       $html .= '<div><b>Reports:</b> ' . $result['count'] . '</div>';
     }
   }
-return $html;
+
+  // Test MYSQL
+  $db = new PDO('mysql:host=mysql;dbname=nebula;charset=utf8', 'nebula', 'nebula');
+
+  return $html;
 }
 
 $app->get('/drug/{med}/{sym}', function ($med,$sym) use ($app) {

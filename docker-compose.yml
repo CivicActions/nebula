@@ -14,11 +14,13 @@ backendweb:
   links:
    - backendphp
 backendphp:
-  image: php:5.6-fpm
+  build: backend/configuration
   command: php-fpm --allow-to-run-as-root
   volumes:
     - backend:/var/www/nebula
     - backend/configuration/php-fpm.conf:/usr/local/etc/php-fpm.conf
+  links:
+    - mysql
 testing:
   image: php:5.6-cli
   volumes:
@@ -26,3 +28,10 @@ testing:
   links:
     - frontendweb
     - backendweb
+mysql:
+  image: mariadb:10.0
+  environment:
+    - MYSQL_ROOT_PASSWORD=root
+    - MYSQL_USER=nebula
+    - MYSQL_PASSWORD=nebula
+    - MYSQL_DATABASE=nebula
