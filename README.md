@@ -1,11 +1,13 @@
 # Nebula
 
-## NOTE: Third-party FOSS brought into this Repo and their licenses are listed at the end of the LICENSE.md file.
-
 URL to our product: TBD
 
 This is our application to 18F's Agile BPA RFQ.  However, it is all freely sharable, and we aim to make a product 
 truly valuable. Feel free to fork this code.
+
+## Licence
+
+For licence details, including licences of third-party free and open source software incorporated into this repository please see the LICENSE.md file.
 
 ## Development environment setup
 
@@ -15,9 +17,9 @@ truly valuable. Feel free to fork this code.
 
 ### Instructions
 
-Checkout the repository, and change to the project directory:
+Clone the repository, and change to the project directory:
 ```bash
-git clone https://github.com/civicactions/nebula
+git clone git@github.com:CivicActions/nebula.git
 cd nebula
 ```
 
