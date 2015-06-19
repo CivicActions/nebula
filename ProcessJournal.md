@@ -45,4 +45,24 @@ Begin ["Design Studio"](http://www.willowtreeapps.com/blog/3-steps-to-running-de
 
 Split into three sub-teams to work on deployment, design wirefames, and spiking the API.
 
+3:15 PM Pacific
+
+Team publishes CivicActions team member Greg Elin's thoughts on how bidders might successfully approach this RFQ, adding it to our github repo: "What 18F will look for in RFQ response". 
+
+4:00 PM Pacific
+
+Wireframes team has completed clickable prototypes for basic screens of "symptoms by drug" interface, in preparation for user testing 6/19.
+
+5:00 PM Pacific
+
+Dev team has completed first pass of working "search by symptom" prototype, returning search specific report totals through the API. 
+
+6:20 PM PT
+
+Pharaceutical industry test users (team connection from Harvard Medical School) confirmed to participate in MVP feedback from 6/19. 
+
+
+
+
+
 
