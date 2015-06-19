@@ -1,6 +1,6 @@
 # Initial User Interview
 
-On Wednesday June 17th, we had a phone interivew with Martha Ogilvie, PhD, a health professional.
+On Wednesday June 17th, we had a phone interivew with Martha Ogilvie, PhD (Director, Intellectual Property Management, Office of Technology Development, University of Oklahoma Health Science Center).
 
 She actually reviewed our Trello board and stories.
 
