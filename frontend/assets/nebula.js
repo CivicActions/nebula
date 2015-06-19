@@ -24,7 +24,7 @@
 	success: function(data) { 
 	  var reactions = data.results		
 	  for (i = 0; i < reactions.length; i++) {
-	    $('#text').append('<div id=drug"' + i + '">' + reactions[i]['term'] + ' |  Reports: ' + reactions[i]['count'] +'</div>');
+	    $('#text').append('<div id="drug-' + i + '">' + reactions[i]['term'] + ' |  Reports: ' + reactions[i]['count'] +'</div>');
 	  }
 	},
 	error: function(data) {
@@ -34,7 +34,8 @@
     })
 
     $('#add-to-list').click(function() {
-      $('#added-meds').append('<div id=added-drug"' + i + '">' + reactions[i]['term'] + ' |  Reports: ' + reactions[i]['count'] +'</div>');
+      $('#error').empty();
+      $('#added-meds').append('<input type="checkbox" value="' + $('#drug').val() + '" class="added-drug ' + $('#drug').val() + '">' + $('#drug').val());
     })
     
   })
