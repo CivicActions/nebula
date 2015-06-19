@@ -1,5 +1,5 @@
 (function($){
- $(document).change(function(){
+ $(document).ready(function(){
     $('#add-to-list').click(function() {
 
       $('#added-meds').append('<input type="checkbox" checked="checked" value="' + $('#drug').val() + '" class="added-drug ' + $('#drug').val() + '">' + $('#drug').val());
