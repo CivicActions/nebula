@@ -20,7 +20,7 @@ function queryFDA($med,$sym){
       'search' => $med,
       'count' => 'patient.reaction.reactionmeddrapt.exact']
   ]);
-  $data = $response->json();
+  $data = json_decode((string) $response->getBody(), TRUE);
   
   foreach($data['results'] as $result){
     if(strtolower($result['term']) == strtolower($sym)){
