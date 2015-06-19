@@ -45,4 +45,19 @@ Begin ["Design Studio"](http://www.willowtreeapps.com/blog/3-steps-to-running-de
 
 Split into three sub-teams to work on deployment, design wirefames, and spiking the API.
 
+2:00 PM Pacific
+
+Have first "round-trip" prototype working. Reviewed Ron's wirefames, and made adjustments informed by our limited experience with the data.
+
+4:00 PM Pacific
+
+Made the entire Repo public, including Greg Elin's article on what we believe 18F will be expecting, which we hope will enlighten other would-be quoters.
+
+Friday June 19th
+
+8:45 Pacific
+
+Morning scrum.  Learned that we had deployment done, first unit tests, and progress on GUI. Attempting to schedule second usability test with our user.
+
+
 
