@@ -74,6 +74,10 @@ Friday June 19th
 Morning scrum.  Learned that we had deployment done, first unit tests, and progress on GUI. Attempting to schedule second usability test with our user.
 
 
+10:45 Pacific
+
+Conlcluded meeting teaching Ron how to upload visual design, and uploaded visual wireframes from yesterday into site, as well as creating file for external user tracking.
+
 
 
 
