@@ -15,8 +15,8 @@
       
       var addedDrug = $('.added-drug');
       var drugArray = [];
-      var mapDrugs = [];
-      var mapNumbers = [];
+    //  var mapDrugs = [];
+     // var mapNumbers = [];
       
       $.each(addedDrug, function() {
 	// drugArray.push($(this).val() + '+');
@@ -53,7 +53,11 @@
 	$.ajax({
 	  url: url,
 	  type: 'GET',
-	  success: function(data) { 
+	  success: function(data) {
+	    var datamap;
+	    var mapDrugs;
+	    var mapNumbers;
+	    
 	    var reactions = data.results
 	    console.log(data);
 	    var drugStrToArray1 = drugFinal.toUpperCase();
@@ -83,7 +87,7 @@
 	 });
 	var color = 220;
 
-	var datamap = {
+	datamap = {
 	  labels: [1,2],
 	  datasets: [
 	    {
