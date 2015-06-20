@@ -2,4 +2,6 @@
 
 * Martha Ogilvie on 6/17
 * Kevin
+* Alaine
 * Henry
+* Aaron
