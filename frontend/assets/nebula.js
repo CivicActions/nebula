@@ -1,5 +1,5 @@
 (function($){
- $(document).ready(function(){
+  $(document).ready(function(){
     $('#add-to-list').click(function() {
 
       $('#added-meds').append('<input type="checkbox" checked="checked" value="' + $('#drug').val() + '" class="added-drug ' + $('#drug').val() + '">' + $('#drug').val());
@@ -11,87 +11,87 @@
       var symptom = $('#symptom').val();
       var url;
       
-      //if(drug.length) {
-      
       var addedDrug = $('.added-drug');
       var drugArray = [];
-      //  var mapDrugs = [];
-      // var mapNumbers = [];
-      
-      $.each(addedDrug, function() {
-	// drugArray.push($(this).val() + '+');
+
+      $.each(addedDrug, function(term, mapDrugs, mapDrugsStr, mapNumbers, mapNumbersStr, datamap) {
 	
 	var drugStringRaw = drugArray.join();
 	var drugString = drugStringRaw.replace(',', '');
 	var drugFinal = drugString.substring(0, drugString.length - 1);
-	
-	//	url = 'https://api.fda.gov/drug/event.json?api_key=rv4OOon6fPJOHBbFHClUOs3BRGSbAEUdg3ACp2pu&search="' + drug + '"&count=patient.reaction.reactionmeddrapt.exact';
-	
-	/*if (drugFinal.length){
+	mapDrugs = [];
+	mapNumbers = [];
+	mapDrugsStr = '';
+	mapNumbersStr = '';
+	/*
+	 * This is code they we may want to revisit for showing drugs taken
+	 * in conjunction with searched drug(s) that are assoicated with symptom search.
+	 */
+	/*
+	  url = 'https://api.fda.gov/drug/event.json?api_key=rv4OOon6fPJOHBbFHClUOs3BRGSbAEUdg3ACp2pu&search="' + drug + '"&count=patient.reaction.reactionmeddrapt.exact';
+	  
+	  if (drugFinal.length){
 	  url = 'https://api.fda.gov/drug/event.json?api_key=rv4OOon6fPJOHBbFHClUOs3BRGSbAEUdg3ACp2pu&search="' + drug + '+' + drugFinal + '"&count=patient.reaction.reactionmeddrapt.exact';
-	  }*/
+	  }
 
-	//  }
-	
-	/*if(symptom.length){
+	  }
+	  
+	  if(symptom.length){
 	  url = 'https://api.fda.gov/drug/event.json?api_key=rv4OOon6fPJOHBbFHClUOs3BRGSbAEUdg3ACp2pu&search="' + symptom + '"&count=patient.drug.medicinalproduct.exact';
 	  }
 	  
 	  if(drug.length && symptom.length){
 	  url = 'https://api.fda.gov/drug/event.json?api_key=rv4OOon6fPJOHBbFHClUOs3BRGSbAEUdg3ACp2pu&search="' + drug + '"+AND+"' + symptom + '"&count=patient.drug.medicinalproduct.exact';
-	  }	  */
-
-	// if(drug.length && symptom.length){
-	url = 'https://api.fda.gov/drug/event.json?api_key=rv4OOon6fPJOHBbFHClUOs3BRGSbAEUdg3ACp2pu&search=' + $(this).val() + '+AND+' + symptom + '&count=patient.drug.medicinalproduct.exact';
-	console.log(url);
+	  }
+	*/
 	
-	//}
-	var datamap = [];
-	var mapDrugs = [];
-	var mapNumbers = [];
+	term = $(this).val();
+	
+	url = 'https://api.fda.gov/drug/event.json?api_key=rv4OOon6fPJOHBbFHClUOs3BRGSbAEUdg3ACp2pu&search=' + term + '+AND+' + symptom + '&count=patient.drug.medicinalproduct.exact';
+	console.log(url);
+
 	$.ajax({
 	  url: url,
 	  type: 'GET',
 	  success: function(data) {
-
-	    var reactions = data.results
-	    // console.log(data);
-	    var drugStrToArray1 = drugFinal.toUpperCase();
 	    
-	    var drugStrToArray2 = drugStrToArray1.split("+");
+	    var reactions = data.results
 	    
 	    for (i = 0; i < reactions.length; i++) {
 
-	      if ($(this.target).val() == reactions[i]['term']){
-		//($.inArray(reactions[i]['term'].toUpperCase(), drugStrToArray2)) {
+	      if (term.toUpperCase() == reactions[i]['term']){
 		
 		$('#text').append('<div id="drug-' + i + '">' + reactions[i]['term'] + ' ' +  symptom +' reports: ' + reactions[i]['count'] +'</div>');
 
-		mapDrugs.push(reactions[i]['term']);
-		mapNumbers.push(reactions[i]['count']);
-	      }
+		mapDrugsStr += term + ',';
+		mapNumbersStr += reactions[i]['count'] + ',';
+	     }
 	      
 	    }
-	    console.log(mapDrugs);
-	    console.log(mapNumbers);
+	    
+	    mapDrugsStr = mapDrugsStr.substring(0, mapDrugsStr.length - 1);
+	    mapNumbersStr = mapNumbersStr.substring(0, mapNumbersStr.length - 1);
+	    console.log(mapDrugsStr);
+	    console.log(mapNumbersStr);
 	    
 	    datamap = {
-	      labels: [mapDrugs[0]],
+		
+	      labels: [mapDrugsStr],
+
 	      datasets: [
 		{
 		  label: "My First dataset",
-		  fillColor: 'rgba(' + color +', '+ color + ',' + color + ', 2)',
-		  strokeColor: 'rgba(' + color +', '+ color + ',' + color + ', 1)',
-		  pointColor: 'rgba(' + color +', '+ color + ',' + color + ', 1)',
+		  fillColor: 'rgba(' + color + ', ' + color + ',' + color + ', 2)',
+		  strokeColor: 'rgba(' + color + ', ' + color + ',' + color + ', 1)',
+		  pointColor: 'rgba(' + color + ', ' + color + ',' + color + ', 1)',
 		  pointStrokeColor: "#fff",
 		  pointHighlightFill: "#fff",
-		  pointHighlightStroke: 'rgba(' + color +', '+ color + ',' + color + ', 1)',
-		  data: [mapNumbers[0]],
+		  pointHighlightStroke: 'rgba(' + color + ', ' + color + ',' + color + ', 1)',
+		  data: [mapNumbersStr],
 		},
 
 	      ]
 	    };
-	    console.log(datamap);
 
 	    var options = {
 	      //Boolean - Whether the scale should start at zero, or an order of magnitude down from the lowest value
