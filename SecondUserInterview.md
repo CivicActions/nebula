@@ -2,7 +2,8 @@
 
 ## Video
 
-We recorded this interview with BlueJeans, hopefully we will get that online and link to it here.
+Linked here on the CivicActions Youtube channel: 
+https://www.youtube.com/watch?v=zPb1cyGbMWQ&feature=youtu.be
 
 ## Notes
 
