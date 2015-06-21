@@ -19,20 +19,18 @@
 	term = $(this).val();
 	
 	url = 'https://api.fda.gov/drug/event.json?api_key=rv4OOon6fPJOHBbFHClUOs3BRGSbAEUdg3ACp2pu&search='
-	  + term + '&count=patient.drug.medicinalproduct.exact';
+	  + term + '&count=patient.reaction.reactionmeddrapt.exact';
 
 	$.ajax({
 	  url: url,
 	  type: 'GET',
 	  success: function(data) {
 	    var reactions = data.results;
+	    console.log(data.results);
 	    
-	    for (i = 0; i < reactions.length; i++) {
-	      if (term.toUpperCase() == reactions[i]['term']){
+	    for (i = 0; i < 10; i++) {
 		sessionStorage.setItem('drugname-' + reactions[i]['term'], reactions[i]['term']);
 		sessionStorage.setItem('drugcount-' + reactions[i]['count'], reactions[i]['count']);
-
-	      }
 	    }
 	    setTimeout(barGraph(), 1000);
 	  },
