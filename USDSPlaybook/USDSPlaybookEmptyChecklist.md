@@ -147,8 +147,8 @@ We should use an incremental, fast-paced style of software development to reduce
 5. 
 6. 
 7. 
-8.
-9.
+8. 
+9. 
 
 #### key questions
 - How long did it take to ship the MVP? If it hasn't shipped yet, when will it?
@@ -171,7 +171,7 @@ We should use an incremental, fast-paced style of software development to reduce
 6. 
 7. 
 8. 
-9.
+9. 
 
 ## Play 5
 ### Structure budgets and contracts to support delivery
@@ -201,8 +201,8 @@ To improve our chances of success when contracting out development work, we need
 5. 
 6. 
 7. 
-8.
-9.
+8. 
+9. 
 
 #### key questions
 - What is the scope of the project? What are the key deliverables?
@@ -275,7 +275,7 @@ We need talented people working in government who have experience creating moder
 5. 
 6. 
 7. 
-8.
+8. 
 
 
 ## Play 8
@@ -363,11 +363,11 @@ Our services should be deployed on flexible infrastructure, where resources can 
 6. 
 7. 
 8. 
-9.
-10.
-11.
-12.
-13.
+9. 
+10. 
+11. 
+12. 
+13. 
 
 
 
@@ -417,8 +417,8 @@ Today, developers write automated scripts that can verify thousands of scenarios
 6. 
 7. 
 8. 
-9.
-10.
+9. 
+10. 
 
 
 ## Play 11
@@ -489,8 +489,8 @@ At every stage of a project, we should measure how well our service is working f
 4. 
 5. 
 6. 
-7.
-8.
+7. 
+8. 
 
 
 #### key questions
@@ -518,11 +518,11 @@ At every stage of a project, we should measure how well our service is working f
 6. 
 7. 
 8. 
-9.
-10.
-11.
-12.
-13.
+9. 
+10. 
+11. 
+12. 
+13. 
 
 
 
@@ -551,8 +551,8 @@ When we collaborate in the open and publish our data publicly, we can improve Go
 5. 
 6. 
 7. 
-8.
-9.
+8. 
+9. 
 
 #### key questions
 - How are you collecting user feedback for bugs and issues?
