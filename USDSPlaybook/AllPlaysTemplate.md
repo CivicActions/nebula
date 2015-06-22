@@ -1,7 +1,7 @@
 # USDS Playbook Checklist and Evaluation Form
 
 ## Play: 1
-## Understand what people need
+### Understand what people need
 
 We must begin digital projects by exploring and pinpointing the needs of the people who will use the service, and the ways the service will fit into their lives. Whether the users are members of the public or government employees, policy makers must include real people in their design process from the beginning. The needs of people — not constraints of government structures or silos — should inform technical and design decisions. We need to continually test the products we build with real people to keep us honest about what is important.
 
@@ -26,20 +26,29 @@ We must begin digital projects by exploring and pinpointing the needs of the peo
 
 
 #### key questions
-A. Who are your primary users?
-B. What user needs will this service address?
-C. Why does the user want or need this service?
-D. Which people will have the most difficulty with the service?
-E. Which research methods were used?
-F. What were the key findings?
-G. How were the findings documented? Where can future team members access the documentation?
-H. How often are you testing with real people?
+1. Who are your primary users?
+2. What user needs will this service address?
+3. Why does the user want or need this service?
+4. Which people will have the most difficulty with the service?
+5. Which research methods were used?
+6. What were the key findings?
+7. How were the findings documented? Where can future team members access the documentation?
+8. How often are you testing with real people?
 
 #### answers to key questions
 
+1. 
+2. 
+3. 
+4. 
+5. 
+6. 
+7. 
+8. 
+
 
 ## Play 2
-## Address the whole experience, from start to finish
+### Address the whole experience, from start to finish
 
 
 
@@ -59,7 +68,7 @@ We need to understand the different ways people will interact with our services,
 - What metrics will best indicate how well the service is working for its users?
 
 ## Play 3
-## Make it simple and intuitive
+### Make it simple and intuitive
 
 
 
@@ -82,7 +91,7 @@ Using a government service shouldn’t be stressful, confusing, or daunting. It�
 - How does the service’s design visually relate to other government services?
 
 ## Play 4
-## Build the service using agile and iterative practices
+### Build the service using agile and iterative practices
 
 
 
@@ -112,7 +121,7 @@ We should use an incremental, fast-paced style of software development to reduce
 - At each stage of usability testing, which gaps were identified in addressing user needs?
 
 ## Play 5
-## Structure budgets and contracts to support delivery
+### Structure budgets and contracts to support delivery
 
 
 
@@ -136,7 +145,7 @@ To improve our chances of success when contracting out development work, we need
 - What are the milestones? How frequent are they?
 - What are the performance metrics defined in the contract (e.g., response time, system uptime, time period to address priority issues)?
 ## Play 6
-## Assign one leader and hold that person accountable
+### Assign one leader and hold that person accountable
 
 
 
@@ -155,7 +164,7 @@ There must be a single product owner who has the authority and responsibility to
 - What does it take for the product owner to add or remove a feature from the service?
 
 ## Play 7
-## Bring in experienced teams
+### Bring in experienced teams
 
 
 
@@ -172,7 +181,7 @@ We need talented people working in government who have experience creating moder
 8. The appropriate privacy, civil liberties, and/or legal advisor for the department or agency is a partner
 
 ## Play 8
-## Choose a modern technology stack
+### Choose a modern technology stack
 
 
 
@@ -189,7 +198,7 @@ The technology decisions we make need to enable development teams to work effici
 - Which databases are you using and why did you choose them?
 - How long does it take for a new team member to start developing?
 ## Play 9
-## Deploy in a flexible hosting environment
+### Deploy in a flexible hosting environment
 
 
 
@@ -220,7 +229,7 @@ Our services should be deployed on flexible infrastructure, where resources can 
 -	How often do you need to contact a person from your hosting provider to get resources or to fix an issue?
 
 ## Play 10
-## Automate testing and deployments
+### Automate testing and deployments
 
 
 
@@ -247,7 +256,7 @@ Today, developers write automated scripts that can verify thousands of scenarios
 - What is your scaling strategy when demand increases suddenly?
 
 ## Play 11
-## Manage security and privacy through reusable processes
+### Manage security and privacy through reusable processes
 
 
 
@@ -272,7 +281,7 @@ The following checklist provides a starting point, but teams should work closely
 - How can someone from the public report a security issue?
 
 ## Play 12
-## Use data to drive decisions
+### Use data to drive decisions
 
 
 
@@ -305,7 +314,7 @@ At every stage of a project, we should measure how well our service is working f
 - How do you measure customer satisfaction?
 
 ## Play 13
-## Default to open
+### Default to open
 
 
 When we collaborate in the open and publish our data publicly, we can improve Government together. By building services more openly and publishing open data, we simplify the public’s access to government services and information, allow the public to contribute easily, and enable reuse by entrepreneurs, nonprofits, other agencies, and the public.
