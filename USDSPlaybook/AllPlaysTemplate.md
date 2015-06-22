@@ -60,6 +60,12 @@ We need to understand the different ways people will interact with our services,
 3. Design the digital parts of the service so that they are integrated with the offline touch points people use to interact with the service
 4. Develop metrics that will measure how well the service is meeting user needs at each step of the service
 
+#### Actions
+1. 
+2. 
+3. 
+4. 
+
 
 #### key questions
 - What are the different ways (both online and offline) that people currently accomplish the task the digital service is designed to help with?
@@ -82,6 +88,15 @@ Using a government service shouldn’t be stressful, confusing, or daunting. It�
 5. Provide users with a way to exit and return later to complete the process
 6. Use language that is familiar to the user and easy to understand
 7. Use language and design consistently throughout the service, including online and offline touch points
+
+#### Actions
+1. 
+2. 
+3. 
+4. 
+5. 
+6. 
+7. 
 
 #### key questions
 - What primary tasks are the user trying to accomplish?
@@ -108,6 +123,16 @@ We should use an incremental, fast-paced style of software development to reduce
 8. Give the entire project team access to the issue tracker and version control system
 9. Use code reviews to ensure quality
 
+#### Actions
+1. 
+2. 
+3. 
+4. 
+5. 
+6. 
+7. 
+8.
+9.
 
 #### key questions
 - How long did it take to ship the MVP? If it hasn't shipped yet, when will it?
@@ -140,6 +165,17 @@ To improve our chances of success when contracting out development work, we need
 8. Contract specifies a warranty period where defects uncovered by the public are addressed by the vendor at no additional cost to the government
 9. Contract includes a transition of services period and transition-out plan
 
+#### Actions
+1. 
+2. 
+3. 
+4. 
+5. 
+6. 
+7. 
+8.
+9.
+
 #### key questions
 - What is the scope of the project? What are the key deliverables?
 - What are the milestones? How frequent are they?
@@ -157,6 +193,15 @@ There must be a single product owner who has the authority and responsibility to
 3. The product owner has a product management background with technical experience to assess alternatives and weigh tradeoffs
 4. The product owner has a work plan that includes budget estimates and identifies funding sources
 5. The product owner has a strong relationship with the contracting officer
+
+#### Actions
+1. 
+2. 
+3. 
+4. 
+5. 
+
+
 
 #### key questions
 - Who is the product owner?
@@ -180,6 +225,17 @@ We need talented people working in government who have experience creating moder
 7. A Federal budget officer is on the internal team or is a partner
 8. The appropriate privacy, civil liberties, and/or legal advisor for the department or agency is a partner
 
+#### Actions
+1. 
+2. 
+3. 
+4. 
+5. 
+6. 
+7. 
+8.
+
+
 ## Play 8
 ### Choose a modern technology stack
 
@@ -192,6 +248,14 @@ The technology decisions we make need to enable development teams to work effici
 2. Whenever possible, ensure that software can be deployed on a variety of commodity hardware types
 3. Ensure that each project has clear, understandable instructions for setting up a local development environment, and that team members can be quickly added or removed from projects
 4. [Consider open source software solutions](http://www.whitehouse.gov/sites/default/files/omb/assets/egov_docs/memotociostechnologyneutrality.pdf) at every layer of the stack
+
+#### Actions
+1. 
+2. 
+3. 
+4. 
+
+
 
 #### key questions
 - What is your development stack and why did you choose it?
@@ -212,6 +276,16 @@ Our services should be deployed on flexible infrastructure, where resources can 
 5. We only pay for resources we use
 6. Static assets are served through a content delivery network
 7. Application is hosted on commodity hardware
+
+#### Actions
+1. 
+2. 
+3. 
+4. 
+5. 
+6. 
+7. 
+
 
 #### key questions
 -	Where is your service hosted?
@@ -241,6 +315,15 @@ Today, developers write automated scripts that can verify thousands of scenarios
 3. Run tests automatically as part of the build process
 4. Perform deployments automatically with deployment scripts, continuous delivery services, or similar techniques
 5. Conduct load and performance tests at regular intervals, including before public launch
+
+#### Actions
+1. 
+2. 
+3. 
+4. 
+5. 
+
+
 
 
 #### key questions
@@ -272,6 +355,15 @@ The following checklist provides a starting point, but teams should work closely
 5. “Pre-certify” the hosting infrastructure used for the project using FedRAMP
 6. Use deployment scripts to ensure configuration of production environment remains consistent and controllable
 
+#### Actions
+1. 
+2. 
+3. 
+4. 
+5. 
+6. 
+
+
 #### key questions
 - Does the service collect personal information from the user?  How is the user notified of this collection?
 - Does it collect more information than necessary? Could the data be used in ways an average user wouldn't expect?
@@ -296,6 +388,16 @@ At every stage of a project, we should measure how well our service is working f
 6. Publish metrics internally
 7. Publish metrics externally
 8. Use an experimentation tool that supports multivariate testing in production
+
+#### Actions
+1. 
+2. 
+3. 
+4. 
+5. 
+6. 
+7. 
+8.
 
 
 #### key questions
@@ -329,6 +431,17 @@ When we collaborate in the open and publish our data publicly, we can improve Go
 7. When appropriate, create an API for third parties and internal users to interact with the service directly
 8. When appropriate, publish source code of projects or components online
 9. When appropriate, share your development process and progress publicly
+
+#### Actions
+1. 
+2. 
+3. 
+4. 
+5. 
+6. 
+7. 
+8.
+9.
 
 #### key questions
 - How are you collecting user feedback for bugs and issues?
