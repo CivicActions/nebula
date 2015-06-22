@@ -1,4 +1,6 @@
-# Play: 1
+# USDS Playbook Checklist and Evaluation Form
+
+## Play: 1
 ## Understand what people need
 
 We must begin digital projects by exploring and pinpointing the needs of the people who will use the service, and the ways the service will fit into their lives. Whether the users are members of the public or government employees, policy makers must include real people in their design process from the beginning. The needs of people — not constraints of government structures or silos — should inform technical and design decisions. We need to continually test the products we build with real people to keep us honest about what is important.
@@ -12,7 +14,7 @@ We must begin digital projects by exploring and pinpointing the needs of the peo
 6. Create a prioritized list of tasks the user is trying to accomplish, also known as "user stories"
 7. As the digital service is being built, regularly test it with potential users to ensure it meets people’s needs
 
-#### Our Actions
+#### Actions
 1. 
 2. 
 3. 
@@ -24,16 +26,19 @@ We must begin digital projects by exploring and pinpointing the needs of the peo
 
 
 #### key questions
-- Who are your primary users?
-- What user needs will this service address?
-- Why does the user want or need this service?
-- Which people will have the most difficulty with the service?
-- Which research methods were used?
-- What were the key findings?
-- How were the findings documented? Where can future team members access the documentation?
-- How often are you testing with real people?
+A. Who are your primary users?
+B. What user needs will this service address?
+C. Why does the user want or need this service?
+D. Which people will have the most difficulty with the service?
+E. Which research methods were used?
+F. What were the key findings?
+G. How were the findings documented? Where can future team members access the documentation?
+H. How often are you testing with real people?
 
-# Play 2
+#### answers to key questions
+
+
+## Play 2
 ## Address the whole experience, from start to finish
 
 
@@ -53,7 +58,7 @@ We need to understand the different ways people will interact with our services,
 - Where does this specific project fit into the larger way people currently obtain the service being offered?
 - What metrics will best indicate how well the service is working for its users?
 
-# Play 3
+## Play 3
 ## Make it simple and intuitive
 
 
@@ -76,7 +81,7 @@ Using a government service shouldn’t be stressful, confusing, or daunting. It�
 - If a user needs help while using the service, how do they go about getting it?
 - How does the service’s design visually relate to other government services?
 
-# Play 4
+## Play 4
 ## Build the service using agile and iterative practices
 
 
@@ -106,7 +111,7 @@ We should use an incremental, fast-paced style of software development to reduce
 - How do you collect user feedback during development? How is that feedback used to improve the service?
 - At each stage of usability testing, which gaps were identified in addressing user needs?
 
-# Play 5
+## Play 5
 ## Structure budgets and contracts to support delivery
 
 
@@ -130,7 +135,7 @@ To improve our chances of success when contracting out development work, we need
 - What is the scope of the project? What are the key deliverables?
 - What are the milestones? How frequent are they?
 - What are the performance metrics defined in the contract (e.g., response time, system uptime, time period to address priority issues)?
-# Play 6
+## Play 6
 ## Assign one leader and hold that person accountable
 
 
@@ -149,7 +154,7 @@ There must be a single product owner who has the authority and responsibility to
 - What organizational changes have been made to ensure the product owner has sufficient authority over and support for the project?
 - What does it take for the product owner to add or remove a feature from the service?
 
-# Play 7
+## Play 7
 ## Bring in experienced teams
 
 
@@ -166,7 +171,7 @@ We need talented people working in government who have experience creating moder
 7. A Federal budget officer is on the internal team or is a partner
 8. The appropriate privacy, civil liberties, and/or legal advisor for the department or agency is a partner
 
-# Play 8
+## Play 8
 ## Choose a modern technology stack
 
 
@@ -183,7 +188,7 @@ The technology decisions we make need to enable development teams to work effici
 - What is your development stack and why did you choose it?
 - Which databases are you using and why did you choose them?
 - How long does it take for a new team member to start developing?
-# Play 9
+## Play 9
 ## Deploy in a flexible hosting environment
 
 
@@ -214,7 +219,7 @@ Our services should be deployed on flexible infrastructure, where resources can 
 -	What data redundancy do you have built into the system, and what would be the impact of a catastrophic data loss?
 -	How often do you need to contact a person from your hosting provider to get resources or to fix an issue?
 
-# Play 10
+## Play 10
 ## Automate testing and deployments
 
 
@@ -241,7 +246,7 @@ Today, developers write automated scripts that can verify thousands of scenarios
 - How does the service perform when you exceed the expected target usage volume? Does it degrade gracefully or catastrophically?
 - What is your scaling strategy when demand increases suddenly?
 
-# Play 11
+## Play 11
 ## Manage security and privacy through reusable processes
 
 
@@ -266,7 +271,7 @@ The following checklist provides a starting point, but teams should work closely
 - How and how often is the service tested for security vulnerabilities?
 - How can someone from the public report a security issue?
 
-# Play 12
+## Play 12
 ## Use data to drive decisions
 
 
@@ -299,7 +304,7 @@ At every stage of a project, we should measure how well our service is working f
 - What tools or technologies are used for A/B testing?
 - How do you measure customer satisfaction?
 
-# Play 13
+## Play 13
 ## Default to open
 
 
