@@ -16,23 +16,23 @@
       var url;
 
       $.each($('.added-drug'), function(term) {
+	
 	term = $(this).val();
 	
 	url = 'https://api.fda.gov/drug/event.json?api_key=rv4OOon6fPJOHBbFHClUOs3BRGSbAEUdg3ACp2pu&search='
-	  + term + '&count=patient.reaction.reactionmeddrapt.exact';
+	  + term + '&limit=5&count=patient.reaction.reactionmeddrapt.exact';
 
 	$.ajax({
 	  url: url,
 	  type: 'GET',
 	  success: function(data) {
-	    var reactions = data.results;
-	    console.log(data.results);
-	    
-	    for (i = 0; i < 10; i++) {
-		sessionStorage.setItem('drugname-' + reactions[i]['term'], reactions[i]['term']);
-		sessionStorage.setItem('drugcount-' + reactions[i]['count'], reactions[i]['count']);
+	    var reactions = data.results;	    
+	    for (i = 0; i < reactions.length; i++) {
+	      sessionStorage.setItem('drugname-' + term, term);
+	      sessionStorage.setItem('drugsymptom-' + reactions[i]['term'], reactions[i]['term']);
+	      sessionStorage.setItem('drugcount-' + reactions[i]['count'], reactions[i]['count']);
 	    }
-	    setTimeout(barGraph(), 1000);
+	    setTimeout(barGraph(), 200);
 	  },
 	  error: function(data) {
 	    $('#error').append('No results.');
@@ -43,36 +43,69 @@
       
     });
     
-    function barGraph() {
-      color = 220;
-      drugName = [];
-      drugCount = [];
+    function chunk(arr, len) {
 
-      for (var key in sessionStorage) {
-	if(key.indexOf('drugname-') != -1) {
-	  drugName.push(sessionStorage.getItem(key));
-	}
-	if(key.indexOf('drugcount-') != -1) {
-	  drugCount.push(sessionStorage.getItem(key));
-	}
+      var chunks = [],
+	  i = 0,
+	  n = arr.length;
+
+      while (i < n) {
+	chunks.push(arr.slice(i, i += len));
       }
 
-      datamap = {
-	labels: drugName,
-	datasets: [{
-	  label: "Drug results",
-	  fillColor: 'rgba(' + color + ', ' + color + ',' + color + ', 2)',
-	  strokeColor: 'rgba(' + color + ', ' + color + ',' + color + ', 1)',
-	  data: drugCount,
-	}]
-      };
+      return chunks;
+    }
+    
+    function barGraph() {
+      var drugName = [];
+      
+      var drugSymptom = [];
+      var numSymptom = [];
+      var numSymptomRaw = [];
+      var allData = [];
+      var randomColorFactor = function(){ return Math.round(Math.random()*255)};
+      
+      for (var key in sessionStorage) {
+	if(key.indexOf('drugname-') != -1) {	
+	  drugName.push(sessionStorage.getItem(key));
+	}
 
+	if(key.indexOf('drugsymptom-') != -1) {
+	  drugSymptom.push(sessionStorage.getItem(key));
+	}
+	
+	if(key.indexOf('drugcount-') != -1) {
+	  numSymptomRaw.push(sessionStorage.getItem(key));
+	  
+	}	
+      }
+      numSymptom = chunk(numSymptomRaw, 5);
+      console.log(numSymptom);
+      
+      for (i = 0; i < drugName.length; i++) {
+
+	allData.push({
+	  label: drugName,
+	  fillColor: 'rgba(' + randomColorFactor() + ',' + randomColorFactor() + ',' + randomColorFactor() + ',.7)',
+	  strokeColor: 'yellow',
+	  data: numSymptom[i],
+	});
+	console.log(allData);	
+      }   
+      
+      var datamap = {
+	labels: drugSymptom,
+	datasets: allData,
+      };
+      
       var ctx = document.getElementById("drug-chart").getContext("2d");
       if (count > 0) {
 	drugChart.destroy();
       }
       count += 1;
-      drugChart = new Chart(ctx).Bar(datamap);     
+      drugChart = new Chart(ctx).StackedBar(datamap, {
+	responsive : true
+      });     
     }
     
   })
