@@ -463,8 +463,6 @@ The following checklist provides a starting point, but teams should work closely
 4. 
 5. 
 6. 
-7. 
-8. 
 
 
 ## Play 12
@@ -520,6 +518,12 @@ At every stage of a project, we should measure how well our service is working f
 6. 
 7. 
 8. 
+9.
+10.
+11.
+12.
+13.
+
 
 
 ## Play 13
@@ -564,6 +568,3 @@ When we collaborate in the open and publish our data publicly, we can improve Go
 3. 
 4. 
 5. 
-6. 
-7. 
-8. 
