@@ -73,6 +73,13 @@ We need to understand the different ways people will interact with our services,
 - Where does this specific project fit into the larger way people currently obtain the service being offered?
 - What metrics will best indicate how well the service is working for its users?
 
+#### answers to key questions
+
+1. 
+2. 
+3. 
+4. 
+
 ## Play 3
 ### Make it simple and intuitive
 
@@ -104,6 +111,15 @@ Using a government service shouldn’t be stressful, confusing, or daunting. It�
 - What languages is your service offered in?
 - If a user needs help while using the service, how do they go about getting it?
 - How does the service’s design visually relate to other government services?
+
+#### answers to key questions
+
+1. 
+2. 
+3. 
+4. 
+5. 
+
 
 ## Play 4
 ### Build the service using agile and iterative practices
@@ -145,6 +161,18 @@ We should use an incremental, fast-paced style of software development to reduce
 - How do you collect user feedback during development? How is that feedback used to improve the service?
 - At each stage of usability testing, which gaps were identified in addressing user needs?
 
+#### answers to key questions
+
+1. 
+2. 
+3. 
+4. 
+5. 
+6. 
+7. 
+8. 
+9.
+
 ## Play 5
 ### Structure budgets and contracts to support delivery
 
@@ -180,6 +208,13 @@ To improve our chances of success when contracting out development work, we need
 - What is the scope of the project? What are the key deliverables?
 - What are the milestones? How frequent are they?
 - What are the performance metrics defined in the contract (e.g., response time, system uptime, time period to address priority issues)?
+
+#### answers to key questions
+
+1. 
+2. 
+3. 
+
 ## Play 6
 ### Assign one leader and hold that person accountable
 
@@ -207,6 +242,13 @@ There must be a single product owner who has the authority and responsibility to
 - Who is the product owner?
 - What organizational changes have been made to ensure the product owner has sufficient authority over and support for the project?
 - What does it take for the product owner to add or remove a feature from the service?
+
+#### answers to key questions
+
+1. 
+2. 
+3. 
+
 
 ## Play 7
 ### Bring in experienced teams
@@ -261,6 +303,15 @@ The technology decisions we make need to enable development teams to work effici
 - What is your development stack and why did you choose it?
 - Which databases are you using and why did you choose them?
 - How long does it take for a new team member to start developing?
+
+
+#### answers to key questions
+
+1. 
+2. 
+3. 
+
+
 ## Play 9
 ### Deploy in a flexible hosting environment
 
@@ -302,6 +353,24 @@ Our services should be deployed on flexible infrastructure, where resources can 
 -	What data redundancy do you have built into the system, and what would be the impact of a catastrophic data loss?
 -	How often do you need to contact a person from your hosting provider to get resources or to fix an issue?
 
+#### answers to key questions
+
+1. 
+2. 
+3. 
+4. 
+5. 
+6. 
+7. 
+8. 
+9.
+10.
+11.
+12.
+13.
+
+
+
 ## Play 10
 ### Automate testing and deployments
 
@@ -338,6 +407,20 @@ Today, developers write automated scripts that can verify thousands of scenarios
 - How does the service perform when you exceed the expected target usage volume? Does it degrade gracefully or catastrophically?
 - What is your scaling strategy when demand increases suddenly?
 
+#### answers to key questions
+
+1. 
+2. 
+3. 
+4. 
+5. 
+6. 
+7. 
+8. 
+9.
+10.
+
+
 ## Play 11
 ### Manage security and privacy through reusable processes
 
@@ -372,6 +455,18 @@ The following checklist provides a starting point, but teams should work closely
 - How and how often is the service tested for security vulnerabilities?
 - How can someone from the public report a security issue?
 
+#### answers to key questions
+
+1. 
+2. 
+3. 
+4. 
+5. 
+6. 
+7. 
+8. 
+
+
 ## Play 12
 ### Use data to drive decisions
 
@@ -396,7 +491,7 @@ At every stage of a project, we should measure how well our service is working f
 4. 
 5. 
 6. 
-7. 
+7.
 8.
 
 
@@ -414,6 +509,18 @@ At every stage of a project, we should measure how well our service is working f
 - Which tools are in place to measure user behavior?
 - What tools or technologies are used for A/B testing?
 - How do you measure customer satisfaction?
+
+#### answers to key questions
+
+1. 
+2. 
+3. 
+4. 
+5. 
+6. 
+7. 
+8. 
+
 
 ## Play 13
 ### Default to open
@@ -449,3 +556,14 @@ When we collaborate in the open and publish our data publicly, we can improve Go
 - If the codebase has not been released under an open source license, explain why.
 - What components are made available to the public as open source?
 - What datasets are made available to the public?
+
+#### answers to key questions
+
+1. 
+2. 
+3. 
+4. 
+5. 
+6. 
+7. 
+8. 
