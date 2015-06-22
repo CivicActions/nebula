@@ -1,7 +1,5 @@
----
-id: 1
-title: Understand what people need
----
+# Play Number: 1
+## Understand what people need
 
 We must begin digital projects by exploring and pinpointing the needs of the people who will use the service, and the ways the service will fit into their lives. Whether the users are members of the public or government employees, policy makers must include real people in their design process from the beginning. The needs of people — not constraints of government structures or silos — should inform technical and design decisions. We need to continually test the products we build with real people to keep us honest about what is important.
 
@@ -23,10 +21,11 @@ We must begin digital projects by exploring and pinpointing the needs of the peo
 - What were the key findings?
 - How were the findings documented? Where can future team members access the documentation?
 - How often are you testing with real people?
----
-id: 2
-title: Address the whole experience, from start to finish
----
+
+# Play 2
+## Address the whole experience, from start to finish
+
+
 
 We need to understand the different ways people will interact with our services, including the actions they take online, through a mobile application, on a phone, or in person. Every encounter — whether it's online or offline — should move the user closer towards their goal.
 
@@ -42,10 +41,10 @@ We need to understand the different ways people will interact with our services,
 - Where are user pain points in the current way people accomplish the task?
 - Where does this specific project fit into the larger way people currently obtain the service being offered?
 - What metrics will best indicate how well the service is working for its users?
----
-id: 3
-title: Make it simple and intuitive
----
+# Play 3
+## Make it simple and intuitive
+
+
 
 Using a government service shouldn’t be stressful, confusing, or daunting. It’s our job to build services that are simple and intuitive enough that users succeed the first time, unaided.
 
@@ -64,10 +63,10 @@ Using a government service shouldn’t be stressful, confusing, or daunting. It�
 - What languages is your service offered in?
 - If a user needs help while using the service, how do they go about getting it?
 - How does the service’s design visually relate to other government services?
----
-id: 4
-title: Build the service using agile and iterative practices
----
+# Play 4
+## Build the service using agile and iterative practices
+
+
 
 We should use an incremental, fast-paced style of software development to reduce the risk of failure. We want to get working software into users’ hands as early as possible to give the design and development team opportunities to adjust based on user feedback about the service. A critical capability is being able to automatically test and deploy the service so that new features can be added often and be put into production easily.
 
@@ -93,10 +92,10 @@ We should use an incremental, fast-paced style of software development to reduce
 - How often do you review and reprioritize the feature and bug backlog?
 - How do you collect user feedback during development? How is that feedback used to improve the service?
 - At each stage of usability testing, which gaps were identified in addressing user needs?
----
-id: 5
-title: Structure budgets and contracts to support delivery
----
+# Play 5
+## Structure budgets and contracts to support delivery
+
+
 
 To improve our chances of success when contracting out development work, we need to work with experienced budgeting and contracting officers. In cases where we use third parties to help build a service, a well-defined contract can facilitate good development practices like conducting a research and prototyping phase, refining product requirements as the service is built, evaluating open source alternatives, ensuring frequent delivery milestones, and allowing the flexibility to purchase cloud computing resources.
 
@@ -116,10 +115,10 @@ To improve our chances of success when contracting out development work, we need
 #### key questions
 - What is the scope of the project? What are the key deliverables?
 - What are the milestones? How frequent are they?
-- What are the performance metrics defined in the contract (e.g., response time, system uptime, time period to address priority issues)?---
-id: 6
-title: Assign one leader and hold that person accountable
----
+- What are the performance metrics defined in the contract (e.g., response time, system uptime, time period to address priority issues)?# Play 6
+## Assign one leader and hold that person accountable
+
+
 
 There must be a single product owner who has the authority and responsibility to assign tasks and work elements; make business, product, and technical decisions; and be accountable for the success or failure of the overall service. This product owner is ultimately responsible for how well the service meets needs of its users, which is how a service should be evaluated. The product owner is responsible for ensuring that features are built and managing the feature and bug backlogs.
 
@@ -134,10 +133,10 @@ There must be a single product owner who has the authority and responsibility to
 - Who is the product owner?
 - What organizational changes have been made to ensure the product owner has sufficient authority over and support for the project?
 - What does it take for the product owner to add or remove a feature from the service?
----
-id: 7
-title: Bring in experienced teams
----
+# Play 7
+## Bring in experienced teams
+
+
 
 We need talented people working in government who have experience creating modern digital services. This includes bringing in seasoned product managers, engineers, and designers. When outside help is needed, our teams should work with contracting officers who understand how to evaluate third-party technical competency so our teams can be paired with contractors who are good at both building and delivering effective digital services. The makeup and experience requirements of the team will vary depending on the scope of the project.
 
@@ -150,10 +149,10 @@ We need talented people working in government who have experience creating moder
 6. A Federal contracting officer is on the internal team if a third party will be used for development work
 7. A Federal budget officer is on the internal team or is a partner
 8. The appropriate privacy, civil liberties, and/or legal advisor for the department or agency is a partner
----
-id: 8
-title: Choose a modern technology stack
----
+# Play 8
+## Choose a modern technology stack
+
+
 
 The technology decisions we make need to enable development teams to work efficiently and enable services to scale easily and cost-effectively. Our choices for hosting infrastructure, databases, software frameworks, programming languages and the rest of the technology stack should seek to avoid vendor lock-in and match what successful modern consumer and enterprise software companies would choose today. In particular, digital services teams should consider using open source, cloud-based, and commodity solutions across the technology stack, because of their widespread adoption and support by successful consumer and enterprise technology companies in the private sector.
 
@@ -166,10 +165,10 @@ The technology decisions we make need to enable development teams to work effici
 #### key questions
 - What is your development stack and why did you choose it?
 - Which databases are you using and why did you choose them?
-- How long does it take for a new team member to start developing?---
-id: 9
-title: Deploy in a flexible hosting environment
----
+- How long does it take for a new team member to start developing?# Play 9
+## Deploy in a flexible hosting environment
+
+
 
 Our services should be deployed on flexible infrastructure, where resources can be provisioned in real-time to meet spikes traffic and user demand. Our digital services are crippled when we host them in data centers that market themselves as “cloud hosting” but require us to manage and maintain hardware directly. This outdated practice wastes time, weakens our disaster recovery plans, and results in significantly higher costs.
 
@@ -196,10 +195,10 @@ Our services should be deployed on flexible infrastructure, where resources can 
 -	What would be the impact of a prolonged downtime window?
 -	What data redundancy do you have built into the system, and what would be the impact of a catastrophic data loss?
 -	How often do you need to contact a person from your hosting provider to get resources or to fix an issue?
----
-id: 10
-title: Automate testing and deployments
----
+# Play 10
+## Automate testing and deployments
+
+
 
 Today, developers write automated scripts that can verify thousands of scenarios in minutes and then deploy updated code into production environments multiple times a day. They use automated performance tests which simulate surges in traffic to identify performance bottlenecks. While manual tests and quality assurance are still necessary, automated tests provide consistent and reliable protection against unintentional regressions, and make it possible for developers to confidently release frequent updates to the service.
 
@@ -222,10 +221,10 @@ Today, developers write automated scripts that can verify thousands of scenarios
 - How many simultaneous users could the system handle, according to the most recent capacity test?
 - How does the service perform when you exceed the expected target usage volume? Does it degrade gracefully or catastrophically?
 - What is your scaling strategy when demand increases suddenly?
----
-id: 11
-title: Manage security and privacy through reusable processes
----
+# Play 11
+## Manage security and privacy through reusable processes
+
+
 
 Our digital services have to protect sensitive information and keep systems secure. This is typically a process of continuous review and improvement which should be built into the development and maintenance of the service. At the start of designing a new service or feature, the team lead should engage the appropriate privacy, security, and legal officer(s) to discuss the type of information collected, how it should be secured, how long it is kept, and how it may be used and shared. The sustained engagement of a privacy specialist helps ensure that personal data is properly managed. In addition, a key process to building a secure service is comprehensively testing and certifying the components in each layer of the technology stack for security vulnerabilities, and then to re-use these same pre-certified components for multiple services.
 
@@ -246,10 +245,10 @@ The following checklist provides a starting point, but teams should work closely
 - Will any of the personal information stored in the system be shared with other services, people, or partners?
 - How and how often is the service tested for security vulnerabilities?
 - How can someone from the public report a security issue?
----
-id: 12
-title: Use data to drive decisions
----
+# Play 12
+## Use data to drive decisions
+
+
 
 At every stage of a project, we should measure how well our service is working for our users. This includes measuring how well a system performs and how people are interacting with it in real-time. Our teams and agency leadership should carefully watch these metrics to find issues and identify which bug fixes and improvements should be prioritized. Along with monitoring tools, a feedback mechanism should be in place for people to report issues directly.
 
@@ -278,10 +277,9 @@ At every stage of a project, we should measure how well our service is working f
 - Which tools are in place to measure user behavior?
 - What tools or technologies are used for A/B testing?
 - How do you measure customer satisfaction?
----
-id: 13
-title: Default to open
----
+# Play 13
+## Default to open
+
 
 When we collaborate in the open and publish our data publicly, we can improve Government together. By building services more openly and publishing open data, we simplify the public’s access to government services and information, allow the public to contribute easily, and enable reuse by entrepreneurs, nonprofits, other agencies, and the public.
 
