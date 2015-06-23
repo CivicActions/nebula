@@ -15,12 +15,12 @@ We must begin digital projects by exploring and pinpointing the needs of the peo
 7. As the digital service is being built, regularly test it with potential users to ensure it meets people’s needs
 
 #### Actions
-1. We've done three inteviews with professionals, including on the first day, see links.
-2. We were able to clearly differentiate between the patient and doctor personae by working through the wireframe refinement process in order to create two different experiences.
+1. We have met with three professionals, including on the first day, to interview them about their needs around adverse effects information. See links https://www.youtube.com/user/civicactions.
+2. We used interviews 
 3. We consistently groomed the user stories in order to keep MVP priorities in mind. 
-4. 
+4. Trello cards here https://trello.com/b/IlUoml5c/nebula
 5. 
-6. 
+6. Our user stories can be found on Trello here https://trello.com/b/IlUoml5c/nebula
 7. 
 
 
@@ -61,7 +61,7 @@ We need to understand the different ways people will interact with our services,
 4. Develop metrics that will measure how well the service is meeting user needs at each step of the service
 
 #### Actions
-1. 
+1. On a mobile device (phone or tablet) in a doctor's office, hospital, pharmacy, medical/nursing school, nursing home. Generally used when a patient is adding or altering the medications in his or her regime. 
 2. 
 3. 
 4. 
