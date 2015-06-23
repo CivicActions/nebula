@@ -24,7 +24,7 @@
     
     function appendItems() {
       // Build our checkbox toggles.
-      $('#added-meds').append('<input type="checkbox" checked="checked" value="'
+      $('#text').append('<input type="checkbox" checked="checked" value="'
 			      + $('#drug').val()
 			      + '" class="added-drug '
 			      + $('#drug').val() + '">'

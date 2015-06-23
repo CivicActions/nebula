@@ -11,3 +11,31 @@ body {
   font-weight:bold;
   font-size:115%;
 }
+#drug-chart {
+  width:85% !important;
+  display:block;
+  float:left;
+  height:450px;
+}
+#text {
+  width:10%;
+  display:block;
+  float:left;
+}
+.added-drug{
+  display:block;
+  clear:both;
+}
+#inner {
+  padding:10px;
+  max-width:960px;
+}
+@media (max-width: 749px) {
+  #drug-chart, #text {
+    width:100% !important;
+    clear:both;
+    float:none;
+    padding:10px;
+  }
+  
+}
