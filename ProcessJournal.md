@@ -78,6 +78,33 @@ Morning scrum.  Learned that we had deployment done, first unit tests, and progr
 
 Conlcluded meeting teaching Ron how to upload visual design, and uploaded visual wireframes from yesterday into site, as well as creating file for external user tracking.
 
+4:00 Second Interview/Demo with Martha Ogilvie
+
+5:00 GUI planning based on feedback from Martha
+
+Monday June 22nd
+
+8:45 Pacific 
+
+Standup
+
+11:00 Pacific
+
+Met with Tyson K. for user interview. See notes on meeting.
+
+
+1:00 Pacific
+
+Security, Privacy and Legal meeting --- met with officers playing each of those roles and took notes. Gave Demo of MVP at this time.
+
+Tuesday June 23rd (planned)
+
+8:45 scrum
+
+10:30 Story grooming session, and sprint retrospective
+
+1:00 review of backend and tie in.
+
 
 
 
