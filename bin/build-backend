@@ -1,0 +1,5 @@
+#!/bin/sh
+cd "$(git rev-parse --show-toplevel)/backend"
+docker-compose build
+docker-compose up --no-recreate -d 
+docker-compose run --rm php php /var/www/nebula/build/build.php

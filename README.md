@@ -11,9 +11,11 @@ For licence details, including licences of third-party free and open source soft
 
 ## Development environment setup
 
+The development environment is fully self-contained, and is based on Docker and Docker Compose.
+
 ### Requirements
 1. [Docker](https://www.docker.com/)
-1. [Docker Compose](http://docs.docker.com/compose/)
+1. [Docker Compose](https://docs.docker.com/compose/)
 
 ### Instructions
 
@@ -47,3 +49,17 @@ To execute the tests run:
 ```
 
 A JUnit format report.xml is available in the "testing" directory. You can include additional PHPUnit arguments after the above command, as needed.
+
+### Automated Testing
+
+A sample Jenkins configuration is available in the devops/jenkins/testing/config.xml directory. This will, upon each git push to github:
+* Bootstrap docker-compose and start the containers.
+* Run the tests and record the results.
+* Report the result to a Slack channel.
+
+## Deployment
+
+### Requirements
+1. [Docker](https://www.docker.com/)
+1. [Docker Compose](https://docs.docker.com/compose/)
+1. [Docker Machine](https://docs.docker.com/machine/)

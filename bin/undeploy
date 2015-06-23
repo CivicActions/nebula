@@ -1,0 +1,13 @@
+#!/bin/sh
+if [ -z "$2" ]; then
+  echo "Usage ./bin/undeploy [subdomain] [domain]"
+  exit 1
+fi
+SUBDOMAIN="$1"
+DOMAIN="$2"
+INSTANCE_NAME="$SUBDOMAIN.$DOMAIN"
+# Unprovision AWS Docker host.
+docker-machine rm "$INSTANCE_NAME"
+cfcli --token="$CLOUDFLARE_TOKEN" --email="$CLOUDFLARE_EMAIL" --domain "$DOMAIN" removerecord "$SUBDOMAIN"
+echo
+echo "Instance and subdomains undeployed."
