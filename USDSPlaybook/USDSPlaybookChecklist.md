@@ -18,9 +18,9 @@ We must begin digital projects by exploring and pinpointing the needs of the peo
 1. We have met with three professionals, including on the first day, to interview them about their needs around adverse effects information. See links https://www.youtube.com/user/civicactions.
 2. We used interviews 
 3. We consistently groomed the user stories in order to keep MVP priorities in mind. 
-4. Trello cards here https://trello.com/b/IlUoml5c/nebula
+4. Trello cards [here] (https://trello.com/b/IlUoml5c/nebula)
 5. 
-6. Our user stories can be found on Trello here https://trello.com/b/IlUoml5c/nebula
+6. Our user stories can be found on Trello [here] (https://trello.com/b/IlUoml5c/nebula)
 7. 
 
 
@@ -43,7 +43,7 @@ We must begin digital projects by exploring and pinpointing the needs of the peo
 4. 
 5. User interviews
 6. That healthcare professionals would benefit from being able to visually compare adverse effects across drugs. 
-7. Interviews and notes are posted [here (https://www.youtube.com/user/civicactions)] and [here (https://github.com/CivicActions/nebula/tree/master/user-interviews)], respectively.
+7. Interviews and notes are posted [here]  (https://www.youtube.com/user/civicactions) and [here] (https://github.com/CivicActions/nebula/tree/master/user-interviews), respectively.
 8. During each sprint. 
 
 
@@ -62,9 +62,9 @@ We need to understand the different ways people will interact with our services,
 
 #### Actions
 1. On a mobile device (phone or tablet) in a doctor's office, hospital, pharmacy, medical/nursing school, nursing home. Generally used when a patient is adding or altering the medications in his or her regime. 
-2. 
+2. Different drugs cause different adverse effects and there is not easy to compare the effects of multiple drugs. 
 3. 
-4. 
+4. Metrics could include lower incidence of adverse effects due to less mixing of different drugs; how often healthcare professionals access the site; how many different drug combinations are compared on the site; 
 
 
 #### key questions
@@ -75,10 +75,10 @@ We need to understand the different ways people will interact with our services,
 
 #### answers to key questions
 
-1. 
-2. 
-3. 
-4. 
+1. Looking up individual drugs online. 
+2. There is no way to get one comprehensive visual of all side effects produced by a drug regime. 
+3. It can fit into the beginning of the prescription experience or when drugs are being added to an existing regime. 
+4. Usage will increase as trust in the information grows over time. 
 
 ## Play 3
 ### Make it simple and intuitive
