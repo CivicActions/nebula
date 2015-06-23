@@ -101,9 +101,15 @@ Tuesday June 23rd (planned)
 
 8:45 scrum
 
-10:30 Story grooming session, and sprint retrospective
+10:30 -12:30 central
 
-1:00 review of backend and tie in.
+Sprint Retrospective and Velocity calculation of first sprint.
+
+Sprint Planning meeting for Second sprint.  Wrote stories, estimated, and prioritized them.  
+
+
+
+
 
 
 

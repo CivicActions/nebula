@@ -1,7 +1,30 @@
 On Monday afternoon we interviewed P. Tyson Kamikawa, 
 Director of Shared Platforms and IT Effectiveness at Harvard Medical School.
 
-The video of this interview will be place here [TBD].
+We have published a [video](https://www.youtube.com/watch?v=NlZQSLsXYFA_) of this interview.
+
+each comment attributed by initials to who said it - 
+
+TK: What about including dosage in the drug variable? This is important to doctors' understanding of drug reaction. 
+ET: Don't recall seeing in data stream
+TK: Each drug should be listed at a certain dosage in the data 
+- Dif't dosages then are separate products 
+ET: Phase II tool - this is a good idea 
+TK: When adverse event data collected, dosage was recorded 
+
+TK: Short description of drug returned? 
+RA: Was initially in wireframe
+ET: Also Phase II? 
+- Do you mean that it would appear while autocomplete pops up drug name? 
+TK: That's one option, but what I was suggesting was a short sentence that would appear next to the drug selected in the list below. List could be stacked vertically, rather than on one horizontal line as it is now, with brief descriptions to the side of each drug, so that dr could confirm that they're looking at the right drug combo.  
+
+TK: National vs name brand vs generic vs competing brands 
+- NDC code - return NDC name? 
+- Drug family - stack up all in same family - as severity (rates of incidence) tends to change between drug types - 
+- Each dosage and each drug type has distinct name 
+- Drugs.com - one is able to see comprehensive drug family info there
+- Able to inquire after full range of drugs within a family at one time? 
+
 
 Tyson basically confirmed the value of our approach for the "Caregiver" audience.  We
 performed a value exercize with him of various features, and here is his input:
