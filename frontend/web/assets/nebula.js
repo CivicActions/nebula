@@ -5,6 +5,35 @@
     var drugChart;
     var count = 0;
     
+    // Add predicatable color patterns for bars.
+    var red = 'rgba(255,0,0,0.7)';
+    var green = 'rgba(0,255,0,0.7)';
+    var blue = 'rgba(0,0,255,0.7)';
+    var grey = 'rgba(192,192,192,0.7)';
+    var yellow = 'rgba(255,255,0,0.7)';
+    var cerise = 'rgba(255,0,255,0.7)';
+    var ran1 = 'rgba(255,255,0,0.7)';
+    var ran2 = 'rgba(0,255,255,0.7)';
+    var ran3 = 'rgba(100,0,255,0.7)';
+    var ran4 = 'rgba(0,100,255,0.7)';
+    var ran5 = 'rgba(50,50,255,0.7)';
+    var ran6 = 'rgba(200,20,255,0.7)';
+    var ran7 = 'rgba(150,20,155,0.7)';
+    var ran8 = 'rgba(60,150,55,0.7)';
+    var ran9 = 'rgba(200,220,55,0.7)';
+    
+    var bgColor = ['red', 'green', 'blue', 'grey', 'yellow', 'cerise',
+		   'ran1', 'ran2', 'ran3','ran4','ran5', 'ran6', 'ran7',
+		   'ran8', 'ran9','red', 'green', 'blue', 'grey', 'yellow',
+		   'cerise', 'ran1', 'ran2', 'ran3','ran4', 'ran5',
+		   'ran6', 'ran7', 'ran8', 'ran9',
+		   'red', 'green', 'blue', 'grey', 'yellow', 'cerise',
+		   'ran1', 'ran2', 'ran3','ran4','ran5', 'ran6', 'ran7',
+		   'ran8', 'ran9','red', 'green', 'blue', 'grey', 'yellow',
+		   'cerise', 'ran1', 'ran2', 'ran3','ran4', 'ran5',
+		   'ran6', 'ran7', 'ran8', 'ran9'];
+
+    
     $('#add-to-list').click(function(){
       if($('#drug').val().length){
 	appendItems();
@@ -24,11 +53,12 @@
     
     function appendItems() {
       // Build our checkbox toggles.
-      $('#text').append('<input type="checkbox" checked="checked" value="'
-			      + $('#drug').val()
-			      + '" class="added-drug '
-			      + $('#drug').val() + '">'
-			      + $('#drug').val());
+      $('#text').append('<div class="checkholder"><input type="checkbox" checked="checked" value="'
+			+ $('#drug').val()
+			+ '" class="added-drug '
+			+ $('#drug').val() + '">'
+			+ $('#drug').val()
+			+ '<div class="check-color" style="background: ' + bgColor[count]  + '"></div></div>');
     }
     function addItems() {	
       
@@ -115,7 +145,8 @@
       
       // Now that we need to build a time series for each symptom in the proper order
       var symptomKeys = Object.keys(allSymptoms);
-
+      
+      var colorCount = 0;
       for (var k in tempData) {
 	var timeSeries = [];
 	for (var n = 0; n < symptomKeys.length; n++) {
@@ -136,12 +167,15 @@
 	  }
 
 	}
+	
  	allData.push({
 	  label: k,
-	  fillColor: 'rgba(' + randomColorFactor() + ',' + randomColorFactor() + ',' + randomColorFactor() + ',.7)',
-	  strokeColor: 'yellow',
+	  fillColor: bgColor[colorCount],
+	  strokeColor: '#888',
 	  data: timeSeries,
 	});
+	colorCount++;
+	
       }
 
       var datamap = {
