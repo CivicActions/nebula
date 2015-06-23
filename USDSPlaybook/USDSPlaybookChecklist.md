@@ -99,7 +99,7 @@ Using a government service shouldnâ€™t be stressful, confusing, or daunting. Itâ
 #### Actions
 1. 
 2. 
-3. 
+3. This is a one-page application. The page will refresh with new drugs in the chart. 
 4. 
 5. 
 6. 
