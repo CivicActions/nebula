@@ -1,31 +1,45 @@
 (function($){
+
   $(document).ready(function(){
     sessionStorage.clear();
     var drugChart;
     var count = 0;
+    
     $('#add-to-list').click(function(){
-      addItems();
+      if($('#drug').val().length){
+	appendItems();
+	addItems();
+      }
       
     });
-
-
-    function addItems() {
-      if ($('#drug').val().length) {
-	
-	
-	$('#added-meds').append('<input type="checkbox" checked="checked" value="'
-				+ $('#drug').val()
-				+ '" class="added-drug '
-				+ $('#drug').val() + '">'
-				+ $('#drug').val());
-
-	$('#error').empty();
-	var symptom = $('#symptom').val();
-	var url;
-
-	$.each($('.added-drug'), function(term) {
+    
+    $(document).change(function(){
+      $('.added-drug').each(function(){
+	$(this).click(function(){
+	  addItems();
 	  
-	  term = $(this).val();
+	});   
+      });  
+    });
+    
+    function appendItems() {
+      // Build our checkbox toggles.
+      $('#added-meds').append('<input type="checkbox" checked="checked" value="'
+			      + $('#drug').val()
+			      + '" class="added-drug '
+			      + $('#drug').val() + '">'
+			      + $('#drug').val());
+    }
+    function addItems() {	
+      
+      $('#error').empty();
+      var symptom = $('#symptom').val();
+      var url;
+
+      $.each($('.added-drug'), function(term) {
+	term = $(this).val();
+	// We only want to pull in terms that correspond to a checked box.
+	if($(this).is(":checked")) {
 	  
 	  url = 'https://api.fda.gov/drug/event.json?api_key=rv4OOon6fPJOHBbFHClUOs3BRGSbAEUdg3ACp2pu&search='
 	    + term + '&limit=5&count=patient.reaction.reactionmeddrapt.exact';
@@ -51,10 +65,13 @@
 	      $('#error').append('No results.');
 	    }
 	  });
-
-	});
-	$('#drug').val('');
-      }
+	} else {
+	  // If it isn't checked, remove the key so that it doesn't display in graph.
+	  sessionStorage.removeItem(term);	  
+	}
+      });
+      $('#drug').val('');
+      
     };
     
     function barGraph() {
@@ -134,6 +151,7 @@
       
       var ctx = document.getElementById("drug-chart").getContext("2d");
       if (count > 0) {
+	// Force chart rebuild whdn items are added.
 	drugChart.destroy();
       }
       count += 1;
