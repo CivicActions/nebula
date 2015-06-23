@@ -230,7 +230,8 @@ There must be a single product owner who has the authority and responsibility to
 5. The product owner has a strong relationship with the contracting officer
 
 #### Actions
-1. 
+1. Product owner was identified on June 17 as Rob Read. Documented here: [link] (https://civicactions.slack.com/archives/agile-gsa/p1434582235000307)
+2. 
 2. 
 3. 
 4. 
