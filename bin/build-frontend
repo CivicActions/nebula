@@ -1,0 +1,4 @@
+#!/bin/sh
+cd "$(git rev-parse --show-toplevel)/frontend"
+docker-compose build
+docker-compose up --no-recreate -d

@@ -28,11 +28,19 @@ function queryFDA($med,$sym){
       $html .= '<div><b>Reports:</b> ' . $result['count'] . '</div>';
     }
   }
-return $html;
+
+  return $html;
 }
 
 $app->get('/drug/{med}/{sym}', function ($med,$sym) use ($app) {
     return queryFDA($med,$sym);
 });
+
+$app->register(new Silex\Provider\DoctrineServiceProvider(), array(
+    'db.options' => array(
+        'url'   => 'mysql://nebula:nebula@mysql:3306/nebula',
+    ),
+));
+$app['db']->fetchAll('SHOW tables');
 
 $app->run();

@@ -1,0 +1,13 @@
+body {
+  max-width:960px;
+  margin:0 auto;
+  padding:25px;
+  color: #333333;
+  font-family: Tahoma, Geneva, sans-serif;
+}
+#error {
+  color:#f00;
+  padding:10px 0;
+  font-weight:bold;
+  font-size:115%;
+}

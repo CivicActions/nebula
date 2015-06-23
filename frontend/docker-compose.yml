@@ -1,0 +1,6 @@
+web:
+  image: nginx:1.9
+  ports:
+    - "2086:80"
+  volumes:
+    - web:/usr/share/nginx/html
