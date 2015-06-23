@@ -1,6 +1,10 @@
 # Nebula
 
-URL to our product: TBD
+
+Try our [application](https://nebula.civicactions.com/) and give us feedback by opening an issue!
+
+And our [api](https://nebulaapi.civicactions.com/) will someday be useful, but is not 
+ready now.
 
 This is our application to 18F's Agile BPA RFQ.  However, it is all freely sharable, and we aim to make a product 
 truly valuable. Feel free to fork this code.
