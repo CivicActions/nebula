@@ -23,14 +23,14 @@
     var ran9 = 'rgba(200,220,55,0.7)';
     
     var bgColor = ['red', 'green', 'blue', 'grey', 'yellow', 'cerise',
-		   'ran1', 'ran2', 'ran3','ran4','ran5', 'ran6', 'ran7',
+		   'ran1', 'ran2', 'ran3', 'ran4','ran5', 'ran6', 'ran7',
 		   'ran8', 'ran9','red', 'green', 'blue', 'grey', 'yellow',
 		   'cerise', 'ran1', 'ran2', 'ran3','ran4', 'ran5',
 		   'ran6', 'ran7', 'ran8', 'ran9',
 		   'red', 'green', 'blue', 'grey', 'yellow', 'cerise',
-		   'ran1', 'ran2', 'ran3','ran4','ran5', 'ran6', 'ran7',
-		   'ran8', 'ran9','red', 'green', 'blue', 'grey', 'yellow',
-		   'cerise', 'ran1', 'ran2', 'ran3','ran4', 'ran5',
+		   'ran1', 'ran2', 'ran3', 'ran4', 'ran5', 'ran6', 'ran7',
+		   'ran8', 'ran9', 'red', 'green', 'blue', 'grey', 'yellow',
+		   'cerise', 'ran1', 'ran2', 'ran3', 'ran4', 'ran5',
 		   'ran6', 'ran7', 'ran8', 'ran9'];
 
     
@@ -53,12 +53,20 @@
     
     function appendItems() {
       // Build our checkbox toggles.
+
+      if ($('.added-drug').length != -1) {
+	var checks = $('.added-drug').length;	
+      }
+      else {
+	var checks = 0;	
+      }
       $('#text').append('<div class="checkholder"><input type="checkbox" checked="checked" value="'
 			+ $('#drug').val()
 			+ '" class="added-drug '
 			+ $('#drug').val() + '">'
 			+ $('#drug').val()
-			+ '<div class="check-color" style="background: ' + bgColor[count]  + '"></div></div>');
+			+ '<div class="check-color" style="background: ' + bgColor[checks]  + '"></div></div>');
+
     }
     function addItems() {	
       
@@ -92,7 +100,7 @@
 	      setTimeout(barGraph(), 200);
 	    },
 	    error: function(data) {
-	      $('#error').append('No results.');
+	      $('#error').append("We are unable to show data for this drug because we can't normalize the usage data when compared to other drugs. For specific adverse effects please refer to other sources.<br /><br />");
 	    }
 	  });
 	} else {
@@ -174,8 +182,7 @@
 	  strokeColor: '#888',
 	  data: timeSeries,
 	});
-	colorCount++;
-	
+	colorCount++;	
       }
 
       var datamap = {
