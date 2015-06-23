@@ -15,7 +15,7 @@ We must begin digital projects by exploring and pinpointing the needs of the peo
 7. As the digital service is being built, regularly test it with potential users to ensure it meets people’s needs
 
 #### Actions
-1. We've done three inteviews with professionals, including on the first day, see links. [link](https://github.com/CivicActions/nebula/edit/master/USDSPlaybook/USDSPlaybookChecklist.md)
+1. We've done three inteviews with professionals, including on the first day, see links.
 2. 
 3. 
 4. 
