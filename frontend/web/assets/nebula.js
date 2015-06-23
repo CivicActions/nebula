@@ -3,50 +3,59 @@
     sessionStorage.clear();
     var drugChart;
     var count = 0;
-    $('#add-to-list').click(function() {
-      
-      $('#added-meds').append('<input type="checkbox" checked="checked" value="'
-			      + $('#drug').val()
-			      + '" class="added-drug '
-			      + $('#drug').val() + '">'
-			      + $('#drug').val());
-
-      $('#error').empty();
-      var symptom = $('#symptom').val();
-      var url;
-
-      $.each($('.added-drug'), function(term) {
-	
-	term = $(this).val();
-	
-	url = 'https://api.fda.gov/drug/event.json?api_key=rv4OOon6fPJOHBbFHClUOs3BRGSbAEUdg3ACp2pu&search='
-	  + term + '&limit=5&count=patient.reaction.reactionmeddrapt.exact';
-
-	$.ajax({
-	  url: url,
-	  type: 'GET',
-	  term: term,
-	  success: function(data) {
-	    var reactions = data.results;
-	    // I will store drug, symtomp, count objects in here in order to have all data.
-	    var triplets = [];
-	    for (i = 0; i < reactions.length; i++) {
-	      var reaction = reactions[i];
-	      triplets.push( { drug: this.term,
-			       symptom: reactions[i]['term'],
-			       count: reactions[i]['count']});
-	    }
-	    sessionStorage.setItem(term,JSON.stringify(triplets));
-	    setTimeout(barGraph(), 200);
-	  },
-	  error: function(data) {
-	    $('#error').append('No results.');
-	  }
-	});
-
-      });
+    $('#add-to-list').click(function(){
+      addItems();
       
     });
+
+
+    function addItems() {
+      if ($('#drug').val().length) {
+	
+	
+	$('#added-meds').append('<input type="checkbox" checked="checked" value="'
+				+ $('#drug').val()
+				+ '" class="added-drug '
+				+ $('#drug').val() + '">'
+				+ $('#drug').val());
+
+	$('#error').empty();
+	var symptom = $('#symptom').val();
+	var url;
+
+	$.each($('.added-drug'), function(term) {
+	  
+	  term = $(this).val();
+	  
+	  url = 'https://api.fda.gov/drug/event.json?api_key=rv4OOon6fPJOHBbFHClUOs3BRGSbAEUdg3ACp2pu&search='
+	    + term + '&limit=5&count=patient.reaction.reactionmeddrapt.exact';
+
+	  $.ajax({
+	    url: url,
+	    type: 'GET',
+	    term: term,
+	    success: function(data) {
+	      var reactions = data.results;
+	      // I will store drug, symtomp, count objects in here in order to have all data.
+	      var triplets = [];
+	      for (i = 0; i < reactions.length; i++) {
+		var reaction = reactions[i];
+		triplets.push( { drug: this.term,
+				 symptom: reactions[i]['term'],
+				 count: reactions[i]['count']});
+	      }
+	      sessionStorage.setItem(term,JSON.stringify(triplets));
+	      setTimeout(barGraph(), 200);
+	    },
+	    error: function(data) {
+	      $('#error').append('No results.');
+	    }
+	  });
+
+	});
+	$('#drug').val('');
+      }
+    };
     
     function barGraph() {
       // We can't use just flat arrays here.  Each drugName must contain an array as it's entry, which is the 
