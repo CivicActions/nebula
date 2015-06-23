@@ -29,6 +29,7 @@ For more information, please refer to <http://unlicense.org>
 ## Free and Open Source software and library licences
 
 Free and Open Source project inclusions:
+* The jQuery library is licenced under an MIT licence, for more details refer to /frontend/web/jquery/LICENSE.txt
 * The chart.js library is licenced under an MIT licence, for more details refer to /frontend/chart/LICENSE.md
 * The Silex framework and it's libraries are licenced under an MIT licence, for more details refer to /backend/vendor/silex/silex/LICENSE.
 * The Guzzle library is licenced under an MIT licence, for more details refer to /backend/vendor/guzzlehttp/guzzle/LICENSE and /testing/vendor/guzzlehttp/guzzle/LICENSE.
