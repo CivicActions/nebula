@@ -7,7 +7,7 @@ fi
 DEPLOY="$1"
 SUBDOMAIN="$2"
 DOMAIN="$3"
-NAME="$SUBDOMAIN.$DOMAIN"
+NAME="$(git rev-parse --short HEAD)-$SUBDOMAIN.$DOMAIN"
 
 # Provision a AWS Docker host.
 docker-machine create "$NAME" --driver amazonec2
@@ -32,4 +32,4 @@ sed -i'' -e "s/[0-9:.]*:80/$PRIVATE_IP:80:80/" $DEPLOY/docker-compose.yml
 # Build site on remote host.
 ./bin/build-$DEPLOY
 echo
-echo "Deployed $DEPLOY to https://$NAME/"
+echo "Deployed $DEPLOY to https://$SUBDOMAIN.$DOMAIN"
