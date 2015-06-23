@@ -1,0 +1,51 @@
+Internal Demo and Legal Q&A, 6/22
+
+Henry Poole, Owen Barton, Ethan Teague, Rob Read, Greg Elin, Steve Curtis 
+
+Call began with demo of working prototype by Ethan. 
+
+Q&A: 
+HP: Drug data stored anywhere? 
+ET: No. Real time call to API. 
+- At present, no association between patient and this data
+- If user chooses to record a particular url to capture a particular search, that's their own choice, undertaken at own risk
+HP: Also need to make sure to state that API is not for clinical use. 
+OB: Notification re: proper use of data. 
+
+HP: What is logged by our system? IP address of user? 
+OB: Nginx is logging IP address, url, browser ID. 
+- These are all totally standard for every site on the web
+HP: Not logging referral? Can we check? 
+OB: Yes, log referrer as well
+- Query is captured as well in path, unless we use Post instead 
+HP: Query is captured and saved, associated with IP address? 
+OB: Yes 
+GE: IP addresses generally regarded as not personally identifiable
+- IP address + other info could be considered triangulate-able 
+- A good idea, eg, to use https 
+OB: We will be using https 
+- Risk is equivalent, eg, to googling "aspirin" or "ibuprofen" 
+
+HP: Using fedramp? 
+OB: Yes. Hosting with AWS - everything in US is fedramp, therefore 
+- Nothing on top of that, however 
+
+HP: Keeping track of all software we're using, keeping track of all licensing? 
+OB: All licenses being tracked in github
+ET: Have added jquery - will add to doc
+OB: Adding licenses for each top level php item
+HP: Contributions from outside in repo? 
+- Would need to get copyright declaration from anyone contributing
+- License of assignment for each - Need to be alerted
+OB: Nothing to date outside of user input 
+
+RR: Nothing can be brought into repo until we decide to merge it 
+GE: Would have to say that it's wonderful to have working code on a Monday 
+
+GE: Have we identified enhancements? 
+RR: Have asked for recommendations from users, and have evaluated them for "value" with users 
+- Some are likely in scope for this MVP, and some not
+
+HP: Looking at features and scope 
+- Looking at these all in terms of a timeline - does not matter as much in terms of where we'll be on Friday 
+- This week's exercise is around process
