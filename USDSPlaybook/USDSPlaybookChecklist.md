@@ -146,8 +146,8 @@ We should use an incremental, fast-paced style of software development to reduce
 4. 
 5. 
 6. 
-7. 
-8. 
+8. Using Github for this - all project members and user-testers/stakeholders have access and the repository is also public.
+8. Using Trello for this - all project members and user-testers/stakeholders have access. For this project, the board is also public.
 9. 
 
 #### key questions
@@ -292,7 +292,7 @@ The technology decisions we make need to enable development teams to work effici
 4. [Consider open source software solutions](http://www.whitehouse.gov/sites/default/files/omb/assets/egov_docs/memotociostechnologyneutrality.pdf) at every layer of the stack
 
 #### Actions
-1. 
+1. API driven frontend. Modern lightweight PHP framework (Silex/Symphony).
 2. 
 3. 
 4. 
@@ -329,13 +329,13 @@ Our services should be deployed on flexible infrastructure, where resources can 
 7. Application is hosted on commodity hardware
 
 #### Actions
-1. 
-2. 
-3. 
-4. 
-5. 
-6. 
-7. 
+1. Fully automated deployment script provisions Amazon Web Services (AWS) infrastructure, and Cloudflare DNS/CDN. Docker based architecture could be horizontally scaled with minimal effort.
+2. Deployments contain a full frontend or backend stack, so can be provisioned dynamically using AWS Cloudwatch rules. 
+3. Using AWS and Cloudflare APIs. 
+4. AWS region is configurable and instances are self contained (no master database needed). 
+5. AWS charges by the minute. 
+6. Cloudfront is used as a content delivery network.
+7. AWS uses commodity hardware.
 
 
 #### key questions
@@ -388,7 +388,7 @@ Today, developers write automated scripts that can verify thousands of scenarios
 #### Actions
 1. 
 2. 
-3. 
+3. The build process runs on every git push, and includes automated tests.
 4. 
 5. 
 
@@ -442,8 +442,8 @@ The following checklist provides a starting point, but teams should work closely
 1. 
 2. 
 3. 
-4. 
-5. 
+4. No PII is retained.
+5. AWS infrastructure is FedRAMP certified.
 6. 
 
 
@@ -483,7 +483,7 @@ At every stage of a project, we should measure how well our service is working f
 8. Use an experimentation tool that supports multivariate testing in production
 
 #### Actions
-1. 
+1. AWS Cloudwatch provides real-time resource monitoring of instances.
 2. 
 3. 
 4. 
