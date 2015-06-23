@@ -1,0 +1,41 @@
+$ ./bin/deploy frontend nebula civicactions.com
+Launching instance...
+To see how to connect Docker to this machine, run: docker-machine env nebula.civicactions.com
+Sending build context to Docker daemon 2.048 kB
+Sending build context to Docker daemon 
+Step 0 : FROM node
+ ---> 6f1869a71dfb
+Step 1 : RUN npm install -g cloudflare-cli
+ ---> Using cache
+ ---> 9e773dbf020d
+Successfully built 9e773dbf020d
+/root/.cfcli.yml not found
+Deleting nebula.civicactions.com
+Finished
+/root/.cfcli.yml not found
+Added A record for nebula
+Enabled cloudflare for nebula.civicactions.com
+Cloning into '/home/owen/workspace/nebula'...
+web uses an image, skipping
+Creating frontend_web_1...
+Pulling image nginx:1.9...
+1.9: Pulling from nginx
+
+64e5325c0d9d: Pull complete
+bf84c1d84a8f: Pull complete
+aaa04ccb1cff: Pull complete
+c25a494fd450: Pull complete
+2b4392756878: Pull complete
+a58c6ba7d446: Pull complete
+6391a6648407: Pull complete
+0b6365661275: Pull complete
+5c1f0ec6cd7b: Pull complete
+36f0b0306c21: Pull complete
+107c338c1d31: Pull complete
+319d2015d149: Already exists
+nginx:1.9: The image you are pulling has been verified. Important: image verification is a tech preview feature and should not be relied on to provide security.
+
+Digest: sha256:32b5248d447448859e328d2b29e5356ba6858882ad7ca359ce4878f2fa4ff104
+Status: Downloaded newer image for nginx:1.9
+
+Deployed frontend to https://nebula.civicactions.com/

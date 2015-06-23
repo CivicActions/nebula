@@ -59,7 +59,36 @@ A sample Jenkins configuration is available in the devops/jenkins/testing/config
 
 ## Deployment
 
+This deploys an instance of the frontend and an instance of the backend on Amazon Web Services instances, then configures DNS (with CDN and SSl) for each IP using Cloudflare. Docker Machine is used to provision and bootstrap the instances. The AWS CLI is used to manage network configuration and a Cloudflare CLI is used to configure Cloudflare (the AWS CLI and Cloudflare tools are run via Docker, so dependencies are minimized).
+
 ### Requirements
 1. [Docker](https://www.docker.com/)
 1. [Docker Compose](https://docs.docker.com/compose/)
 1. [Docker Machine](https://docs.docker.com/machine/)
+1. Amazon Web Services account and API keys.
+1. Cloudflare account and API keys.
+
+### Instructions
+
+Clone the repository, and change to the project directory:
+```bash
+git clone git@github.com:CivicActions/nebula.git
+cd nebula
+```
+
+Create the following environment variables, containing your AWS and Cloudflare access details:
+```
+export AWS_ACCESS_KEY_ID=
+export AWS_SECRET_ACCESS_KEY=
+export AWS_VPC_ID=
+export AWS_DEFAULT_REGION=
+export CLOUDFLARE_EMAIL=
+export CLOUDFLARE_TOKEN=
+```
+
+Run the ./bin/deploy script to deploy the frontend and backend respectively, where the second parameter is the subdomain to deploy two, and the third is a Cloudflare DNS hosted domain name. For example:
+```
+./bin/deploy frontend nebula civicactions.com
+./bin/deploy backend nebulaapi civicactions.com
+```
+Will deploy to https://nebula.civicactions.com/ and https://nebulaapi.civicactions.com/.
