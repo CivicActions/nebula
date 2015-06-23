@@ -16,8 +16,8 @@ We must begin digital projects by exploring and pinpointing the needs of the peo
 
 #### Actions
 1. We've done three inteviews with professionals, including on the first day, see links.
-2. 
-3. 
+2. We were able to clearly differentiate between the patient and doctor personae by working through the wireframe refinement process in order to create two different experiences.
+3. We consistently groomed the user stories in order to keep MVP priorities in mind. 
 4. 
 5. 
 6. 
@@ -37,14 +37,14 @@ We must begin digital projects by exploring and pinpointing the needs of the peo
 
 #### answers to key questions
 
-1. 
-2. 
-3. 
+1. Health care professionals.
+2. The need to compare the adverse effects of multiple drugs. 
+3. To help patients reduce side effects associated with their drug regimes. 
 4. 
-5. 
-6. 
-7. 
-8. 
+5. User interviews
+6. That healthcare professionals would benefit from being able to visually compare adverse effects across drugs. 
+7. Interviews and notes are posted [here (https://www.youtube.com/user/civicactions)] and [here (https://github.com/CivicActions/nebula/tree/master/user-interviews)], respectively.
+8. During each sprint. 
 
 
 ## Play 2
