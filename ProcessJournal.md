@@ -107,6 +107,12 @@ Sprint Retrospective and Velocity calculation of first sprint.
 
 Sprint Planning meeting for Second sprint.  Wrote stories, estimated, and prioritized them.  
 
+5:00 Central
+
+Had a Style Guide meeting to discuss style guide.  Intellectual property got in the way of using an extant style guide. We decided to copy as much styling as possible from 18F, and work into a tiny style guide to improve the styling.
+
+
+
 
 
 
