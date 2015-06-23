@@ -1,4 +1,5 @@
-On Monday afternoon we interviewed Tyson K., of Harvard Medical School, for an hour.
+On Monday afternoon we interviewed P. Tyson Kamikawa, 
+Director of Shared Platforms and IT Effectiveness at Harvard Medical School.
 
 The video of this interview will be place here [TBD].
 
