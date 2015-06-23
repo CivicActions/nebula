@@ -1,7 +1,7 @@
 On Monday afternoon we interviewed P. Tyson Kamikawa, 
 Director of Shared Platforms and IT Effectiveness at Harvard Medical School.
 
-We have published a [video](https://www.youtube.com/watch?v=NlZQSLsXYFA_ of this interview.
+We have published a [video](https://www.youtube.com/watch?v=NlZQSLsXYFA_) of this interview.
 
 each comment attributed by initials to who said it - 
 
