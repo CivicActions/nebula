@@ -28,7 +28,7 @@
 	  term: term,
 	  success: function(data) {
 	    var reactions = data.results;
-	      // I will store drug, symtomp, count objects in here in order to have all data.
+	    // I will store drug, symtomp, count objects in here in order to have all data.
 	    var triplets = [];
 	    for (i = 0; i < reactions.length; i++) {
 	      var reaction = reactions[i];
@@ -48,96 +48,75 @@
       
     });
     
-    function chunk(arr, len) {
-
-      var chunks = [],
-	  i = 0,
-	  n = arr.length;
-
-      while (i < n) {
-	chunks.push(arr.slice(i, i += len));
-      }
-
-      return chunks;
-    }
-    
     function barGraph() {
-// We can't use just flat arrays here.  Each drugName must contain an array as it's entry, which is the 
-// mapping from Symptom to count that we need...
-      var drugName = [];
-      
-      var drugSymptom = [];
-      var numSymptom = [];
-      var numSymptomRaw = [];
+      // We can't use just flat arrays here.  Each drugName must contain an array as it's entry, which is the 
+      // mapping from Symptom to count that we need.
       var allData = [];
       var randomColorFactor = function(){ return Math.round(Math.random()*255)};
       var tempData = [];
       for (var key in sessionStorage) {
 	var triplets = JSON.parse(sessionStorage.getItem(key));
-	  tempData[key] = triplets;
+	tempData[key] = triplets;
       }
-      numSymptom = chunk(numSymptomRaw, 5);
-      console.log(numSymptom);
 
-	// Now we need to build a list of symptoms in a fixed order...
-	var allSymptoms = [];
+      // Now we need to build a list of symptoms in a fixed order.
+      var allSymptoms = [];
+      for (var k in tempData) {
+	var triplets = tempData[k];
+	
+	for(var okey in triplets) {
+	  var obj = triplets[okey];
+	  
+	  if (obj.symptom in allSymptoms) {
+	    allSymptoms[obj.symptom] += obj.count;
+	  }
+	  else {
+	    allSymptoms[obj.symptom] = obj.count;
+	  }
+	}
+      }
 
-     for (var k in tempData) {
-	 var triplets = tempData[k];
-	 for(var okey in triplets) {
-	     var obj = triplets[okey];
-	     if (obj.symptom in allSymptoms) {
-		 allSymptoms[obj.symptom] += obj.count;
-	     } else {
-		 allSymptoms[obj.symptom] = obj.count;
-	     }
-	 }
-     }
+      // Now Sort symptoms by count.
+      allSymptoms.sort(function (a, b) {
+	if (a.count > b.count) {
+	  return 1;
+	}
+	if (a.count < b.count) {
+	  return -1;
+	}
+	return 0;
+      });
+      
+      // Now that we need to build a time series for each symptom in the proper order
+      var symptomKeys = Object.keys(allSymptoms);
 
-	// Now Sort symptoms by count....
-	allSymptoms.sort(function (a, b) {
-	    if (a.count > b.count) {
-		return 1;
+      for (var k in tempData) {
+	var timeSeries = [];
+	for (var n = 0; n < symptomKeys.length; n++) {
+	  var i = 0;
+	  var triplets = tempData[k];
+	  var mycount = undefined;
+	  for (i = 0; i < triplets.length; i++) {
+	    var triplet = triplets[i];
+	    if ((triplet.drug == k) && (triplet.symptom == symptomKeys[n])) {
+	      mycount = triplet.count;
 	    }
-	    if (a.count < b.count) {
-		return -1;
-	    }
-	    return 0;
-	});
+	  }
+	  
+	  if (mycount) {
+	    timeSeries.push(mycount);
+	  } else {
+	    timeSeries.push(0);
+	  }
 
-
-	// Now that we need to build a time series for each symptom in the proper order
-
-	var symptomKeys = Object.keys(allSymptoms);
-
-     for (var k in tempData) {
-	 var timeSeries = [];
-	 for (var n = 0; n < symptomKeys.length; n++) {
-		 var i = 0;
-	         var triplets = tempData[k];
-	         var mycount = undefined;
-		 for (i = 0; i < triplets.length; i++) {
-		     var triplet = triplets[i];
-		     if ((triplet.drug == k) && (triplet.symptom == symptomKeys[n])) {
-//			 timeSeries.push(triplet.count);
-			 mycount = triplet.count;
-		     }
-		 }
-		 
-	     if (mycount) {
-			 timeSeries.push(mycount);
-		     } else {
-			 timeSeries.push(0);
-		     }
-
-	 }
- 	 allData.push({
+	}
+ 	allData.push({
 	  label: k,
 	  fillColor: 'rgba(' + randomColorFactor() + ',' + randomColorFactor() + ',' + randomColorFactor() + ',.7)',
 	  strokeColor: 'yellow',
 	  data: timeSeries,
-	 });
-     }
+	});
+      }
 
       var datamap = {
 	labels: Object.keys(allSymptoms),
