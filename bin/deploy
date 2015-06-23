@@ -14,7 +14,6 @@ docker-machine create "$NAME" --driver amazonec2
 IP=$(docker-machine ip "$NAME" 2>&1)
 PRIVATE_IP=$(docker-machine inspect --format='{{.Driver.PrivateIPAddress}}' "$NAME" 2>&1)
 # Open port 80.
-#aws ec2 authorize-security-group-ingress --group-name docker-machine --protocol tcp --port 80 --cidr 0.0.0.0/0
 AWS='docker run --rm -e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY -e AWS_VPC_ID -e AWS_DEFAULT_REGION anigeo/awscli'
 $AWS ec2 revoke-security-group-ingress --group-name docker-machine --protocol tcp --port 80 --cidr 0.0.0.0/0
 $AWS ec2 authorize-security-group-ingress --group-name docker-machine --protocol tcp --port 80 --cidr 0.0.0.0/0
