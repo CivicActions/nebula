@@ -22,4 +22,5 @@
 
 - Lack of process about how to fully document things to close tickets/tasks [Put more effort into this.]
 - Map our effort and budget into focus [Rob  and Steve to align understanding of budget/LOE deliverables.]
+- Involve Chuck our Presentation Layer expert
 
