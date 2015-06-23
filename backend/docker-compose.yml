@@ -1,0 +1,30 @@
+web:
+  image: nginx:1.9
+  ports:
+    - "2095:80"
+  volumes:
+    - .:/var/www/nebula
+    - ./configuration/nginx.conf:/etc/nginx/conf.d/default.conf
+  links:
+   - php
+php:
+  build: configuration
+  command: php-fpm --allow-to-run-as-root
+  volumes:
+    - .:/var/www/nebula
+    - ./configuration/php-fpm.conf:/usr/local/etc/php-fpm.conf
+  links:
+    - mysql
+testing:
+  image: php:5.6-cli
+  volumes:
+    - .:/usr/src/nebula
+  links:
+    - web
+mysql:
+  image: mariadb:10.0
+  environment:
+    - MYSQL_ROOT_PASSWORD=root
+    - MYSQL_USER=nebula
+    - MYSQL_PASSWORD=nebula
+    - MYSQL_DATABASE=nebula
