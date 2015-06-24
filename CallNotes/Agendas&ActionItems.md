@@ -6,6 +6,7 @@
 * Obtaining additional user interviews is a high priority for today
 * Melinda and Rob wrote up a summary, could use review by others (but word count is tight at 750).
 * We want to make the application usable to a "cold" user, and to publicize the URL more broadly.
+* Need to start the other two README documents.
 
 ## 6/23 Scrum call Action items
 * Rob, Steve, Aaron, to meet with Melinda to take a look at writing needs
