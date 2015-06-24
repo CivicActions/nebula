@@ -1,57 +1,46 @@
 
-// Load the Visualization API and the piechart package.
-google.load('visualization', '1.0', {'packages':['corechart']});
+(function($){
 
-// Set a callback to run when the Google Visualization API is loaded.
-// 
+  // Load the Visualization API and the barchart package.
+  google.load('visualization', '1.0', {'packages':['corechart']});
 
-// Callback that creates and populates a data table,
-// instantiates the pie chart, passes in the data and
-// draws it.
-function drawChart(colors, data) {
-  console.log(window.innerHeight);
-  console.log($('text').length);
-  
-  // Create the data table.
-  var data = google.visualization.arrayToDataTable(data);
-  // Set chart options
-  var options = {
-    height: window.innerWidth / 2,
-   legend: { position: 'top', maxLines: 3 },
-    bar: { groupWidth: '85%' },
-    colors: colors,
-    isStacked: true
-  };
+  // Set a callback to run when the Google Visualization API is loaded.
+  // 
+
+  // Callback that creates and populates a data table,
+  // instantiates the bar chart, passes in the data and
+  // draws it.
+  function drawChart(colors, data) {
+    console.log(window.innerHeight);
+    console.log($('text').length);
+    
+    // Create the data table.
+    var data = google.visualization.arrayToDataTable(data);
+    // Set chart options
+    var options = {
+      height: window.innerWidth / 2,
+      legend: { position: 'top', maxLines: 3 },
+      bar: { groupWidth: '85%' },
+      colors: colors,
+      isStacked: true
+    };
 
     // Instantiate and draw our chart, passing in some options.
-  var chart = new google.visualization.BarChart(document.getElementById('drug-chart'));
-  chart.draw(data, options);
-  $(window).resize(function() {
-    options.height = window.innerWidth / 1.2;
+    var chart = new google.visualization.BarChart(document.getElementById('drug-chart'));
     chart.draw(data, options);
-  });
+    $(window).resize(function() {
+      options.height = window.innerWidth / 1.2;
+      chart.draw(data, options);
+    });
 
-  $('#drug-chart').click(function() {
-    console.log('in function');
-    
-    options.height = $('text').length * 40;
-    chart.draw(data, options);
-  })
+    $('#drug-chart').click(function() {
+      console.log('in function');
+      
+      options.height = $('text').length * 40;
+      chart.draw(data, options);
+    }) 
+  }
 
-  
-}
-// Sorts (descending), an object that has numeric keys
-function sortObjectByValue(obj) {
-	var sortable = [];
-	for (var k in obj) {
-	    sortable.push([k, obj[k]]);
-         }
-	sortable.sort(function(a, b) {return b[1] - a[1]});
-	return sortable;
-}
-
-
-(function($){
   // Sorts (descending), an object that has numeric keys
   function sortObjectByValue(obj) {
     var sortable = [];
@@ -86,7 +75,7 @@ function sortObjectByValue(obj) {
     var ran8 = 'rgba(60,150,55,0.7)';
     var ran9 = 'rgba(200,220,55,0.7)';
 
- 
+    
     var bgColor = ['red', 'green', 'blue', 'grey', 'yellow', 'cerise',
 		   'ran1', 'ran2', 'ran3', 'ran4','ran5', 'ran6', 'ran7',
 		   'ran8', 'ran9','red', 'green', 'blue', 'grey', 'yellow',
@@ -97,7 +86,7 @@ function sortObjectByValue(obj) {
 		   'ran8', 'ran9', 'red', 'green', 'blue', 'grey', 'yellow',
 		   'cerise', 'ran1', 'ran2', 'ran3', 'ran4', 'ran5',
 		   'ran6', 'ran7', 'ran8', 'ran9'];
- 
+    
     var bgColorCodes = ['red', 'green', 'blue', 'grey', 'yellow'];
 
     // Load our saved searches.
@@ -117,7 +106,7 @@ function sortObjectByValue(obj) {
     function getParameterByName(name) {
       name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
       var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-          results = regex.exec(location.search);
+      results = regex.exec(location.search);
       return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
     } 
     
@@ -174,7 +163,6 @@ function sortObjectByValue(obj) {
     }
     
     function addItems() {	
-      
       $('#error').empty();
       var symptom = $('#symptom').val();
       var url;
@@ -238,7 +226,6 @@ function sortObjectByValue(obj) {
     }
     
     function barGraph() {
-
       // We can't use just flat arrays here.  Each drugName must contain an array as it's entry, which is the 
       // mapping from Symptom to count that we need.
       var allData = [];
@@ -270,7 +257,7 @@ function sortObjectByValue(obj) {
       // Now that we need to build a time series for each symptom in the proper order
       var symptomKeys = [];
       for (var k in allSymptomsAsArray) {
-	  symptomKeys.push(allSymptomsAsArray[k][0]);
+	symptomKeys.push(allSymptomsAsArray[k][0]);
       }
       
       var colorCount = 0;
@@ -292,7 +279,6 @@ function sortObjectByValue(obj) {
 	  } else {
 	    timeSeries.push(0);
 	  }
-
 	}
 	
  	allData.push({
@@ -305,41 +291,39 @@ function sortObjectByValue(obj) {
       }
 
       var datamap = {
-	  labels: symptomKeys,
+	labels: symptomKeys,
 	datasets: allData,
       };
 
-    var datax = [];
+      var datax = [];
       var drugs = Object.keys(tempData);
       for (var n = 0; n < symptomKeys.length; n++) {
-	  var timeSeries = [];
-	  timeSeries.push(symptomKeys[n]);
-	  for (var k in tempData) {
-	      var i = 0;
-	      var triplets = tempData[k];
-	      var mycount = undefined;
-	      for (i = 0; i < triplets.length; i++) {
-		  var triplet = triplets[i];
-		  if ((triplet.drug == k) && (triplet.symptom == symptomKeys[n])) {
-		      mycount = triplet.count;
-		  }
-	      }
-	      if (mycount) {
-		  timeSeries.push(mycount);
-	      } else {
-		  timeSeries.push(0);
-	      }
+	var timeSeries = [];
+	timeSeries.push(symptomKeys[n]);
+	for (var k in tempData) {
+	  var i = 0;
+	  var triplets = tempData[k];
+	  var mycount = undefined;
+	  for (i = 0; i < triplets.length; i++) {
+	    var triplet = triplets[i];
+	    if ((triplet.drug == k) && (triplet.symptom == symptomKeys[n])) {
+	      mycount = triplet.count;
+	    }
 	  }
+	  if (mycount) {
+	    timeSeries.push(mycount);
+	  } else {
+	    timeSeries.push(0);
+	  }
+	}
 	datax.push(timeSeries);
       }
 
-    drugs.unshift('Drug');
-    datax.unshift(drugs);
-    drawChart(bgColorCodes, datax);
-      
-      
+      drugs.unshift('Drug');
+      datax.unshift(drugs);
+      drawChart(bgColorCodes, datax);
 
     }
-    
+   
   })
 })(jQuery);
