@@ -13,6 +13,10 @@
 * Rob, team to tweet live url (with disclaimer). Get it out into the world. 
 * Rob / Ethan / April to coordinate around ~100 word addition for Pool 2 readme. Rob / Ron / Ethan to coordinate around ~100 word addition for Pool 1 readme. Steve to send both to Melinda in hopes that she can turn out readmes for all three Pools by tomorrow AM. 
 
+### Team balance scores:
+(In keeping with a central tenet of our process standards at CivicActions, we track "work/life" balance on each call. Tracking of this in github begins with our 6/24 scrum): 
+ET: 8; RA: 8; DN: 8.5; SC: 8.5; RR: 9.5; HP: 9; AR: 6; AP: 8
+
 ### Resolutions from this meeting:
 * Ron agreed to do QA, particularly around Mobile devices.
 * Rob to start Checklist for Thursday night
