@@ -10,6 +10,7 @@ $app->register(new Silex\Provider\DoctrineServiceProvider(), array(
         'url'   => 'mysql://nebula:nebula@mysql:3306/nebula',
     ),
 ));
+$queryBuilder = $app['db']->createQueryBuilder();
 
 /**
  * Build our tables.
@@ -62,7 +63,6 @@ if ($res === TRUE) {
  */
 $file = '/var/www/nebula/build/tmpARHQ/h152a.dat';
 if (file_exists($file)) {
-  $queryBuilder = $app['db']->createQueryBuilder();
   $data = file($file);
   foreach($data as $row){
     $drugidx = trim(substr($row,27,14)); // UNIQUE RX/PRESCRIBED MEDICINE IDENTIFIER
@@ -79,17 +79,21 @@ if (file_exists($file)) {
   }
 }
 
+print 'Prescriptions table has been popluated, poplating rx names table';
+
+$queryBuilder = $app['db']->createQueryBuilder();
+
 /* Build list of prescription names. */
 $sql = "SELECT DISTINCT rx_name FROM prescribed_medicines";
 $rx_names = $app['db']->fetchAll($sql);
 foreach($rx_names as $rx_name){
     $queryBuilder
     ->insert('rx_names')
-      ->setValue('rx_name', ':rxname')
-    ->setParameter('rxname',$rx_name)
+    ->setValue('rx_name', ':rxname')
+    ->setParameter('rxname',$rx_name['rx_name'])
     ->execute();
 }
-
+print 'RX names have been populated';
 print 'Tables built and data populated.';
 
 /*
