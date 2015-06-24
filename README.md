@@ -21,7 +21,7 @@ CivicActions has developed a functional, responsive, mobile-friendly web app usi
 
 On the first day, we mustered a multidisciplinary team to collaborate in creating a viable MVP as quickly as possible -- four developers, a product owner, a product manager, a designer, a UX expert, a style guide designer, and a writer. Rob Read (product owner) was assigned responsibility for the project and ensured its successful outcome with all deliverables met.
 
-In order to pinpoint user needs from the outset, we immediately scheduled an interview with an actual user who agreed to test the product, Dr. Martha Ogilvie of NIH. Prior to the interview, we had an ideation session to proactively brainstorm possible requirements and solutions, which included candidate stories and a JK exercise. Dr. Ogilvie validated our approach and helped us reprioritize our stories. Utilizing her feedback, we began work on several “spikes” to help drive out risks and uncertainty, and an MVP began to take shape.
+In order to pinpoint user needs from the outset, we immediately scheduled an interview with an actual user who agreed to test the product, Dr. Martha Ogilvie of the University of Oklahoma Health Science Center. Prior to the interview, we had an ideation session to proactively brainstorm possible requirements and solutions, which included candidate stories and a JK exercise. Dr. Ogilvie validated our approach and helped us reprioritize our stories. Utilizing her feedback, we began work on several “spikes” to help drive out risks and uncertainty, and an MVP began to take shape.
 
 Day Two included more story-writing, backlog grooming, and estimation -- all channeled into a Design Studio, run by our on-staff HCD expert. As expected, the stellar ideas rose to the top, and we were ready to begin work on deployment, wireframes, spiking the API, and continued progress on the MVP.  We chose Chart.js as a powerful open-source tool for conveying graphical adverse drug effect data to the user, and JQuery as a simple input tool.
 
@@ -33,7 +33,7 @@ On Day Four we met with Tyson Kamikawa of Harvard Medical School, who helped fur
 
 ## Second Sprint
 
-We began Day Five with a retrospective for the first sprint to ensure that we were learning and iterating along the way. Planning for the second sprint included story-writing informed by our user interviews, estimating, and prioritizing. We discussed Style Guides and decided to write a small guide for our super-simple application, copying as much from the 18F style guides as possible. , Our DevOps engineer fully vetted our document deployment time, which was measured at seven minutes.
+We began Day Five with a retrospective for the first sprint to ensure that we were learning and iterating along the way. Planning for the second sprint included story-writing informed by our user interviews, estimating, and prioritizing. We discussed Style Guides and decided to write a small guide for our super-simple application, copying as much from the 18F style guides as possible. Our DevOps engineer fully vetted our document deployment time, which was measured at seven minutes.
 
 Seeking offline feedback from our external users, we published the URL to our working MVP and asked the users to return for interviews. This allowed users to review the product before the next interviews, allowing for the most effective feedback. Throughout our process, we used a limited form of the Lean UX methodology, attempting to verify each assertion with our test users.
 
