@@ -7,6 +7,7 @@
 * Ideally want to tie back-end in today.
 * Helptext / disclaimers 
 * Winvale conversation / Attachment E / Compliance matrix
+* Chuck and style guide
 * Obtaining additional user interviews is a high priority for today
 * Melinda and Rob wrote up a summary, could use review by others (but word count is tight at 750).
 * We want to make the application usable to a "cold" user, and to publicize the URL more broadly.
