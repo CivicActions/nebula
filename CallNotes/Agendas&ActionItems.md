@@ -1,4 +1,19 @@
 
+## 6/24 Scrum call Action Items
+* Team to dig into Digital Services checklist, Steve to ping members whose contributions are most needed 
+* Team to meet following scrum to look at enhancement requests, bugs, anything that might be added within budget and timeline to Sprint 2  
+* Ron to lead QA and responsive testing effort. Log bugs as issues in github. 
+* Rob to build checklist for Sprint end (EOD Thursday) and add to github. 
+* Ron and Ethan to coordinate around helptext / disclaimertext to be added to site. Disclaimers urgent. 
+* Steve to coordinate with Winvale around compliance meeting today
+* Steve to handle Attachment E (compliance) 
+* Chuck to work 1/2 day today on style guide. Coordinate with Ethan and Ron re: implementation. 
+* User interview team meeting with Tyson for 2nd interview on Thursday (Steve to schedule). Steve to follow up with Martha regarding additional user feedback and interview. 
+* Main readme has been forwarded to Jeanne at Winvale for comments. Steve and Rob to coordinate around response, edits. 
+* Rob, team to tweet live url (with disclaimer). Get it out into the world. 
+* Rob / Ethan / April to coordinate around ~100 word addition for Pool 2 readme. Rob / Ron / Ethan to coordinate around ~100 word addition for Pool 1 readme. Steve to send both to Melinda in hopes that she can turn out readmes for all three Pools by tomorrow AM. 
+
+
 ## 6/24 Scrum call Agenda Items
 * Digital Services checklist
 * Additions to Sprint 2 backlog; grooming and estimation following Scrum?  
