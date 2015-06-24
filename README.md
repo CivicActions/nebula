@@ -15,7 +15,7 @@ deployment and running the automated unit tests
 
 # Process
 
-CivicActions has developed a functional, responsive, mobile-friendly web app using agile, lean, and human-centered design methodologies. We employed the SCRUM development process, which entailed two sprints lasting four days each.
+CivicActions has developed a functional, responsive, mobile-friendly web app using agile, lean, and human-centered design methodologies. We employed the scrum development process, which entailed two sprints lasting four days each.
 
 ## First Sprint
 
