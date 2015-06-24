@@ -233,8 +233,13 @@
       var randomColorFactor = function(){ return Math.round(Math.random()*255)};
       var tempData = [];
       for (var key in sessionStorage) {
+	
+	
 	var triplets = JSON.parse(sessionStorage.getItem(key));
-	tempData[key] = triplets;
+	console.log(sessionStorage.getItem(key));
+	if(sessionStorage.getItem(key) !== null){
+	  tempData[key] = triplets;
+	}
       }
 
       // Now we need to build a list of symptoms in a fixed order.
