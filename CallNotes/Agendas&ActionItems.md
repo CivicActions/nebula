@@ -1,6 +1,7 @@
 
 ## 6/24 Scrum call Action Items
 * Digital Services checklist
+* Additions to Sprint 2 backlog; grooming and estimation following Scrum?  
 * Need to assign a QA person/team with emphasis on mobile/responsive testing
 * Need to develop checklist for Thursday night, including repo management work.
 * Ideally want to tie back-end in today.
