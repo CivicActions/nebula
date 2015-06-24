@@ -5,13 +5,12 @@ Try our [application](https://nebula.civicactions.com/) and give us feedback by 
 And our [api](https://nebulaapi.civicactions.com/) will someday be useful, but is not 
 ready now.
 
-This is our application to 18F's Agile BPA RFQ.  However, it is all freely sharable, and we aim to make a product 
-truly valuable. Feel free to fork this code.
+This is our application to 18F's Agile BPA RFQ.  However, it is all freely sharable, and we aim to make a truly valuable product. Feel free to fork this code.
 
 ## User Manaul
 
 Please enjoy our [User Manual](USER_MANUAL.md), which explains a possible approach to
-deployment and running the automated unit tests
+deployment and running the automated unit tests.
 
 # Process
 
