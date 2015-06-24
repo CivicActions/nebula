@@ -231,11 +231,10 @@ There must be a single product owner who has the authority and responsibility to
 
 #### Actions
 1. Product owner was identified on June 17 as Rob Read. Documented [here] (https://civicactions.slack.com/archives/agile-gsa/p1434582235000307)
-2. 
-2. 
-3. 
-4. 
-5. 
+2. Stakeholders in this instance are agency management, and authority as outlined was granted to product owner on day 1 of Sprint.  
+3. See Read's [biography] (https://civicactions.com/team/rob-read). 
+4. * * * 
+5. Again, see [biography] (https://civicactions.com/team/rob-read). 
 
 
 
