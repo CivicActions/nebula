@@ -5,7 +5,7 @@
 * Need to assign a QA person/team with emphasis on mobile/responsive testing
 * Need to develop checklist for Thursday night, including repo management work.
 * Ideally want to tie back-end in today.
-* Helptext 
+* Helptext / disclaimers 
 * Winvale conversation / Attachment E / Compliance matrix
 * Obtaining additional user interviews is a high priority for today
 * Melinda and Rob wrote up a summary, could use review by others (but word count is tight at 750).
