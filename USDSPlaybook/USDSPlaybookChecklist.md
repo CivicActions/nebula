@@ -148,7 +148,7 @@ We should use an incremental, fast-paced style of software development to reduce
 6. Features prioritized on our Trello list "Prioritized Stories"; bugs prioritized in our issue queue in github. 
 8. Using Github for this - all project members and user-testers/stakeholders have access and the repository is also public.
 8. Using Trello for this - all project members and user-testers/stakeholders have access. For this project, the board is also public.
-9. 
+9. * * * 
 
 #### key questions
 - How long did it take to ship the MVP? If it hasn't shipped yet, when will it?
@@ -163,15 +163,15 @@ We should use an incremental, fast-paced style of software development to reduce
 
 #### answers to key questions
 
-1. 
-2. 
-3. 
-4. 
-5. 
-6. 
-7. 
-8. 
-9. 
+1. MVP shipped (made public) on day 5 of the Sprint. 
+2. * * * 
+3. Sprints have been 4 days each in this initial Sprint. 
+4. Git
+5. Github issue queue
+6. Trello, prioritized in the Sprint planning meeting. 
+7. Every 2 days. 
+8. User interviews, fed into backlog prioritization. 
+9. Early gap was inaccess to tool (access only through screenshare), later gaps were in poor UX, inaccess to relativized data. 
 
 ## Play 5
 ### Structure budgets and contracts to support delivery
@@ -230,7 +230,7 @@ There must be a single product owner who has the authority and responsibility to
 5. The product owner has a strong relationship with the contracting officer
 
 #### Actions
-1. Product owner was identified on June 17 as Rob Read. Documented here: [link] (https://civicactions.slack.com/archives/agile-gsa/p1434582235000307)
+1. Product owner was identified on June 17 as Rob Read. Documented [here] (https://civicactions.slack.com/archives/agile-gsa/p1434582235000307)
 2. 
 2. 
 3. 
