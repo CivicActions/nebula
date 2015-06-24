@@ -178,7 +178,9 @@
       var symptom = $('#symptom').val();
       var url;
 
-      $.each($('.added-drug'), function(term) {
+      $.each($('.added-drug'), function(domobj) {
+	      term = this.value;
+	 
 
 	// We only want to pull in terms that correspond to a checked box.
 	if($(this).is(":checked")) {
@@ -232,11 +234,17 @@
       var allData = [];
       var randomColorFactor = function(){ return Math.round(Math.random()*255)};
       var tempData = [];
-      for (var key in sessionStorage) {
+      /*      for (var key in sessionStorage) {
 	var triplets = JSON.parse(sessionStorage.getItem(key));
 	tempData[key] = triplets;
       }
-
+      */
+      // This was necessary to work with FireFox, the code above worked in other browsers
+      for (var i = 0; i < sessionStorage.length; i++) {
+	  var key = sessionStorage.key(i);
+	  var triplets = JSON.parse(sessionStorage.getItem(key));
+	tempData[key] = triplets;
+      }
       // Now we need to build a list of symptoms in a fixed order.
       var allSymptoms = [];
       for (var k in tempData) {
