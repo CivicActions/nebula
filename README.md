@@ -1,4 +1,6 @@
 # Nebula
+# DO NOT EDIT IN THIS DOC
+Edit in google docs instead: https://docs.google.com/a/civicactions.net/document/d/1E7op-Ik6YBFm-HWJlee6MDgrCNPN1bz9J8bh3oUWplo/edit?usp=sharing
 
 Try our [application](https://nebula.civicactions.com/) and give us feedback by opening an issue!
 
