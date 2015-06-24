@@ -1,5 +1,5 @@
 
-## 6/24 Scrum call Action Items
+## 6/24 Scrum call Agenda Items
 * Digital Services checklist
 * Additions to Sprint 2 backlog; grooming and estimation following Scrum?  
 * Need to assign a QA person/team with emphasis on mobile/responsive testing
