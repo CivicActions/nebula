@@ -10,17 +10,14 @@
   // Callback that creates and populates a data table,
   // instantiates the bar chart, passes in the data and
   // draws it.
-  function drawChart(colors, data) {
-    console.log(window.innerHeight);
-    console.log($('text').length);
-    
+  function drawChart(colors, data) {    
     // Create the data table.
     var data = google.visualization.arrayToDataTable(data);
     // Set chart options
     var options = {
       height: window.innerWidth / 2,
       legend: {position: 'none'},
-      bar: { groupWidth: '85%' },
+      bar: {groupWidth: '75%'},
       colors: colors,
       isStacked: true
     };
@@ -113,15 +110,15 @@
     $(document).change(function(){
       $('.added-drug').each(function(){
 	$(this).click(function(){
-	  addItems();
-	  
+	  addItems();	  
 	});   
       });  
     });
     
     function appendItems() {
-      // Build our checkbox toggles.
 
+      
+      // Build our checkbox toggles.
       if ($('.added-drug').length != -1) {
 	var checks = $('.added-drug').length;	
       }
@@ -136,9 +133,6 @@
 	var savedItemsArr = savedItems.split(' ');
 	
 	for(i = 0; i < savedItemsArr.length; i++) {
-	  console.log(i);
-	  console.log(savedItemsArr);
-	  console.log(savedItemsArr[i]);
 	  $('#text').append('<div class="checkholder"><input type="checkbox" checked="checked" value="'
 			    + savedItemsArr[i]
 			    + '" class="added-drug '
@@ -147,6 +141,8 @@
 			    + '<div class="check-color" style="background: ' + bgColor[i]  + '"></div></div>');
 	  
 	}
+	count++;
+	
       }
       // Build from input.
       else {
@@ -159,7 +155,22 @@
 			  + '<div class="check-color" style="background: ' + bgColor[checks]  + '"></div></div>');
 
       }
-
+  
+      var urlBase = window.location.origin + '?saved=';
+      var queryItems = [];
+      $('.added-drug').each(function(){
+	queryItems.push($(this).val());
+	
+      });
+      
+      varlinkUrl = urlBase + queryItems.join('+');	
+      sessionStorage.setItem('link', JSON.stringify(varlinkUrl));
+      if(sessionStorage.getItem('link')){
+	link = sessionStorage.getItem('link');
+	sanitizedLink = link.replace(/"/g, '')
+	$('#link-save').html('Link to this search: ' + '<a href="' + sanitizedLink + '">' + sanitizedLink + '</a>');
+	
+      }
     }
     
     function addItems() {	
@@ -209,16 +220,6 @@
     function loadSaved() {
       // Load our saved query string
       if(sessionStorage.getItem('loadeddata') !== "yes" && getParameterByName('saved')) {
-	
-	var urlBase = window.location.origin + '?saved=';
-	var queryItems = [];
-	$('.added-drug').each(function(){
-	  queryItems.push($(this).val());
-	  
-	});
-	
-	varlinkUrl = urlBase + queryItems.join('+');	
-	sessionStorage.setItem('link', JSON.stringify(varlinkUrl));
 	appendItems();
 	addItems();
 	sessionStorage.setItem('loadeddata', JSON.stringify('yes'));
@@ -322,7 +323,6 @@
       drugs.unshift('Drug');
       datax.unshift(drugs);
       drawChart(bgColorCodes, datax);
-
     }
    
   })
