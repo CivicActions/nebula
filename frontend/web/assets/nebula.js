@@ -1,16 +1,14 @@
 
-// Sorts (descending), an object that has numeric keys
-function sortObjectByValue(obj) {
-	var sortable = [];
-	for (var k in obj) {
-	    sortable.push([k, obj[k]]);
-         }
-	sortable.sort(function(a, b) {return b[1] - a[1]});
-	return sortable;
-}
-
-
 (function($){
+  // Sorts (descending), an object that has numeric keys
+  function sortObjectByValue(obj) {
+    var sortable = [];
+    for (var k in obj) {
+      sortable.push([k, obj[k]]);
+    }
+    sortable.sort(function(a, b) {return b[1] - a[1]});
+    return sortable;
+  }
 
   $(document).ready(function(){
     
@@ -55,7 +53,10 @@ function sortObjectByValue(obj) {
 	appendItems();
 	addItems();
       }
-      
+      else{
+	
+	loadSaved();
+      }
     });
 
     // Used for grabbing url query.
@@ -85,14 +86,16 @@ function sortObjectByValue(obj) {
 	var checks = 0;	
       }
 
-      // If no query, build from input.
-      if (sessionStorage.getItem('loadeddata') == null) {
+      // Build fron query if it exists.
+      if (getParameterByName('saved') && count == 0) {
 	
 	var savedItems = getParameterByName('saved');
 	var savedItemsArr = savedItems.split(' ');
 	
 	for(i = 0; i < savedItemsArr.length; i++) {
-	  
+	  console.log(i);
+	  console.log(savedItemsArr);
+	  console.log(savedItemsArr[i]);
 	  $('#text').append('<div class="checkholder"><input type="checkbox" checked="checked" value="'
 			    + savedItemsArr[i]
 			    + '" class="added-drug '
@@ -102,8 +105,10 @@ function sortObjectByValue(obj) {
 	  
 	}
       }
-      // Build from query.
+      // Build from input.
       else {
+	console.log($('#drug').val());
+	
 	$('#text').append('<div class="checkholder"><input type="checkbox" checked="checked" value="'
 			  + $('#drug').val()
 			  + '" class="added-drug '
