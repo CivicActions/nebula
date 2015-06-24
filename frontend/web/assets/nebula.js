@@ -13,10 +13,12 @@ function sortObjectByValue(obj) {
 (function($){
 
   $(document).ready(function(){
+    
     sessionStorage.clear();
+
     var drugChart;
     var count = 0;
-    
+
     // Add predicatable color patterns for bars.
     var red = 'rgba(255,0,0,0.7)';
     var green = 'rgba(0,255,0,0.7)';
@@ -37,7 +39,7 @@ function sortObjectByValue(obj) {
     var bgColor = ['red', 'green', 'blue', 'grey', 'yellow', 'cerise',
 		   'ran1', 'ran2', 'ran3', 'ran4','ran5', 'ran6', 'ran7',
 		   'ran8', 'ran9','red', 'green', 'blue', 'grey', 'yellow',
-		   'cerise', 'ran1', 'ran2', 'ran3','ran4', 'ran5',
+		   'cerise', 'ran1', 'ran2', 'ran3', 'ran4', 'ran5',
 		   'ran6', 'ran7', 'ran8', 'ran9',
 		   'red', 'green', 'blue', 'grey', 'yellow', 'cerise',
 		   'ran1', 'ran2', 'ran3', 'ran4', 'ran5', 'ran6', 'ran7',
@@ -45,6 +47,8 @@ function sortObjectByValue(obj) {
 		   'cerise', 'ran1', 'ran2', 'ran3', 'ran4', 'ran5',
 		   'ran6', 'ran7', 'ran8', 'ran9'];
 
+    // Load our saved searches.
+    loadSaved();
     
     $('#add-to-list').click(function(){
       if($('#drug').val().length){
@@ -53,6 +57,14 @@ function sortObjectByValue(obj) {
       }
       
     });
+
+    // Used for grabbing url query.
+    function getParameterByName(name) {
+      name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+      var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+          results = regex.exec(location.search);
+      return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+    } 
     
     $(document).change(function(){
       $('.added-drug').each(function(){
@@ -72,14 +84,37 @@ function sortObjectByValue(obj) {
       else {
 	var checks = 0;	
       }
-      $('#text').append('<div class="checkholder"><input type="checkbox" checked="checked" value="'
-			+ $('#drug').val()
-			+ '" class="added-drug '
-			+ $('#drug').val() + '">'
-			+ $('#drug').val()
-			+ '<div class="check-color" style="background: ' + bgColor[checks]  + '"></div></div>');
+
+      // If no query, build from input.
+      if (sessionStorage.getItem('loadeddata') == null) {
+	
+	var savedItems = getParameterByName('saved');
+	var savedItemsArr = savedItems.split(' ');
+	
+	for(i = 0; i < savedItemsArr.length; i++) {
+	  
+	  $('#text').append('<div class="checkholder"><input type="checkbox" checked="checked" value="'
+			    + savedItemsArr[i]
+			    + '" class="added-drug '
+			    + savedItemsArr[i] + '">'
+			    + savedItemsArr[i]
+			    + '<div class="check-color" style="background: ' + bgColor[i]  + '"></div></div>');
+	  
+	}
+      }
+      // Build from query.
+      else {
+	$('#text').append('<div class="checkholder"><input type="checkbox" checked="checked" value="'
+			  + $('#drug').val()
+			  + '" class="added-drug '
+			  + $('#drug').val() + '">'
+			  + $('#drug').val()
+			  + '<div class="check-color" style="background: ' + bgColor[checks]  + '"></div></div>');
+
+      }
 
     }
+    
     function addItems() {	
       
       $('#error').empty();
@@ -87,7 +122,7 @@ function sortObjectByValue(obj) {
       var url;
 
       $.each($('.added-drug'), function(term) {
-	term = $(this).val();
+
 	// We only want to pull in terms that correspond to a checked box.
 	if($(this).is(":checked")) {
 	  
@@ -120,9 +155,29 @@ function sortObjectByValue(obj) {
 	  sessionStorage.removeItem(term);	  
 	}
       });
+      
       $('#drug').val('');
       
     };
+
+    function loadSaved() {
+      // Load our saved query string
+      if(sessionStorage.getItem('loadeddata') !== "yes" && getParameterByName('saved')) {
+	
+	var urlBase = window.location.origin + '?saved=';
+	var queryItems = [];
+	$('.added-drug').each(function(){
+	  queryItems.push($(this).val());
+	  
+	});
+	
+	varlinkUrl = urlBase + queryItems.join('+');	
+	sessionStorage.setItem('link', JSON.stringify(varlinkUrl));
+	appendItems();
+	addItems();
+	sessionStorage.setItem('loadeddata', JSON.stringify('yes'));
+      }      
+    }
     
     function barGraph() {
       // We can't use just flat arrays here.  Each drugName must contain an array as it's entry, which is the 
@@ -203,7 +258,8 @@ function sortObjectByValue(obj) {
       count += 1;
       drugChart = new Chart(ctx).StackedBar(datamap, {
 	responsive : true
-      });     
+      });
+
     }
     
   })
