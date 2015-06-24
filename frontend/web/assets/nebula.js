@@ -1,4 +1,30 @@
 
+// Load the Visualization API and the piechart package.
+google.load('visualization', '1.0', {'packages':['corechart']});
+
+// Set a callback to run when the Google Visualization API is loaded.
+// 
+
+// Callback that creates and populates a data table,
+// instantiates the pie chart, passes in the data and
+// draws it.
+function drawChart(colors,data) {
+
+    // Create the data table.
+    var data = google.visualization.arrayToDataTable(data );
+    // Set chart options
+    var options = {
+        width: 800,
+        legend: { position: 'top', maxLines: 3 },
+        bar: { groupWidth: '75%' },
+	colors: colors,
+        isStacked: true
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.BarChart(document.getElementById('drug-chart'));
+    chart.draw(data, options);
+}
 // Sorts (descending), an object that has numeric keys
 function sortObjectByValue(obj) {
 	var sortable = [];
@@ -11,6 +37,9 @@ function sortObjectByValue(obj) {
 
 
 (function($){
+    $(window).resize(function(){
+	    barGraph();
+	});
 
   $(document).ready(function(){
     sessionStorage.clear();
@@ -33,7 +62,8 @@ function sortObjectByValue(obj) {
     var ran7 = 'rgba(150,20,155,0.7)';
     var ran8 = 'rgba(60,150,55,0.7)';
     var ran9 = 'rgba(200,220,55,0.7)';
-    
+
+ 
     var bgColor = ['red', 'green', 'blue', 'grey', 'yellow', 'cerise',
 		   'ran1', 'ran2', 'ran3', 'ran4','ran5', 'ran6', 'ran7',
 		   'ran8', 'ran9','red', 'green', 'blue', 'grey', 'yellow',
@@ -44,6 +74,8 @@ function sortObjectByValue(obj) {
 		   'ran8', 'ran9', 'red', 'green', 'blue', 'grey', 'yellow',
 		   'cerise', 'ran1', 'ran2', 'ran3', 'ran4', 'ran5',
 		   'ran6', 'ran7', 'ran8', 'ran9'];
+ 
+    var bgColorCodes = ['red', 'green', 'blue', 'grey', 'yellow'];
 
     
     $('#add-to-list').click(function(){
@@ -125,6 +157,7 @@ function sortObjectByValue(obj) {
     };
     
     function barGraph() {
+
       // We can't use just flat arrays here.  Each drugName must contain an array as it's entry, which is the 
       // mapping from Symptom to count that we need.
       var allData = [];
@@ -191,10 +224,39 @@ function sortObjectByValue(obj) {
       }
 
       var datamap = {
-	labels: Object.keys(allSymptoms),
+	  labels: symptomKeys,
 	datasets: allData,
       };
+
+    var datax = [];
+      var drugs = Object.keys(tempData);
+      for (var n = 0; n < symptomKeys.length; n++) {
+	  var timeSeries = [];
+	  timeSeries.push(symptomKeys[n]);
+	  for (var k in tempData) {
+	      var i = 0;
+	      var triplets = tempData[k];
+	      var mycount = undefined;
+	      for (i = 0; i < triplets.length; i++) {
+		  var triplet = triplets[i];
+		  if ((triplet.drug == k) && (triplet.symptom == symptomKeys[n])) {
+		      mycount = triplet.count;
+		  }
+	      }
+	      if (mycount) {
+		  timeSeries.push(mycount);
+	      } else {
+		  timeSeries.push(0);
+	      }
+	  }
+	datax.push(timeSeries);
+      }
+
+    drugs.unshift('Drug');
+    datax.unshift(drugs);
+    drawChart(bgColorCodes,datax);
       
+    /*
       var ctx = document.getElementById("drug-chart").getContext("2d");
       if (count > 0) {
 	// Force chart rebuild whdn items are added.
@@ -204,6 +266,7 @@ function sortObjectByValue(obj) {
       drugChart = new Chart(ctx).StackedBar(datamap, {
 	responsive : true
       });     
+    */
     }
     
   })
