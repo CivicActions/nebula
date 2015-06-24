@@ -19,9 +19,9 @@ We must begin digital projects by exploring and pinpointing the needs of the peo
 2. We used interviews 
 3. We consistently groomed the user stories in order to keep MVP priorities in mind. 
 4. Trello cards [here] (https://trello.com/b/IlUoml5c/nebula)
-5. 
+5. Results of our discussions wiht users, and determinations based on these discussions, are consistently shared with the team and agency leadership in [this folder] (https://github.com/CivicActions/nebula/tree/master/user-interviews) in our repo, and in our Slack channel. 
 6. Our user stories can be found on Trello [here] (https://trello.com/b/IlUoml5c/nebula)
-7. 
+7. We scheduled a total of [five user interviews] (https://github.com/CivicActions/nebula/tree/master/user-interviews) throughout the 7 day Sprint, from day 1 to day 7. 
 
 
 
@@ -40,7 +40,7 @@ We must begin digital projects by exploring and pinpointing the needs of the peo
 1. Health care professionals.
 2. The need to compare the adverse effects of multiple drugs. 
 3. To help patients reduce side effects associated with their drug regimes. 
-4. 
+4. Those not facile with online tools. Those who are looking for information on non-prescription drugs (as the MVP will be targeted to prescription drugs in the AHRQ database). 
 5. User interviews
 6. That healthcare professionals would benefit from being able to visually compare adverse effects across drugs. 
 7. Interviews and notes are posted [here]  (https://www.youtube.com/user/civicactions) and [here] (https://github.com/CivicActions/nebula/tree/master/user-interviews), respectively.
@@ -63,7 +63,7 @@ We need to understand the different ways people will interact with our services,
 #### Actions
 1. On a mobile device (phone or tablet) in a doctor's office, hospital, pharmacy, medical/nursing school, nursing home. Generally used when a patient is adding or altering the medications in his or her regime. 
 2. Different drugs cause different adverse effects and there is not easy to compare the effects of multiple drugs. 
-3. 
+3. Our intent is that information linking and promoting this tool could be posted in Dr's offices and medical facilities, in order grow public and professional awareness of the tool. 
 4. Metrics could include lower incidence of adverse effects due to less mixing of different drugs; how often healthcare professionals access the site; how many different drug combinations are compared on the site; 
 
 
@@ -140,12 +140,12 @@ We should use an incremental, fast-paced style of software development to reduce
 9. Use code reviews to ensure quality
 
 #### Actions
-1. 
-2. 
-3. 
-4. 
-5. 
-6. 
+1. See url https://nebula.civicactions.com/, rendered public on day 5 of our Sprint. 
+2. User interviews run via screenshare on days 1, 3, 4 of the Sprint, and live interaction with the url solicited on day 5, with feedback immediately collected from affiliate Tomorrow Partners and from members of the CivicActions team beyond the project team. See [process journal] (https://github.com/CivicActions/nebula/edit/master/ProcessJournal.md).
+3. Daily scrums, targeted sub-group meetings, chat (Slack), and Sprint rituals (retrospectives, Sprint planning meetings, backlog grooming meetings) have all constituted the central pillars of our team communication. 
+4. Our project team is exactly the size required by the roles specified in the RFQ in order to qualify for Pools 1, 2, 3, and has been entirely non-hierarchical, with directives derived in consultation with all concerned members of the project team. 
+5. Features are pushed to the live site multiple times each day, as evidenced by the log in github and Slack. 
+6. Features prioritized on our Trello list "Prioritized Stories"; bugs prioritized in our issue queue in github. 
 8. Using Github for this - all project members and user-testers/stakeholders have access and the repository is also public.
 8. Using Trello for this - all project members and user-testers/stakeholders have access. For this project, the board is also public.
 9. 
