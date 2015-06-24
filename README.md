@@ -10,7 +10,7 @@ truly valuable. Feel free to fork this code.
 
 ## User Manaul
 
-Please enjoy our [User Manaul](USER_MANUAL.md), which explains a possible approach to
+Please enjoy our [User Manual](USER_MANUAL.md), which explains a possible approach to
 deployment and running the automated unit tests
 
 # Process
