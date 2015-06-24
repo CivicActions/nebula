@@ -236,7 +236,7 @@
 	
 	
 	var triplets = JSON.parse(sessionStorage.getItem(key));
-	console.log(sessionStorage.getItem(key));
+	
 	if(sessionStorage.getItem(key) !== null){
 	  tempData[key] = triplets;
 	}
@@ -251,19 +251,23 @@
 	  var obj = triplets[okey];
 	  
 	  if (obj.symptom in allSymptoms) {
-	    allSymptoms[obj.symptom] += obj.count;
+	      allSymptoms[obj.symptom] += obj.count;
 	  }
 	  else {
-	    allSymptoms[obj.symptom] = obj.count;
+	      allSymptoms[obj.symptom] = obj.count;
 	  }
+	  
 	}
       }
-
+      
+      delete allSymptoms['undefined'];    
       allSymptomsAsArray = sortObjectByValue(allSymptoms);
+      
       // Now that we need to build a time series for each symptom in the proper order
       var symptomKeys = [];
       for (var k in allSymptomsAsArray) {
-	symptomKeys.push(allSymptomsAsArray[k][0]);
+	  symptomKeys.push(allSymptomsAsArray[k][0]);
+	
       }
       
       var colorCount = 0;
