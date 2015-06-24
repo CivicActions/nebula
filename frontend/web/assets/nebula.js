@@ -8,22 +8,37 @@ google.load('visualization', '1.0', {'packages':['corechart']});
 // Callback that creates and populates a data table,
 // instantiates the pie chart, passes in the data and
 // draws it.
-function drawChart(colors,data) {
-
-    // Create the data table.
-    var data = google.visualization.arrayToDataTable(data );
-    // Set chart options
-    var options = {
-        width: 800,
-        legend: { position: 'top', maxLines: 3 },
-        bar: { groupWidth: '75%' },
-	colors: colors,
-        isStacked: true
-    };
+function drawChart(colors, data) {
+  console.log(window.innerHeight);
+  console.log($('text').length);
+  
+  // Create the data table.
+  var data = google.visualization.arrayToDataTable(data);
+  // Set chart options
+  var options = {
+    height: window.innerWidth / 2,
+   legend: { position: 'top', maxLines: 3 },
+    bar: { groupWidth: '85%' },
+    colors: colors,
+    isStacked: true
+  };
 
     // Instantiate and draw our chart, passing in some options.
-    var chart = new google.visualization.BarChart(document.getElementById('drug-chart'));
+  var chart = new google.visualization.BarChart(document.getElementById('drug-chart'));
+  chart.draw(data, options);
+  $(window).resize(function() {
+    options.height = window.innerWidth / 1.2;
     chart.draw(data, options);
+  });
+
+  $('#drug-chart').click(function() {
+    console.log('in function');
+    
+    options.height = $('text').length * 40;
+    chart.draw(data, options);
+  })
+
+  
 }
 // Sorts (descending), an object that has numeric keys
 function sortObjectByValue(obj) {
@@ -38,7 +53,7 @@ function sortObjectByValue(obj) {
 
 (function($){
     $(window).resize(function(){
-	    barGraph();
+	    //barGraph();
 	});
 
   $(document).ready(function(){
@@ -81,7 +96,7 @@ function sortObjectByValue(obj) {
     $('#add-to-list').click(function(){
       if($('#drug').val().length){
 	appendItems();
-	addItems();
+	addItems();	
       }
       
     });
