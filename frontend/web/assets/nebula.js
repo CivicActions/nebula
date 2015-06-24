@@ -1,4 +1,56 @@
 
+// Load the Visualization API and the piechart package.
+google.load('visualization', '1.0', {'packages':['corechart']});
+
+// Set a callback to run when the Google Visualization API is loaded.
+// 
+
+// Callback that creates and populates a data table,
+// instantiates the pie chart, passes in the data and
+// draws it.
+function drawChart(colors, data) {
+  console.log(window.innerHeight);
+  console.log($('text').length);
+  
+  // Create the data table.
+  var data = google.visualization.arrayToDataTable(data);
+  // Set chart options
+  var options = {
+    height: window.innerWidth / 2,
+   legend: { position: 'top', maxLines: 3 },
+    bar: { groupWidth: '85%' },
+    colors: colors,
+    isStacked: true
+  };
+
+    // Instantiate and draw our chart, passing in some options.
+  var chart = new google.visualization.BarChart(document.getElementById('drug-chart'));
+  chart.draw(data, options);
+  $(window).resize(function() {
+    options.height = window.innerWidth / 1.2;
+    chart.draw(data, options);
+  });
+
+  $('#drug-chart').click(function() {
+    console.log('in function');
+    
+    options.height = $('text').length * 40;
+    chart.draw(data, options);
+  })
+
+  
+}
+// Sorts (descending), an object that has numeric keys
+function sortObjectByValue(obj) {
+	var sortable = [];
+	for (var k in obj) {
+	    sortable.push([k, obj[k]]);
+         }
+	sortable.sort(function(a, b) {return b[1] - a[1]});
+	return sortable;
+}
+
+
 (function($){
   // Sorts (descending), an object that has numeric keys
   function sortObjectByValue(obj) {
@@ -33,7 +85,8 @@
     var ran7 = 'rgba(150,20,155,0.7)';
     var ran8 = 'rgba(60,150,55,0.7)';
     var ran9 = 'rgba(200,220,55,0.7)';
-    
+
+ 
     var bgColor = ['red', 'green', 'blue', 'grey', 'yellow', 'cerise',
 		   'ran1', 'ran2', 'ran3', 'ran4','ran5', 'ran6', 'ran7',
 		   'ran8', 'ran9','red', 'green', 'blue', 'grey', 'yellow',
@@ -44,6 +97,8 @@
 		   'ran8', 'ran9', 'red', 'green', 'blue', 'grey', 'yellow',
 		   'cerise', 'ran1', 'ran2', 'ran3', 'ran4', 'ran5',
 		   'ran6', 'ran7', 'ran8', 'ran9'];
+ 
+    var bgColorCodes = ['red', 'green', 'blue', 'grey', 'yellow'];
 
     // Load our saved searches.
     loadSaved();
@@ -51,10 +106,9 @@
     $('#add-to-list').click(function(){
       if($('#drug').val().length){
 	appendItems();
-	addItems();
+	addItems();	
       }
-      else{
-	
+      else{	
 	loadSaved();
       }
     });
@@ -107,7 +161,6 @@
       }
       // Build from input.
       else {
-	console.log($('#drug').val());
 	
 	$('#text').append('<div class="checkholder"><input type="checkbox" checked="checked" value="'
 			  + $('#drug').val()
@@ -148,7 +201,7 @@
 				 symptom: reactions[i]['term'],
 				 count: reactions[i]['count']});
 	      }
-	      sessionStorage.setItem(term,JSON.stringify(triplets));
+	      sessionStorage.setItem(term, JSON.stringify(triplets));
 	      setTimeout(barGraph(), 200);
 	    },
 	    error: function(data) {
@@ -185,6 +238,7 @@
     }
     
     function barGraph() {
+
       // We can't use just flat arrays here.  Each drugName must contain an array as it's entry, which is the 
       // mapping from Symptom to count that we need.
       var allData = [];
@@ -251,19 +305,39 @@
       }
 
       var datamap = {
-	labels: Object.keys(allSymptoms),
+	  labels: symptomKeys,
 	datasets: allData,
       };
-      
-      var ctx = document.getElementById("drug-chart").getContext("2d");
-      if (count > 0) {
-	// Force chart rebuild whdn items are added.
-	drugChart.destroy();
+
+    var datax = [];
+      var drugs = Object.keys(tempData);
+      for (var n = 0; n < symptomKeys.length; n++) {
+	  var timeSeries = [];
+	  timeSeries.push(symptomKeys[n]);
+	  for (var k in tempData) {
+	      var i = 0;
+	      var triplets = tempData[k];
+	      var mycount = undefined;
+	      for (i = 0; i < triplets.length; i++) {
+		  var triplet = triplets[i];
+		  if ((triplet.drug == k) && (triplet.symptom == symptomKeys[n])) {
+		      mycount = triplet.count;
+		  }
+	      }
+	      if (mycount) {
+		  timeSeries.push(mycount);
+	      } else {
+		  timeSeries.push(0);
+	      }
+	  }
+	datax.push(timeSeries);
       }
-      count += 1;
-      drugChart = new Chart(ctx).StackedBar(datamap, {
-	responsive : true
-      });
+
+    drugs.unshift('Drug');
+    datax.unshift(drugs);
+    drawChart(bgColorCodes, datax);
+      
+      
 
     }
     

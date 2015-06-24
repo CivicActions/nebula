@@ -3,12 +3,14 @@
   <head>
     <meta charset="UTF-8">
     <script src="jquery/jquery-1.11.3.min.js"></script>
+   <!--Load the AJAX API-->
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script src="assets/nebula.js"></script>
     <script src="chart/Chart.js"></script>
     <script src="chart/Chart.StackedBar.js"></script>
     <link rel="stylesheet" type="text/css" href="assets/style.css">
     <title>Nebula</title>
-  </head>
+   </head>
   <body>
 	  <h1>CivicActions: Project Nebula</h1>
     <div id="info">
@@ -26,8 +28,8 @@
     <div id="inner">
       <div id="text">
       </div>
-      <canvas id="drug-chart"></canvas>
-
+    <div id="drug-chart">		  
+    </div>
     </div>
     <footer>
 	    <p>Our website contains general information about the adverse effects reported for certain drugs.</p>
