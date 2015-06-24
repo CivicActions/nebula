@@ -13,6 +13,13 @@
 * Rob, team to tweet live url (with disclaimer). Get it out into the world. 
 * Rob / Ethan / April to coordinate around ~100 word addition for Pool 2 readme. Rob / Ron / Ethan to coordinate around ~100 word addition for Pool 1 readme. Steve to send both to Melinda in hopes that she can turn out readmes for all three Pools by tomorrow AM. 
 
+### Resolutions from this meeting:
+* Ron agreed to do QA, particularly around Mobile devices.
+* Rob to start Checklist for Thursday night
+* We generally agreed to treat announcement that GSA had extended the deadline as a non-event and just complete all of our work by Thursday night as originally planned.
+* We agreed to an approach about accessibility, based on text and visual impairment (a light investment, given our time.)
+
+
 
 ## 6/24 Scrum call Agenda Items
 * Digital Services checklist
