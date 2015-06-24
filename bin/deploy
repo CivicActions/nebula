@@ -8,13 +8,29 @@ DEPLOY="$1"
 SUBDOMAIN="$2"
 DOMAIN="$3"
 NAME="$(git rev-parse --short HEAD)-$SUBDOMAIN.$DOMAIN"
+AWS='docker run --rm -e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY -e AWS_VPC_ID -e AWS_DEFAULT_REGION anigeo/awscli'
+
+# Remove instances tagged as old
+OLD=$($AWS ec2 describe-instances --output text --filters "Name=tag:Status,Values=${DEPLOY}-old"|grep INSTANCES|awk '{print $7}')
+if [ ! -z $OLD ]; then
+  echo "Terminating instance(s) $OLD"
+  $AWS ec2 terminate-instances --instance-ids $OLD
+fi
+
+# Tag remaining instances as old before creating new
+REMAINING=$($AWS ec2 describe-instances --output text --filters "Name=tag:Status,Values=${DEPLOY}"|grep INSTANCES|awk '{print $7}')
+if [ ! -z $REMAINING ]; then
+  echo "Setting tag to ${DEPLOY}-old for $REMAINING"
+  $AWS ec2 create-tags --resources $REMAINING --tags Key=Status,Value=${DEPLOY}-old
+fi
 
 # Provision a AWS Docker host.
 docker-machine create "$NAME" --driver amazonec2
 IP=$(docker-machine ip "$NAME" 2>&1)
 PRIVATE_IP=$(docker-machine inspect --format='{{.Driver.PrivateIPAddress}}' "$NAME" 2>&1)
+INSTANCE_ID=$(docker-machine inspect --format='{{.Driver.InstanceId}}' "$NAME" 2>&1)
+$AWS ec2 create-tags --resources $INSTANCE_ID --tags Key=Status,Value=${DEPLOY}
 # Open port 80.
-AWS='docker run --rm -e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY -e AWS_VPC_ID -e AWS_DEFAULT_REGION anigeo/awscli'
 $AWS ec2 revoke-security-group-ingress --group-name docker-machine --protocol tcp --port 80 --cidr 0.0.0.0/0
 $AWS ec2 authorize-security-group-ingress --group-name docker-machine --protocol tcp --port 80 --cidr 0.0.0.0/0
 
