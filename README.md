@@ -7,7 +7,7 @@ ready now.
 
 This is our application to 18F's Agile BPA RFQ.  However, it is all freely sharable, and we aim to make a truly valuable product. Feel free to fork this code.
 
-## User Manaul
+## User Manual
 
 Please enjoy our [User Manual](USER_MANUAL.md), which explains a possible approach to
 deployment and running the automated unit tests.
