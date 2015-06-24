@@ -19,7 +19,7 @@
     // Set chart options
     var options = {
       height: window.innerWidth / 2,
-      legend: { position: 'top', maxLines: 3 },
+      legend: {position: 'none'},
       bar: { groupWidth: '85%' },
       colors: colors,
       isStacked: true
