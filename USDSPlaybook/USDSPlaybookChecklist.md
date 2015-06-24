@@ -100,9 +100,9 @@ Using a government service shouldnâ€™t be stressful, confusing, or daunting. Itâ
 1. CHUCK
 2. CHUCK
 3. This simple, one page application takes a list of drugs and displays the adverse effects associated with each one. When a user adds a drug to the list the drug is displayed in the legend and its data appears in the graph, giving immediate visual feedback. 
-4. We will prioritize accessibility stories, which may influence chart colors, tabular data, and a descriptive copy. For [reference] (http://accessibility.psu.edu/images/charts/#charttext) 
+4. We will prioritize accessibility stories, which may influence chart colors, tabular data, and a descriptive copy. For [reference] (http://accessibility.psu.edu/images/charts/#charttext) and [here] (http://guides.library.duke.edu/topten)
 5. We are offering a "save url" option. It will save the list but no personal information. 
-6. The language 
+6. The language will be kept to a minimum so the focus can remain on the charts. This app is geared towards health care professionals and we will ensure the copy makes sense to them. 
 7. 
 
 #### key questions
