@@ -40,6 +40,18 @@ body {
   padding:10px;
   max-width:960px;
 }
-@media (max-width: 749px) {
-
+#link-save {
+  clear:both;
+  padding-bottom:15px;
+}
+#link-save h3 {
+  float:left;
+  margin: 0 25px 0 0;
+}
+#link-save a {
+  float:left;
+  margin-top:1px;
+}
+footer {
+  clear:both;
 }

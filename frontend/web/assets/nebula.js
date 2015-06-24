@@ -168,7 +168,7 @@
       if(sessionStorage.getItem('link')){
 	link = sessionStorage.getItem('link');
 	sanitizedLink = link.replace(/"/g, '')
-	$('#link-save').html('Link to this search: ' + '<a href="' + sanitizedLink + '">' + sanitizedLink + '</a>');
+	$('#link-save').html('<h3>Link to this search:</h3> ' + '<a href="' + sanitizedLink + '">' + sanitizedLink + '</a>');
 	
       }
     }

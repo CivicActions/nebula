@@ -1,61 +1,65 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <script src="jquery/jquery-1.11.3.min.js"></script>
-    <!--Load the AJAX API-->
-    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-    <script src="assets/nebula.js"></script>
-    <script src="chart/Chart.js"></script>
-    <script src="chart/Chart.StackedBar.js"></script>
-    <link rel="stylesheet" type="text/css" href="assets/style.css">
-    <title>Nebula</title>
-  </head>
-  <body>
-    <div id="inner">
-    <h1>CivicActions: Project Nebula</h1>
-    <div id="info">
-      <div id="label"><h2>Find Drug</h2><span>Enter the name of the drug.</span></div>
-      <input type="text" name="drug" id="drug" placeholder="Enter drug name"> <button id="add-to-list">Add to list</button>
-      <br />
-      <div id="description">		  
-      </div>
-    </div>
-    <div id="error">		  
-    </div>
-    <div id="added-meds">		  
-    </div>
-    <div id="side-effects">Side Effects<hr /></div>
-    
-      <div id="text">
-      </div>
-      <div id="drug-chart">		  
-      </div>
-      <div id="link-save">
+	<head>
+		<meta charset="UTF-8">
+		<script src="jquery/jquery-1.11.3.min.js"></script>
+		<!--Load the AJAX API-->
+		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+		<script src="assets/nebula.js"></script>
+		<script src="chart/Chart.js"></script>
+		<script src="chart/Chart.StackedBar.js"></script>
+		<link rel="stylesheet" type="text/css" href="assets/style.css">
+		<title>Nebula</title>
+	</head>
+	<body>
+		<header>
+		<h1>CivicActions: Project Nebula</h1>	
+		</header>
+		<div id="inner">
+			<h2>Adverse Effects Comparison Tool</h2>
+			Compare the number of reported adverse effects for a list of drugs you create.
+			<div id="info">
+				<div id="label"><h2>Find Drug</h2><span>Enter the name of the drug.</span></div>
+				<input type="text" name="drug" id="drug" placeholder="Enter drug name"> <button id="add-to-list">Add to list</button>
+				<br />
+				<div id="description">		  
+				</div>
+			</div>
+			<div id="error">		  
+			</div>
+			<div id="added-meds">		  
+			</div>
+			<div id="side-effects">Side Effects<hr /></div>
+			
+			<div id="text">
+			</div>
+			<div id="drug-chart">		  
+			</div>
+			<div id="link-save">
 
-     
-    </div>
-    <footer>
-      <p>Our website contains general information about the adverse effects reported for certain drugs.</p>
-      <p>The medical information is not advice and should not be treated as such.</p>
-      <p><h3>No warranties</h3>
-	The medical information on our website is provided without any representations or warranties, express or implied.</p>
-      <p>We do not warrant or represent that the medical information on this website:<br />
-	(a)  will be constantly available, or available at all, or<br />
-	(b)  is true, accurate, complete, current or non-misleading.
-      </p>
-      <p><h3>Medical assistance</h3>
-	<ul>
-	  <li>You must not rely on the information on our website as an alternative to medical advice from your doctor or other professional healthcare provider.</li>
-	  <li>If you have any specific questions about any medical matter, you should consult your doctor or other professional healthcare provider.</li>
-	  <li>If you think you may be suffering from any medical condition, you should seek immediate medical attention.</li>
-	  <li>You should never delay seeking medical advice, disregard medical advice or discontinue medical treatment because of information on our website.</li>
-	</ul>
-      </p>
+				
+			</div>
+			<footer>
+				<p>Our website contains general information about the adverse effects reported for certain drugs.</p>
+				<p>The medical information is not advice and should not be treated as such.</p>
+				<p><h3>No warranties</h3>
+					The medical information on our website is provided without any representations or warranties, express or implied.</p>
+				<p>We do not warrant or represent that the medical information on this website:<br />
+					(a)  will be constantly available, or available at all, or<br />
+					(b)  is true, accurate, complete, current or non-misleading.
+				</p>
+				<p><h3>Medical assistance</h3>
+					<ul>
+						<li>You must not rely on the information on our website as an alternative to medical advice from your doctor or other professional healthcare provider.</li>
+						<li>If you have any specific questions about any medical matter, you should consult your doctor or other professional healthcare provider.</li>
+						<li>If you think you may be suffering from any medical condition, you should seek immediate medical attention.</li>
+						<li>You should never delay seeking medical advice, disregard medical advice or discontinue medical treatment because of information on our website.</li>
+					</ul>
+				</p>
 
-    </footer>
-     </div>
-  </body>
+			</footer>
+		</div>
+	</body>
 </html>
 
 
