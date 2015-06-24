@@ -111,9 +111,13 @@ Sprint Planning meeting for Second sprint.  Wrote stories, estimated, and priori
 
 Had a Style Guide meeting to discuss style guide.  Intellectual property got in the way of using an extant style guide. We decided to copy as much styling as possible from 18F, and work into a tiny style guide to improve the styling.
 
-9:00 Central
+9:00pm Central
 
 A story comes out of QA for not sorting things correctly when multiple drugs.  It is fixed and put back in QA.
+
+12:00pm Central
+
+To be more mobile-friendly, got horizontal bars working to allow large data sets.
 
 
 
