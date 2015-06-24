@@ -97,12 +97,12 @@ Using a government service shouldnâ€™t be stressful, confusing, or daunting. Itâ
 7. Use language and design consistently throughout the service, including online and offline touch points
 
 #### Actions
-1. 
-2. 
-3. This is a one-page application. The page will refresh with new drugs in the chart. 
-4. 
-5. 
-6. 
+1. CHUCK
+2. CHUCK
+3. This simple, one page application takes a list of drugs and displays the adverse effects associated with each one. When a user adds a drug to the list the drug is displayed in the legend and its data appears in the graph, giving immediate visual feedback. 
+4. We will prioritize accessibility stories, which may influence chart colors, tabular data, and a descriptive copy. For [reference] (http://accessibility.psu.edu/images/charts/#charttext) 
+5. We are offering a "save url" option. It will save the list but no personal information. 
+6. The language 
 7. 
 
 #### key questions
