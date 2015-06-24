@@ -1,5 +1,9 @@
 <?php
-
+function dpr($var){
+  print '<pre>';
+  print_r($var);
+  print '</pre>';
+}
 // web/index.php
 require_once __DIR__.'/../vendor/autoload.php';
 use GuzzleHttp\Client;
@@ -7,7 +11,7 @@ use GuzzleHttp\Client;
 $app = new Silex\Application();
 
 
-function queryFDA($med,$sym){
+function queryFDA($med){
   $client = new Client([
       // Base URI is used with relative requests
       'base_uri' => 'https://api.fda.gov/',
@@ -23,24 +27,39 @@ function queryFDA($med,$sym){
   $data = json_decode((string) $response->getBody(), TRUE);
   
   foreach($data['results'] as $result){
-    if(strtolower($result['term']) == strtolower($sym)){
-      $html .= '<div><b>Symptom:</b> ' . ucwords(strtolower($result['term'])) . '</div>';
+      $html .= '<div><b>Term:</b> ' . $result['term'] . '</div>';
       $html .= '<div><b>Reports:</b> ' . $result['count'] . '</div>';
-    }
   }
 
   return $html;
 }
 
-$app->get('/drug/{med}/{sym}', function ($med,$sym) use ($app) {
-    return queryFDA($med,$sym);
+$app->get('/rx/{med}', function ($med) use ($app) {
+    return queryFDA($med);
 });
 
-$app->register(new Silex\Provider\DoctrineServiceProvider(), array(
-    'db.options' => array(
-        'url'   => 'mysql://nebula:nebula@mysql:3306/nebula',
-    ),
-));
-$app['db']->fetchAll('SHOW tables');
+$app->get('/rx.json', function () use ($app) {
+  $rx_names = array();
+  if($app['request']->get('search')){
+    dpr($app['request']->get('search'));
+    $json = array($app['request']->get('search'));
+  }
+  else{
+    $app->register(new Silex\Provider\DoctrineServiceProvider(), array(
+      'db.options' => array(
+          'url'   => 'mysql://nebula:nebula@mysql:3306/nebula',
+      ),
+    ));
+
+    $rx_name_sql = "SELECT rx_name FROM rx_names";
+    $rx_names_results = $app['db']->fetchAll($rx_name_sql);
+    foreach($rx_names_results as $rx_name){
+      $rx_names[] = $rx_name['rx_name']; 
+    }
+    $json = $rx_names;
+  }
+  return json_encode($json);
+});
 
 $app->run();
+
