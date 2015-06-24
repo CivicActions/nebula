@@ -1,3 +1,15 @@
+
+// Sorts (descending), an object that has numeric keys
+function sortObjectByValue(obj) {
+	var sortable = [];
+	for (var k in obj) {
+	    sortable.push([k, obj[k]]);
+         }
+	sortable.sort(function(a, b) {return b[1] - a[1]});
+	return sortable;
+}
+
+
 (function($){
 
   $(document).ready(function(){
@@ -140,19 +152,12 @@
 	}
       }
 
-      // Now Sort symptoms by count.
-      allSymptoms.sort(function (a, b) {
-	if (a.count > b.count) {
-	  return 1;
-	}
-	if (a.count < b.count) {
-	  return -1;
-	}
-	return 0;
-      });
-      
+      allSymptomsAsArray = sortObjectByValue(allSymptoms);
       // Now that we need to build a time series for each symptom in the proper order
-      var symptomKeys = Object.keys(allSymptoms);
+      var symptomKeys = [];
+      for (var k in allSymptomsAsArray) {
+	  symptomKeys.push(allSymptomsAsArray[k][0]);
+      }
       
       var colorCount = 0;
       for (var k in tempData) {
