@@ -97,8 +97,8 @@ Using a government service shouldnâ€™t be stressful, confusing, or daunting. Itâ
 7. Use language and design consistently throughout the service, including online and offline touch points
 
 #### Actions
-1. CHUCK
-2. CHUCK
+1. An expert created a simple, application specific style [guide](https://github.com/CivicActions/nebula/blob/master/GSA_AGILE_BPA_style_guide.png).
+2. This is a very simple application, but we are harmonizing the color palette.
 3. This simple, one page application takes a list of drugs and displays the adverse effects associated with each one. When a user adds a drug to the list the drug is displayed in the legend and its data appears in the graph, giving immediate visual feedback. 
 4. We prioritized accessibility stories and use colors that make the chart easier to read for users with visual impairments. For [reference] (http://accessibility.psu.edu/images/charts/#charttext) and [here] (http://guides.library.duke.edu/topten)
 5. We are offering a "save url" option so that users may return to the chart. It will save the list of drugs but no personal information. 
