@@ -20,6 +20,17 @@
 * Steve to confirm pricing with Bill / Henry
 * Steve to confirm "matrix" with Winvale
 * More documentation of "portable URL" feature and why it was motivated by user interviews.
+* 
+
+### Highlights form 6/25
+
+* Autocomplete API now Working!
+* Bootstrap/Responsive design now working!
+* All Bugs Squashed
+* Color Style guide in play
+* Planning to work late, but make final push this evening
+* Need to do significant research inot AHRQ Sample statistics 
+
 
 ## 6/24 Scrum call Action Items
 * Team to dig into Digital Services checklist, Steve to ping members whose contributions are most needed 
