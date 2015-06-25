@@ -19,7 +19,7 @@
       legend: {position: 'none'},
       bar: {groupWidth: '75%'},
       colors: colors,
-      isStacked: true
+      isStacked: true,
     };
 
     // Instantiate and draw our chart, passing in some options.
@@ -30,9 +30,7 @@
       chart.draw(data, options);
     });
 
-    $('#drug-chart').click(function() {
-      console.log('in function');
-      
+    $('#drug-chart').click(function() {      
       options.height = $('text').length * 40;
       chart.draw(data, options);
     }) 
@@ -116,7 +114,6 @@
     });
     
     function appendItems() {
-
       
       // Build our checkbox toggles.
       if ($('.added-drug').length != -1) {
@@ -270,7 +267,6 @@
 	
       }
       
-      var colorCount = 0;
       for (var k in tempData) {
 	var timeSeries = [];
 	for (var n = 0; n < symptomKeys.length; n++) {
@@ -291,13 +287,6 @@
 	  }
 	}
 	
- 	allData.push({
-	  label: k,
-	  fillColor: bgColor[colorCount],
-	  strokeColor: '#888',
-	  data: timeSeries,
-	});
-	colorCount++;	
       }
 
       var datamap = {
