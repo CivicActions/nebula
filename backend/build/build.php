@@ -39,7 +39,7 @@ $rxNameTable->setPrimaryKey(array("rx_nid"));
 $queries = $schema->toSql($platform);
 
 foreach($queries as $query){
-  print 'Table Created';
+  print "Table Created\n";
   $app['db']->executeQuery($query);
 }
 
@@ -53,7 +53,7 @@ $res = $zip->open('/var/www/nebula/build/tmpARHQ.zip');
 if ($res === TRUE) {
     $zip->extractTo('/var/www/nebula/build/tmpARHQ');
     $zip->close();
-    echo 'AHRQ Data Extracted';
+    echo "AHRQ Data Extracted\n";
 } else {
     echo 'failed, code:' . $res;
 }
@@ -62,9 +62,11 @@ if ($res === TRUE) {
  * Populate Our prescription Table from AHRQ file.
  */
 $file = '/var/www/nebula/build/tmpARHQ/h152a.dat';
-if (file_exists($file)) {
-  $data = file($file);
-  foreach($data as $row){
+$handle = fopen('/var/www/nebula/build/tmpARHQ/h152a.dat', 'r');
+$line = 0;
+if ($handle) {
+  while (($row = fgets($handle)) !== false) {
+    $line++;
     $drugidx = trim(substr($row,27,14)); // UNIQUE RX/PRESCRIBED MEDICINE IDENTIFIER
     $rxname = trim(substr($row,65,49)); // EDICATION NAME (IMPUTED)
     $report_year = '2012'; // Year impmorted report was for
@@ -76,10 +78,12 @@ if (file_exists($file)) {
       ->setValue('drugidx_year', $report_year)
       ->setParameter('rxname',$rxname)
       ->execute();
+    ($line % 100000) AND print "line: $line\n";
   }
+  fclose($handle);
 }
 
-print 'Prescriptions table has been popluated, poplating rx names table';
+print "Prescriptions table has been populated, populating rx names table\n";
 
 $queryBuilder = $app['db']->createQueryBuilder();
 
@@ -93,14 +97,14 @@ foreach($rx_names as $rx_name){
     ->setParameter('rxname',$rx_name['rx_name'])
     ->execute();
 }
-print 'RX names have been populated';
-print 'Tables built and data populated.';
+print "RX names have been populated\n";
+print "Tables built and data populated.\n";
 
 /*
  * Remove ARHQ files.
  */
 unlink('/var/www/nebula/build/tmpARHQ.zip');
-echo 'tmpARHQ.zip removed';
+echo "tmpARHQ.zip removed\n";
 
 function rrmdir($path) {
      // Open the source directory to read in files
@@ -115,4 +119,4 @@ function rrmdir($path) {
         rmdir($path);
 }
 rrmdir('/var/www/nebula/build/tmpARHQ');
-echo 'tmpARHQ removed';
+echo "tmpARHQ removed";
