@@ -119,6 +119,9 @@ A story comes out of QA for not sorting things correctly when multiple drugs.  I
 
 To be more mobile-friendly, got horizontal bars working to allow large data sets.
 
+4:00pm Central
+url shared with affiliates at design firm Tomorrow Partners, as well as with members of the CivicActions community beyond the project team, and UX, design, feedback collected immediately and shared via slack and github issues. 
+
 
 
 
