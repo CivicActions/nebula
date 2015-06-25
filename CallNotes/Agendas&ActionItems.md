@@ -7,6 +7,7 @@
 * Martha's interview 4:30ET? Who will attend?
 * Ethan to update to Chucks's color palette [done]
 * Add Chuck's style guide to repo
+* UX issues & concerns: note as github issue? doc to Ron? 
 * Ethan to merge boostrap pull request - [done]
 * Ethan or Rob to add Lukes feedback footer
 * Of greatest importance is user feedback and final tweaks
