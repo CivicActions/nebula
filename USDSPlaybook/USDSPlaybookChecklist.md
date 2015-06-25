@@ -37,11 +37,11 @@ We must begin digital projects by exploring and pinpointing the needs of the peo
 
 #### answers to key questions
 
-1. Health care professionals.
+1. Health care professionals, but in particular busy doctors treating highly prescribed patients.
 2. The need to compare the adverse effects of multiple drugs. 
 3. To help patients reduce side effects associated with their drug regimes. 
 4. Those not facile with online tools. Those who are looking for information on non-prescription drugs (as the MVP will be targeted to prescription drugs in the AHRQ database). 
-5. User interviews
+5. User interviews, and Design Studio.
 6. That healthcare professionals would benefit from being able to visually compare adverse effects across drugs. 
 7. Interviews and notes are posted [here]  (https://www.youtube.com/user/civicactions) and [here] (https://github.com/CivicActions/nebula/tree/master/user-interviews), respectively.
 8. During each sprint. 
