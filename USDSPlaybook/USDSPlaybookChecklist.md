@@ -75,10 +75,10 @@ We need to understand the different ways people will interact with our services,
 
 #### answers to key questions
 
-1. Looking up individual drugs online. 
+1. Looking up individual drugs online. Some doctors use WebMD, but don't admit it.
 2. There is no way to get one comprehensive visual of all side effects produced by a drug regime. 
-3. It can fit into the beginning of the prescription experience or when drugs are being added to an existing regime. 
-4. Usage will increase as trust in the information grows over time. 
+3. It can fit into the beginning of the prescription experience or when drugs are being added to an existing regime. Busy doctors, particularly in gerontology, have to manage complex drug regimenes quickly. 
+4. Usage will increase as trust in the information grows over time. We would like to create a "Would you recommend this to your collequges" but we did not have time to measure that in this project.
 
 ## Play 3
 ### Make it simple and intuitive
@@ -114,11 +114,11 @@ Using a government service shouldnâ€™t be stressful, confusing, or daunting. Itâ
 
 #### answers to key questions
 
-1. 
-2. 
-3. 
-4. 
-5. 
+1. The user wants to understand the adverse event implications of complicated drug regimens for highly-prescribed patiens (who sometimes have 5, 10, or 15 drugs.)
+2. We have not worked much on "plain language", especially because our intended users are professional doctors.
+3. English only at present.
+4. Since this is a prototype, we have provided no help facility. Whoever forks it may wish to do so.
+5. We haven't attempted to harmonize with other government services, which are generally not a good model for this kind of mobile-friendly application.  Instead, we aimed for a more modern, Bootstrap-style responsive design.
 
 
 ## Play 4
@@ -147,8 +147,8 @@ We should use an incremental, fast-paced style of software development to reduce
 5. Features are pushed to the live site multiple times each day, as evidenced by the log in github and Slack. 
 6. Features prioritized on our Trello list "Prioritized Stories"; bugs prioritized in our issue queue in github. 
 8. Using Github for this - all project members and user-testers/stakeholders have access and the repository is also public.
-8. Using Trello for this - all project members and user-testers/stakeholders have access. For this project, the board is also public.
-9. * * * 
+8. Using Trello for this - all project members and user-testers/stakeholders have access. For this project, the board is also public. We used GitHub for some bugs.
+9. We did not use public conde reviews, but we used pull requests in github to ensure expert-on-neophyte individual code reviews. 
 
 #### key questions
 - How long did it take to ship the MVP? If it hasn't shipped yet, when will it?
@@ -163,8 +163,8 @@ We should use an incremental, fast-paced style of software development to reduce
 
 #### answers to key questions
 
-1. MVP shipped (made public) on day 5 of the Sprint. 
-2. * * * 
+1. MVP shipped (made public) on day 5 of the Sprint. It was shown (in buggy state) to users on Days 3 and 4.
+2. Seven minutes.
 3. Sprints have been 4 days each in this initial Sprint. 
 4. Git
 5. Github issue queue
@@ -223,11 +223,14 @@ To improve our chances of success when contracting out development work, we need
 There must be a single product owner who has the authority and responsibility to assign tasks and work elements; make business, product, and technical decisions; and be accountable for the success or failure of the overall service. This product owner is ultimately responsible for how well the service meets needs of its users, which is how a service should be evaluated. The product owner is responsible for ensuring that features are built and managing the feature and bug backlogs.
 
 #### checklist
-1. A product owner has been identified
-2. All stakeholders agree that the product owner has the authority to assign tasks and make decisions about features and technical implementation details
-3. The product owner has a product management background with technical experience to assess alternatives and weigh tradeoffs
+1. A product owner was assigned.
+2. All stakeholders agree that the product owner has the authority to assign tasks and make decisions about features and technical implementation details.
+3. The product owner has a product management background with technical experience to assess alternatives and weigh tradeoffs.
 4. The product owner has a work plan that includes budget estimates and identifies funding sources
 5. The product owner has a strong relationship with the contracting officer
+
+# TBD: A section is missing here.
+
 
 #### Actions
 1. Product owner was identified on June 17 as Rob Read. Documented [here] (https://civicactions.slack.com/archives/agile-gsa/p1434582235000307)
@@ -245,9 +248,9 @@ There must be a single product owner who has the authority and responsibility to
 
 #### answers to key questions
 
-1. 
-2. 
-3. 
+1. A single product owner, Rob Read, was assigned.
+2. Although CivicActions maintains a polite and professional environment, the Product Owner was empowered to make prioritizaion decisions and assign tasks.
+3. The product owner required no additional authority, but based all decision on user feedback.
 
 
 ## Play 7
@@ -268,14 +271,14 @@ We need talented people working in government who have experience creating moder
 8. The appropriate privacy, civil liberties, and/or legal advisor for the department or agency is a partner
 
 #### Actions
-1. 
-2. 
-3. 
-4. 
-5. 
-6. 
-7. 
-8. 
+1. Yes -- though our "high-traffic" credentials might not be Google or Facebook quality.
+2. Yes 
+3. Yes, we used an XUnit framework
+4. Yes, we had a run-test-after commit system using Jenkins
+5. Yes
+6. NA
+7. NA (though we had someone play this role)
+8. We assigned the CEO to play the role of Privacy and Legal officer, and an experienced Cyber guy to play the role of Security officer. 
 
 
 ## Play 8
@@ -292,7 +295,7 @@ The technology decisions we make need to enable development teams to work effici
 4. [Consider open source software solutions](http://www.whitehouse.gov/sites/default/files/omb/assets/egov_docs/memotociostechnologyneutrality.pdf) at every layer of the stack
 
 #### Actions
-1. API driven frontend. Modern lightweight PHP framework (Silex/Symphony).
+1. API driven frontend. Modern lightweight PHP framework (Silex/Symphony). 
 2. 
 3. 
 4. 
