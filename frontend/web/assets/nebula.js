@@ -89,36 +89,39 @@
     var count = 0;
 
     // Add predicatable color patterns for bars.
-    var red = 'rgba(255,0,0,0.7)';
-    var green = 'rgba(0,255,0,0.7)';
-    var blue = 'rgba(0,0,255,0.7)';
-    var grey = 'rgba(192,192,192,0.7)';
-    var yellow = 'rgba(255,255,0,0.7)';
-    var cerise = 'rgba(255,0,255,0.7)';
-    var ran1 = 'rgba(255,255,0,0.7)';
-    var ran2 = 'rgba(0,255,255,0.7)';
-    var ran3 = 'rgba(100,0,255,0.7)';
-    var ran4 = 'rgba(0,100,255,0.7)';
-    var ran5 = 'rgba(50,50,255,0.7)';
-    var ran6 = 'rgba(200,20,255,0.7)';
-    var ran7 = 'rgba(150,20,155,0.7)';
-    var ran8 = 'rgba(60,150,55,0.7)';
-    var ran9 = 'rgba(200,220,55,0.7)';
+    var silver = '#F7F7F7';
+    var grain = '#CECECE';
+    var rain = '#75787b';
+    var chrono = '#5D6B75';
+    var ocean = '#007FAA';
+    var sky = '#3FA9F5';
+    var grass = '#00A159';
+
+    var silver2 = '#e2dfdf';
+    var grain2 = '#Cfdfdf';
+    var rain2 = '#799999';
+    var chrono2 = '#5b6e7b';
+    var ocean2 = '#007777';
+    var sky2 = '#3Fffff';
+    var grass2 = '#00cccc';
+
+    var silver3 = '#787878';
+    var grain3 = '#Cacaca';
+    var rain3 = '#75587b';
+    var chrono3 = '#5D2222';
+    var ocean3 = '#005aaA';
+    var sky3 = '#3FaAdd';
+    var grass3 = '#039051';
 
     
-    var bgColor = ['red', 'green', 'blue', 'grey', 'yellow', 'cerise',
-		   'ran1', 'ran2', 'ran3', 'ran4','ran5', 'ran6', 'ran7',
-		   'ran8', 'ran9','red', 'green', 'blue', 'grey', 'yellow',
-		   'cerise', 'ran1', 'ran2', 'ran3', 'ran4', 'ran5',
-		   'ran6', 'ran7', 'ran8', 'ran9',
-		   'red', 'green', 'blue', 'grey', 'yellow', 'cerise',
-		   'ran1', 'ran2', 'ran3', 'ran4', 'ran5', 'ran6', 'ran7',
-		   'ran8', 'ran9', 'red', 'green', 'blue', 'grey', 'yellow',
-		   'cerise', 'ran1', 'ran2', 'ran3', 'ran4', 'ran5',
-		   'ran6', 'ran7', 'ran8', 'ran9'];
+    var bgColor = [silver, grain, rain, chrono, ocean, sky, grass,
+		   silver2, grain2, rain2, chrono2, ocean2, sky2, grass2,
+		   silver3, grain3, rain3, chrono3, ocean3, sky3, grass3,
+		   silver, grain, rain, chrono, ocean, sky, grass,
+		   silver2, grain2, rain2, chrono2, ocean2, sky2, grass2,
+		   silver3, grain3, rain3, chrono3, ocean3, sky3, grass3
+		  ];
     
-    var bgColorCodes = ['red', 'green', 'blue', 'grey', 'yellow'];
-
     // Load our saved searches.
     loadSaved();
 
