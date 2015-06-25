@@ -1,6 +1,6 @@
 #!/bin/sh
 cd "$(git rev-parse --show-toplevel)"
-if [[ "$3" = "" ]]; then
+if [ "$3" = "" ]; then
   echo "Usage ./bin/deploy [frontend|backend] [subdomain] [domain]"
   exit 1
 fi
