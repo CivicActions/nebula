@@ -1,6 +1,11 @@
 ## 6/26 Scrum call Action Items
+
+* Getting Dave to Push the code is of paramount importance for QA and our users
+* Confirm: Tyson interview at 2:30 Eastern? Who will attend?
+* Have we scheduled Martha's interview? Who will attend?
+* Ethan to update to Chucks's color palette [underway]
 * Add Chuck's style guide to repo
-* Ethan to merge boostrap pull request
+* Ethan to merge boostrap pull request - [done]
 * Ethan or Rob to add Lukes feedback footer
 * Of greatest importance is user feedback and final tweaks
 * If we get normalization done, testing
