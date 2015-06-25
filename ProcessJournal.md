@@ -136,6 +136,8 @@ Scrum meeting in preparation for Final Push tonight.
 
 4:00 Third interview with Martha. Additional confirmation of our approach, particularly the contextualization of the work.
 
+5:00 Decision announce to add a third sprint for the final three days.
+
 
 
 
