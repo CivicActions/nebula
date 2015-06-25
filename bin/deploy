@@ -12,14 +12,14 @@ AWS='docker run --rm -e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY -e AWS_VPC_ID
 
 # Remove instances tagged as old
 OLD=$($AWS ec2 describe-instances --output text --filters "Name=tag:Status,Values=${DEPLOY}-old"|grep INSTANCES|awk '{print $7}')
-if [ ! -z $OLD ]; then
+if [ ! -z "$OLD" ]; then
   echo "Terminating instance(s) $OLD"
   $AWS ec2 terminate-instances --instance-ids $OLD
 fi
 
 # Tag remaining instances as old before creating new
 REMAINING=$($AWS ec2 describe-instances --output text --filters "Name=tag:Status,Values=${DEPLOY}"|grep INSTANCES|awk '{print $7}')
-if [ ! -z $REMAINING ]; then
+if [ ! -z "$REMAINING" ]; then
   echo "Setting tag to ${DEPLOY}-old for $REMAINING"
   $AWS ec2 create-tags --resources $REMAINING --tags Key=Status,Value=${DEPLOY}-old
 fi
