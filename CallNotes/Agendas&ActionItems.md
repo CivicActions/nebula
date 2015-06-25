@@ -1,4 +1,5 @@
 ### Team balance scores:
+ET: 8, RR: 7, AR: 7, DN: 7, RA: 8, SC: 7, LF: 6.5, AP: 8
 
 ## 6/25 Scrum call Agenda Items
 
