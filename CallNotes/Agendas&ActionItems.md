@@ -1,3 +1,14 @@
+## 6/26 Scrum call Action Items
+* Add Chuck's style guide to repo
+* Ethan to merge boostrap pull request
+* Ethan or Rob to add Lukes feedback footer
+* Of greatest importance is user feedback and final tweaks
+* If we get normalization done, testing
+* Need to test, test, test, including on iPhones and iPads and Android phones
+* Team needs to review (and probably add to) Checklist for Thursday night
+* Aaron, Steve and/or Rob to make sure all of USDS Checklist is responded to (it's okay if the answer is "didn't do it")
+* Relevant team members to review verbiage for different pools in the READMEs.
+* More documentation of "portable URL" feature and why it was motivated by user interviews.
 
 ## 6/24 Scrum call Action Items
 * Team to dig into Digital Services checklist, Steve to ping members whose contributions are most needed 
