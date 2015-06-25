@@ -86,11 +86,12 @@
 
     // Load our saved searches.
     loadSaved();
-    
-    $('#add-to-list').click(function(){
+
+    $('#add-to-list').click(function() {
       if($('#drug').val().length){
 	appendItems();
-	addItems();	
+	addItems();
+
       }
       else{	
 	loadSaved();
@@ -101,17 +102,9 @@
     function getParameterByName(name) {
       name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
       var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-      results = regex.exec(location.search);
+	  results = regex.exec(location.search);
       return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
     } 
-    
-    $(document).change(function(){
-      $('.added-drug').each(function(){
-	$(this).click(function(){
-	  addItems();	  
-	});   
-      });  
-    });
     
     function appendItems() {
       
@@ -135,7 +128,7 @@
 			    + '" class="added-drug '
 			    + savedItemsArr[i] + '">'
 			    + savedItemsArr[i]
-			    + '<div class="check-color" style="background: ' + bgColor[i]  + '"></div></div>');
+			    + '<div class="check-color" data-color="' + bgColor[i] + '" style="background: ' + bgColor[i]  + '"></div></div>');
 	  
 	}
 	count++;
@@ -149,10 +142,10 @@
 			  + '" class="added-drug '
 			  + $('#drug').val() + '">'
 			  + $('#drug').val()
-			  + '<div class="check-color" style="background: ' + bgColor[checks]  + '"></div></div>');
+			  + '<div class="check-color" data-color="' + bgColor[checks] + '" style="background: ' + bgColor[checks]  + '"></div></div>');
 
       }
-  
+      
       var urlBase = window.location.origin + '?saved=';
       var queryItems = [];
       $('.added-drug').each(function(){
@@ -168,7 +161,36 @@
 	$('#link-save').html('<h3>Link to this search:</h3> ' + '<a href="' + sanitizedLink + '">' + sanitizedLink + '</a>');
 	
       }
+
+      // This limits the colors allowed by the graph to checkboxes that are on - keeps things in sync.
+      var revisedPalette = [];
+      $('.check-color').each(function() {
+	if($(this).siblings().prop("checked")) {	  
+	  
+	  revisedPalette.push($(this).attr('data-color'));
+	}
+	sessionStorage.setItem('colorscheme', JSON.stringify(revisedPalette));	  
+      });      
     }
+
+    $(document).change(function() {
+      $('.added-drug').each(function(){
+	$(this).click(function(){
+	  addItems();     
+	});   
+      });
+
+      // This limits the colors allowed by the graph to checkboxes that are on - keeps things in sync.
+      var devisedPalette = [];
+      $('.check-color').each(function() {
+	if($(this).siblings().prop("checked")) {	  
+	  
+	  devisedPalette.push($(this).attr('data-color'));
+	}
+	sessionStorage.setItem('colorscheme', JSON.stringify(devisedPalette));	  
+      });
+    });
+    
     
     function addItems() {	
       $('#error').empty();
@@ -248,10 +270,10 @@
 	  var obj = triplets[okey];
 	  
 	  if (obj.symptom in allSymptoms) {
-	      allSymptoms[obj.symptom] += obj.count;
+	    allSymptoms[obj.symptom] += obj.count;
 	  }
 	  else {
-	      allSymptoms[obj.symptom] = obj.count;
+	    allSymptoms[obj.symptom] = obj.count;
 	  }
 	  
 	}
@@ -263,7 +285,7 @@
       // Now that we need to build a time series for each symptom in the proper order
       var symptomKeys = [];
       for (var k in allSymptomsAsArray) {
-	  symptomKeys.push(allSymptomsAsArray[k][0]);
+	symptomKeys.push(allSymptomsAsArray[k][0]);
 	
       }
       
@@ -293,7 +315,8 @@
 	labels: symptomKeys,
 	datasets: allData,
       };
-
+      var sanitizedColors = JSON.parse(sessionStorage.getItem('colorscheme'));
+      
       var datax = [];
       var drugs = Object.keys(tempData);
       for (var n = 0; n < symptomKeys.length; n++) {
@@ -320,8 +343,8 @@
 
       drugs.unshift('Drug');
       datax.unshift(drugs);
-      drawChart(bgColorCodes, datax);
+      drawChart(sanitizedColors, datax);
     }
-   
+    
   })
 })(jQuery);
