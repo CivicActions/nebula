@@ -460,7 +460,7 @@ The following checklist provides a starting point, but teams should work closely
 
 #### answers to key questions
 
-1. 
+1. The service is anonymous and does not collect personal information from the user.
 2. 
 3. 
 4. 
