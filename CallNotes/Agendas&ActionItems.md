@@ -1,8 +1,8 @@
-## 6/26 Scrum call Action Items
+## 6/25 Scrum call Agenda Items
 
 * Getting Dave to Push the code is of paramount importance for QA and our users
-* Confirm: Tyson interview at 2:30 Eastern? Who will attend?
-* Have we scheduled Martha's interview? Who will attend?
+* Tyson interview at 2:30 Eastern? Who will attend?
+* Martha's interview 4:30ET? Who will attend?
 * Ethan to update to Chucks's color palette [underway]
 * Add Chuck's style guide to repo
 * Ethan to merge boostrap pull request - [done]
@@ -12,7 +12,9 @@
 * Need to test, test, test, including on iPhones and iPads and Android phones
 * Team needs to review (and probably add to) Checklist for Thursday night
 * Aaron, Steve and/or Rob to make sure all of USDS Checklist is responded to (it's okay if the answer is "didn't do it")
-* Relevant team members to review verbiage for different pools in the READMEs.
+* Melinda to flesh out Pools 1 and 2 READMEs, Steve to pass to Winvale. Relevant team members to review verbiage for different pools in the READMEs.
+* Steve to confirm pricing with Bill / Henry
+* Steve to confirm "matrix" with Winvale
 * More documentation of "portable URL" feature and why it was motivated by user interviews.
 
 ## 6/24 Scrum call Action Items
