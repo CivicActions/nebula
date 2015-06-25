@@ -23,6 +23,8 @@ We broke for research and story writing to reconvene shortly.
 
 2:00 PM Pacific
 
+
+
 Met with Martha Oglive, researcher at Oklahoma health science center, previously at NIH. Martha validated problem statement and provided input and prioritization on user stories. Also discussed next steps for UX as well as technical architecture questions.
 
 Thursday June 18, early
@@ -97,7 +99,7 @@ Met with Tyson K. for user interview. See notes on meeting.
 
 Security, Privacy and Legal meeting --- met with officers playing each of those roles and took notes. Gave Demo of MVP at this time.
 
-Tuesday June 23rd (planned)
+Tuesday June 23rd 
 
 8:45 scrum
 
@@ -122,7 +124,17 @@ To be more mobile-friendly, got horizontal bars working to allow large data sets
 4:00pm Central
 url shared with affiliates at design firm Tomorrow Partners, as well as with members of the CivicActions community beyond the project team, and UX, design, feedback collected immediately and shared via slack and github issues. 
 
+Wednesday June 24th
 
+Thursday June 25th
+
+9:45
+
+Scrum meeting in preparation for Final Push tonight.
+
+2:30 Second interview with Tyson.  Major confirmation of approach.  Generally validated our approach.
+
+4:00 Third interview with Martha. Additional confirmation of our approach, particularly the contextualization of the work.
 
 
 
