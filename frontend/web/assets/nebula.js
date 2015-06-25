@@ -157,12 +157,12 @@
       // Build from input.
       else {
 	
-	$('#text').append('<div class="checkholder"><input type="checkbox" checked="checked" value="'
-			  + $('#drug').val()
-			  + '" class="added-drug '
-			  + $('#drug').val() + '">'
-			  + $('#drug').val()
-			  + '<div class="check-color" data-color="' + bgColor[checks] + '" style="background: ' + bgColor[checks]  + '"></div></div>');
+        $('#text').append('<div class="checkholder"><input type="checkbox" checked="checked" value="'
+          + $('#drug').val()
+          + '" class="added-drug '
+          + $('#drug').val() + '">'
+          + $('#drug').val()
+          + '<div class="check-color" data-color="' + bgColor[checks] + '" style="background: ' + bgColor[checks]  + '"></div></div>');
 
       }
       
@@ -196,7 +196,7 @@
     $(document).change(function() {
       $('.added-drug').each(function(){
 	$(this).click(function(){
-	  addItems();     
+	  addItems();
 	});   
       });
 
@@ -216,7 +216,7 @@
       $('#error').empty();
       var symptom = $('#symptom').val();
       var url;
-
+      $('#clear-all').removeClass('hidden');
       $.each($('.added-drug'), function(term) {
 
 	// We only want to pull in terms that correspond to a checked box.
@@ -371,6 +371,13 @@
       {
         $('#add-to-list').click();
       }
+    });
+    $('#clear-all').click(function() {
+      $('.checkholder').remove();
+      $('#drug-chart').empty();
+      $('#link-save').empty();
+      $('#clear-all').addClass('hidden');
+      sessionStorage.clear();
     });
   })
 })(jQuery);

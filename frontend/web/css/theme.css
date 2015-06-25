@@ -48,3 +48,18 @@ h3 {
   margin-left: 10px;
   margin-right: 10px;
 }
+#clear-all{
+  text-shadow: none;
+  padding: 5px;
+  margin-left: 20px;
+  line-height: 1.3333333;
+  border-radius: 6px;
+  display: inline-block;
+  text-decoration: underline;
+}
+#clear-all:hover{
+  cursor: pointer;
+}
+.hidden{
+  display: none;
+}
