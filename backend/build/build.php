@@ -78,7 +78,7 @@ if ($handle) {
       ->setValue('drugidx_year', $report_year)
       ->setParameter('rxname',$rxname)
       ->execute();
-    ($line % 100000) OR print "line: $line\n";
+    ($line % 50000) OR print "line: $line\n";
   }
   fclose($handle);
 }
