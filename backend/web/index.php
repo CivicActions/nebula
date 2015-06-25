@@ -1,9 +1,7 @@
 <?php
-function dpr($var){
-  print '<pre>';
-  print_r($var);
-  print '</pre>';
-}
+header('Access-Control-Allow-Methods: GET, PUT, POST, DELETE, OPTIONS');
+header("access-control-allow-origin: *");
+
 // web/index.php
 require_once __DIR__.'/../vendor/autoload.php';
 use GuzzleHttp\Client;
