@@ -1,0 +1,50 @@
+body {
+  font-size: 16px;
+}
+h3 {
+  padding-bottom: 20px;
+}
+.header {
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+.header img {
+}
+.hero {
+  background: #007FAA;
+  color: #fff; 
+  margin-bottom: 20px; 
+  padding-bottom: 50px;
+  padding-top: 30px;
+}
+.btn-default, .btn-default:hover {
+  background: #3FA9F5;
+  background-image: none;
+  border-color: #3FA9F5;
+  color: #fff;
+  text-shadow: none;
+}
+.btn-default:hover {
+  background: #fff;
+  color: #3FA9F5;
+}
+.sideeffects {
+  padding-bottom: 60px;
+}
+.footer {
+  background: #efefef;
+  font-size: 14px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+.social {
+  background: #007FAA;
+  font-size: 40px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+.social a, .social a:visited, .social a:hover {
+  color: #fff;
+  margin-left: 10px;
+  margin-right: 10px;
+}
