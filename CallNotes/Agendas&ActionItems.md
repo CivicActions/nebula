@@ -5,7 +5,7 @@
 * Getting Dave to Push the code is of paramount importance for QA and our users
 * Tyson interview at 2:30 Eastern? Who will attend?
 * Martha's interview 4:30ET? Who will attend?
-* Ethan to update to Chucks's color palette [underway]
+* Ethan to update to Chucks's color palette [done]
 * Add Chuck's style guide to repo
 * Ethan to merge boostrap pull request - [done]
 * Ethan or Rob to add Lukes feedback footer
