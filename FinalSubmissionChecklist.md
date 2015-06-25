@@ -8,3 +8,5 @@
 * [ ] Create Design Pool Repo with its own README.md tailored to that pool
 * [ ] Create Development Pool Repo with its own README.md tailored to that pool
 * [ ] Lock-down all 3 Repos to prevent modifying after the fact
+* [ ] Google doc checklist 
+
