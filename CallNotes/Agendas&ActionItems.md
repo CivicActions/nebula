@@ -1,3 +1,5 @@
+### Team balance scores:
+
 ## 6/25 Scrum call Agenda Items
 
 * Getting Dave to Push the code is of paramount importance for QA and our users
@@ -10,6 +12,7 @@
 * Of greatest importance is user feedback and final tweaks
 * If we get normalization done, testing
 * Need to test, test, test, including on iPhones and iPads and Android phones
+* Dave to build more tests for Jenkins suite? 
 * Team needs to review (and probably add to) Checklist for Thursday night
 * Aaron, Steve and/or Rob to make sure all of USDS Checklist is responded to (it's okay if the answer is "didn't do it")
 * Melinda to flesh out Pools 1 and 2 READMEs, Steve to pass to Winvale. Relevant team members to review verbiage for different pools in the READMEs.
