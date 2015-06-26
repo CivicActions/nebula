@@ -42,7 +42,7 @@
     var options = {
       width: 250,
       height: 250,
-      chartArea: {'width': '100%', 'height': '100%'},
+      chartArea: {'width': '95%', 'height': '95%'},
       legend: {position: 'none'},
       colors: colors,
     };
@@ -240,8 +240,7 @@
 	if($(this).is(":checked")) {
 	  term = $(this).val();
 
-	 url = 'https://api.fda.gov/drug/event.json?api_key=rv4OOon6fPJOHBbFHClUOs3BRGSbAEUdg3ACp2pu&search='
-	    + term + '&limit=5&count=patient.reaction.reactionmeddrapt.exact';
+	  url = 'https://api.sideeffect.io/rx.json?search=' + term;
 
 	  url2 = 'https://api.sideeffect.io/rx.json?ahrq=' + term;
 
@@ -250,6 +249,7 @@
 	    type: 'GET',
 	    term: term,
 	    success: function(data) {
+	      data = JSON.parse(data);
 	      
 	      var reactions = data.results;
 	      // I will store drug, symtomp, count objects in here in order to have all data.
@@ -405,7 +405,6 @@
 
       drugs.unshift('Drug');
       datax.unshift(drugs);
-      console.log(datax);
       drawChart(sanitizedColors, datax);
 
       var pieData = [];
@@ -430,7 +429,7 @@
       drawPieChart(sanitizedColors, doublesGrab);
       
     }
-  
+  /*
     $('input').keypress(function (e) {
      var key = e.which;
      if(key == 13)  // the enter key code
@@ -438,6 +437,7 @@
         $('#add-to-list').click();
       }
     });
+*/
     $('#clear-all').click(function() {
       $('.checkholder').remove();
       $('#drug-chart').empty();
