@@ -18,6 +18,7 @@
       height: window.innerWidth / 2,
       legend: {position: 'none'},
       bar: {groupWidth: '75%'},
+      chartArea: {'width': '80%', 'height': '90%', 'float': 'right'},
       colors: colors,
       isStacked: true,
     };
@@ -31,7 +32,6 @@
     });
   }
 
-
   // Callback that creates and populates a data table,
   // instantiates the bar chart, passes in the data and
   // draws it.
@@ -40,23 +40,18 @@
     var data = google.visualization.arrayToDataTable(data);
     // Set chart options
     var options = {
-      height: window.innerWidth / 2,
-     // legend: {position: 'none'},
-     // is3D: true,
+      width: 250,
+      height: 250,
+      chartArea: {'width': '100%', 'height': '100%'},
+      legend: {position: 'none'},
       colors: colors,
     };
 
     // Instantiate and draw our chart, passing in some options.
     var chart = new google.visualization.PieChart(document.getElementById('pie-chart'));
     chart.draw(data, options);
-    $(window).resize(function() {
-      options.height = window.innerWidth / 1.2;
-      chart.draw(data, options);
-    });
-
   }
 
-  
 
   // Sorts (descending), an object that has numeric keys
   function sortObjectByValue(obj) {
@@ -274,7 +269,6 @@
 	    }
 	  }); 
 
-
 	  $.ajax({
 	    url: url2,
 	    type: 'GET',
@@ -298,9 +292,6 @@
 	      $('#error').append("We are unable to show data for this drug because we can't normalize the usage data when compared to other drugs. For specific adverse effects please refer to other sources.<br /><br />");
 	    }
 	  });
-
-
-
 	  
 	} else {
 	  // If it isn't checked, remove the key so that it doesn't display in graph.
@@ -435,10 +426,7 @@
 	doublesGrab[i][1] = parseInt(doublesGrab[i][1]);	
       }
 
-      doublesGrab.unshift(columns);
-      
-     console.log(doublesGrab);
-      
+      doublesGrab.unshift(columns);      
       drawPieChart(sanitizedColors, doublesGrab);
       
     }

@@ -8,7 +8,6 @@
 */
 #error {
   color:#f00;
-  padding:10px 0;
   font-weight:bold;
   font-size:115%;
 }
@@ -31,9 +30,15 @@
   min-height:360px;
   position:relative;
 }
-#text {
+#pie-chart {
+  display:block;
   clear:both;
+  margin:0 auto;
+}
+#text {
+  float:left;
   padding:10px 0;
+  width:300px;
 }
 .added-drug{
 }
@@ -55,4 +60,10 @@
 }
 footer {
   clear:both;
+}
+@media (min-width: 600px) {
+  #pie-chart {
+    float:right;
+    margin-right:100px;
+  }
 }
