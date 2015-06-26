@@ -1,3 +1,17 @@
+## 6/26 Scrum call Action Items
+* Rob coordinate with Melinda around revisions to 2nd READMEs in light of changes to Sprint plan. Steve to pass these to Winvale no later than Tues noon. 
+* Team to address the USDS checklist as follows: 
+     - 7 - Budget - Steve 
+     - 9 - Hosting - Dave
+     - 10 - Automation - Dave
+     - 12 - Data -> Decisions - Rob or Ron
+     - 13 - Open - Rob or Ethan
+* Team to add more "how to use" "what this is" info to disclaimer text 
+* Greg to forward heat chart examples to Rob
+* Steve to coordinate with Martha and Tyson around additional user inteviews on Tuesday 
+* Team to meet for Sprint 3 planning following scrum, entering all further enhancements in Trello, and then prioritizing issues in github queue
+
+
 ## 6/26 Scrum call Agenda
 
 * Need Sprint Planning Meeting after Scrum
