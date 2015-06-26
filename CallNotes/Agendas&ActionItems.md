@@ -1,3 +1,10 @@
+## 6/26 Scrum call Action Items
+
+* Need Sprint Planning Meeting after Scrum
+* Should we plan additional promotion?
+* Note that finalization Plan is moved up to Tuesday night
+* Review change in personnel
+
 ## 6/25 Scrum call Action Items
 
 * Tyson interview at 2:30 Eastern (Ron, Rob, Steve) 
