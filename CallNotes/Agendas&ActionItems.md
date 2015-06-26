@@ -29,6 +29,7 @@ ET: 7, RR: 8, AR: 8.5, DN: 8.5, RA: 9.75, SC: 9, LF: 7, AP: 9, GE: 3, HP: 9
      - 10 - Automation - Dave
      - 12 - Data -> Decisions - Rob or Ron
      - 13 - Open - Rob or Ethan
+
 ### Highlights
 
 * Created Releases under the wire
