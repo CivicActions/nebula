@@ -438,7 +438,7 @@
       drawPieChart(sanitizedColors, doublesGrab);
       
     }
-  /*
+
     $('input').keypress(function (e) {
      var key = e.which;
      if(key == 13)  // the enter key code
@@ -446,7 +446,7 @@
         $('#add-to-list').click();
       }
     });
-*/
+
     $('#clear-all').click(function() {
       $('.checkholder').remove();
       $('#drug-chart').empty();
