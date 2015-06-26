@@ -4,6 +4,7 @@
 * Should we plan additional promotion?
 * Note that finalization Plan is moved up to Tuesday night
 * Review change in personnel
+* Status of add'l READMEs
 * Greg and Luke: GSA roles 
 * Get hours in! 
 * USDS Checklist: 
