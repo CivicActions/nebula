@@ -442,12 +442,12 @@ The following checklist provides a starting point, but teams should work closely
 6. Use deployment scripts to ensure configuration of production environment remains consistent and controllable
 
 #### Actions
-1. 
-2. 
-3. 
-4. No PII is retained.
+1. CivicActions has determined in consultation with internal privacy experts the system does not collect any personal information.
+2. CivicActions has determined in consultation with internal privacy experts the system does not collect any personal information.
+3. CivicActions has determined in consultation with internal privacy experts the system does not collect any personal information.
+4. CivicActions has determined in consultation with internal privacy experts the system does not collect any personal information and no PII is retained.
 5. AWS infrastructure is FedRAMP certified.
-6. 
+6. CivicActions uses Ansible, Docker and other Infrastructure as Code tools to automate and control the configuration and deployment of development and production environments.
 
 
 #### key questions
@@ -461,11 +461,11 @@ The following checklist provides a starting point, but teams should work closely
 #### answers to key questions
 
 1. The service is anonymous and does not collect personal information from the user.
-2. 
-3. 
-4. 
-5. 
-6. 
+2. The service does not collect more information than necessary to return the results of potential drug interactions.
+3. N/A
+4. N/A
+5. CivicActions uses OpenSCAP and GovReady for automated, continous scanning of the system against the USGCB baselines and for known vultnerabilities.
+6. Yes. The system will have a contact page with a variety of information including a privacy email address indicated for questions regarding HIPPA, privacy, and security matters.
 
 
 ## Play 12
