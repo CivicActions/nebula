@@ -1,3 +1,19 @@
+## 6/25 Scrum call Agenda Items
+
+* Tyson interview at 2:30 Eastern (Ron, Rob, Steve) 
+* Martha's interview 5:00 (Rob, Ethan, Steve) 
+* Add Chuck's style guide to repo
+* Team to note all bugs, enhancements, etc as issues in github. Will prioritize from there. 
+* Ethan or Rob to add Lukes feedback footer
+* Team to concentrate today on incorporating and prioritizing feedback from testers 
+* Ron to continue leading QA and cross-browser, cross-device testing 
+* Dave to add more tests to Jenkins. Also to work on automated deployment through Jenkins
+* Steve leading USDS Checklist response
+* Melinda to flesh out Pools 1 and 2 READMEs, Steve to pass to Winvale. 
+* Steve to confirm pricing with Bill / Henry
+* Steve to confirm "matrix" with Winvale
+* Rob to add documentation of "portable URL" feature and why it was motivated by user interviews.
+
 ### Team balance scores:
 ET: 8, RR: 7, AR: 7, DN: 7, RA: 8, SC: 7, LF: 6.5, AP: 8
 
