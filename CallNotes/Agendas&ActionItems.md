@@ -1,4 +1,4 @@
-## 6/25 Scrum call Agenda Items
+## 6/25 Scrum call Action Items
 
 * Tyson interview at 2:30 Eastern (Ron, Rob, Steve) 
 * Martha's interview 5:00 (Rob, Ethan, Steve) 
