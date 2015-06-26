@@ -1,9 +1,9 @@
 # Nebula
 
 
-Try our [application](https://nebula.civicactions.com/) and give us feedback by opening an issue!
+Try our [application](https://www.sideeffect.io/) and give us feedback by opening an issue!
 
-And our [api](https://nebulaapi.civicactions.com/) will someday be useful, but is not 
+And our [api](https://api.sideeffect.io/) will someday be useful, but is not
 ready now.
 
 This is our application to 18F's Agile BPA RFQ.  However, it is all freely sharable, and we aim to make a product 
@@ -92,7 +92,7 @@ export CLOUDFLARE_TOKEN=
 
 Run the ./bin/deploy script to deploy the frontend and backend respectively, where the second parameter is the subdomain to deploy two, and the third is a Cloudflare DNS hosted domain name. For example:
 ```
-./bin/deploy frontend nebula civicactions.com
-./bin/deploy backend nebulaapi civicactions.com
+./bin/deploy frontend www sideeffect.io
+./bin/deploy backend api sideeffect.io
 ```
-Will deploy to https://nebula.civicactions.com/ and https://nebulaapi.civicactions.com/.
+Will deploy to https://www.sideeffect.io/ and https://api.sideeffect.io/

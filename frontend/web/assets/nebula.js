@@ -77,7 +77,7 @@
        * Currently all results are returned.
        */
     /*  $( "#drug" ).autocomplete({
-	source: "https://nebulaapi.civicactions.com/rx.json",
+	source: "https://api.sideeffect.io/rx.json",
 	minLength: 2,
 	select: function( event, ui ) {
           log( ui.item ?
@@ -248,7 +248,7 @@
 	 url = 'https://api.fda.gov/drug/event.json?api_key=rv4OOon6fPJOHBbFHClUOs3BRGSbAEUdg3ACp2pu&search='
 	    + term + '&limit=5&count=patient.reaction.reactionmeddrapt.exact';
 
-	  url2 = 'https://nebulaapi.civicactions.com/rx.json?ahrq=' + term;
+	  url2 = 'https://api.sideeffect.io/rx.json?ahrq=' + term;
 
 	  $.ajax({
 	    url: url,
