@@ -8,7 +8,10 @@
 * Get hours in! 
 * USDS Checklist: 
      - 7 - Budget - Steve 
-     - 
+     - 9 - Hosting - Dave
+     - 10 - Automation - Dave
+     - 12 - Data -> Decisions - Rob or Ron
+     - 13 - Open - Rob or Ethan
 
 ## 6/25 Scrum call Action Items
 
