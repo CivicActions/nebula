@@ -120,6 +120,15 @@
 		   silver2, grain2, rain2, chrono2, ocean2, sky2, grass2,
 		   silver3, grain3, rain3, chrono3, ocean3, sky3, grass3
 		  ];
+
+    var bgColor = [ocean, grass, rain, sky, grain, chrono,
+		   ocean2, grass2, rain2, sky2, grain2, chrono2,
+		   ocean3, grass3, rain3, sky3, grain3, chrono3,
+		   ocean, grass, rain, sky, grain, chrono,
+		   ocean2, grass2, rain2, sky2, grain2, chrono2,
+		   ocean3, grass3, rain3, sky3, grain3, chrono3
+		  ];
+
     
     // Load our saved searches.
     loadSaved();
