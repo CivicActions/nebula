@@ -42,4 +42,4 @@ We rapidly addressed a few bugs that our Quality Assurance process uncovered.  O
 On Day Six, we tied the back-end API to the front-end to provide normalization, making the data more consumable and readable. This was a major feature requested in our user interviews. Our engineers worked on automated tests for the back-end API. 
 
 
-We completed our process on Day Seven, polishing the application and ensuring that all RFQ deliverables had been met.
+We completed our process on Day Seven, polishing the application and ensuring that deliverables.
