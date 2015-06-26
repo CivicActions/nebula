@@ -1,8 +1,9 @@
-
 (function($){
 
   // Load the Visualization API and the barchart package.
   google.load('visualization', '1.0', {'packages':['corechart']});
+
+  var mapDrugsIntoColorIndices = {};
 
   // Set a callback to run when the Google Visualization API is loaded.
   // 
@@ -52,7 +53,6 @@
     chart.draw(data, options);
   }
 
-
   // Sorts (descending), an object that has numeric keys
   function sortObjectByValue(obj) {
     var sortable = [];
@@ -65,8 +65,8 @@
 
   $(document).ready(function(){
 
-   /* $(function() {
-      /**
+    /* $(function() {
+       /**
        * @TODO
        * Fix autcomplete to limit results.
        * Currently all results are returned.
@@ -75,12 +75,12 @@
 	source: "https://api.sideeffect.io/rx.json",
 	minLength: 2,
 	select: function( event, ui ) {
-          log( ui.item ?
-               "Selected: " + ui.item.value + " aka " + ui.item.id :
-               "Nothing selected, input was " + this.value );
+        log( ui.item ?
+        "Selected: " + ui.item.value + " aka " + ui.item.id :
+        "Nothing selected, input was " + this.value );
 	}
-      });
-    }); */
+	});
+	}); */
     
     sessionStorage.clear();
 
@@ -112,14 +112,6 @@
     var sky3 = '#3FaAdd';
     var grass3 = '#039051';
 
-    
-    var bgColor = [silver, grain, rain, chrono, ocean, sky, grass,
-		   silver2, grain2, rain2, chrono2, ocean2, sky2, grass2,
-		   silver3, grain3, rain3, chrono3, ocean3, sky3, grass3,
-		   silver, grain, rain, chrono, ocean, sky, grass,
-		   silver2, grain2, rain2, chrono2, ocean2, sky2, grass2,
-		   silver3, grain3, rain3, chrono3, ocean3, sky3, grass3
-		  ];
 
     var bgColor = [ocean, grass, rain, sky, grain, chrono,
 		   ocean2, grass2, rain2, sky2, grain2, chrono2,
@@ -175,7 +167,8 @@
 			    + savedItemsArr[i] + '">'
 			    + savedItemsArr[i]
 			    + '<div class="check-color" data-color="' + bgColor[i] + '" style="background: ' + bgColor[i]  + '"></div></div>');
-	  
+	  // Here we maintain the color mapping to match the HTML status. 
+	  mapDrugsIntoColorIndices[savedItemsArr[i]] = i;
 	}
 	count++;
 	
@@ -183,13 +176,14 @@
       // Build from input.
       else {
 	
-        $('#text').append('<div class="checkholder"><input type="checkbox" checked="checked" value="'
-          + $('#drug').val()
-          + '" class="added-drug '
-          + $('#drug').val() + '">'
-          + $('#drug').val()
-          + '<div class="check-color" data-color="' + bgColor[checks] + '" style="background: ' + bgColor[checks]  + '"></div></div>');
-
+	$('#text').append('<div class="checkholder"><input type="checkbox" checked="checked" value="'
+			  + $('#drug').val()
+			  + '" class="added-drug '
+			  + $('#drug').val() + '">'
+			  + $('#drug').val()
+			  + '<div class="check-color" data-color="' + bgColor[checks] + '" style="background: ' + bgColor[checks]  + '"></div></div>');
+	  // Here we maintain the color mapping to match the HTML status. 
+	  mapDrugsIntoColorIndices[$('#drug').val()] = checks;
       }
       
       var urlBase = window.location.origin + '?saved=';
@@ -286,7 +280,7 @@
 	      
 	      var reactions = data;
 	      var doubles = [];
-	      var reaction = reactions[i];
+	      //	      var reaction = reactions[i];
 	      json = JSON.parse(data);	      
 	      drug = term;
 	      count = json['ahrq_sample'];
@@ -326,7 +320,15 @@
       // mapping from Symptom to count that we need.
       var allData = [];
       var tempData = [];
+
+ // This was necessary to work with FireFox, the code above worked in other browsers
+      for (var i = 0; i < sessionStorage.length; i++) {
+	  var key = sessionStorage.key(i);
+	  var triplets = JSON.parse(sessionStorage.getItem(key));
+	tempData[key] = triplets;
+      }
       
+/*
       for (var key in sessionStorage) {	
 	
 	var triplets = JSON.parse(sessionStorage.getItem(key));
@@ -335,6 +337,7 @@
 	  tempData[key] = triplets;
 	}
       }
+*/
 
       // Now we need to build a list of symptoms in a fixed order.
       var allSymptoms = [];
@@ -419,11 +422,20 @@
       var pieData = [];
       var doublesGrab = [];
       
+// I don't believe this will work with FireFox.  I believe we will
+// have to use the pattern that I added above...
+
+// Furthermore, there is no guarantee that this will bring back the 
+// data in any paricular order---therefore the sanitizedColors array,
+// which is an order, is not guaranteed to match.
+// The solution is to either compute the order of the colors from the 
+// doublesGrab array, or to sort the doublesGrab array into the 
+// same order as the colors (which requires a drug-to-color mapping.)
       for (var key in sessionStorage) {	
 	if(key.indexOf('name-use-') != -1){
 	  if(sessionStorage.getItem(key) !== null){	      
 	    doublesGrab.push(JSON.parse(sessionStorage.getItem(key)));
-	   
+	    
 	  }
 	}
       }
@@ -435,15 +447,28 @@
       }
 
       doublesGrab.unshift(columns);      
-      drawPieChart(sanitizedColors, doublesGrab);
+      // Now sort the colors based on the actual drug in the doublesGrab array...
+      piechartColorOrder = [];
+      // The first record in doublesGrab is a weird "axis1, axis2" thing..
+      for (i = 1; i < doublesGrab.length; i++) {
+	var index = mapDrugsIntoColorIndices[doublesGrab[i][0]];
+	if (typeof index == 'undefined') {
+	  debugger;
+	}
+	var color = bgColor[index];
+	piechartColorOrder[i] = color ? color : "red";
+      }
+      piechartColorOrder.shift("red");
+//      drawPieChart(sanitizedColors, doublesGrab);
+      drawPieChart(piechartColorOrder, doublesGrab);
       
     }
 
     $('input').keypress(function (e) {
-     var key = e.which;
-     if(key == 13)  // the enter key code
+      var key = e.which;
+      if(key == 13)  // the enter key code
       {
-        $('#add-to-list').click();
+	$('#add-to-list').click();
       }
     });
 
