@@ -1,5 +1,7 @@
 # On Day 7, had third interview with Martha Ogilvie, PhD
 
+[Link to video] (https://youtu.be/CRA1zJ2wJUE) 
+
 Martha noted the following things:
 * Speed good
 * Used well in IPad
