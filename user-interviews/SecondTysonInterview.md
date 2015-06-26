@@ -1,5 +1,7 @@
 # Inteview with Tyson
 
+[Link to video] (https://www.youtube.com/watch?v=IRpesVcfXKE&feature=youtu.be)
+
 New GUI is good. 
 
 A number of bugs noted:

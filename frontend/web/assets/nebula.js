@@ -29,12 +29,34 @@
       options.height = window.innerWidth / 1.2;
       chart.draw(data, options);
     });
-
-    $('#drug-chart').click(function() {      
-      options.height = $('text').length * 40;
-      chart.draw(data, options);
-    }) 
   }
+
+
+  // Callback that creates and populates a data table,
+  // instantiates the bar chart, passes in the data and
+  // draws it.
+  function drawPieChart(colors, data) {    
+    // Create the data table.
+    var data = google.visualization.arrayToDataTable(data);
+    // Set chart options
+    var options = {
+      height: window.innerWidth / 2,
+     // legend: {position: 'none'},
+     // is3D: true,
+      colors: colors,
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.PieChart(document.getElementById('pie-chart'));
+    chart.draw(data, options);
+    $(window).resize(function() {
+      options.height = window.innerWidth / 1.2;
+      chart.draw(data, options);
+    });
+
+  }
+
+  
 
   // Sorts (descending), an object that has numeric keys
   function sortObjectByValue(obj) {
@@ -48,14 +70,14 @@
 
   $(document).ready(function(){
 
-    $(function() {
+   /* $(function() {
       /**
        * @TODO
        * Fix autcomplete to limit results.
        * Currently all results are returned.
        */
-      $( "#drug" ).autocomplete({
-	source: "https://nebulaapi.civicactions.com/rx.json",
+    /*  $( "#drug" ).autocomplete({
+	source: "https://api.sideeffect.io/rx.json",
 	minLength: 2,
 	select: function( event, ui ) {
           log( ui.item ?
@@ -63,7 +85,7 @@
                "Nothing selected, input was " + this.value );
 	}
       });
-    });
+    }); */
     
     sessionStorage.clear();
 
@@ -221,15 +243,19 @@
 
 	// We only want to pull in terms that correspond to a checked box.
 	if($(this).is(":checked")) {
-	  
-	  url = 'https://api.fda.gov/drug/event.json?api_key=rv4OOon6fPJOHBbFHClUOs3BRGSbAEUdg3ACp2pu&search='
+	  term = $(this).val();
+
+	 url = 'https://api.fda.gov/drug/event.json?api_key=rv4OOon6fPJOHBbFHClUOs3BRGSbAEUdg3ACp2pu&search='
 	    + term + '&limit=5&count=patient.reaction.reactionmeddrapt.exact';
+
+	  url2 = 'https://api.sideeffect.io/rx.json?ahrq=' + term;
 
 	  $.ajax({
 	    url: url,
 	    type: 'GET',
 	    term: term,
 	    success: function(data) {
+	      
 	      var reactions = data.results;
 	      // I will store drug, symtomp, count objects in here in order to have all data.
 	      var triplets = [];
@@ -239,13 +265,43 @@
 				 symptom: reactions[i]['term'],
 				 count: reactions[i]['count']});
 	      }
+	      
 	      sessionStorage.setItem(term, JSON.stringify(triplets));
-	      setTimeout(barGraph(), 200);
+	      setTimeout(buildGraph(), 200);
+	    },
+	    error: function(data) {
+	      $('#error').append("We are unable to show data for this drug because we can't normalize the usage data when compared to other drugs. For specific adverse effects please refer to other sources.<br /><br />");
+	    }
+	  }); 
+
+
+	  $.ajax({
+	    url: url2,
+	    type: 'GET',
+	    term: term,
+	    success: function(data) {
+	      
+	      var reactions = data;
+	      var doubles = [];
+	      var reaction = reactions[i];
+	      json = JSON.parse(data);	      
+	      drug = term;
+	      count = json['ahrq_sample'];
+	      doubles.push(
+		drug,count
+	      );
+	      sessionStorage.setItem('name-use-count-' + term, JSON.stringify(doubles));
+
+	      setTimeout(buildGraph(), 200);
 	    },
 	    error: function(data) {
 	      $('#error').append("We are unable to show data for this drug because we can't normalize the usage data when compared to other drugs. For specific adverse effects please refer to other sources.<br /><br />");
 	    }
 	  });
+
+
+
+	  
 	} else {
 	  // If it isn't checked, remove the key so that it doesn't display in graph.
 	  sessionStorage.removeItem(term);	  
@@ -265,14 +321,13 @@
       }      
     }
     
-    function barGraph() {
+    function buildGraph() {
       // We can't use just flat arrays here.  Each drugName must contain an array as it's entry, which is the 
       // mapping from Symptom to count that we need.
       var allData = [];
-      var randomColorFactor = function(){ return Math.round(Math.random()*255)};
       var tempData = [];
-      for (var key in sessionStorage) {
-	
+      
+      for (var key in sessionStorage) {	
 	
 	var triplets = JSON.parse(sessionStorage.getItem(key));
 	
@@ -331,10 +386,6 @@
 	
       }
 
-      var datamap = {
-	labels: symptomKeys,
-	datasets: allData,
-      };
       var sanitizedColors = JSON.parse(sessionStorage.getItem('colorscheme'));
       
       var datax = [];
@@ -363,8 +414,32 @@
 
       drugs.unshift('Drug');
       datax.unshift(drugs);
+      console.log(datax);
       drawChart(sanitizedColors, datax);
+
+      var pieData = [];
+      var doublesGrab = [];
+      
+      for (var key in sessionStorage) {	
+	if(key.indexOf('name-use-') != -1){
+	  if(sessionStorage.getItem(key) !== null){	      
+	    doublesGrab.push(JSON.parse(sessionStorage.getItem(key)));
+	   
+	  }
+	}
+      }
+      var dataForPie = [];      
+
+      for (i = 0; i < doublesGrab.length; i++) {
+	doublesGrab[i][1] = parseInt(doublesGrab[i][1]);	
+      }
+      
+     // console.log(doublesGrab);
+      
+      //drawPieChart(sanitizedColors, doublesGrab);
+      
     }
+  
     $('input').keypress(function (e) {
      var key = e.which;
      if(key == 13)  // the enter key code
