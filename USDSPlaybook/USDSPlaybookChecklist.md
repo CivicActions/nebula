@@ -16,12 +16,12 @@ We must begin digital projects by exploring and pinpointing the needs of the peo
 
 #### Actions
 1. We have met with three professionals, including on the first day, to interview them about their needs around adverse effects information. See links https://www.youtube.com/user/civicactions.
-2. We used interviews 
-3. We consistently groomed the user stories in order to keep MVP priorities in mind. 
-4. Trello cards [here] (https://trello.com/b/IlUoml5c/nebula)
-5. Results of our discussions wiht users, and determinations based on these discussions, are consistently shared with the team and agency leadership in [this folder] (https://github.com/CivicActions/nebula/tree/master/user-interviews) in our repo, and in our Slack channel. 
-6. Our user stories can be found on Trello [here] (https://trello.com/b/IlUoml5c/nebula)
-7. We scheduled a total of [five user interviews] (https://github.com/CivicActions/nebula/tree/master/user-interviews) throughout the 7 day Sprint, from day 1 to day 7. 
+2. We used interviews
+3. We consistently groomed the user stories in order to keep MVP priorities in mind.
+4. Trello cards [here](https://trello.com/b/IlUoml5c/nebula)
+5. Results of our discussions wiht users, and determinations based on these discussions, are consistently shared with the team and agency leadership in [this folder](https://github.com/CivicActions/nebula/tree/master/user-interviews) in our repo, and in our Slack channel.
+6. Our user stories can be found on Trello [here](https://trello.com/b/IlUoml5c/nebula)
+7. We scheduled a total of [five user interviews](https://github.com/CivicActions/nebula/tree/master/user-interviews) throughout the 7 day Sprint, from day 1 to day 7.
 
 
 
@@ -38,13 +38,13 @@ We must begin digital projects by exploring and pinpointing the needs of the peo
 #### answers to key questions
 
 1. Health care professionals, but in particular busy doctors treating highly prescribed patients.
-2. The need to compare the adverse effects of multiple drugs. 
-3. To help patients reduce side effects associated with their drug regimes. 
-4. Those not facile with online tools. Those who are looking for information on non-prescription drugs (as the MVP will be targeted to prescription drugs in the AHRQ database). 
+2. The need to compare the adverse effects of multiple drugs.
+3. To help patients reduce side effects associated with their drug regimes.
+4. Those not facile with online tools. Those who are looking for information on non-prescription drugs (as the MVP will be targeted to prescription drugs in the AHRQ database).
 5. User interviews, and Design Studio.
-6. That healthcare professionals would benefit from being able to visually compare adverse effects across drugs. 
-7. Interviews and notes are posted [here]  (https://www.youtube.com/user/civicactions) and [here] (https://github.com/CivicActions/nebula/tree/master/user-interviews), respectively.
-8. During each sprint. 
+6. That healthcare professionals would benefit from being able to visually compare adverse effects across drugs.
+7. Interviews and notes are posted [here]  (https://www.youtube.com/user/civicactions) and [here](https://github.com/CivicActions/nebula/tree/master/user-interviews), respectively.
+8. During each sprint.
 
 
 ## Play 2
@@ -61,10 +61,10 @@ We need to understand the different ways people will interact with our services,
 4. Develop metrics that will measure how well the service is meeting user needs at each step of the service
 
 #### Actions
-1. On a mobile device (phone or tablet) in a doctor's office, hospital, pharmacy, medical/nursing school, nursing home. Generally used when a patient is adding or altering the medications in his or her regime. 
-2. Different drugs cause different adverse effects and there is not easy to compare the effects of multiple drugs. 
-3. Our intent is that information linking and promoting this tool could be posted in Dr's offices and medical facilities, in order grow public and professional awareness of the tool. 
-4. Metrics could include lower incidence of adverse effects due to less mixing of different drugs; how often healthcare professionals access the site; how many different drug combinations are compared on the site; 
+1. On a mobile device (phone or tablet) in a doctor's office, hospital, pharmacy, medical/nursing school, nursing home. Generally used when a patient is adding or altering the medications in his or her regime.
+2. Different drugs cause different adverse effects and there is not easy to compare the effects of multiple drugs.
+3. Our intent is that information linking and promoting this tool could be posted in Dr's offices and medical facilities, in order grow public and professional awareness of the tool.
+4. Metrics could include lower incidence of adverse effects due to less mixing of different drugs; how often healthcare professionals access the site; how many different drug combinations are compared on the site;
 
 
 #### key questions
@@ -76,8 +76,8 @@ We need to understand the different ways people will interact with our services,
 #### answers to key questions
 
 1. Looking up individual drugs online. Some doctors use WebMD, but don't admit it.
-2. There is no way to get one comprehensive visual of all side effects produced by a drug regime. 
-3. It can fit into the beginning of the prescription experience or when drugs are being added to an existing regime. Busy doctors, particularly in gerontology, have to manage complex drug regimenes quickly. 
+2. There is no way to get one comprehensive visual of all side effects produced by a drug regime.
+3. It can fit into the beginning of the prescription experience or when drugs are being added to an existing regime. Busy doctors, particularly in gerontology, have to manage complex drug regimenes quickly.
 4. Usage will increase as trust in the information grows over time. We would like to create a "Would you recommend this to your collequges" but we did not have time to measure that in this project.
 
 ## Play 3
@@ -99,11 +99,11 @@ Using a government service shouldnâ€™t be stressful, confusing, or daunting. Itâ
 #### Actions
 1. An expert created a simple, application specific style [guide](https://github.com/CivicActions/nebula/blob/master/GSA_AGILE_BPA_style_guide.png).
 2. This is a very simple application, but we are harmonizing the color palette.
-3. This simple, one page application takes a list of drugs and displays the adverse effects associated with each one. When a user adds a drug to the list the drug is displayed in the legend and its data appears in the graph, giving immediate visual feedback. 
-4. We prioritized accessibility stories and use colors that make the chart easier to read for users with visual impairments. For [reference] (http://accessibility.psu.edu/images/charts/#charttext) and [here] (http://guides.library.duke.edu/topten)
-5. We are offering a "save url" option so that users may return to the chart. It will save the list of drugs but no personal information. 
-6. The language will be kept to a minimum so the focus can remain on the charts. This app is geared towards health care professionals and we will ensure the copy makes sense to them. In subsequent revisions of the wireframes we've minimized or removed unnecessary text. 
-7. We are currently only an online service. 
+3. This simple, one page application takes a list of drugs and displays the adverse effects associated with each one. When a user adds a drug to the list the drug is displayed in the legend and its data appears in the graph, giving immediate visual feedback.
+4. We prioritized accessibility stories and use colors that make the chart easier to read for users with visual impairments. For [reference](http://accessibility.psu.edu/images/charts/#charttext) and [here](http://guides.library.duke.edu/topten)
+5. We are offering a "save url" option so that users may return to the chart. It will save the list of drugs but no personal information.
+6. The language will be kept to a minimum so the focus can remain on the charts. This app is geared towards health care professionals and we will ensure the copy makes sense to them. In subsequent revisions of the wireframes we've minimized or removed unnecessary text.
+7. We are currently only an online service.
 
 #### key questions
 - What primary tasks are the user trying to accomplish?
@@ -140,15 +140,15 @@ We should use an incremental, fast-paced style of software development to reduce
 9. Use code reviews to ensure quality
 
 #### Actions
-1. See url https://nebula.civicactions.com/, rendered public on day 5 of our Sprint. 
-2. User interviews run via screenshare on days 1, 3, 4 of the Sprint, and live interaction with the url solicited on day 5, with feedback immediately collected from affiliate Tomorrow Partners and from members of the CivicActions team beyond the project team. See [process journal] (https://github.com/CivicActions/nebula/edit/master/ProcessJournal.md).
-3. Daily scrums, targeted sub-group meetings, chat (Slack), and Sprint rituals (retrospectives, Sprint planning meetings, backlog grooming meetings) have all constituted the central pillars of our team communication. 
-4. Our project team is exactly the size required by the roles specified in the RFQ in order to qualify for Pools 1, 2, 3, and has been entirely non-hierarchical, with directives derived in consultation with all concerned members of the project team. 
-5. Features are pushed to the live site multiple times each day, as evidenced by the log in github and Slack. 
-6. Features prioritized on our Trello list "Prioritized Stories"; bugs prioritized in our issue queue in github. 
+1. See url https://nebula.civicactions.com/, rendered public on day 5 of our Sprint.
+2. User interviews run via screenshare on days 1, 3, 4 of the Sprint, and live interaction with the url solicited on day 5, with feedback immediately collected from affiliate Tomorrow Partners and from members of the CivicActions team beyond the project team. See [process journal](https://github.com/CivicActions/nebula/edit/master/ProcessJournal.md).
+3. Daily scrums, targeted sub-group meetings, chat (Slack), and Sprint rituals (retrospectives, Sprint planning meetings, backlog grooming meetings) have all constituted the central pillars of our team communication.
+4. Our project team is exactly the size required by the roles specified in the RFQ in order to qualify for Pools 1, 2, 3, and has been entirely non-hierarchical, with directives derived in consultation with all concerned members of the project team.
+5. Features are pushed to the live site multiple times each day, as evidenced by the log in github and Slack.
+6. Features prioritized on our Trello list "Prioritized Stories"; bugs prioritized in our issue queue in github.
 8. Using Github for this - all project members and user-testers/stakeholders have access and the repository is also public.
 8. Using Trello for this - all project members and user-testers/stakeholders have access. For this project, the board is also public. We used GitHub for some bugs.
-9. We did not use public conde reviews, but we used pull requests in github to ensure expert-on-neophyte individual code reviews. 
+9. We did not use public conde reviews, but we used pull requests in github to ensure expert-on-neophyte individual code reviews.
 
 #### key questions
 - How long did it take to ship the MVP? If it hasn't shipped yet, when will it?
@@ -165,13 +165,13 @@ We should use an incremental, fast-paced style of software development to reduce
 
 1. MVP shipped (made public) on day 5 of the Sprint. It was shown (in buggy state) to users on Days 3 and 4.
 2. Seven minutes.
-3. Sprints have been 4 days each in this initial Sprint. 
+3. Sprints have been 4 days each in this initial Sprint.
 4. Git
 5. Github issue queue
-6. Trello, prioritized in the Sprint planning meeting. 
-7. Every 2 days. 
-8. User interviews, fed into backlog prioritization. 
-9. Early gap was inaccess to tool (access only through screenshare), later gaps were in poor UX, inaccess to relativized data. 
+6. Trello, prioritized in the Sprint planning meeting.
+7. Every 2 days.
+8. User interviews, fed into backlog prioritization.
+9. Early gap was inaccess to tool (access only through screenshare), later gaps were in poor UX, inaccess to relativized data.
 
 ## Play 5
 ### Structure budgets and contracts to support delivery
@@ -194,15 +194,15 @@ To improve our chances of success when contracting out development work, we need
 9. Contract includes a transition of services period and transition-out plan
 
 #### Actions
-1. 
-2. 
-3. 
-4. 
-5. 
-6. 
-7. 
-8. 
-9. 
+1.
+2.
+3.
+4.
+5.
+6.
+7.
+8.
+9.
 
 #### key questions
 - What is the scope of the project? What are the key deliverables?
@@ -211,9 +211,9 @@ To improve our chances of success when contracting out development work, we need
 
 #### answers to key questions
 
-1. 
-2. 
-3. 
+1.
+2.
+3.
 
 ## Play 6
 ### Assign one leader and hold that person accountable
@@ -231,11 +231,11 @@ There must be a single product owner who has the authority and responsibility to
 
 
 #### Actions
-1. Product owner was identified on June 17 as Rob Read. Documented [here] (https://civicactions.slack.com/archives/agile-gsa/p1434582235000307)
-2. Stakeholders in this instance are agency management, and authority as outlined was granted to product owner on day 1 of Sprint.  
-3. See Read's [biography] (https://civicactions.com/team/rob-read). 
+1. Product owner was identified on June 17 as Rob Read. Documented [here](https://civicactions.slack.com/archives/agile-gsa/p1434582235000307)
+2. Stakeholders in this instance are agency management, and authority as outlined was granted to product owner on day 1 of Sprint.
+3. See Read's [biography](https://civicactions.com/team/rob-read).
 4. We eearly established a labor budget matrix of peoples skills against their availability.
-5. Again, see [biography] (https://civicactions.com/team/rob-read). 
+5. Again, see [biography](https://civicactions.com/team/rob-read).
 
 
 
@@ -270,13 +270,13 @@ We need talented people working in government who have experience creating moder
 
 #### Actions
 1. Yes -- though our "high-traffic" credentials might not be Google or Facebook quality.
-2. Yes 
+2. Yes
 3. Yes, we used an XUnit framework
 4. Yes, we had a run-test-after commit system using Jenkins
 5. Yes
 6. NA
 7. NA (though we had someone play this role)
-8. We assigned the CEO to play the role of Privacy and Legal officer, and an experienced Cyber guy to play the role of Security officer. 
+8. We assigned the CEO to play the role of Privacy and Legal officer, and an experienced Cyber guy to play the role of Security officer.
 
 
 ## Play 8
@@ -296,7 +296,7 @@ The technology decisions we make need to enable development teams to work effici
 1. API driven frontend. Modern lightweight PHP framework (Silex/Symphony). Bootstrap, jquery.
 2. We used Bootstrap in order to be Responsive, and tested with phones and iPad tablets.
 3. We have reproducible installation instructions, and continuous integration of unit test framework.
-4. 
+4.
 
 
 
@@ -309,7 +309,7 @@ The technology decisions we make need to enable development teams to work effici
 #### answers to key questions
 
 1. PHP on the backend chosen do to familiarity fo the team. API-centric for flexibility and reusability. JQuery and Bootstrap on the front end.
-2. 
+2. We chose Mariadb version 10.0 as a popular and stable drop-in replacement of MySQL with strong support in the community.
 3. We had no new team members join in this short time.
 
 
@@ -331,10 +331,10 @@ Our services should be deployed on flexible infrastructure, where resources can 
 
 #### Actions
 1. Fully automated deployment script provisions Amazon Web Services (AWS) infrastructure, and Cloudflare DNS/CDN. Docker based architecture could be horizontally scaled with minimal effort.
-2. Deployments contain a full frontend or backend stack, so can be provisioned dynamically using AWS Cloudwatch rules. 
-3. Using AWS and Cloudflare APIs. 
-4. AWS region is configurable and instances are self contained (no master database needed). 
-5. AWS charges by the minute. 
+2. Deployments contain a full frontend or backend stack, so can be provisioned dynamically using AWS Cloudwatch rules.
+3. Using AWS and Cloudflare APIs.
+4. AWS region is configurable and instances are self contained (no master database needed).
+5. AWS charges by the minute.
 6. Cloudfront is used as a content delivery network.
 7. AWS uses commodity hardware.
 
@@ -356,19 +356,19 @@ Our services should be deployed on flexible infrastructure, where resources can 
 
 #### answers to key questions
 
-1. 
-2. 
-3. 
-4. 
-5. 
-6. 
-7. 
-8. 
-9. 
-10. 
-11. 
-12. 
-13. 
+1. Amazon Web Services, US West (Oregon) data center.
+2. t2.micro for both frontend and backend. See [Instance Types](http://aws.amazon.com/ec2/instance-types/) for more details.
+3.
+4. The CloudFlare CDN is robust enough to handle a substantial surge in traffic. Also, we can scale our docker containers if necessary.
+5. With cloud computing we can scale up our capacity as much as we want.
+6. Provisioning our server instances is automated and takes under 20 minutes for a full deployment (frontend and backend).
+7. Using the docker-compose product we can easily scale any of our containers. (For example, the command `docker-compose scale web=2` would double our front end containers.)
+8.
+9. We are using the West Coast AWS region data center. The CloudFlare CDN mirrors the site in many servers worldwide.
+10. Assuming github is online, we could be back online in a different region within 20 to 30 minutes.
+11. Our app is not storing any critical data.
+12.
+13. We are using the AWS and CloudFlare APIs and web interfaces so we do not need to contact our provider for resources.
 
 
 
@@ -387,11 +387,11 @@ Today, developers write automated scripts that can verify thousands of scenarios
 5. Conduct load and performance tests at regular intervals, including before public launch
 
 #### Actions
-1. 
-2. 
+1.
+2.
 3. The build process runs on every git push, and includes automated tests.
-4. 
-5. 
+4.
+5.
 
 
 
@@ -410,16 +410,16 @@ Today, developers write automated scripts that can verify thousands of scenarios
 
 #### answers to key questions
 
-1. 
-2. 
-3. 
-4. 
-5. 
-6. 
-7. 
-8. 
-9. 
-10. 
+1.
+2.
+3.
+4.
+5.
+6. We are using Jenkins as our central tool, which uses docker, docker-compose, and docker-machine to manage the containers.
+7.
+8.
+9.
+10.
 
 
 ## Play 11
@@ -485,13 +485,13 @@ At every stage of a project, we should measure how well our service is working f
 
 #### Actions
 1. AWS Cloudwatch provides real-time resource monitoring of instances.
-2. 
-3. 
-4. 
-5. 
-6. 
-7. 
-8. 
+2.
+3.
+4.
+5.
+6.
+7.
+8.
 
 
 #### key questions
@@ -512,18 +512,18 @@ At every stage of a project, we should measure how well our service is working f
 #### answers to key questions
 
 1.
-2. 
-3. 
-4. 
-5. 
-6. 
-7. 
-8. 
-9. 
-10. 
-11. We are adding Google Analytics to the site so that we can gain better insight into usage and behavior. We are also planning on basic usability testing using a remote testing tool after the release of the MVP. 
-12. Our MVP is rapidly evolving and we are not ready for A/B testing at this time. 
-13. We have interviewed users consistently throughout our development process in order to garner their feedback on the product. And we have included a way for users to submit suggestions, issues and ideas from the site. Future plans include surveys. 
+2.
+3.
+4.
+5.
+6.
+7.
+8.
+9.
+10.
+11. We are adding Google Analytics to the site so that we can gain better insight into usage and behavior. We are also planning on basic usability testing using a remote testing tool after the release of the MVP.
+12. Our MVP is rapidly evolving and we are not ready for A/B testing at this time.
+13. We have interviewed users consistently throughout our development process in order to garner their feedback on the product. And we have included a way for users to submit suggestions, issues and ideas from the site. Future plans include surveys.
 
 
 
@@ -545,15 +545,15 @@ When we collaborate in the open and publish our data publicly, we can improve Go
 9. When appropriate, share your development process and progress publicly
 
 #### Actions
-1. 
-2. 
-3. 
-4. 
-5. 
-6. 
-7. 
-8. 
-9. 
+1.
+2.
+3.
+4.
+5.
+6.
+7.
+8.
+9.
 
 #### key questions
 - How are you collecting user feedback for bugs and issues?
@@ -564,8 +564,8 @@ When we collaborate in the open and publish our data publicly, we can improve Go
 
 #### answers to key questions
 
-1. 
-2. 
-3. 
-4. 
-5. 
+1.
+2.
+3.
+4.
+5.
