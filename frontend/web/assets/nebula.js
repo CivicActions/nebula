@@ -429,14 +429,17 @@
 	}
       }
       var dataForPie = [];      
-
+      var columns = ['axis1', 'axis2'];
+      
       for (i = 0; i < doublesGrab.length; i++) {
 	doublesGrab[i][1] = parseInt(doublesGrab[i][1]);	
       }
+
+      doublesGrab.unshift(columns);
       
-     // console.log(doublesGrab);
+     console.log(doublesGrab);
       
-      //drawPieChart(sanitizedColors, doublesGrab);
+      drawPieChart(sanitizedColors, doublesGrab);
       
     }
   
