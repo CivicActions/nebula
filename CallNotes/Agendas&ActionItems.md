@@ -1,9 +1,14 @@
-## 6/26 Scrum call Action Items
+## 6/26 Scrum call Agenda
 
 * Need Sprint Planning Meeting after Scrum
 * Should we plan additional promotion?
 * Note that finalization Plan is moved up to Tuesday night
 * Review change in personnel
+* Greg and Luke: GSA roles 
+* Get hours in! 
+* USDS Checklist: 
+     - 7 - Budget - Steve 
+     - 
 
 ## 6/25 Scrum call Action Items
 
