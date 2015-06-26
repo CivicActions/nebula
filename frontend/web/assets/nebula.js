@@ -41,8 +41,8 @@
     // Set chart options
     var options = {
       height: window.innerWidth / 2,
-      legend: {position: 'none'},
-      is3D: true,
+     // legend: {position: 'none'},
+     // is3D: true,
       colors: colors,
     };
 
@@ -285,13 +285,15 @@
 	      var doubles = [];
 	      var reaction = reactions[i];
 	      json = JSON.parse(data);
-	      doubles.push({ drug: term,
-			     count: json['ahrq_sample'],
-			   });
+	      drug = term;
+	      
+	      count = json['ahrq_sample'];
+	      doubles.push(
+		drug,count
+	      );
 	      sessionStorage.setItem('name-use-count-' + term, JSON.stringify(doubles));
 
 	      setTimeout(buildGraph(), 200);
-	      console.log(sessionStorage.getItem(term + '-use-count'));
 	    },
 	    error: function(data) {
 	      $('#error').append("We are unable to show data for this drug because we can't normalize the usage data when compared to other drugs. For specific adverse effects please refer to other sources.<br /><br />");
@@ -427,13 +429,22 @@
 	  }
 	}
       }
-      
+      var dataForPie = [];
 
-     // console.log(doublesGrab);
-     // console.log(datax);
-     // drawPieChart(sanitizedColors, doublesGrab);
+      for (i = 0; i < doublesGrab.length; i++) {
+	$.makeArray(doublesGrab[i]);
+	  dataForPie.push(doublesGrab[i][0][i]);
+
+      }
+      console.log(datax);
+      
+      console.log(doublesGrab);
+      
+      // drawPieChart(sanitizedColors, doublesGrab);
       
     }
+
+    
     $('input').keypress(function (e) {
      var key = e.which;
      if(key == 13)  // the enter key code
