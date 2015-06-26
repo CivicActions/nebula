@@ -229,14 +229,12 @@ There must be a single product owner who has the authority and responsibility to
 4. The product owner has a work plan that includes budget estimates and identifies funding sources
 5. The product owner has a strong relationship with the contracting officer
 
-# TBD: A section is missing here.
-
 
 #### Actions
 1. Product owner was identified on June 17 as Rob Read. Documented [here] (https://civicactions.slack.com/archives/agile-gsa/p1434582235000307)
 2. Stakeholders in this instance are agency management, and authority as outlined was granted to product owner on day 1 of Sprint.  
 3. See Read's [biography] (https://civicactions.com/team/rob-read). 
-4. * * * 
+4. We eearly established a labor budget matrix of peoples skills against their availability.
 5. Again, see [biography] (https://civicactions.com/team/rob-read). 
 
 
@@ -295,9 +293,9 @@ The technology decisions we make need to enable development teams to work effici
 4. [Consider open source software solutions](http://www.whitehouse.gov/sites/default/files/omb/assets/egov_docs/memotociostechnologyneutrality.pdf) at every layer of the stack
 
 #### Actions
-1. API driven frontend. Modern lightweight PHP framework (Silex/Symphony). 
-2. 
-3. 
+1. API driven frontend. Modern lightweight PHP framework (Silex/Symphony). Bootstrap, jquery.
+2. We used Bootstrap in order to be Responsive, and tested with phones and iPad tablets.
+3. We have reproducible installation instructions, and continuous integration of unit test framework.
 4. 
 
 
@@ -310,9 +308,9 @@ The technology decisions we make need to enable development teams to work effici
 
 #### answers to key questions
 
-1. 
+1. PHP on the backend chosen do to familiarity fo the team. API-centric for flexibility and reusability. JQuery and Bootstrap on the front end.
 2. 
-3. 
+3. We had no new team members join in this short time.
 
 
 ## Play 9
