@@ -11,6 +11,8 @@
 * Steve to coordinate with Martha and Tyson around additional user inteviews on Tuesday 
 * Team to meet for Sprint 3 planning following scrum, entering all further enhancements in Trello, and then prioritizing issues in github queue
 
+### Team balance scores:
+ET: 7, RR: 8, AR: 8.5, DN: 8.5, RA: 9.75, SC: 9, LF: 7, AP: 9, GE: 3, HP: 9
 
 ## 6/26 Scrum call Agenda
 
