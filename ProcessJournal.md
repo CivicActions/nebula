@@ -138,6 +138,23 @@ Scrum meeting in preparation for Final Push tonight.
 
 5:00 Decision announce to add a third sprint for the final three days.
 
+Friday, June 26th
+
+9:45
+
+Scrum meeting.  Creating Release 2.0, under the wire for the original deadline.
+
+10:30 
+
+Sprint Planning Meeting. Velocity for Sprint 2: 29 story points.
+Celebreting success in integrating AHRQ data into pie chart, and making release under the wire.
+
+Attempting to arrange a 3rd user for user test next week.
+
+Personnel changes doing that.  Making basic plan to work on polishing existing features.
+
+
+
 
 
 
