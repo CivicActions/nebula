@@ -511,7 +511,7 @@ At every stage of a project, we should measure how well our service is working f
 
 #### answers to key questions
 
-1. 
+1.
 2. 
 3. 
 4. 
@@ -521,9 +521,9 @@ At every stage of a project, we should measure how well our service is working f
 8. 
 9. 
 10. 
-11. 
-12. 
-13. 
+11. We are adding Google Analytics to the site so that we can gain better insight into usage and behavior. We are also planning on basic usability testing using a remote testing tool after the release of the MVP. 
+12. Our MVP is rapidly evolving and we are not ready for A/B testing at this time. 
+13. We have interviewed users consistently throughout our development process in order to garner their feedback on the product. And we have included a way for users to submit suggestions, issues and ideas from the site. Future plans include surveys. 
 
 
 
