@@ -284,9 +284,8 @@
 	      var reactions = data;
 	      var doubles = [];
 	      var reaction = reactions[i];
-	      json = JSON.parse(data);
+	      json = JSON.parse(data);	      
 	      drug = term;
-	      
 	      count = json['ahrq_sample'];
 	      doubles.push(
 		drug,count
@@ -415,7 +414,7 @@
 
       drugs.unshift('Drug');
       datax.unshift(drugs);
-      
+      console.log(datax);
       drawChart(sanitizedColors, datax);
 
       var pieData = [];
@@ -429,22 +428,18 @@
 	  }
 	}
       }
-      var dataForPie = [];
+      var dataForPie = [];      
 
       for (i = 0; i < doublesGrab.length; i++) {
-	$.makeArray(doublesGrab[i]);
-	  dataForPie.push(doublesGrab[i][0][i]);
-
+	doublesGrab[i][1] = parseInt(doublesGrab[i][1]);	
       }
-      console.log(datax);
       
-      console.log(doublesGrab);
+     // console.log(doublesGrab);
       
-      // drawPieChart(sanitizedColors, doublesGrab);
+      //drawPieChart(sanitizedColors, doublesGrab);
       
     }
-
-    
+  
     $('input').keypress(function (e) {
      var key = e.which;
      if(key == 13)  // the enter key code
