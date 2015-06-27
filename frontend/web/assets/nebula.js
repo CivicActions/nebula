@@ -255,7 +255,7 @@
           console.log("XX term ="+term);
 	  console.log("XX url ="+url);
 
-	  url2 = 'https://api.sideeffect.io/rx.json?ahrq=' + term;
+	  url2 = 'https://api.sideeffect.io/rx.json?ahrq="' + term + '"';
 
 	  $.ajax({
 	    url: url,
