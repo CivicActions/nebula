@@ -65,22 +65,20 @@
 
   $(document).ready(function(){
 
-    /* $(function() {
-       /**
-       * @TODO
-       * Fix autcomplete to limit results.
-       * Currently all results are returned.
-       */
-    /*  $( "#drug" ).autocomplete({
-	source: "https://api.sideeffect.io/rx.json",
-	minLength: 2,
-	select: function( event, ui ) {
-        log( ui.item ?
-        "Selected: " + ui.item.value + " aka " + ui.item.id :
-        "Nothing selected, input was " + this.value );
-	}
-	});
-	}); */
+    // Build our autocomplete
+    $.ajax({
+      url: "https://api.sideeffect.io/rx.json",
+      dataType: 'json',
+    }).success(function(data) {
+      console.dir(data);
+      var source = $.map(data, function(term) {
+        return term
+      });
+
+      $("#drug").autocomplete({
+	source: source
+      });	      
+    });
     
     sessionStorage.clear();
 
