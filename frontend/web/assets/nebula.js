@@ -15,11 +15,15 @@
     // Create the data table.
     var data = google.visualization.arrayToDataTable(data);
     // Set chart options
+    var chartAreaHeight = data.getNumberOfRows() * 30;
+    var chartHeight = chartAreaHeight + 80;
+    
     var options = {
-      height: window.innerWidth / 2,
+      height: chartHeight,
+     vAxis:{textStyle:{color: '#005500',fontSize: '11'}},
       legend: {position: 'none'},
       bar: {groupWidth: '75%'},
-      chartArea: {'width': '80%', 'height': '90%', 'float': 'right'},
+      chartArea: {'width': '80%', 'height': chartAreaHeight,},
       colors: colors,
       isStacked: true,
     };
@@ -28,7 +32,6 @@
     var chart = new google.visualization.BarChart(document.getElementById('drug-chart'));
     chart.draw(data, options);
     $(window).resize(function() {
-      options.height = window.innerWidth / 1.2;
       chart.draw(data, options);
     });
   }
@@ -75,8 +78,10 @@
       });
 
       $("#drug").autocomplete({
-	source: source
-      });	      
+	source: source,
+	
+      });
+     
     });
     
     sessionStorage.clear();
@@ -244,15 +249,13 @@
 //	  url = 'https://api.sideeffect.io/rx.json?search=' + term;
 
 // But at present this must be used...
-	  url = 'https://api.sideeffect.io/rx/' + term;
+	  url = 'https://api.sideeffect.io/rx/"' + term + '"';
 
 // Note: This is the 
 //	  url = 'https://api.fda.gov/drug/event.json?api_key=rv4OOon6fPJOHBbFHClUOs3BRGSbAEUdg3ACp2pu&search='
 //	    + term + '&limit=5&count=patient.reaction.reactionmeddrapt.exact';
 
 
-// I have to revert this to get non-zero data to make the pie-chart show up.
-//	  url2 = 'https://api.sideeffect.io/rx.json?ahrq="' + term + '"';
 	  url2 = 'https://api.sideeffect.io/rx.json?ahrq=' + term;
 
 	  $.ajax({
