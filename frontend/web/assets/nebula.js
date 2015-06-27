@@ -251,7 +251,10 @@
 //	  url = 'https://api.fda.gov/drug/event.json?api_key=rv4OOon6fPJOHBbFHClUOs3BRGSbAEUdg3ACp2pu&search='
 //	    + term + '&limit=5&count=patient.reaction.reactionmeddrapt.exact';
 
-	  url2 = 'https://api.sideeffect.io/rx.json?ahrq="' + term + '"';
+
+// I have to revert this to get non-zero data to make the pie-chart show up.
+//	  url2 = 'https://api.sideeffect.io/rx.json?ahrq="' + term + '"';
+	  url2 = 'https://api.sideeffect.io/rx.json?ahrq=' + term;
 
 	  $.ajax({
 	    url: url,
