@@ -206,7 +206,7 @@
 	  
 	  revisedPalette.push($(this).attr('data-color'));
 	}
-	sessionStorage.setItem('colorscheme', JSON.stringify(revisedPalette));	  
+//	sessionStorage.setItem('colorscheme', JSON.stringify(revisedPalette));	  
       });      
     }
 
@@ -224,7 +224,6 @@
 	  
 	  devisedPalette.push($(this).attr('data-color'));
 	}
-	sessionStorage.setItem('colorscheme', JSON.stringify(devisedPalette));	  
       });
     });
     
@@ -351,28 +350,28 @@
       var allData = [];
       var tempData = [];
 
+
+      // Now sort the colors based on the actual drug in the doublesGrab array...
+      barchartColorOrder = [];
+
+
  // This was necessary to work with FireFox, the code above worked in other browsers
       for (var i = 0; i < sessionStorage.length; i++) {
 	var key = sessionStorage.key(i);
 // This needs to be refactored.  We probably shouldn't use drug names as keys -- we should have one key for
 // all drugs, which won't be that hard.
-	if ((key != "colorscheme") && 
+	if (
 	    !(key.lastIndexOf("name-use", 0) === 0) &&
 	   (key != "loadeddata") &&
 	   (key != "link")) {
 	  var triplets = JSON.parse(sessionStorage.getItem(key));
 	  tempData[key] = triplets;
+	  var index = mapDrugsIntoColorIndices[key];
+	  var color = bgColor[index];
+	  barchartColorOrder.push(color ? color : "red");
 	}
       }
       
-/*
-      for (var key in sessionStorage) {	
-	var triplets = JSON.parse(sessionStorage.getItem(key));
-	if(sessionStorage.getItem(key) !== null){
-	  tempData[key] = triplets;
-	}
-      }
-*/
 
       // Now we need to build a list of symptoms in a fixed order.
       var allSymptoms = [];
@@ -424,8 +423,6 @@
 	
       }
 
-      var sanitizedColors = JSON.parse(sessionStorage.getItem('colorscheme'));
-      
       var datax = [];
       var drugs = Object.keys(tempData);
       for (var n = 0; n < symptomKeys.length; n++) {
@@ -442,6 +439,10 @@
 	    }
 	  }
 	  if (mycount) {
+	    if (typeof mycount != 'number') {
+	      debugger;
+	      mycount = 0;
+            } 
 	    timeSeries.push(mycount);
 	  } else {
 	    timeSeries.push(0);
@@ -452,7 +453,7 @@
 
       drugs.unshift('Drug');
       datax.unshift(drugs);
-      drawChart(sanitizedColors, datax);
+      drawChart(barchartColorOrder, datax);
 
       var pieData = [];
       var doublesGrab = [];
@@ -494,7 +495,6 @@
 	piechartColorOrder[i] = color ? color : "red";
       }
       piechartColorOrder.shift("red");
-//      drawPieChart(sanitizedColors, doublesGrab);
       drawPieChart(piechartColorOrder, doublesGrab);
       
     }
