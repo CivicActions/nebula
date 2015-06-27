@@ -119,7 +119,7 @@
 		   ocean, grass, rain, sky, grain, chrono,
 		   ocean2, grass2, rain2, sky2, grain2, chrono2,
 		   ocean3, grass3, rain3, sky3, grain3, chrono3
-		  ];
+	];
 
     
     // Load our saved searches.
@@ -243,7 +243,19 @@
 	if($(this).is(":checked")) {
 	  term = $(this).val();
 
-	  url = 'https://api.sideeffect.io/rx.json?search=' + term;
+
+// Possibly this syntax sill work...
+//	  url = 'https://api.sideeffect.io/rx.json?search=' + term;
+
+// But at present this must be used...
+	  url = 'https://api.sideeffect.io/rx/' + term;
+
+// Note: This is the 
+//	  url = 'https://api.fda.gov/drug/event.json?api_key=rv4OOon6fPJOHBbFHClUOs3BRGSbAEUdg3ACp2pu&search='
+//	    + term + '&limit=5&count=patient.reaction.reactionmeddrapt.exact';
+
+          console.log("XX term ="+term);
+	  console.log("XX url ="+url);
 
 	  url2 = 'https://api.sideeffect.io/rx.json?ahrq=' + term;
 
@@ -252,6 +264,8 @@
 	    type: 'GET',
 	    term: term,
 	    success: function(data) {
+// Comment out this line if you are going directly against the OpenFDA API --- its header returns JSON,
+// whereas ours returns a string that must be parsed
 	      data = JSON.parse(data);
 	      
 	      var reactions = data.results;
@@ -265,6 +279,9 @@
 	      }
 	      
 	      sessionStorage.setItem(term, JSON.stringify(triplets));
+	      console.log("term ="+term);
+	      console.log("url ="+url);
+	      console.log("value ="+JSON.stringify(triplets));
 	      setTimeout(buildGraph(), 200);
 	    },
 	    error: function(data) {
@@ -280,7 +297,6 @@
 	      
 	      var reactions = data;
 	      var doubles = [];
-	      //	      var reaction = reactions[i];
 	      json = JSON.parse(data);	      
 	      drug = term;
 	      count = json['ahrq_sample'];
@@ -323,16 +339,21 @@
 
  // This was necessary to work with FireFox, the code above worked in other browsers
       for (var i = 0; i < sessionStorage.length; i++) {
-	  var key = sessionStorage.key(i);
+	var key = sessionStorage.key(i);
+// This needs to be refactored.  We probably shouldn't use drug names as keys -- we should have one key for
+// all drugs, which won't be that hard.
+	if ((key != "colorscheme") && 
+	    !(key.lastIndexOf("name-use", 0) === 0) &&
+	   (key != "loadeddata") &&
+	   (key != "link")) {
 	  var triplets = JSON.parse(sessionStorage.getItem(key));
-	tempData[key] = triplets;
+	  tempData[key] = triplets;
+	}
       }
       
 /*
       for (var key in sessionStorage) {	
-	
 	var triplets = JSON.parse(sessionStorage.getItem(key));
-	
 	if(sessionStorage.getItem(key) !== null){
 	  tempData[key] = triplets;
 	}
