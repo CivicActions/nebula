@@ -13,13 +13,18 @@
   // draws it.
   function drawChart(colors, data) {    
     // Create the data table.
+    var numBars = data.length;
+    var computedHeight = 28 * numBars;
     var data = google.visualization.arrayToDataTable(data);
     // Set chart options
     var options = {
-      height: window.innerWidth / 2,
-      legend: {position: 'none'},
-      bar: {groupWidth: '75%'},
-      chartArea: {'width': '80%', 'height': '90%', 'float': 'right'},
+//      height: window.innerWidth *2.0,
+      height: computedHeight,
+      legend: {position: 'bottom'},
+//      bar: {groupWidth: '60%'},
+      title: 'Reported Side Effects',
+      subtitle: 'From OpenFDA Adverse Events Database',
+      chartArea: {'top': 0, 'width': '50%', 'float': 'right'},
       colors: colors,
       isStacked: true,
     };
@@ -41,10 +46,11 @@
     var data = google.visualization.arrayToDataTable(data);
     // Set chart options
     var options = {
-      width: 250,
-      height: 250,
-      chartArea: {'width': '95%', 'height': '95%'},
-      legend: {position: 'none'},
+      title: 'Relative Reported Number of Prescriptions',
+      subtitle: 'From AHRQ MEPS Data',
+      height: 400,
+      width: 400,
+      legend: {position: 'bottom'},
       colors: colors,
     };
 
@@ -158,7 +164,7 @@
 	var savedItemsArr = savedItems.split(' ');
 	
 	for(i = 0; i < savedItemsArr.length; i++) {
-	  $('#text').append('<div class="checkholder" id="' + savedItemsArr[i] + '"><input type="checkbox" checked="checked" value="'
+	  $('#added-meds').append('<div class="checkholder" id="' + savedItemsArr[i] + '"><input type="checkbox" checked="checked" value="'
 			    + savedItemsArr[i]
 			    + '" class="added-drug '
 			    + savedItemsArr[i] + '">'
@@ -173,7 +179,7 @@
       // Build from input.
       else {
 	
-	$('#text').append('<div class="checkholder" id="' + $('#drug').val() + '"><input type="checkbox" checked="checked" value="'
+	$('#added-meds').append('<div class="checkholder" id="' + $('#drug').val() + '"><input type="checkbox" checked="checked" value="'
 			  + $('#drug').val()
 			  + '" class="added-drug '
 			  + $('#drug').val() + '">'
