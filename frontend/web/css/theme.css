@@ -1,14 +1,24 @@
 body {
   font-size: 16px;
 }
-h3 {
-  padding-bottom: 20px;
+h1, h2, h3, h4, h5 {
+  color: #00A159;
+  font-weight: bold;
+}
+hr {
+  border-top: 1px solid #cecece;
+}
+big {
+  font-size: 26px;
 }
 .header {
-  padding-bottom: 10px;
-  padding-top: 10px;
+  padding-bottom: 20px;
+  padding-top: 20px;
 }
 .header img {
+  max-width: 275px;
+  height: auto;
+  width: 100%;
 }
 .hero {
   background: #007FAA;
@@ -17,7 +27,11 @@ h3 {
   padding-bottom: 50px;
   padding-top: 30px;
 }
-.btn-default, .btn-default:hover {
+.hero h3 {
+  color: #fff;
+  padding-bottom: 20px;
+}
+.hero .btn-default, .hero .btn-default:hover {
   background: #3FA9F5;
   background-image: none;
   border-color: #3FA9F5;
@@ -31,11 +45,17 @@ h3 {
 .sideeffects {
   padding-bottom: 60px;
 }
+.contact {
+  padding-bottom: 40px;
+}
 .footer {
-  background: #efefef;
+  background: #f7f7f7;
   font-size: 14px;
-  padding-bottom: 10px;
-  padding-top: 10px;
+  padding-bottom: 30px;
+  padding-top: 30px;
+}
+.footer h4, .footer h3 {
+  color: #5d6b75;
 }
 .social {
   background: #007FAA;
