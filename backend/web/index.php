@@ -28,7 +28,6 @@ function queryFDA($med){
     'query' => [
       'api_key' => 'rv4OOon6fPJOHBbFHClUOs3BRGSbAEUdg3ACp2pu',
       'search' => $med,
-      'limit' => 5,
       'count' => 'patient.reaction.reactionmeddrapt.exact']
   ]);
   $data = json_decode((string) $response->getBody(), TRUE);
