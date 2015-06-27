@@ -70,7 +70,6 @@
       url: "https://api.sideeffect.io/rx.json",
       dataType: 'json',
     }).success(function(data) {
-      console.dir(data);
       var source = $.map(data, function(term) {
         return term
       });
@@ -159,7 +158,7 @@
 	var savedItemsArr = savedItems.split(' ');
 	
 	for(i = 0; i < savedItemsArr.length; i++) {
-	  $('#text').append('<div class="checkholder"><input type="checkbox" checked="checked" value="'
+	  $('#text').append('<div class="checkholder" id="' + savedItemsArr[i] + '"><input type="checkbox" checked="checked" value="'
 			    + savedItemsArr[i]
 			    + '" class="added-drug '
 			    + savedItemsArr[i] + '">'
@@ -174,7 +173,7 @@
       // Build from input.
       else {
 	
-	$('#text').append('<div class="checkholder"><input type="checkbox" checked="checked" value="'
+	$('#text').append('<div class="checkholder" id="' + $('#drug').val() + '"><input type="checkbox" checked="checked" value="'
 			  + $('#drug').val()
 			  + '" class="added-drug '
 			  + $('#drug').val() + '">'
@@ -252,9 +251,6 @@
 //	  url = 'https://api.fda.gov/drug/event.json?api_key=rv4OOon6fPJOHBbFHClUOs3BRGSbAEUdg3ACp2pu&search='
 //	    + term + '&limit=5&count=patient.reaction.reactionmeddrapt.exact';
 
-          console.log("XX term ="+term);
-	  console.log("XX url ="+url);
-
 	  url2 = 'https://api.sideeffect.io/rx.json?ahrq="' + term + '"';
 
 	  $.ajax({
@@ -277,12 +273,19 @@
 	      }
 	      
 	      sessionStorage.setItem(term, JSON.stringify(triplets));
-	      console.log("term ="+term);
-	      console.log("url ="+url);
-	      console.log("value ="+JSON.stringify(triplets));
+
 	      setTimeout(buildGraph(), 200);
 	    },
 	    error: function(data) {
+	      $('.checkholder').each(function() {
+		var keySearch = $(this).attr('id');
+		console.log(keySearch);
+		
+		if(sessionStorage.getItem(keySearch) == null) {
+		  $(this).remove();
+		  
+		}
+	      })
 	      $('#error').append("We are unable to show data for this drug because we can't normalize the usage data when compared to other drugs. For specific adverse effects please refer to other sources.<br /><br />");
 	    }
 	  }); 
@@ -306,6 +309,16 @@
 	      setTimeout(buildGraph(), 200);
 	    },
 	    error: function(data) {
+	      $('.checkholder').each(function() {
+		console.log($(this).attr('id'));
+		var keySearch = $(this).attr('id');
+		
+		if(sessionStorage.getItem(keySearch) == null) {
+		  $(this).remove();
+		  
+		}
+	      })
+	      
 	      $('#error').append("We are unable to show data for this drug because we can't normalize the usage data when compared to other drugs. For specific adverse effects please refer to other sources.<br /><br />");
 	    }
 	  });
