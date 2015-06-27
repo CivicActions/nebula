@@ -251,7 +251,8 @@
 //	  url = 'https://api.fda.gov/drug/event.json?api_key=rv4OOon6fPJOHBbFHClUOs3BRGSbAEUdg3ACp2pu&search='
 //	    + term + '&limit=5&count=patient.reaction.reactionmeddrapt.exact';
 
-	  url2 = 'https://api.sideeffect.io/rx.json?ahrq="' + term + '"';
+//	  url2 = 'https://api.sideeffect.io/rx.json?ahrq="' + term + '"';
+	  url2 = 'https://api.sideeffect.io/rx.json?ahrq=' + term;
 
 	  $.ajax({
 	    url: url,
@@ -475,7 +476,7 @@
       var columns = ['axis1', 'axis2'];
       
       for (i = 0; i < doublesGrab.length; i++) {
-	doublesGrab[i][1] = parseInt(doublesGrab[i][1]);	
+	doublesGrab[i][1] = parseInt(doublesGrab[i][1]);
       }
 
       doublesGrab.unshift(columns);      
