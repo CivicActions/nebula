@@ -6,7 +6,6 @@
   var mapDrugsIntoColorIndices = {};
 
   // Set a callback to run when the Google Visualization API is loaded.
-  // 
 
   // Callback that creates and populates a data table,
   // instantiates the bar chart, passes in the data and
@@ -25,7 +24,7 @@
       subtitle: 'From OpenFDA Adverse Events Database',
       chartArea: {'top': 0, 'width': '50%', 'float': 'right'},
       height: chartHeight,
-     vAxis:{textStyle:{color: '#005500',fontSize: '11'}},
+      vAxis:{textStyle:{color: '#005500',fontSize: '11'}},
       legend: {position: 'none'},
       bar: {groupWidth: '75%'},
       chartArea: {'width': '80%', 'height': chartAreaHeight,},
@@ -60,6 +59,9 @@
     // Instantiate and draw our chart, passing in some options.
     var chart = new google.visualization.PieChart(document.getElementById('pie-chart'));
     chart.draw(data, options);
+        $(window).resize(function() {
+      chart.draw(data, options);
+    });
   }
 
   // Sorts (descending), an object that has numeric keys
@@ -87,7 +89,7 @@
 	source: source,
 	
       });
-     
+      
     });
     
     sessionStorage.clear();
@@ -127,7 +129,7 @@
 		   ocean, grass, rain, sky, grain, chrono,
 		   ocean2, grass2, rain2, sky2, grain2, chrono2,
 		   ocean3, grass3, rain3, sky3, grain3, chrono3
-	];
+		  ];
 
     
     // Load our saved searches.
@@ -170,11 +172,11 @@
 	
 	for(i = 0; i < savedItemsArr.length; i++) {
 	  $('#added-meds').append('<div class="checkholder" id="' + savedItemsArr[i] + '"><input type="checkbox" checked="checked" value="'
-			    + savedItemsArr[i]
-			    + '" class="added-drug '
-			    + savedItemsArr[i] + '">'
-			    + savedItemsArr[i]
-			    + '<div class="check-color" data-color="' + bgColor[i] + '" style="background: ' + bgColor[i]  + '"></div></div>');
+				  + savedItemsArr[i]
+				  + '" class="added-drug '
+				  + savedItemsArr[i] + '">'
+				  + savedItemsArr[i]
+				  + '<div class="check-color" data-color="' + bgColor[i] + '" style="background: ' + bgColor[i]  + '"></div></div>');
 	  // Here we maintain the color mapping to match the HTML status. 
 	  mapDrugsIntoColorIndices[savedItemsArr[i]] = i;
 	}
@@ -185,13 +187,13 @@
       else {
 	
 	$('#added-meds').append('<div class="checkholder" id="' + $('#drug').val() + '"><input type="checkbox" checked="checked" value="'
-			  + $('#drug').val()
-			  + '" class="added-drug '
-			  + $('#drug').val() + '">'
-			  + $('#drug').val()
-			  + '<div class="check-color" data-color="' + bgColor[checks] + '" style="background: ' + bgColor[checks]  + '"></div></div>');
-	  // Here we maintain the color mapping to match the HTML status. 
-	  mapDrugsIntoColorIndices[$('#drug').val()] = checks;
+				+ $('#drug').val()
+				+ '" class="added-drug '
+				+ $('#drug').val() + '">'
+				+ $('#drug').val()
+				+ '<div class="check-color" data-color="' + bgColor[checks] + '" style="background: ' + bgColor[checks]  + '"></div></div>');
+	// Here we maintain the color mapping to match the HTML status. 
+	mapDrugsIntoColorIndices[$('#drug').val()] = checks;
       }
       
       var urlBase = window.location.origin + '?saved=';
@@ -217,11 +219,12 @@
 	  
 	  revisedPalette.push($(this).attr('data-color'));
 	}
-//	sessionStorage.setItem('colorscheme', JSON.stringify(revisedPalette));	  
+	//	sessionStorage.setItem('colorscheme', JSON.stringify(revisedPalette));	  
       });      
     }
 
     $(document).change(function() {
+      
       $('.added-drug').each(function(){
 	$(this).click(function(){
 	  addItems();
@@ -245,21 +248,19 @@
       var url;
       $('#clear-all').removeClass('hidden');
       $.each($('.added-drug'), function(term) {
-
+	term = $(this).val();
 	// We only want to pull in terms that correspond to a checked box.
 	if($(this).is(":checked")) {
-	  term = $(this).val();
 
+	  // Possibly this syntax sill work...
+	  //	  url = 'https://api.sideeffect.io/rx.json?search=' + term;
 
-// Possibly this syntax sill work...
-//	  url = 'https://api.sideeffect.io/rx.json?search=' + term;
-
-// But at present this must be used...
+	  // But at present this must be used...
 	  url = 'https://api.sideeffect.io/rx/"' + term + '"';
 
-// Note: This is the 
-//	  url = 'https://api.fda.gov/drug/event.json?api_key=rv4OOon6fPJOHBbFHClUOs3BRGSbAEUdg3ACp2pu&search='
-//	    + term + '&limit=5&count=patient.reaction.reactionmeddrapt.exact';
+	  // Note: This is the 
+	  //	  url = 'https://api.fda.gov/drug/event.json?api_key=rv4OOon6fPJOHBbFHClUOs3BRGSbAEUdg3ACp2pu&search='
+	  //	    + term + '&limit=5&count=patient.reaction.reactionmeddrapt.exact';
 
 
 	  url2 = 'https://api.sideeffect.io/rx.json?ahrq=' + term;
@@ -269,8 +270,8 @@
 	    type: 'GET',
 	    term: term,
 	    success: function(data) {
-// Comment out this line if you are going directly against the OpenFDA API --- its header returns JSON,
-// whereas ours returns a string that must be parsed
+	      // Comment out this line if you are going directly against the OpenFDA API --- its header returns JSON,
+	      // whereas ours returns a string that must be parsed
 	      data = JSON.parse(data);
 	      
 	      var reactions = data.results;
@@ -297,7 +298,10 @@
 		  
 		}
 	      })
-	      $('#error').append("We are unable to show data for this drug because we can't normalize the usage data when compared to other drugs. For specific adverse effects please refer to other sources.<br /><br />");
+		if(!$('#error').text().length) {
+		  
+		  $('#error').append("We are unable to show data for this drug because we can't normalize the usage data when compared to other drugs. For specific adverse effects please refer to other sources.<br /><br />");
+		}
 	    }
 	  }); 
 
@@ -329,14 +333,15 @@
 		  
 		}
 	      })
-	      
-	      $('#error').append("We are unable to show data for this drug because we can't normalize the usage data when compared to other drugs. For specific adverse effects please refer to other sources.<br /><br />");
 	    }
 	  });
 	  
-	} else {
+	}
+	else {
 	  // If it isn't checked, remove the key so that it doesn't display in graph.
-	  sessionStorage.removeItem(term);	  
+	  sessionStorage.removeItem(term);
+	  sessionStorage.removeItem('name-use-count-' + term);
+	  
 	}
       });
       
@@ -364,15 +369,15 @@
       barchartColorOrder = [];
 
 
- // This was necessary to work with FireFox, the code above worked in other browsers
+      // This was necessary to work with FireFox, the code above worked in other browsers
       for (var i = 0; i < sessionStorage.length; i++) {
 	var key = sessionStorage.key(i);
-// This needs to be refactored.  We probably shouldn't use drug names as keys -- we should have one key for
-// all drugs, which won't be that hard.
+	// This needs to be refactored.  We probably shouldn't use drug names as keys -- we should have one key for
+	// all drugs, which won't be that hard.
 	if (
-	    !(key.lastIndexOf("name-use", 0) === 0) &&
-	   (key != "loadeddata") &&
-	   (key != "link")) {
+	  !(key.lastIndexOf("name-use", 0) === 0) &&
+	    (key != "loadeddata") &&
+	    (key != "link")) {
 	  var triplets = JSON.parse(sessionStorage.getItem(key));
 	  tempData[key] = triplets;
 	  var index = mapDrugsIntoColorIndices[key];
@@ -467,15 +472,15 @@
       var pieData = [];
       var doublesGrab = [];
       
-// I don't believe this will work with FireFox.  I believe we will
-// have to use the pattern that I added above...
+      // I don't believe this will work with FireFox.  I believe we will
+      // have to use the pattern that I added above...
 
-// Furthermore, there is no guarantee that this will bring back the 
-// data in any paricular order---therefore the sanitizedColors array,
-// which is an order, is not guaranteed to match.
-// The solution is to either compute the order of the colors from the 
-// doublesGrab array, or to sort the doublesGrab array into the 
-// same order as the colors (which requires a drug-to-color mapping.)
+      // Furthermore, there is no guarantee that this will bring back the 
+      // data in any paricular order---therefore the sanitizedColors array,
+      // which is an order, is not guaranteed to match.
+      // The solution is to either compute the order of the colors from the 
+      // doublesGrab array, or to sort the doublesGrab array into the 
+      // same order as the colors (which requires a drug-to-color mapping.)
       for (var key in sessionStorage) {	
 	if(key.indexOf('name-use-') != -1){
 	  if(sessionStorage.getItem(key) !== null){	      
