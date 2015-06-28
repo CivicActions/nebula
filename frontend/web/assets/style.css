@@ -11,16 +11,28 @@
   font-weight:bold;
   font-size:115%;
 }
-.check-color {
-  display:block;
-  padding:10px;
-  margin-left:8px;
-  position:relative;
-  border:thin solid #888;
-}
 .checkholder {
   float:left;
-  margin:5px 8px;
+  margin:5px 25px 5px 2px;
+  font-size:14px;
+}
+.check-color {
+  display:block;
+  padding:7px 15px;
+  margin-left:8px;
+  float:left;
+  position:relative;
+}
+.checkholder .added-drug{
+  float:left;
+  font-size:16px;
+  margin:0
+}
+.checkholder label{
+  font-weight: normal;
+  position: relative;
+  top: -3px;
+  left: 5px;
 }
 #drug-chart {
   display:block;
@@ -42,8 +54,7 @@
   padding:10px 0;
   width:300px;
 }
-.added-drug{
-}
+
 #inner {
   padding:10px;
   max-width:960px;

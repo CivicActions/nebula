@@ -171,7 +171,7 @@
 				  + savedItemsArr[i]
 				  + '" class="added-drug '
 				  + savedItemsArr[i] + '">'
-				  + savedItemsArr[i]
+				  + '<label>' + savedItemsArr[i] + '</label>'
 				  + '<div class="check-color" data-color="' + bgColor[i] + '" style="background: ' + bgColor[i]  + '"></div></div>');
 	  // Here we maintain the color mapping to match the HTML status. 
 	  mapDrugsIntoColorIndices[savedItemsArr[i]] = i;
@@ -186,7 +186,7 @@
 				+ $('#drug').val()
 				+ '" class="added-drug '
 				+ $('#drug').val() + '">'
-				+ $('#drug').val()
+				+ '<label>' + $('#drug').val() + '</label>'
 				+ '<div class="check-color" data-color="' + bgColor[checks] + '" style="background: ' + bgColor[checks]  + '"></div></div>');
 	// Here we maintain the color mapping to match the HTML status. 
 	  mapDrugsIntoColorIndices[$('#drug').val()] = checks;
