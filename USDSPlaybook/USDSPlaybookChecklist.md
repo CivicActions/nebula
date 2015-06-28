@@ -414,7 +414,7 @@ Today, developers write automated scripts that can verify thousands of scenarios
 2.
 3.
 4.
-5.
+5. PHPUnit tests
 6. We are using Jenkins as our central tool, which uses docker, docker-compose, and docker-machine to manage the containers.
 7.
 8.
