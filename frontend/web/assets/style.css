@@ -60,6 +60,11 @@
   float:left;
   margin-top:1px;
 }
+.col-md-12 #clear-all {
+  display:block;
+  clear:both;
+  margin-left:0;
+}
 footer {
   clear:both;
 }
