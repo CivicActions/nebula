@@ -122,15 +122,10 @@
     var sky3 = '#3FaAdd';
     var grass3 = '#039051';
 
-
     var bgColor = [ocean, grass, rain, sky, grain, chrono,
-		   ocean2, grass2, rain2, sky2, grain2, chrono2,
-		   ocean3, grass3, rain3, sky3, grain3, chrono3,
-		   ocean, grass, rain, sky, grain, chrono,
 		   ocean2, grass2, rain2, sky2, grain2, chrono2,
 		   ocean3, grass3, rain3, sky3, grain3, chrono3
 		  ];
-
     
     // Load our saved searches.
     loadSaved();
@@ -170,7 +165,8 @@
 	var savedItems = getParameterByName('saved');
 	var savedItemsArr = savedItems.split(' ');
 	
-	for(i = 0; i < savedItemsArr.length; i++) {
+	for(i = 0; i < savedItemsArr.length; i++) {	    
+	  
 	  $('#added-meds').append('<div class="checkholder" id="' + savedItemsArr[i] + '"><input type="checkbox" checked="checked" value="'
 				  + savedItemsArr[i]
 				  + '" class="added-drug '
@@ -179,13 +175,13 @@
 				  + '<div class="check-color" data-color="' + bgColor[i] + '" style="background: ' + bgColor[i]  + '"></div></div>');
 	  // Here we maintain the color mapping to match the HTML status. 
 	  mapDrugsIntoColorIndices[savedItemsArr[i]] = i;
-	}
-	count++;
 	
+	count++;
+	}
       }
       // Build from input.
       else {
-	
+	if(!sessionStorage.getItem($('#drug').val())){
 	$('#added-meds').append('<div class="checkholder" id="' + $('#drug').val() + '"><input type="checkbox" checked="checked" value="'
 				+ $('#drug').val()
 				+ '" class="added-drug '
@@ -193,7 +189,8 @@
 				+ $('#drug').val()
 				+ '<div class="check-color" data-color="' + bgColor[checks] + '" style="background: ' + bgColor[checks]  + '"></div></div>');
 	// Here we maintain the color mapping to match the HTML status. 
-	mapDrugsIntoColorIndices[$('#drug').val()] = checks;
+	  mapDrugsIntoColorIndices[$('#drug').val()] = checks;
+	}
       }
       
       var urlBase = window.location.origin + '?saved=';
@@ -219,7 +216,6 @@
 	  
 	  revisedPalette.push($(this).attr('data-color'));
 	}
-	//	sessionStorage.setItem('colorscheme', JSON.stringify(revisedPalette));	  
       });      
     }
 
@@ -298,11 +294,16 @@
 		  
 		}
 	      })
-		if(!$('#error').text().length) {
-		  
-		  $('#error').append("We are unable to show data for this drug because we can't normalize the usage data when compared to other drugs. For specific adverse effects please refer to other sources.<br /><br />");
+		/*
+		 * Comenting out for now - when response time is slow, we can get false error displayed to user.
+		 * Not displaying an error message seems minor - bad selection will return no results, so 
+		 * risk is minimal.
+		 */
+		// if(!$('#error').text().length) {
+		// $('#error').append("We are unable to show data for this drug because we can't normalize the usage data when compared to other drugs. For specific adverse effects please refer to other sources.<br /><br />");
+		//}
+		
 		}
-	    }
 	  }); 
 
 	  $.ajax({
