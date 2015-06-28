@@ -160,7 +160,7 @@
       }
 
       // Build fron query if it exists.
-      if (getParameterByName('saved') && count == 0) {
+      if (getParameterByName('saved') && count == 0 && !$('#drug').val().length) {
 	
 	var savedItems = getParameterByName('saved');
 	var savedItemsArr = savedItems.split(' ');
