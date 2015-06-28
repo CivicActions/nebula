@@ -34,6 +34,10 @@
   top: -3px;
   left: 5px;
 }
+#link-save a,
+#clear-all{
+  color:#00A159
+}
 #drug-chart {
   display:block;
   clear:both;
