@@ -533,10 +533,13 @@ $('#added-meds').append('<div class="checkholder" id="' + $('#drug').val() + '">
     });
 
     $('#clear-all').click(function() {
+      
       $('.checkholder').remove();
       $('#drug-chart').empty();
       $('#link-save').empty();
       $('#clear-all').addClass('hidden');
+      appendItems();
+      addItems();
       sessionStorage.clear();
     });
   })
