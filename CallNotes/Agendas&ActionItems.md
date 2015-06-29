@@ -1,3 +1,12 @@
+## 6/29 Scrum call Agenda
+* Sprint 3 planning
+* CoWork on compliance checklist
+* Finalize USDS checklist
+* Tues EOD checklist
+* Testing plan
+* Budget for full team
+* READMEs for pools 1 and 2
+
 ## 6/26 Scrum call Action Items
 * Rob coordinate with Melinda around revisions to 2nd READMEs in light of changes to Sprint plan. Steve to pass these to Winvale no later than Tues noon. 
 * Team to address the USDS checklist as follows: 
