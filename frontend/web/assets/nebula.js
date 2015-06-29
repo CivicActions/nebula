@@ -27,7 +27,7 @@
       vAxis:{textStyle:{color: '#005500',fontSize: '11'}},
       legend: {position: 'none'},
       bar: {groupWidth: '75%'},
-      chartArea: {'width': '80%', 'height': chartAreaHeight,},
+      chartArea: {'width': '50%', 'height': chartAreaHeight,},
       colors: colors,
       isStacked: true,
     };
@@ -452,6 +452,7 @@ $('#added-meds').append('<div class="checkholder" id="' + $('#drug').val() + '">
       var drugs = Object.keys(tempData);
       for (var n = 0; n < symptomKeys.length; n++) {
 	var timeSeries = [];
+// Let's try to add a little space to the name so it looks better...
 	timeSeries.push(symptomKeys[n]);
 	for (var k in tempData) {
 	  var i = 0;
