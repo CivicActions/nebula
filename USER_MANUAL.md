@@ -71,7 +71,7 @@ This deploys an instance of the frontend and an instance of the backend on Amazo
 1. [Docker Compose](https://docs.docker.com/compose/) to automate defining and runnning multi-container applications with Docker
 1. [Docker Machine](https://docs.docker.com/machine/) to automate creating Docker hosts locally, on cloud providers, or in a data center
 1. Amazon Web Services account and API keys to automate interactions with AWS
-1. Cloudflare account and API keys to automate interactions with Cloudflaire
+1. Cloudflare account and API keys to automate interactions with Cloudflare
 
 ### Instructions
 
