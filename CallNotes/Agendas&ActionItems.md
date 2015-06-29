@@ -8,7 +8,7 @@
 * Budget for full team
 * READMEs for pools 1 and 2
 * Process journal?
-* Tomorrow partner feedback
+* Tomorrow Partners feedback
 
 ## 6/26 Scrum call Action Items
 * Rob coordinate with Melinda around revisions to 2nd READMEs in light of changes to Sprint plan. Steve to pass these to Winvale no later than Tues noon. 
