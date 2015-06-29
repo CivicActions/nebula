@@ -1,5 +1,5 @@
 ## 6/29 Scrum call Agenda
-* Sprint 3 planning
+* Sprint 3 planning, prioritization (Sprint 2 retrospective?) 
 * CoWork on compliance checklist
 * Finalize USDS checklist
 * Tues EOD checklist
