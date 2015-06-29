@@ -1,3 +1,15 @@
+## 6/29 Scrum call Action Items
+* Team to head into Sprint 2 retrospective and Sprint 3 planning immediately following Scrum
+* Code review (Ethan, Owen, Rob, full team invited) 12pmPT today
+* Steve and Dave to Cowork on compliance checklist
+* Steve to finalize USDS checklist
+* Rob to work on Tues EOD checklist
+* Ron to continue as QA / cross-browser / cross-device test lead, with ad hoc help from Aaron and rest of team
+* Greg, Owen, Luke to send Steve hours worked on project thus far 
+* Rob to complete first draft of Pool 3 README, rewritten to include Sprint 3. Steve to then pass to Melinda by EOD to incorportate pool specific language for #s 1 and 2. 
+* Rob updating and maintaing Process Journal
+
+
 ## 6/29 Scrum call Agenda
 * Sprint 3 planning, prioritization (Sprint 2 retrospective?) 
 * Code review this afternoon
