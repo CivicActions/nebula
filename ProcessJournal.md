@@ -161,7 +161,9 @@ Fantastic work over the weekend.  Product looking much better.  Deceded to do Sp
 
 10:15 Retrospective
 
-2:00 Central -- code/design review.
+2:00 Central -- code/design review.  Took 5 or 6 refactoirngins out of this. Attended by 6 or 7 poeple.
+
+3:30 Fourth Interview with Tyson.
 
 
 
