@@ -20,7 +20,7 @@
     var chartHeight = chartAreaHeight + 80;
     
     var options = {
-      title: 'Total Reported Adverse Effects',
+      title: 'Total Reported Adverse Effects (since 2004)',
       subtitle: 'From OpenFDA Adverse Events Database',
       chartArea: {'top': 0, 'width': '50%', 'float': 'right'},
       height: chartHeight,
