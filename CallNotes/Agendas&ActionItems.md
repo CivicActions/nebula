@@ -8,8 +8,11 @@
 * Greg, Owen, Luke to send Steve hours worked on project thus far 
 * Rob to complete first draft of Pool 3 README, rewritten to include Sprint 3. Steve to then pass to Melinda by EOD to incorportate pool specific language for #s 1 and 2. 
 * Rob updating and maintaing Process Journal
+* Henry to work on final legal confirmation 
 * Steve to schedule user interview with Tyson today, pursue moving tomorrow's meeting with Martha from tomorrow to today as well. 
 
+### Team balance scores:
+DN: 8, ET: 8, RR: 7, OB: 9.5, LF: 8.5, RA: 8, AP: 8.5, HP: 8, SC: 8.5 
 
 ## 6/29 Scrum call Agenda
 * Sprint 3 planning, prioritization (Sprint 2 retrospective?) 
