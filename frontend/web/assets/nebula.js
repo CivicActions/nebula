@@ -59,7 +59,7 @@
     // Instantiate and draw our chart, passing in some options.
     var chart = new google.visualization.PieChart(document.getElementById('pie-chart'));
     chart.draw(data, options);
-        $(window).resize(function() {
+    $(window).resize(function() {
       chart.draw(data, options);
     });
   }
@@ -175,22 +175,23 @@
 				  + '<div class="check-color" data-color="' + bgColor[i] + '" style="background: ' + bgColor[i]  + '"></div></div>');
 	  // Here we maintain the color mapping to match the HTML status. 
 	  mapDrugsIntoColorIndices[savedItemsArr[i]] = i;
-	
-	count++;
+	  _gaq.push(['_trackEvent', 'checkbox', 'used']);
+	  count++;
 	}
       }
       // Build from input.
       else {
 	if(!sessionStorage.getItem($('#drug').val())){
-	$('#added-meds').append('<div class="checkholder" id="' + $('#drug').val() + '"><input type="checkbox" checked="checked" value="'
-				+ $('#drug').val()
-				+ '" class="added-drug '
+$('#added-meds').append('<div class="checkholder" id="' + $('#drug').val() + '"><input type="checkbox" checked="checked" value="'
++ $('#drug').val()
++ '" class="added-drug '
 				+ $('#drug').val() + '">'
 				+ '<label>' + $('#drug').val() + '</label>'
 				+ '<div class="check-color" data-color="' + bgColor[checks] + '" style="background: ' + bgColor[checks]  + '"></div></div>');
 	// Here we maintain the color mapping to match the HTML status. 
 	  mapDrugsIntoColorIndices[$('#drug').val()] = checks;
 	}
+	_gaq.push(['_trackEvent', 'checkbox', 'used']);
       }
       
       var urlBase = window.location.origin + '?saved=';
@@ -219,13 +220,22 @@
       });      
     }
 
+
+    $('.added-drug').each(function(){
+      $(this).click(function(){
+	addItems();
+      });   
+    });
+
+    
     $(document).change(function() {
-      
+
       $('.added-drug').each(function(){
 	$(this).click(function(){
 	  addItems();
 	});   
       });
+
 
       // This limits the colors allowed by the graph to checkboxes that are on - keeps things in sync.
       var devisedPalette = [];
@@ -235,8 +245,8 @@
 	  devisedPalette.push($(this).attr('data-color'));
 	}
       });
-    });
-    
+    //  addItems();
+    });    
     
     function addItems() {	
       $('#error').empty();
