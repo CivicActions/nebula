@@ -7,9 +7,10 @@
 
 ## Checks
 
-* Ran [Chrome Accessibility Developer Tools](https://chrome.google.com/webstore/detail/accessibility-developer-t/fpkknkljclfencbdbgkenhalefipecmb/reviews?hl=en) to identify machine detectable issues.
+* Ran [Chrome Accessibility Developer Tools](https://chrome.google.com/webstore/detail/accessibility-developer-t/fpkknkljclfencbdbgkenhalefipecmb/reviews?hl=en) and [WAVE toolbar](http://wave.webaim.org/extension/) to identify machine detectable issues.
 * Started the [ChromeVox](http://www.chromevox.com/) screen reader, disabled the screen display, and tested adding drugs, removing drugs and navigating the page using keyboard only.
 * Tested 300% zoom on major browsers and tested if drugs could be added, removed and results reviewed.
+* Manual reviewed markup structure and stylesheets for accessibility issues. 
 
 ## Issues
 
