@@ -20,7 +20,7 @@
     var chartHeight = chartAreaHeight + 80;
     
     var options = {
-      title: 'Reported Side Effects',
+      title: 'Reported Adverse Effects',
       subtitle: 'From OpenFDA Adverse Events Database',
       chartArea: {'top': 0, 'width': '50%', 'float': 'right'},
       height: chartHeight,
@@ -48,7 +48,7 @@
     var data = google.visualization.arrayToDataTable(data);
     // Set chart options
     var options = {
-      title: 'Relative Reported Number of Prescriptions',
+      title: 'Relative Reported Number of Prescriptions for Selected Drugs',
       subtitle: 'From AHRQ MEPS Data',
       height: 400,
       width: 400,
