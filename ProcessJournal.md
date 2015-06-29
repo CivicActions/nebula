@@ -153,6 +153,16 @@ Attempting to arrange a 3rd user for user test next week.
 
 Personnel changes doing that.  Making basic plan to work on polishing existing features.
 
+Monday, June 29th
+
+9:45 Scrum
+
+Fantastic work over the weekend.  Product looking much better.  Deceded to do Sprint Retrospective, new prioritization, code review.
+
+10:15 Retrospective
+
+2:00 Central -- code/design review.
+
 
 
 
