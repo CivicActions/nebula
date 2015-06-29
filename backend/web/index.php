@@ -1,8 +1,7 @@
 <?php
-header('Access-Control-Allow-Methods: GET, PUT, POST, DELETE, OPTIONS');
-header("access-control-allow-origin: *");
-// web/index.php
 require_once __DIR__.'/../vendor/autoload.php';
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use GuzzleHttp\Client;
 
 $app = new Silex\Application();
@@ -11,6 +10,12 @@ $app->register(new Silex\Provider\DoctrineServiceProvider(), array(
         'url'   => 'mysql://nebula:nebula@mysql:3306/nebula',
     ),
 ));
+
+// Handling CORS respons with right headers.
+$app->after(function (Request $request, Response $response) {
+   $response->headers->set("Access-Control-Allow-Origin","*");
+   $response->headers->set("Access-Control-Allow-Methods","GET,POST,PUT,DELETE,OPTIONS");
+});
 
 class ahrq {
   public $ahrq_sample = '';
