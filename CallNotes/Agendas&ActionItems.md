@@ -8,6 +8,7 @@
 * Greg, Owen, Luke to send Steve hours worked on project thus far 
 * Rob to complete first draft of Pool 3 README, rewritten to include Sprint 3. Steve to then pass to Melinda by EOD to incorportate pool specific language for #s 1 and 2. 
 * Rob updating and maintaing Process Journal
+* Steve to schedule user interview with Tyson today, pursue moving tomorrow's meeting with Martha from tomorrow to today as well. 
 
 
 ## 6/29 Scrum call Agenda
