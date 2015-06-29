@@ -67,11 +67,11 @@ A sample Jenkins configuration is available in the devops/jenkins/testing/config
 This deploys an instance of the frontend and an instance of the backend on Amazon Web Services instances, then configures DNS (with CDN and SSl) for each IP using Cloudflare. Docker Machine is used to provision and bootstrap the instances. The AWS CLI is used to manage network configuration and a Cloudflare CLI is used to configure Cloudflare (the AWS CLI and Cloudflare tools are run via Docker, so dependencies are minimized).
 
 ### Requirements
-1. [Docker](https://www.docker.com/)
-1. [Docker Compose](https://docs.docker.com/compose/)
-1. [Docker Machine](https://docs.docker.com/machine/)
-1. Amazon Web Services account and API keys.
-1. Cloudflare account and API keys.
+1. [Docker](https://www.docker.com/) to manage containers
+1. [Docker Compose](https://docs.docker.com/compose/) to automate defining and runnning multi-container applications with Docker
+1. [Docker Machine](https://docs.docker.com/machine/) to automate creating Docker hosts locally, on cloud providers, or in a data center
+1. Amazon Web Services account and API keys to automate interactions with AWS
+1. Cloudflare account and API keys to automate interactions with Cloudflaire
 
 ### Instructions
 
