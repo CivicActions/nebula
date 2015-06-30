@@ -69,29 +69,28 @@ function ahrqCount($app, $drug) {
   return $result->fetchAll()[0]['total'];
 }
 
-// API endpoint that provides a simplified interface to the FCC API,
+// API endpoint that provides a simplified interface to the FDA API,
 // returning incidence of different symptoms for a given search term.
-$app->get('/rx/{search}', function ($search) use ($app) {
+$app->get('/fda/{search}', function ($search) use ($app) {
   $fda_response = queryFDA($search);
   return new Response($fda_response->getBody(), $fda_response->getStatusCode(), ['Content-Type' => 'application/json']);
 });
 
-$app->get('/rx.json', function () use ($app) {
+$app->get('/ahrq', function () use ($app) {
   $rx_names = array();
-  if ($app['request']->get('ahrq')) {
-    $result = new stdClass();
-    $term = $app['request']->get('ahrq');
-      $result->ahrq_sample = ahrqCount($app, $term);
-      return json_encode($result);
+  $rx_name_sql = "SELECT rx_name FROM rx_names";
+  $rx_names_results = $app['db']->fetchAll($rx_name_sql);
+  foreach ($rx_names_results as $rx_name) {
+    $rx_names[] = $rx_name['rx_name'];
   }
-  else {
-    $rx_name_sql = "SELECT rx_name FROM rx_names";
-    $rx_names_results = $app['db']->fetchAll($rx_name_sql);
-    foreach ($rx_names_results as $rx_name) {
-      $rx_names[] = $rx_name['rx_name'];
-    }
-    return json_encode($rx_names);
-  }
+  return json_encode($rx_names);
+});
+
+$app->get('/ahrq/{drug}', function ($drug) use ($app) {
+  $result = new stdClass();
+  $term = $app['request']->get('ahrq');
+  $result->ahrq_sample = ahrqCount($app, $drug);
+  return json_encode($result);
 });
 
 $app->run();

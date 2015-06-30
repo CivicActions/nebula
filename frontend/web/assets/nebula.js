@@ -78,7 +78,7 @@
 
     // Build our autocomplete
     $.ajax({
-      url: "https://api.sideeffect.io/rx.json",
+      url: "https://api.sideeffect.io/ahrq",
       dataType: 'json',
     }).success(function(data) {
       var source = $.map(data, function(term) {
@@ -257,29 +257,14 @@ $('#added-meds').append('<div class="checkholder" id="' + $('#drug').val() + '">
 	term = $(this).val();
 	// We only want to pull in terms that correspond to a checked box.
 	if($(this).is(":checked")) {
-
-	  // Possibly this syntax sill work...
-	  //	  url = 'https://api.sideeffect.io/rx.json?search=' + term;
-
-	  // But at present this must be used...
-	  url = 'https://api.sideeffect.io/rx/"' + term + '"';
-
-	  // Note: This is the 
-	  //	  url = 'https://api.fda.gov/drug/event.json?api_key=rv4OOon6fPJOHBbFHClUOs3BRGSbAEUdg3ACp2pu&search='
-	  //	    + term + '&limit=5&count=patient.reaction.reactionmeddrapt.exact';
-
-
-	  url2 = 'https://api.sideeffect.io/rx.json?ahrq=' + term;
+	  url = 'https://api.sideeffect.io/fda/"' + term + '"';
+	  url2 = 'https://api.sideeffect.io/ahrq/' + term;
 
 	  $.ajax({
 	    url: url,
 	    type: 'GET',
 	    term: term,
 	    success: function(data) {
-	      // Comment out this line if you are going directly against the OpenFDA API --- its header returns JSON,
-	      // whereas ours returns a string that must be parsed
-	      data = JSON.parse(data);
-	      
 	      var reactions = data.results;
 	      // I will store drug, symtomp, count objects in here in order to have all data.
 	      var triplets = [];
