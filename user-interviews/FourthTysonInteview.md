@@ -2,6 +2,8 @@
 
 Tyson believes it looks much better.  He believes we are right on the borderline of having something valuable now.
 
+Video is linked [here](https://youtu.be/t9DZnuDEXv0)
+
 He suggested several major bug fixes/changes:
 
 * He wants to see all drugs, even if it is not in the AHRQ database.  We have to have a way to make it visible that it is not 
