@@ -8,23 +8,22 @@ ini_set('memory_limit', '500M');
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-// Create our application, connect the database and prepare a query builder.
+// Create our application, connect the database.
 $app = new Silex\Application();
 $app->register(new Silex\Provider\DoctrineServiceProvider(), array(
   'db.options' => array(
     'url' => 'mysql://nebula:nebula@mysql:3306/nebula',
   ),
 ));
-$queryBuilder = $app['db']->createQueryBuilder();
 
-// Drop tables if they already exist.
+// If our tables already exist, then we exit early since our work is done.
 $schemaManager = $app['db']->getSchemaManager();
 if ($schemaManager->tablesExist(array('prescribed_medicines', 'rx_names')) == TRUE) {
-  $schemaManager->dropTable('prescribed_medicines');
-  $schemaManager->dropTable('rx_names');
+  exit(0);
 }
 
 // Build our tables.
+$queryBuilder = $app['db']->createQueryBuilder();
 $platform = $app['db']->getDatabasePlatform();
 $schema   = new \Doctrine\DBAL\Schema\Schema();
 
