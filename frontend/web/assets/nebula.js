@@ -368,110 +368,83 @@ $('#added-meds').append('<div class="checkholder" id="' + $('#drug').val() + '">
 	sessionStorage.setItem('loadeddata', JSON.stringify('yes'));
       }      
     }
-    
     function buildGraph() {
-      // We can't use just flat arrays here.  Each drugName must contain an array as it's entry, which is the 
-      // mapping from Symptom to count that we need.
-      var allData = [];
-      var tempData = [];
-
 
       // Now sort the colors based on the actual drug in the doublesGrab array...
       barchartColorOrder = [];
 
+// TODO: This is a problem.  I don't know why this would happen.  We need to figure this out.
+      if (sessionStorage.getItem("SYMPTOM_MAP") == null) {
+	return;
+	}
+      var symptomMap = JSON.parse(sessionStorage.getItem("SYMPTOM_MAP"));
+      var symptomKeys = [];
+      symptomKeys = Object.keys(symptomMap);
 
+
+      barchartColorOrder = [];
       // This was necessary to work with FireFox, the code above worked in other browsers
-      for (var i = 0; i < sessionStorage.length; i++) {
-	var key = sessionStorage.key(i);
-	// This needs to be refactored.  We probably shouldn't use drug names as keys -- we should have one key for
-	// all drugs, which won't be that hard.
-	if (
-	  !(key.lastIndexOf("name-use", 0) === 0) &&
-	    (key != "loadeddata") &&
-	    (key != "link")) {
-	  var triplets = JSON.parse(sessionStorage.getItem(key));
-	  tempData[key] = triplets;
-	  var index = mapDrugsIntoColorIndices[key];
+      var drugs = [];
+      for (var n = 0; n < symptomKeys.length; n++) {
+	var s = symptomKeys[n];
+	var drugsForS = symptomMap[s];
+        for (var d in drugsForS) {
+	  if (!(d in drugs)) {
+	    drugs.push(d);
+	  }
+	}
+      }
+
+
+      for (var n = 0; n < drugs.length; n++) {
+	  var index = mapDrugsIntoColorIndices[drugs[n]];
 	  var color = bgColor[index];
 	  barchartColorOrder.push(color ? color : "red");
-	}
       }
-      
 
-
-      // Now we need to build a list of symptoms in a fixed order.
+      // Now we need to build a list of symptoms in # of symptoms order
       var allSymptoms = [];
-      for (var k in tempData) {
-	var triplets = tempData[k];
-	
-	for(var okey in triplets) {
-	  var obj = triplets[okey];
-	  
-	  if (obj.symptom in allSymptoms) {
-	    allSymptoms[obj.symptom] += obj.count;
-	  }
-	  else {
-	    allSymptoms[obj.symptom] = obj.count;
-	  }
-	  
+      for (var n = 0; n < symptomKeys.length; n++) {
+	var s = symptomKeys[n];
+	var drugsForS = symptomMap[s];
+        for (var d in drugsForS) {
+	  if (s in allSymptoms) {
+	    allSymptoms[s] += drugsForS[d];
+          } else {
+	    allSymptoms[s] = drugsForS[d];
+          }
 	}
-      }
+     }
       
       delete allSymptoms['undefined'];    
+
       allSymptomsAsArray = sortObjectByValue(allSymptoms);
       
       // Now that we need to build a time series for each symptom in the proper order
-      var symptomKeys = [];
       for (var k in allSymptomsAsArray) {
 	symptomKeys.push(allSymptomsAsArray[k][0]);
-	
       }
-
-      var symptomMap = JSON.parse(sessionStorage.getItem("SYMPTOM_MAP"));
-      var d = new Date();
-      var begin = d.getTime();
-      console.log("XXX");
-/*
-      for (var k in tempData) {
-	var timeSeries = [];
-	for (var n = 0; n < symptomKeys.length; n++) {
-	  var i = 0;
-	  var triplets = tempData[k];
-	  var mycount = undefined;
-	  for (i = 0; i < triplets.length; i++) {
-	    var triplet = triplets[i];
-	    if ((triplet.drug == k) && (triplet.symptom == symptomKeys[n])) {
-	      mycount = triplet.count;
-	    }
-	  }
-	  
-	  if (mycount) {
-	    timeSeries.push(mycount);
-	  } else {
-	    timeSeries.push(0);
-	  }
-	}
-	
-      }
-*/
-      console.log("YYY");
 
       var datax = [];
-      var drugs = Object.keys(tempData);
+      var drugs = [];
+      for (var n = 0; n < symptomKeys.length; n++) {
+	var s = symptomKeys[n];
+	var drugsForS = symptomMap[s];
+        for (var d in drugsForS) {
+	  if (drugs.indexOf(d) == -1) {
+	    drugs.push(d);
+	  }
+	}
+     }
+
+
+
       for (var n = 0; n < symptomKeys.length; n++) {
 	var timeSeries = [];
-// Let's try to add a little space to the name so it looks better...
 	timeSeries.push(symptomKeys[n]);
-	for (var k in tempData) {
-	  var i = 0;
-	  var triplets = tempData[k];
+	for (var k in drugs) {
 	  var mycount = undefined;
-	  for (i = 0; i < triplets.length; i++) {
-	    var triplet = triplets[i];
-	    if ((triplet.drug == k) && (triplet.symptom == symptomKeys[n])) {
-	      mycount = triplet.count;
-	    }
-	  }
+	  mycount = symptomMap[symptomKeys[n]][drugs[k]];
 	  if (mycount) {
 	    if (typeof mycount != 'number') {
 	      debugger;
@@ -484,23 +457,14 @@ $('#added-meds').append('<div class="checkholder" id="' + $('#drug').val() + '">
 	}
 	datax.push(timeSeries);
       }
-      var d = new Date();
-     var finaltime = d.getTime();
-      console.log("total time = "+(finaltime - begin) +"ms");
-      console.log("ZZZ");
+
       drugs.unshift('Drug');
       datax.unshift(drugs);
       drawChart(barchartColorOrder, datax);
 
       var pieData = [];
       var doublesGrab = [];
-      
-      // I don't believe this will work with FireFox.  I believe we will
-      // have to use the pattern that I added above...
 
-      // Furthermore, there is no guarantee that this will bring back the 
-      // data in any paricular order---therefore the sanitizedColors array,
-      // which is an order, is not guaranteed to match.
       // The solution is to either compute the order of the colors from the 
       // doublesGrab array, or to sort the doublesGrab array into the 
       // same order as the colors (which requires a drug-to-color mapping.)
@@ -508,7 +472,6 @@ $('#added-meds').append('<div class="checkholder" id="' + $('#drug').val() + '">
 	if(key.indexOf('name-use-') != -1){
 	  if(sessionStorage.getItem(key) !== null){	      
 	    doublesGrab.push(JSON.parse(sessionStorage.getItem(key)));
-	    
 	  }
 	}
       }
