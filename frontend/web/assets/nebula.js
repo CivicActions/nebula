@@ -78,7 +78,7 @@
 
     // Build our autocomplete
     $.ajax({
-      url: "https://api.sideeffect.io/ahrq",
+      url: "https://api.sideeffect.io/v1/ahrq",
       dataType: 'json',
     }).success(function(data) {
       var source = $.map(data, function(term) {
@@ -257,8 +257,8 @@ $('#added-meds').append('<div class="checkholder" id="' + $('#drug').val() + '">
 	term = $(this).val();
 	// We only want to pull in terms that correspond to a checked box.
 	if($(this).is(":checked")) {
-	  url = 'https://api.sideeffect.io/fda/"' + term + '"';
-	  url2 = 'https://api.sideeffect.io/ahrq/' + term;
+	  url = 'https://api.sideeffect.io/v1/fda/"' + term + '"';
+	  url2 = 'https://api.sideeffect.io/v1/ahrq/' + term;
 
 	  $.ajax({
 	    url: url,

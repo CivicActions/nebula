@@ -9,7 +9,7 @@ class FDAAPITest extends PHPUnit_Framework_TestCase
    */
   public function testIbuprofenPain() {
     $client = new Client();
-    $request = $client->get('http://web/fda/ibuprofen');
+    $request = $client->get('http://web/v1/fda/ibuprofen');
     $response = $request;
     $this->assertEquals(200, $response->getStatusCode());
     $data = json_decode((string) $response->getBody(), TRUE);
@@ -29,7 +29,7 @@ class FDAAPITest extends PHPUnit_Framework_TestCase
    */
   public function testInteractionsNausea() {
     $client = new Client();
-    $request = $client->get('http://web/fda/CRESTOR+BENICAR+ASPIRIN');
+    $request = $client->get('http://web/v1/fda/CRESTOR+BENICAR+ASPIRIN');
     $response = $request;
     $this->assertEquals(200, $response->getStatusCode());
     $data = json_decode((string) $response->getBody(), TRUE);
@@ -49,7 +49,7 @@ class FDAAPITest extends PHPUnit_Framework_TestCase
     */
    public function testNonExistent() {
     $client = new Client();
-    $request = $client->get('http://web/fda/RAINBOWS', ['http_errors' => false]);
+    $request = $client->get('http://web/v1/fda/RAINBOWS', ['http_errors' => false]);
     $response = $request;
     $this->assertEquals(404, $response->getStatusCode());
    }

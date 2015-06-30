@@ -71,12 +71,12 @@ function ahrqCount($app, $drug) {
 
 // API endpoint that provides a simplified interface to the FDA API,
 // returning incidence of different symptoms for a given search term.
-$app->get('/fda/{search}', function ($search) use ($app) {
+$app->get('/v1/fda/{search}', function ($search) use ($app) {
   $fda_response = queryFDA($search);
   return new Response($fda_response->getBody(), $fda_response->getStatusCode(), ['Content-Type' => 'application/json']);
 });
 
-$app->get('/ahrq', function () use ($app) {
+$app->get('/v1/ahrq', function () use ($app) {
   $rx_names = array();
   $rx_name_sql = "SELECT rx_name FROM rx_names";
   $rx_names_results = $app['db']->fetchAll($rx_name_sql);
@@ -86,7 +86,7 @@ $app->get('/ahrq', function () use ($app) {
   return json_encode($rx_names);
 });
 
-$app->get('/ahrq/{drug}', function ($drug) use ($app) {
+$app->get('/v1/ahrq/{drug}', function ($drug) use ($app) {
   $result = new stdClass();
   $term = $app['request']->get('ahrq');
   $result->ahrq_sample = ahrqCount($app, $drug);
