@@ -6,6 +6,15 @@
   font-family: Tahoma, Geneva, sans-serif;
 }
 */
+#barLegend{
+  float:left;
+  margin-left:55px;
+  font-weight:bold;
+  padding-right:55px;
+}
+#count-symptoms {
+  padding-left:55px;
+}
 #error {
   color:#f00;
   font-weight:bold;

@@ -20,14 +20,12 @@
     var chartHeight = chartAreaHeight + 80;
     
     var options = {
-      title: 'Total Reported Adverse Effects (since 2004)',
-      subtitle: 'From OpenFDA Adverse Events Database',
-      chartArea: {'top': 0, 'width': '50%', 'float': 'right'},
+      chartArea: {'top': 0, 'width': '100%'},
       height: chartHeight,
       vAxis:{textStyle:{color: '#005500',fontSize: '11'}},
       legend: {position: 'none'},
       bar: {groupWidth: '75%'},
-      chartArea: {'width': '50%', 'height': chartAreaHeight,},
+      chartArea: {'width': '70%', 'height': chartAreaHeight,},
       colors: colors,
       isStacked: true,
     };
@@ -93,7 +91,7 @@
     });
     
     sessionStorage.clear();
-
+   
     var drugChart;
     var count = 0;
 
@@ -227,7 +225,6 @@ $('#added-meds').append('<div class="checkholder" id="' + $('#drug').val() + '">
       });   
     });
 
-    
     $(document).change(function() {
 
       $('.added-drug').each(function(){
@@ -235,7 +232,6 @@ $('#added-meds').append('<div class="checkholder" id="' + $('#drug').val() + '">
 	  addItems();
 	});   
       });
-
 
       // This limits the colors allowed by the graph to checkboxes that are on - keeps things in sync.
       var devisedPalette = [];
@@ -245,7 +241,8 @@ $('#added-meds').append('<div class="checkholder" id="' + $('#drug').val() + '">
 	  devisedPalette.push($(this).attr('data-color'));
 	}
       });
-    //  addItems();
+
+      
     });    
     
     function addItems() {	
@@ -406,6 +403,10 @@ $('#added-meds').append('<div class="checkholder" id="' + $('#drug').val() + '">
       delete allSymptoms['undefined'];    
 
       allSymptomsAsArray = sortObjectByValue(allSymptoms);
+
+      // Used for creating a number to display on top of chart / improve ui.
+      var totalCount = sessionStorage.setItem('totalcount', allSymptomsAsArray[0][1]);
+      
       symptomKeys = [];
       // Now that we need to build a time series for each symptom in the proper order
       for (var k in allSymptomsAsArray) {
@@ -483,6 +484,8 @@ $('#added-meds').append('<div class="checkholder" id="' + $('#drug').val() + '">
       }
       piechartColorOrder.shift("red");
       drawPieChart(piechartColorOrder, doublesGrab);
+      
+      $('#count-symptoms').text(' -------Highest Symptom Count: ' + sessionStorage.getItem('totalcount'));
       
     }
 
