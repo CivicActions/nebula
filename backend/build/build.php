@@ -48,7 +48,7 @@ $rxNameTable->setPrimaryKey(array('rx_nid'));
 // Build the query string and execute it.
 $queries = $schema->toSql($platform);
 foreach ($queries as $query) {
-  print 'Table Created\n';
+  print "Table Created\n";
   $app['db']->executeQuery($query);
 }
 
@@ -61,7 +61,7 @@ $res = $zip->open('/var/www/nebula/build/tmpARHQ.zip');
 if ($res === TRUE) {
   $zip->extractTo('/var/www/nebula/build/tmpARHQ');
   $zip->close();
-  echo 'AHRQ Data Extracted\n';
+  echo "AHRQ Data Extracted\n";
 }
 else {
   echo 'Failed, code:' . $res;
@@ -88,12 +88,12 @@ if ($handle) {
       ->setValue('drugidx_year', $report_year)
       ->setParameter('rxname', $rxname)
       ->execute();
-    ($line % 50000) OR print 'line: $line\n';
+    ($line % 50000) OR print "line: $line\n";
   }
   fclose($handle);
 }
 
-print 'Prescriptions table has been populated, populating rx names table\n';
+print "Prescriptions table has been populated, populating rx names table\n";
 
 $queryBuilder = $app['db']->createQueryBuilder();
 
@@ -106,12 +106,12 @@ foreach ($rx_names as $rx_name) {
     ->setParameter('rxname', $rx_name['rx_name'])
     ->execute();
 }
-print 'RX names have been populated\n';
-print 'Tables built and data populated.\n';
+print "RX names have been populated\n";
+print "Tables built and data populated.\n";
 
 // Remove ARHQ files.
 unlink('/var/www/nebula/build/tmpARHQ.zip');
-echo 'tmpARHQ.zip removed\n';
+echo "tmpARHQ.zip removed\n";
 
 /**
  * Helper function to recursively remove directories.
