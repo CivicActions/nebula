@@ -55,6 +55,12 @@ body {
   clear:both;
   margin:0 auto;
 }
+
+.hero .btn-default, .hero .btn-default:hover {
+  background: #404C54 !important;
+  text-transform: uppercase;
+  border:none;
+}
 #text {
   float:left;
   padding:10px 0;
