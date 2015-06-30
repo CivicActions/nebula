@@ -2,7 +2,7 @@
 
 Tyson believes it looks much better.  He believes we are right on the borderline of having something valuable now.
 
-Video is linked [here](https://youtu.be/t9DZnuDEXv0)
+Video is linked [here](https://youtu.be/t9DZnuDEXv0).
 
 He suggested several major bug fixes/changes:
 
