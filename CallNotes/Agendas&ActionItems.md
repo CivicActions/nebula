@@ -1,3 +1,12 @@
+## 6/30 Scrum call Agenda
+* Tues EOD checklist 
+* Steve: READMEs to Winvale
+* Dave: Final rows of criteria spreadsheet
+* Rob: Follow up with Martha re: interview today? 
+* Steve: Video link for 4th Tyson interview 
+* Henry: Feedback from lawyer? 
+* Luke: Project hours to date. All: project hours for this week (send directly to Steve or input in Harvest) 
+
 ## 6/29 Scrum call Action Items
 * Team to head into Sprint 2 retrospective and Sprint 3 planning immediately following Scrum
 * Code review (Ethan, Owen, Rob, full team invited) 12pmPT today
