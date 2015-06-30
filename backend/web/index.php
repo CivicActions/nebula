@@ -97,6 +97,48 @@ $app->get('/v1/ahrq/{drug}', function ($drug) use ($app) {
   return json_encode($result);
 });
 
+// API endpoint that combines data from FDA and AHRQ in a single request.
+$app->get('/v1/combined/{drugs}', function ($drugs) use ($app) {
+  $data = array();
+
+  // Process FDA data.
+  foreach ($drugs as $drug) {
+    // TODO: Investigate using Guzzle parallel capabilities here.
+    $fda_response = queryFDA('"' . $drug . '"');
+    // Store the response code, so caller can check for 404 etc.
+    $data['fda']['status'][$drug] = $fda_response->getStatusCode();
+    if ($fda_response->getStatusCode() == 200) {
+      $fda_response_data = json_decode((string)$fda_response->getBody(), TRUE);
+      // Build an intermediate list of symptoms.
+      foreach ($fda_response_data['results'] as $symptom) {
+        $symptom_name = $symptom['term'];
+        $symptom_count = $symptom['count'];
+        $symptoms[$symptom_name][$drug] = $symptom_count;
+      }
+    }
+  }
+  // Calulate totals for each symptom, and sort the list.
+  $data['fda']['totals'] = array_map('array_sum', $symptoms);
+  arsort($data['fda']['totals'], SORT_NUMERIC);
+  // Build a data list including drug details, sorted in the same order as
+  // the totals.
+  foreach ($data['fda']['totals'] as $symptom_name => $symptom_count) {
+    $data['fda']['data'][$symptom_name] = $symptoms[$symptom_name];
+  }
+
+  // Process AHRQ data.
+  foreach ($drugs as $drug) {
+    $data['ahrq'][$drug] = ahrqCount($app, $drug);
+  }
+
+  return new Response(json_encode($data), 200, ['Content-Type' => 'application/json']);
+})
+// Break path arguments into drugs.
+->assert('drugs', '.*')
+->convert('drugs', function ($drugs) {
+    return explode('/', $drugs);
+});
+
 $documentation = function() use ($app) {
   return <<<EOF
 <!doctype html>
@@ -108,6 +150,8 @@ See <a href="https://www.sideeffect.io">sideeffect.io</a> for important disclaim
   <br>Listing of all drugs present in the AHRQ survey sample. See an <a href='/v1/ahrq'>example query</a>.
 <li>/v1/ahrq/{drug}
   <br>Number of prescriptions of a specific drug in the AHRQ survey sample. See an <a href='/v1/ahrq/BENICAR'>example query</a>.
+<li>/v1/combined/{drug}/{drug}/{drug}...
+  <br>Combines data from FDA dataset (including http status, cross-drug totals and drug specific reports by symptom) as well as AHRQ number of prescriptions for each drug. See an <a href='/v1/combined/CRESTOR/BENICAR/ASPIRIN'>example query</a>.
 EOF;
 };
 
