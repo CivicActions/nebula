@@ -42,7 +42,7 @@ function queryFDA($search) {
   $response = $client->get('https://api.fda.gov/drug/event.json', [
     'http_errors' => FALSE,
     'query' => [
-      'api_key' => 'rv4OOon6fPJOHBbFHClUOs3BRGSbAEUdg3ACp2pu',
+      'api_key' => $_ENV['FDA_API_KEY'],
       'search' => $search,
       'count' => 'patient.reaction.reactionmeddrapt.exact'],
   ]);

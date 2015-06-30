@@ -20,6 +20,7 @@ The development environment is fully self-contained, and is based on Docker and 
 ### Requirements
 1. [Docker](https://www.docker.com/)
 1. [Docker Compose](https://docs.docker.com/compose/)
+1. An [FDA API Key](https://open.fda.gov/api/reference/#your-api-key)
 
 ### Instructions
 
@@ -30,6 +31,11 @@ cd nebula
 ```
 
 If you are using boot2docker, make sure it is started up and it's shell environment variable are available before continuing.
+
+Export your FDA API Key, adding it to the end of this command:
+```
+export FDA_API_KEY=
+```
 
 To start docker containers, initiate database schemas and import:
 ```
