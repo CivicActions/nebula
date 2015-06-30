@@ -371,7 +371,7 @@ $('#added-meds').append('<div class="checkholder" id="' + $('#drug').val() + '">
     function buildGraph() {
 
       // Now sort the colors based on the actual drug in the doublesGrab array...
-      barchartColorOrder = [];
+      var barchartColorOrder = [];
 
 // TODO: This is a problem.  I don't know why this would happen.  We need to figure this out.
       if (sessionStorage.getItem("SYMPTOM_MAP") == null) {
@@ -419,7 +419,7 @@ $('#added-meds').append('<div class="checkholder" id="' + $('#drug').val() + '">
       delete allSymptoms['undefined'];    
 
       allSymptomsAsArray = sortObjectByValue(allSymptoms);
-      
+      symptomKeys = [];
       // Now that we need to build a time series for each symptom in the proper order
       for (var k in allSymptomsAsArray) {
 	symptomKeys.push(allSymptomsAsArray[k][0]);
@@ -436,8 +436,6 @@ $('#added-meds').append('<div class="checkholder" id="' + $('#drug').val() + '">
 	  }
 	}
      }
-
-
 
       for (var n = 0; n < symptomKeys.length; n++) {
 	var timeSeries = [];
