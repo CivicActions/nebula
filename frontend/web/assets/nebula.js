@@ -172,7 +172,8 @@
 				  + '<div class="check-color" data-color="' + bgColor[i] + '" style="background: ' + bgColor[i]  + '"></div></div>');
 	  // Here we maintain the color mapping to match the HTML status. 
 	  mapDrugsIntoColorIndices[savedItemsArr[i]] = i;
-	  _gaq.push(['_trackEvent', 'checkbox', 'used']);
+	  //Uncommenting Kev's ga stuff, here. It was working, but started creating errors on code freeze, so had to take this approach as time was limited.'
+	 // _gaq.push(['_trackEvent', 'checkbox', 'used']);
 	  count++;
 	}
       }
