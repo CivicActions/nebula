@@ -190,7 +190,7 @@ $('#added-meds').append('<div class="checkholder" id="' + $('#drug').val() + '">
 	// Here we maintain the color mapping to match the HTML status. 
 	  mapDrugsIntoColorIndices[$('#drug').val()] = checks;
 	}
-	_gaq.push(['_trackEvent', 'checkbox', 'used']);
+//	_gaq.push(['_trackEvent', 'checkbox', 'used']);
       }
       
       var urlBase = window.location.origin + '?saved=';
