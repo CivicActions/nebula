@@ -76,6 +76,7 @@ This deploys an instance of the frontend and an instance of the backend on Amazo
 1. [Docker](https://www.docker.com/) to manage containers
 1. [Docker Compose](https://docs.docker.com/compose/) to automate defining and runnning multi-container applications with Docker
 1. [Docker Machine](https://docs.docker.com/machine/) to automate creating Docker hosts locally, on cloud providers, or in a data center
+1. An [FDA API Key](https://open.fda.gov/api/reference/#your-api-key)
 1. Amazon Web Services account and API keys to automate interactions with AWS
 1. Cloudflare account and API keys to automate interactions with Cloudflare
 
@@ -87,7 +88,7 @@ git clone git@github.com:CivicActions/nebula.git
 cd nebula
 ```
 
-Create the following required environment variables, containing your AWS and Cloudflare access details:
+Create the following required environment variables, containing your AWS, Cloudflare and FDA API access details:
 ```
 export AWS_ACCESS_KEY_ID=
 export AWS_SECRET_ACCESS_KEY=
@@ -95,6 +96,7 @@ export AWS_VPC_ID=
 export AWS_DEFAULT_REGION=
 export CLOUDFLARE_EMAIL=
 export CLOUDFLARE_TOKEN=
+export FDA_API_KEY=
 ```
 
 Depending on your region and VPC selected, you may also need to set the following environment variables:
