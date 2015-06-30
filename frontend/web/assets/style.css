@@ -1,11 +1,7 @@
-/* body {
-  max-width:960px;
-  margin:0 auto;
-  padding:25px;
-  color: #333333;
-  font-family: Tahoma, Geneva, sans-serif;
+body {
+  color: #5b5d60 !important;
 }
-*/
+
 #barLegend{
   float:left;
   margin-left:55px;
