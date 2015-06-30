@@ -2,3 +2,4 @@ backend/report.xml
 docker-compose-frontend.yml
 docker-compose-backend.yml
 .env
+.DS_Store
