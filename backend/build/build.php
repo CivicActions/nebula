@@ -18,6 +18,13 @@ $queryBuilder = $app['db']->createQueryBuilder();
 $platform = $app['db']->getDatabasePlatform();
 $schema = new \Doctrine\DBAL\Schema\Schema();
 
+// Drop if tables exist.
+$schemaManager = $app['db']->getSchemaManager();
+if ($schemaManager->tablesExist(array('prescribed_medicines', 'rx_names')) == true) {
+  $schemaManager->dropTable('prescribed_medicines');
+  $schemaManager->dropTable('rx_names');
+}
+
 /* Create "Prescriptions Table" */
 $prescribedTable = $schema->createTable("prescribed_medicines");
 // UNIQUE RX/PRESCRIBED MEDICINE IDENTIFIER
