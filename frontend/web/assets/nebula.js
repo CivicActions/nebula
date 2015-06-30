@@ -164,7 +164,7 @@
 	
 	var savedItems = getParameterByName('saved');
 	var savedItemsArr = savedItems.split(' ');
-	
+	console.log("About to add "+ savedItemsArr.length);
 	for(i = 0; i < savedItemsArr.length; i++) {	    
 	  
 	  $('#added-meds').append('<div class="checkholder" id="' + savedItemsArr[i] + '"><input type="checkbox" checked="checked" value="'
@@ -182,6 +182,7 @@
       // Build from input.
       else {
 	if(!sessionStorage.getItem($('#drug').val())){
+	  console.log("About to add one at a time!");
 $('#added-meds').append('<div class="checkholder" id="' + $('#drug').val() + '"><input type="checkbox" checked="checked" value="'
 + $('#drug').val()
 + '" class="added-drug '
@@ -283,13 +284,25 @@ $('#added-meds').append('<div class="checkholder" id="' + $('#drug').val() + '">
 	      var reactions = data.results;
 	      // I will store drug, symtomp, count objects in here in order to have all data.
 	      var triplets = [];
+	      var symptomMap = JSON.parse(sessionStorage.getItem("SYMPTOM_MAP"));
+	      if (typeof symptomMap == "undefined" || symptomMap == null) {
+		symptomMap = {};
+	      }
 	      for (i = 0; i < reactions.length; i++) {
 		var reaction = reactions[i];
-		triplets.push( { drug: this.term,
+		var triplet = { drug: this.term,
 				 symptom: reactions[i]['term'],
-				 count: reactions[i]['count']});
+				 count: reactions[i]['count']}
+		if (!(triplet.symptom in symptomMap)) 
+		  symptomMap[triplet.symptom] = {};
+		if (symptomMap[triplet.symptom] == null) {
+		  symptomMap[triplet.symptom] = {};
+		  }
+		symptomMap[triplet.symptom][triplet.drug] = triplet.count;
+		triplets.push(triplet);
 	      }
-	      
+
+	      sessionStorage.setItem("SYMPTOM_MAP", JSON.stringify(symptomMap));	      
 	      sessionStorage.setItem(term, JSON.stringify(triplets));
 
 	      setTimeout(buildGraph(), 200);
@@ -300,7 +313,8 @@ $('#added-meds').append('<div class="checkholder" id="' + $('#drug').val() + '">
 		console.log(keySearch);
 		
 		if(sessionStorage.getItem(keySearch) == null) {
-		  $(this).remove();
+		  console.log("REMOVING"+keySearch);
+//		  $(this).remove();
 		  
 		}
 	      })
@@ -339,8 +353,9 @@ $('#added-meds').append('<div class="checkholder" id="' + $('#drug').val() + '">
 		console.log($(this).attr('id'));
 		var keySearch = $(this).attr('id');
 		
-		if(sessionStorage.getItem(keySearch) == null) {
-		  $(this).remove();
+		if(sessionStorage.getItem(keySearch) == null) { 
+		  console.log("REMOVING"+keySearch);
+//		  $(this).remove();
 		  
 		}
 	      })
@@ -398,6 +413,7 @@ $('#added-meds').append('<div class="checkholder" id="' + $('#drug').val() + '">
       }
       
 
+
       // Now we need to build a list of symptoms in a fixed order.
       var allSymptoms = [];
       for (var k in tempData) {
@@ -425,7 +441,12 @@ $('#added-meds').append('<div class="checkholder" id="' + $('#drug').val() + '">
 	symptomKeys.push(allSymptomsAsArray[k][0]);
 	
       }
-      
+
+      var symptomMap = JSON.parse(sessionStorage.getItem("SYMPTOM_MAP"));
+      var d = new Date();
+      var begin = d.getTime();
+      console.log("XXX");
+/*
       for (var k in tempData) {
 	var timeSeries = [];
 	for (var n = 0; n < symptomKeys.length; n++) {
@@ -447,6 +468,8 @@ $('#added-meds').append('<div class="checkholder" id="' + $('#drug').val() + '">
 	}
 	
       }
+*/
+      console.log("YYY");
 
       var datax = [];
       var drugs = Object.keys(tempData);
@@ -476,7 +499,10 @@ $('#added-meds').append('<div class="checkholder" id="' + $('#drug').val() + '">
 	}
 	datax.push(timeSeries);
       }
-
+      var d = new Date();
+     var finaltime = d.getTime();
+      console.log("total time = "+(finaltime - begin) +"ms");
+      console.log("ZZZ");
       drugs.unshift('Drug');
       datax.unshift(drugs);
       drawChart(barchartColorOrder, datax);
@@ -534,7 +560,7 @@ $('#added-meds').append('<div class="checkholder" id="' + $('#drug').val() + '">
     });
 
     $('#clear-all').click(function() {
-      
+      console.log("Calling clear-all click!");
       $('.checkholder').remove();
       $('#drug-chart').empty();
       $('#link-save').empty();
