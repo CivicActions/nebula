@@ -171,7 +171,7 @@
 				  + savedItemsArr[i]
 				  + '" class="added-drug '
 				  + savedItemsArr[i] + '">'
-				  + '<label>' + savedItemsArr[i] + '</label>'
+				  + '<label for="' + savedItemsArr[i] + '">' + savedItemsArr[i] + '</label>'
 				  + '<div class="check-color" data-color="' + bgColor[i] + '" style="background: ' + bgColor[i]  + '"></div></div>');
 	  // Here we maintain the color mapping to match the HTML status. 
 	  mapDrugsIntoColorIndices[savedItemsArr[i]] = i;
@@ -187,7 +187,7 @@ $('#added-meds').append('<div class="checkholder" id="' + $('#drug').val() + '">
 + $('#drug').val()
 + '" class="added-drug '
 				+ $('#drug').val() + '">'
-				+ '<label>' + $('#drug').val() + '</label>'
+				+ '<label for="' + $('#drug').val() + '">' + $('#drug').val() + '</label>'
 				+ '<div class="check-color" data-color="' + bgColor[checks] + '" style="background: ' + bgColor[checks]  + '"></div></div>');
 	// Here we maintain the color mapping to match the HTML status. 
 	  mapDrugsIntoColorIndices[$('#drug').val()] = checks;
@@ -506,7 +506,6 @@ $('#added-meds').append('<div class="checkholder" id="' + $('#drug').val() + '">
     });
 
     $('#clear-all').click(function() {
-      console.log("Calling clear-all click!");
       $('.checkholder').remove();
       $('#drug-chart').empty();
       $('#link-save').empty();
