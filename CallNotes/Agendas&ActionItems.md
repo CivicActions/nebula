@@ -6,6 +6,7 @@
 * Steve: Video link for 4th Tyson interview 
 * Henry: Feedback from lawyer? 
 * Luke: Project hours to date. All: project hours for this week (send directly to Steve or input in Harvest) 
+* Project team loses Dave and Ethan to GlobalNET at EOD today. +/- zero availability to GSA from tomorrow AM. 
 
 ## 6/29 Scrum call Action Items
 * Team to head into Sprint 2 retrospective and Sprint 3 planning immediately following Scrum
