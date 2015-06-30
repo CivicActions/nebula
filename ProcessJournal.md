@@ -165,6 +165,19 @@ Fantastic work over the weekend.  Product looking much better.  Deceded to do Sp
 
 3:30 Fourth Interview with Tyson.  This provided confirmation and 4 addtional issues.
 
+Tuesday, June 30th
+
+9:45  Scrum
+
+Enterring final phase, attempt to "cool down".  Of course, everything seems to go wrong at the last minute.   Ethan got significant improvements to the backend done.  Now handling 7 drugs or more, but failures from the FDA site not handled robustly.
+
+10:15 Final prioritization meeting.
+
+In the afternoon, groomed stories and backlogs. Dealt with high-severity issues only.
+
+
+5:00 (Planned) Final Code push.
+
 
 
 
