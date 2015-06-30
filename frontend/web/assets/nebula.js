@@ -377,15 +377,10 @@ $('#added-meds').append('<div class="checkholder" id="' + $('#drug').val() + '">
 
 
       barchartColorOrder = [];
-      // This was necessary to work with FireFox, the code above worked in other browsers
-      var drugs = [];
-      drugs = Object.keys(mapDrugsIntoColorIndices);
 
-      for (var n = 0; n < drugs.length; n++) {
-	  var index = mapDrugsIntoColorIndices[drugs[n]];
-	  var color = bgColor[index];
-	  barchartColorOrder.push(color ? color : "red");
-      }
+
+
+
 
       // Now we need to build a list of symptoms in # of symptoms order
       var allSymptoms = [];
@@ -415,17 +410,14 @@ $('#added-meds').append('<div class="checkholder" id="' + $('#drug').val() + '">
       }
 
       var datax = [];
+
       var drugs = [];
-      for (var n = 0; n < symptomKeys.length; n++) {
-	var s = symptomKeys[n];
-	var drugsForS = symptomMap[s];
-        for (var d in drugsForS) {
-	  if (drugs.indexOf(d) == -1) {
-	    if($('.' + d).is(":checked")){
-	      drugs.push(d);
-	    }
-	  }
-	}
+      for (var d in mapDrugsIntoColorIndices) {
+	if (drugs.indexOf(d) == -1) {
+	   if($('.' + d).is(":checked")){
+	     drugs.push(d);
+	   }
+        }
       }
 
       for (var n = 0; n < symptomKeys.length; n++) {
@@ -439,12 +431,18 @@ $('#added-meds').append('<div class="checkholder" id="' + $('#drug').val() + '">
 	      debugger;
 	      mycount = 0;
             } 
-	    timeSeries.push(mycount);
+	    timeSeries[timeSeries.length] = mycount;
 	  } else {
-	    timeSeries.push(0);
+	    timeSeries[timeSeries.length] = 0;
 	  }
 	}
 	datax.push(timeSeries);
+      }
+
+      for (var k in drugs) {
+	  var index = mapDrugsIntoColorIndices[drugs[k]];
+	  var color = bgColor[index];
+	  barchartColorOrder.push(color ? color : "red");
       }
 
       drugs.unshift('Drug');
