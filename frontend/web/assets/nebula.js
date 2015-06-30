@@ -385,16 +385,7 @@ $('#added-meds').append('<div class="checkholder" id="' + $('#drug').val() + '">
       barchartColorOrder = [];
       // This was necessary to work with FireFox, the code above worked in other browsers
       var drugs = [];
-      for (var n = 0; n < symptomKeys.length; n++) {
-	var s = symptomKeys[n];
-	var drugsForS = symptomMap[s];
-        for (var d in drugsForS) {
-	  if (!(d in drugs)) {
-	    drugs.push(d);
-	  }
-	}
-      }
-
+      drugs = Object.keys(mapDrugsIntoColorIndices);
 
       for (var n = 0; n < drugs.length; n++) {
 	  var index = mapDrugsIntoColorIndices[drugs[n]];
@@ -426,16 +417,6 @@ $('#added-meds').append('<div class="checkholder" id="' + $('#drug').val() + '">
       }
 
       var datax = [];
-      var drugs = [];
-      for (var n = 0; n < symptomKeys.length; n++) {
-	var s = symptomKeys[n];
-	var drugsForS = symptomMap[s];
-        for (var d in drugsForS) {
-	  if (drugs.indexOf(d) == -1) {
-	    drugs.push(d);
-	  }
-	}
-     }
 
       for (var n = 0; n < symptomKeys.length; n++) {
 	var timeSeries = [];
