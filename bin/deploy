@@ -9,7 +9,7 @@ SUBDOMAIN="$2"
 DOMAIN="$3"
 NAME="$(git rev-parse --short HEAD)-$SUBDOMAIN.$DOMAIN"
 TAG="${DOMAIN}-${DEPLOY}"
-AWS='docker run --rm -e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY -e AWS_VPC_ID -e AWS_DEFAULT_REGION anigeo/awscli'
+AWS='docker run --rm -e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY -e AWS_VPC_ID -e AWS_DEFAULT_REGION -e AWS_ZONE -e AWS_SUBNET_ID anigeo/awscli'
 
 # Remove instances tagged as old
 OLD=$($AWS ec2 describe-instances --output text --filters "Name=tag:Status,Values=${TAG}-old"|grep INSTANCES|awk '{print $7}')
@@ -27,6 +27,8 @@ fi
 
 # Provision a AWS Docker host.
 docker-machine create "$NAME" --driver amazonec2
+echo "Machine created. Waiting a few seconds before getting the IP and ID"
+sleep 10
 IP=$(docker-machine ip "$NAME" 2>&1)
 PRIVATE_IP=$(docker-machine inspect --format='{{.Driver.PrivateIPAddress}}' "$NAME" 2>&1)
 INSTANCE_ID=$(docker-machine inspect --format='{{.Driver.InstanceId}}' "$NAME" 2>&1)

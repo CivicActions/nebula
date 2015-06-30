@@ -81,7 +81,7 @@ git clone git@github.com:CivicActions/nebula.git
 cd nebula
 ```
 
-Create the following environment variables, containing your AWS and Cloudflare access details:
+Create the following required environment variables, containing your AWS and Cloudflare access details:
 ```
 export AWS_ACCESS_KEY_ID=
 export AWS_SECRET_ACCESS_KEY=
@@ -90,6 +90,15 @@ export AWS_DEFAULT_REGION=
 export CLOUDFLARE_EMAIL=
 export CLOUDFLARE_TOKEN=
 ```
+
+Depending on your region and VPC selected, you may also need to set the following environment variables:
+```
+export AWS_ZONE=
+export AWS_SUBNET_ID=
+```
+You should ensure that your VPC is contained within the Region you select, and that the zone/subnet (if selected) are available on that VPC. The AWS environment variables and default values are detailed in the [Docker Machine](https://docs.docker.com/machine/#amazon-web-services) documentation.
+
+If you use boot2docker, you will need to start it now using `boot2docker up`.
 
 Run the ./bin/deploy script to deploy the frontend and backend respectively, where the second parameter is the subdomain to deploy two, and the third is a Cloudflare DNS hosted domain name. For example:
 ```
