@@ -1,7 +1,7 @@
 # Pool Three
 ## Prototype Development Process
 
-Try our [application](https://www.sideeffect.io/) or [build it yourself](https://github.com/CivicActions/nebula/blob/master/USER_MANUAL.md).
+Try our [application](https://www.sideeffect.io/) or [build it yourself](https://github.com/CivicActions/nebula/blob/master/DEVOPS_MANUAL.md).
 
 We used agile, lean, and human-centered design methodologies to develop our Agile Delivery Services (ADS) I prototype and create a functional, responsive, mobile-friendly web-based application. We used a SCRUM development process that consisted of the following two sprints:
 
