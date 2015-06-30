@@ -93,4 +93,29 @@ $app->get('/v1/ahrq/{drug}', function ($drug) use ($app) {
   return json_encode($result);
 });
 
+$app->get('/v1/ahrq/{drug}', function ($drug) use ($app) {
+  $result = new stdClass();
+  $term = $app['request']->get('ahrq');
+  $result->ahrq_sample = ahrqCount($app, $drug);
+  return json_encode($result);
+});
+
+$documentation = function() use ($app) {
+  return <<<EOF
+<!doctype html>
+<title>SideEffect.io API documentation</title>
+See <a href="https://www.sideeffect.io">sideeffect.io</a> for important disclaimers, data sources and notes.
+<ul><li>/v1/fda/{search}
+  <br>wrapper on the fda api to return incidence of different adverse effect symptoms given a search term. See an <a href='/v1/fda/CRESTOR+BENICAR+ASPIRIN'>example query</a>.
+<li>/v1/ahrq
+  <br>Listing of all drugs present in the AHRQ survey sample. See an <a href='/v1/ahrq'>example query</a>.
+<li>/v1/ahrq/{drug}
+  <br>Number of prescriptions of a specific drug in the AHRQ survey sample. See an <a href='/v1/ahrq/BENICAR'>example query</a>.
+EOF;
+};
+
+$app->get('/', $documentation);
+$app->get('/v1', $documentation);
+$app->get('/v1/', $documentation);
+
 $app->run();
