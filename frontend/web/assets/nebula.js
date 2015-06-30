@@ -164,7 +164,6 @@
 	
 	var savedItems = getParameterByName('saved');
 	var savedItemsArr = savedItems.split(' ');
-	console.log("About to add "+ savedItemsArr.length);
 	for(i = 0; i < savedItemsArr.length; i++) {	    
 	  
 	  $('#added-meds').append('<div class="checkholder" id="' + savedItemsArr[i] + '"><input type="checkbox" checked="checked" value="'
@@ -339,9 +338,6 @@ $('#added-meds').append('<div class="checkholder" id="' + $('#drug').val() + '">
 		var keySearch = $(this).attr('id');
 		
 		if(sessionStorage.getItem(keySearch) == null) { 
-		  console.log("REMOVING"+keySearch);
-//		  $(this).remove();
-		  
 		}
 	      })
 	    }
@@ -417,6 +413,18 @@ $('#added-meds').append('<div class="checkholder" id="' + $('#drug').val() + '">
       }
 
       var datax = [];
+      var drugs = [];
+      for (var n = 0; n < symptomKeys.length; n++) {
+	var s = symptomKeys[n];
+	var drugsForS = symptomMap[s];
+        for (var d in drugsForS) {
+	  if (drugs.indexOf(d) == -1) {
+	    if($('.' + d).is(":checked")){
+	      drugs.push(d);
+	    }
+	  }
+	}
+      }
 
       for (var n = 0; n < symptomKeys.length; n++) {
 	var timeSeries = [];
