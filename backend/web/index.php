@@ -76,6 +76,8 @@ $app->get('/v1/fda/{search}', function ($search) use ($app) {
   return new Response($fda_response->getBody(), $fda_response->getStatusCode(), ['Content-Type' => 'application/json']);
 });
 
+// API endpoint that provides a listing of all drugs present in the AHRQ survey
+// sample.
 $app->get('/v1/ahrq', function () use ($app) {
   $rx_names = array();
   $rx_name_sql = "SELECT rx_name FROM rx_names";
@@ -86,13 +88,8 @@ $app->get('/v1/ahrq', function () use ($app) {
   return json_encode($rx_names);
 });
 
-$app->get('/v1/ahrq/{drug}', function ($drug) use ($app) {
-  $result = new stdClass();
-  $term = $app['request']->get('ahrq');
-  $result->ahrq_sample = ahrqCount($app, $drug);
-  return json_encode($result);
-});
-
+// API endpoint that provides the number of prescriptions of a specific drug
+// in the AHRQ survey sample.
 $app->get('/v1/ahrq/{drug}', function ($drug) use ($app) {
   $result = new stdClass();
   $term = $app['request']->get('ahrq');
@@ -114,6 +111,7 @@ See <a href="https://www.sideeffect.io">sideeffect.io</a> for important disclaim
 EOF;
 };
 
+// API documentation endpoints.
 $app->get('/', $documentation);
 $app->get('/v1', $documentation);
 $app->get('/v1/', $documentation);
