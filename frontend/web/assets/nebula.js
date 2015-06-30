@@ -545,7 +545,6 @@ $('#added-meds').append('<div class="checkholder" id="' + $('#drug').val() + '">
     });
 
     $('#clear-all').click(function() {
-      console.log("Calling clear-all click!");
       $('.checkholder').remove();
       $('#drug-chart').empty();
       $('#link-save').empty();
