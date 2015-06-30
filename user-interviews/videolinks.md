@@ -39,4 +39,12 @@ Martha Ogilvie
 
 Video link [here](https://youtu.be/CRA1zJ2wJUE) 
 
+###Interview 6
+
+Tyson Kamikawa 
+
+6/29
+
+Video link [here](https://youtu.be/t9DZnuDEXv0)
+
 
