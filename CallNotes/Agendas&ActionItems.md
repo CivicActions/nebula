@@ -1,3 +1,10 @@
+## 7/2 Scrum call Agenda
+
+* Greg Elin to assert and document duplication of installation instructions
+* Owen to export slack conversation to GitHub
+* Rob to figure out how to bookmark inside systems
+* 
+
 ## 7/1 Scrum call Agenda
 * Proposal plan in light of new bid extension. New questions of conformity to three separate Pools.
 * Confirming team and availability for coming days 
