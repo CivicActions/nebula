@@ -1,3 +1,12 @@
+## 7/1 Scrum call Agenda
+* Proposal plan in light of new bid extension. New questions of conformity to three separate Pools.
+* Confirming team and availability for coming days 
+* How do we capture changing requirements (READMEs, criteria doc) in our project budget? 
+* Revisions to READMEs
+* Current prototype testing and bugfix
+
+[Steve was not on full 6/30 call, hence no posted Action items or Balance scores. See our [Process Journal](https://github.com/CivicActions/nebula/blob/master/ProcessJournal.md) for a high level review of the day's proceedings.
+
 ## 6/30 Scrum call Agenda
 * Tues EOD checklist 
 * Steve: READMEs to Winvale
