@@ -279,6 +279,7 @@ We need talented people working in government who have experience creating moder
 8. We assigned the CEO to play the role of Privacy and Legal officer, and an experienced Cyber guy to play the role of Security officer.
 
 
+<a name="Play8"></a>
 ## Play 8
 ### Choose a modern technology stack
 
