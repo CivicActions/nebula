@@ -1,4 +1,4 @@
-# Licence
+# License
 
 Except where otherwise noted for libraries below, this is free and unencumbered software released into the public domain.
 
