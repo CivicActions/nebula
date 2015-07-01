@@ -7,7 +7,12 @@ To fill in this:
 * Greg Elin to assert and document duplication of installation instructions
 * Owen to export slack conversation to GitHub
 * Rob to figure out how to bookmark inside systems
-* 
+* Ron to make video of website resizing (Or someone else?)
+* Rob to lead Sprint 3 retrospective
+* Owen and Dave to create deployment diagram (maybe Rob also)
+* Greg to figure out a quick approach to continuous monitoring
+* Steve to add personnel matrix or something else linkable as evidence
+
 
 ## 7/1 Scrum call Agenda
 * Proposal plan in light of new bid extension. New questions of conformity to three separate Pools.
