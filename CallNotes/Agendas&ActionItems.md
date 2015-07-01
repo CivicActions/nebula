@@ -19,6 +19,9 @@
 * Code Finalization and bug Squashing, final testing.
 * Attempting to utilize Owen's new code; Rob's new code which is still not working.
 
+## Balance Scores: 
+DN: 6, ET: 8, RR: 6, OB: 8.5, LF: 8.5, RA: 8, AP: 8.5, HP: 9
+
 ## 6/29 Scrum call Action Items
 * Team to head into Sprint 2 retrospective and Sprint 3 planning immediately following Scrum
 * Code review (Ethan, Owen, Rob, full team invited) 12pmPT today
