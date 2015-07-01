@@ -6,12 +6,12 @@ To fill in this:
 
 * Greg Elin to assert and document duplication of installation instructions
 * Owen to export slack conversation to GitHub
-* Rob to figure out how to bookmark inside systems
+* Rob to figure out how to bookmark inside systems (done---you add anchors.)
 * Ron to make video of website resizing (Or someone else?)
 * Rob to lead Sprint 3 retrospective
-* Owen and Dave to create deployment diagram (maybe Rob also)
 * Greg to figure out a quick approach to continuous monitoring
 * Steve to add personnel matrix or something else linkable as evidence
+* Greg/Owen to add documentation to diagram (https://github.com/CivicActions/nebula/blob/master/security/logical-network-topology-1.0.0.jpg) of our AWS operating system
 
 
 ## 7/1 Scrum call Agenda
