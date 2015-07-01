@@ -5,7 +5,7 @@
 * Revisions to READMEs
 * Current prototype testing and bugfix
 
-[Steve was not on full 6/30 call, hence no posted Action items or Balance scores. See our [Process Journal](https://github.com/CivicActions/nebula/blob/master/ProcessJournal.md) for a high level review of the day's proceedings.
+[Steve was not on full 6/30 call, hence no posted Action items or Balance scores. See our [Process Journal](https://github.com/CivicActions/nebula/blob/master/ProcessJournal.md) for a high level review of the day's proceedings.]
 
 ## 6/30 Scrum call Agenda
 * Tues EOD checklist 
