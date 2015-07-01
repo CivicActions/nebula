@@ -35,4 +35,4 @@ Free and Open Source project inclusions:
 * The Guzzle library is licenced under an MIT licence, for more details refer to /backend/vendor/guzzlehttp/guzzle/LICENSE and /testing/vendor/guzzlehttp/guzzle/LICENSE.
 * The PHPUnit test framework and libraries are licenced under a BSD 3 Clause license, for more details refer to /testing/vendor/phpunit/phpunit/LICENSE.
 
-Some libraries may include or depend on other projects not specifically listed above, please refer to README and LICENCE files within those project directories for details.
+Some libraries may include or depend on other projects not specifically listed above, please refer to README and LICENSE files within those project directories for details.
