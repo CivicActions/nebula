@@ -1,5 +1,6 @@
 # USDS Playbook Checklist and Evaluation Form
 
+<a name="abcd"></a>
 ## Play: 1
 ### Understand what people need
 
@@ -46,7 +47,7 @@ We must begin digital projects by exploring and pinpointing the needs of the peo
 7. Interviews and notes are posted [here]  (https://www.youtube.com/user/civicactions) and [here](https://github.com/CivicActions/nebula/tree/master/user-interviews), respectively.
 8. During each sprint.
 
-
+<a name="Play2"></a>
 ## Play 2
 ### Address the whole experience, from start to finish
 
@@ -80,6 +81,7 @@ We need to understand the different ways people will interact with our services,
 3. It can fit into the beginning of the prescription experience or when drugs are being added to an existing regime. Busy doctors, particularly in gerontology, have to manage complex drug regimenes quickly.
 4. Usage will increase as trust in the information grows over time. We would like to create a "Would you recommend this to your collequges" but we did not have time to measure that in this project.
 
+<a name="Play3"></a>
 ## Play 3
 ### Make it simple and intuitive
 
@@ -120,7 +122,7 @@ Using a government service shouldnâ€™t be stressful, confusing, or daunting. Itâ
 4. Since this is a prototype, we have provided no help facility. Whoever forks it may wish to do so.
 5. We haven't attempted to harmonize with other government services, which are generally not a good model for this kind of mobile-friendly application.  Instead, we aimed for a more modern, Bootstrap-style responsive design.
 
-
+<a name="Play4"></a>
 ## Play 4
 ### Build the service using agile and iterative practices
 
@@ -173,6 +175,7 @@ We should use an incremental, fast-paced style of software development to reduce
 8. User interviews, fed into backlog prioritization.
 9. Early gap was inaccess to tool (access only through screenshare), later gaps were in poor UX, inaccess to relativized data.
 
+<a name="Play5"></a>
 ## Play 5
 ### Structure budgets and contracts to support delivery
 
@@ -215,6 +218,7 @@ To improve our chances of success when contracting out development work, we need
 2.
 3.
 
+<a name="Play6"></a>
 ## Play 6
 ### Assign one leader and hold that person accountable
 
@@ -251,6 +255,7 @@ There must be a single product owner who has the authority and responsibility to
 3. The product owner required no additional authority, but based all decision on user feedback.
 
 
+<a name="Play7"></a>
 ## Play 7
 ### Bring in experienced teams
 
@@ -313,7 +318,7 @@ The technology decisions we make need to enable development teams to work effici
 2. We chose Mariadb version 10.0 as a popular and stable drop-in replacement of MySQL with strong support in the community.
 3. We had no new team members join in this short time.
 
-
+<a name="Play9"></a>
 ## Play 9
 ### Deploy in a flexible hosting environment
 
@@ -372,7 +377,7 @@ Our services should be deployed on flexible infrastructure, where resources can 
 13. We are using the AWS and CloudFlare APIs and web interfaces so we do not need to contact our provider for resources.
 
 
-
+<a name="Play10"></a>
 ## Play 10
 ### Automate testing and deployments
 
@@ -422,7 +427,7 @@ Today, developers write automated scripts that can verify thousands of scenarios
 9.
 10.
 
-
+<a name="Play11"></a>
 ## Play 11
 ### Manage security and privacy through reusable processes
 
@@ -466,7 +471,7 @@ The following checklist provides a starting point, but teams should work closely
 5. CivicActions uses OpenSCAP and GovReady for automated, continous scanning of the system against the USGCB baselines and for known vultnerabilities.
 6. Yes. The system will have a contact page with a variety of information including a privacy email address indicated for questions regarding HIPPA, privacy, and security matters.
 
-
+<a name="Play12"></a>
 ## Play 12
 ### Use data to drive decisions
 
@@ -527,7 +532,7 @@ At every stage of a project, we should measure how well our service is working f
 13. We have interviewed users consistently throughout our development process in order to garner their feedback on the product. And we have included a way for users to submit suggestions, issues and ideas from the site. Future plans include surveys.
 
 
-
+<a name="Play13"></a>
 ## Play 13
 ### Default to open
 
