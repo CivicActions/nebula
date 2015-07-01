@@ -1,5 +1,9 @@
 ## 7/2 Scrum call Agenda
 
+To fill in this:
+
+[Attachment E](https://docs.google.com/spreadsheets/d/1em8jwz7l1t9puVJNvv-1U45-VpIq-UsyitbSc7IAl0g/edit#gid=1239734005)
+
 * Greg Elin to assert and document duplication of installation instructions
 * Owen to export slack conversation to GitHub
 * Rob to figure out how to bookmark inside systems
