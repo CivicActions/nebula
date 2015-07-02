@@ -1,0 +1,184 @@
+diff --git a/src/render-and-download.js b/src/render-and-download.js
+index 39c10ed..b74bed5 100644
+--- a/src/render-and-download.js
++++ b/src/render-and-download.js
+@@ -70,7 +70,7 @@ module.exports = function(issues, dest, callback) {
+       issue.styleNormalize = styleNormalize;
+ 
+       var filename = sprintf(
+-        '#%0' + String(digit) + 'd-%s.html',
++        '#%0' + String(digit) + 'd-%s.md',
+         issue.number,
+         issue.title.trim().replace(/\s+/g, '-'));
+       var filepath = path.join(dest, filename);
+diff --git a/src/swig-markdown.js b/src/swig-markdown.js
+index 055cb79..57b9f0f 100644
+--- a/src/swig-markdown.js
++++ b/src/swig-markdown.js
+@@ -7,6 +7,6 @@ marked.setOptions({
+ });
+ 
+ module.exports = function(input) {
+-  return marked(input);
++  return input;
+ };
+ module.exports.safe = true;
+diff --git a/tmpl/issue.html b/tmpl/issue.html
+index f8aab93..3113018 100644
+--- a/tmpl/issue.html
++++ b/tmpl/issue.html
+@@ -1,135 +1,19 @@
+-<!DOCTYPE html>
+-<html>
+-  <head>
+-    <meta charset="utf-8">
+-    <title>{{ title }}</title>
+-    <style>{{ styleNormalize|safe }}</style>
+-    <style>{{ styleGithub|safe }}</style>
+-    <style>
+-      body {
+-        background-color: #eee;
+-        font-family: "Helvetica Neue", Helvetica, sans-serif;
+-      }
+-      a, a:visited {
+-        color: #4183c4;
+-        text-decoration: none;
+-      }
+-      a:hover, a:active {
+-        outline: 0;
+-        text-decoration: underline;
+-      }
+-      div.wrapper {
+-        margin: 50px auto;
+-        width: 700px;
+-      }
+-      h1 a, h1 a:visited {
+-        color: #333;
+-      }
+-      table {
+-        background-color: #fcfcfc;
+-        font-size: 12px;
+-        width: 100%;
+-      }
+-      table td {
+-        border-bottom: 1px solid #ddd;
+-        border-top: 1px solid #ddd;
+-        padding: 10px 20px;
+-        vertical-align: top;
+-      }
+-      table td:nth-child(1) {
+-        color: gray;
+-        width: 150px;
+-      }
+-      div.wrapper > table {
+-        border-radius: 5px;
+-        border: 1px solid #ddd;
+-        margin-bottom: 30px;
+-        overflow: hidden;
+-      }
+-      article {
+-        background-color: white;
+-        border-radius: 5px;
+-        border: 1px solid #ddd;
+-        margin-bottom: 30px;
+-        overflow: hidden;
+-      }
+-      article:last-child {
+-        margin-bottom: 0;
+-      }
+-      article > table td {
+-        border-top-style: none;
+-      }
+-      article > div {
+-        padding: 20px;
+-      }
+-    </style>
+-  </head>
+-  <body>
+-    <div class="wrapper">
+-      <h1><a href="{{ html_url }}">{{ title }} #{{ number }}</a></h1>
+-      <table>
+-        <tbody>
+-        <tr>
+-          <td>Created by</td>
+-          <td>
+-            <a href="{{ user.html_url }}">
+-              {{ user.login }}
+-            </a>
+-          </td>
+-        </tr>
+-        <tr>
+-          <td>Created at</td>
+-          <td>{{ created_at }}</td>
+-        </tr>
+-        <tr>
+-          <td>Updated at</td>
+-          <td>{{ updated_at }}</td>
+-        </tr>
+-        <tr>
+-          <td>Closed at</td>
+-          <td>{{ closed_at }}</td>
+-        </tr>
+-        <tr>
+-          <td>Permalink</td>
+-          <td><a href="{{ html_url }}">{{ html_url }}</a></td>
+-        </tr>
+-        </tbody>
+-      </table>
+-      {% for comment in comments %}
+-      <article>
+-        <table>
+-          <tbody>
+-          <tr>
+-            <td>Commented by</td>
+-            <td>
+-              <a href="{{ comment.user.html_url }}">
+-                {{ comment.user.login }}
+-              </a>
+-            </td>
+-          </tr>
+-          <tr>
+-            <td>Created at</td>
+-            <td>{{ comment.created_at }}</td>
+-          </tr>
+-          <tr>
+-            <td>Updated at</td>
+-            <td>{{ comment.updated_at }}</td>
+-          </tr>
+-          <tr>
+-            <td>Permalink</td>
+-            <td>
+-              <a href="{{ comment.html_url }}">
+-                {{ comment.html_url }}
+-              </a>
+-            </td>
+-          </tr>
+-          </tbody>
+-        </table>
+-        <div class="markdown-body">
+-          {{ comment.body|markdown }}
+-        </div>
+-      </article>
+-      {% endfor %}
+-    </div>
+-  </body>
+-</html>
++# #{{ number }}: {{ title }}
++
++* Source: {{ html_url }}
++* Created by: {{ user.login }}
++* Created at: {{ created_at }}
++* Updated at: {{ updated_at }}
++* Closed at: {{ closed_at }}
++
++{% for comment in comments %}
++## Comment
++
++* Source: {{ comment.html_url }}
++* Commented by: {{ comment.user.login }}
++* Created at: {{ comment.created_at }}
++* Updated at: {{ comment.updated_at }}
++
++{{ comment.body|markdown }}
++
++{% endfor %}
