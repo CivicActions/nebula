@@ -11,8 +11,8 @@ To fill in this:
 * Rob to lead Sprint 3 retrospective
 * Greg to figure out a quick approach to continuous monitoring
 * Steve to add personnel matrix or something else linkable as evidence
-* Greg/Owen to add documentation to diagram (https://github.com/CivicActions/nebula/blob/master/security/logical-network-topology-1.0.0.jpg) of our AWS operating system
-* Rob to somehow get filled in Links/Table into the docuement for Melinda and get ready for her.
+* Greg/Owen to add documentation to diagram (https://github.com/CivicActions/nebula/blob/master/security/logical-network-topology-1.0.0.jpg) of our AWS operating system - done
+* Rob to somehow get filled in Links/Table into the docuement for Melinda and get ready for her. - underway
 
 
 ## 7/1 Scrum call Agenda
