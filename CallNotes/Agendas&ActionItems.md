@@ -5,14 +5,18 @@ To fill in this:
 [Attachment E](https://docs.google.com/spreadsheets/d/1em8jwz7l1t9puVJNvv-1U45-VpIq-UsyitbSc7IAl0g/edit#gid=1239734005)
 
 * Greg Elin to assert and document duplication of installation instructions
-* Owen to export slack conversation to GitHub
-* Rob to figure out how to bookmark inside systems (done---you add anchors.)
 * Ron to make video of website resizing (Or someone else?)
 * Rob to lead Sprint 3 retrospective
 * Greg to figure out a quick approach to continuous monitoring
 * Steve to add personnel matrix or something else linkable as evidence
-* Greg/Owen to add documentation to diagram (https://github.com/CivicActions/nebula/blob/master/security/logical-network-topology-1.0.0.jpg) of our AWS operating system - done
-* Rob to somehow get filled in Links/Table into the docuement for Melinda and get ready for her. - underway
+* Greg/Owen to add documentation to diagram (https://github.com/CivicActions/nebula/blob/master/security/logical-network-topology-1.0.0.jpg) of our AWS operating system - done?
+* Rob to somehow get filled in Links/Table into the docuement for Melinda and get ready for her. - done
+
+Major action items:
+* Promotion/User Finding/Usability plan -- staffed by whom?
+* Finishing RFQ application (Esp. Attachment E and Readme)
+* Review of weekend schdule
+* How to share our experience (please edit the shared doc I posted.)
 
 
 ## 7/1 Scrum call Agenda
