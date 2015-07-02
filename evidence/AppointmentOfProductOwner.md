@@ -1,3 +1,7 @@
+# Transcript of our Slack Conversation
+
+We've cut here a transcript of our internal slack conversation showing that Product Owner was appointed at 4:03 on Thursday June 25th.
+
 [_[2:58 PM](https://civicactions.slack.com/archives/agile-gsa/p1434578294000301)_]__[henry.poole](https://civicactions.slack.com/team/henry.poole)_:__We need to follow this.
 
 _  
@@ -13,7 +17,7 @@ _
 [_[4:02 PM](https://civicactions.slack.com/archives/agile-gsa/p1434582141000306)_]_[luke](https://civicactions.slack.com/team/luke)_:_Â [@pava](https://civicactions.slack.com/team/pava): Kind of cool seeing it that way.
 
 _  
-[_[4:03 PM](https://civicactions.slack.com/archives/agile-gsa/p1434582235000307)_]_[grugnog](https://civicactions.slack.com/team/grugnog)_:_Â **@channel**: A couple of quick notes on decisions - we designatedÂ [@rob.read](https://civicactions.slack.com/team/rob.read)Â as product owner. Tomorrow plan is to prioritize/estimate/split etc the user stories, and then have a design studio session, where we can each wireframe how we "see" the main interface, and arrive at a shared picture of what we are building. Then, multiple tracks of wireframing/design (which is probably the critical path for tomorrow) as well as technical research and setting up some infrastructure (automated testing etc).
+[_[4:03 PM](https://civicactions.slack.com/archives/agile-gsa/p1434582235000307)_]_[grugnog](https://civicactions.slack.com/team/grugnog)_:_Â **@channel**: *A couple of quick notes on decisions - we designatedÂ [@rob.read](https://civicactions.slack.com/team/rob.read)Â as product owner.* Tomorrow plan is to prioritize/estimate/split etc the user stories, and then have a design studio session, where we can each wireframe how we "see" the main interface, and arrive at a shared picture of what we are building. Then, multiple tracks of wireframing/design (which is probably the critical path for tomorrow) as well as technical research and setting up some infrastructure (automated testing etc).
 
 _  
 [_[4:05 PM](https://civicactions.slack.com/archives/agile-gsa/p1434582334000308)_]__[grugnog](https://civicactions.slack.com/team/grugnog)_:__With the playbook - please add comments to the cards noting (a), how we can fulfill each/several checkbox, and (b) how we can demonstrate that
