@@ -1,6 +1,6 @@
 # Transcript of our Slack Conversation
 
-We've cut here a transcript of our internal slack conversation showing that Product Owner was appointed at 4:03 on Thursday June 25th.
+We've cut here a transcript of our internal slack conversation showing that Product Owner was appointed at 4:03 on Thursday June 25th (see quoted text below.)
 
 [_[2:58 PM](https://civicactions.slack.com/archives/agile-gsa/p1434578294000301)_]__[henry.poole](https://civicactions.slack.com/team/henry.poole)_:__We need to follow this.
 
