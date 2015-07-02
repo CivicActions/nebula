@@ -178,6 +178,20 @@ In the afternoon, groomed stories and backlogs. Dealt with high-severity issues 
 
 5:00 (Planned) Final Code push.
 
+Wednesday, July 1st
+
+9:45 Scrum
+
+Decided not to apply to Pools 1 or Pools 2 based on clarifications from the GSA. De-staffed most developers from the project. Continued working on preparation of RFQ itself, Attachment E, and README.md.
+
+Thursday, July 2nd
+
+9:45 Scrum
+
+10:15 (Planned) #3rd Sprint Retrospective
+
+
+
 
 
 
