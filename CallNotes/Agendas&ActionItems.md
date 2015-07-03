@@ -1,15 +1,18 @@
 ## 7/3 Scrum call Agenda
 
-To fill in this:
-
-[Attachment E](https://docs.google.com/spreadsheets/d/1em8jwz7l1t9puVJNvv-1U45-VpIq-UsyitbSc7IAl0g/edit#gid=1239734005)
-
+* Team to decide level of effort investment to make in prepraring for promotional work: Rob to do coding tweaks, Owen or new developer brought back, etc.  Probably 5 hours of effort to do high-priotiy bugs that Ron and Luke identified.
+* Luke to finalize decisions on Survery.
 * Greg Elin to assert and document duplication of installation instructions
 * Aaron to review Attachment E
 * Greg to figure out a quick approach to continuous monitoring and document
 * Steve to add personnel matrix or something else linkable as evidence (still needed)
 * Greg/Owen to add documentation to diagram (https://github.com/CivicActions/nebula/blob/master/security/logical-network-topology-1.0.0.jpg) of our AWS operating system - still needed
 * Rob to complete main README.md (currently a google doc: https://docs.google.com/a/civicactions.net/document/d/1E7op-Ik6YBFm-HWJlee6MDgrCNPN1bz9J8bh3oUWplo/edit?usp=sharing) and transmit to Melinda and WinValue by noon
+
+To fill in this:
+
+[Attachment E](https://docs.google.com/spreadsheets/d/1em8jwz7l1t9puVJNvv-1U45-VpIq-UsyitbSc7IAl0g/edit#gid=1239734005)
+
 
 ## 7/2 Scrum call Agenda
 
