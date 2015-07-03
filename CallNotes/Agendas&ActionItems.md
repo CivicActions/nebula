@@ -5,6 +5,7 @@ To fill in this:
 [Attachment E](https://docs.google.com/spreadsheets/d/1em8jwz7l1t9puVJNvv-1U45-VpIq-UsyitbSc7IAl0g/edit#gid=1239734005)
 
 * Greg Elin to assert and document duplication of installation instructions
+* Aaron to review Attachment E
 * Greg to figure out a quick approach to continuous monitoring and document
 * Steve to add personnel matrix or something else linkable as evidence (still needed)
 * Greg/Owen to add documentation to diagram (https://github.com/CivicActions/nebula/blob/master/security/logical-network-topology-1.0.0.jpg) of our AWS operating system - still needed
