@@ -1,0 +1,925 @@
+Last login: Thu Jul  2 07:51:50 on ttys007
+Gregs-MBP:~ greg$ pwd
+/Users/greg
+Gregs-MBP:nebula greg$
+Gregs-MBP:nebula greg$ # Clone sideeffect repo "nebula" and change into directory
+Gregs-MBP:nebula greg$ git clone git@github.com:CivicActions/nebula.git
+Cloning into 'nebula'...
+remote: Counting objects: 5912, done.
+remote: Compressing objects: 100% (216/216), done.
+remote: Total 5912 (delta 76), reused 0 (delta 0), pack-reused 5695
+Receiving objects: 100% (5912/5912), 61.34 MiB | 9.51 MiB/s, done.
+Resolving deltas: 100% (2431/2431), done.
+Checking connectivity... done.
+Gregs-MBP:nebula greg$ cd nebula
+Gregs-MBP:nebula greg$ 
+Gregs-MBP:nebula greg$ # Confirm AWS Subnet availability
+Gregs-MBP:nebula greg$ aws ec2 describe-subnets
+SUBNETS us-west-2c  4091  172.31.0.0/20 True  True  available subnet-fdbf71a4 vpc-bcf24fd9
+SUBNETS us-west-2a  4091  172.31.16.0/20  True  True  available subnet-959931e2 vpc-bcf24fd9
+SUBNETS us-west-2b  4091  172.31.32.0/20  True  True  available subnet-68a9230d vpc-bcf24fd9
+Gregs-MBP:nebula greg$ 
+Gregs-MBP:nebula greg$ # Set environmental variables
+Gregs-MBP:nebula greg$ export AWS_ACCESS_KEY_ID="[REDACTED]"
+Gregs-MBP:nebula greg$ export AWS_SECRET_ACCESS_KEY="[REDACTED]"
+Gregs-MBP:nebula greg$ export AWS_VPC_ID="vpc-bcf24fd9"
+Gregs-MBP:nebula greg$ export AWS_DEFAULT_REGION="us-west-1"
+Gregs-MBP:nebula greg$ export CLOUDFLARE_EMAIL=g[REDACTED]
+Gregs-MBP:nebula greg$ export CLOUDFLARE_TOKEN=[REDACTED]
+Gregs-MBP:nebula greg$ 
+Gregs-MBP:nebula greg$ # Previously selected domain to use: gregelin.net
+Gregs-MBP:nebula greg$ 
+Gregs-MBP:nebula greg$ # Running on OSX, so start boot2docker
+Gregs-MBP:nebula greg$
+Gregs-MBP:nebula greg$ boot2docker down
+Gregs-MBP:nebula greg$ boot2docker delete
+Gregs-MBP:nebula greg$ boot2docker init
+Gregs-MBP:nebula greg$ boot2docker up
+Waiting for VM and Docker daemon to start...
+.........................ooooooooooooooooooo
+Started.
+Writing /Users/greg/.boot2docker/certs/boot2docker-vm/ca.pem
+Writing /Users/greg/.boot2docker/certs/boot2docker-vm/cert.pem
+Writing /Users/greg/.boot2docker/certs/boot2docker-vm/key.pem
+
+To connect the Docker client to the Docker daemon, please set:
+    export DOCKER_HOST=tcp://192.168.59.105:2376
+    export DOCKER_CERT_PATH=/Users/greg/.boot2docker/certs/boot2docker-vm
+    export DOCKER_TLS_VERIFY=1
+
+Gregs-MBP:nebula greg$     export DOCKER_HOST=tcp://192.168.59.105:2376
+Gregs-MBP:nebula greg$     export DOCKER_CERT_PATH=/Users/greg/.boot2docker/certs/boot2docker-vm
+Gregs-MBP:nebula greg$     export DOCKER_TLS_VERIFY=1
+Gregs-MBP:nebula greg$ ./bin/deploy frontend www1 gregelin.net
+Gregs-MBP:nebula greg$ 
+Gregs-MBP:nebula greg$ # Deploy front end
+Gregs-MBP:nebula greg$ 
+Gregs-MBP:nebula greg$ ./bin/deploy frontend www1 gregelin.net
+[deploy] Attempting to create host 87efeae-www1.gregelin.net
+[deploy] Removing instances tagged as old
+[deploy] Terminating instance(s) i-e2445e14
+{
+    "TerminatingInstances": [
+        {
+            "InstanceId": "i-e2445e14", 
+            "CurrentState": {
+                "Code": 48, 
+                "Name": "terminated"
+            }, 
+            "PreviousState": {
+                "Code": 48, 
+                "Name": "terminated"
+            }
+        }
+    ]
+}
+Launching instance...
+To see how to connect Docker to this machine, run: docker-machine env 87efeae-www1.gregelin.net
+Machine created. Waiting a few seconds before getting the IP and ID
+Cloning into '/Users/greg/nebula'...
+web uses an image, skipping
+Creating frontend_web_1...
+Pulling image nginx:1.9...
+1.9: Pulling from nginx
+64e5325c0d9d: Pull complete
+bf84c1d84a8f: Pull complete
+aaa04ccb1cff: Pull complete
+c25a494fd450: Pull complete
+2b4392756878: Pull complete
+a58c6ba7d446: Pull complete
+6391a6648407: Pull complete
+0b6365661275: Pull complete
+5c1f0ec6cd7b: Pull complete
+36f0b0306c21: Pull complete
+107c338c1d31: Pull complete
+319d2015d149: Already exists
+nginx:1.9: The image you are pulling has been verified. Important: image verification is a tech preview feature and should not be relied on to provide security.
+Digest: sha256:32b5248d447448859e328d2b29e5356ba6858882ad7ca359ce4878f2fa4ff104
+Status: Downloaded newer image for nginx:1.9
+Sending build context to Docker daemon 2.048 kB
+Sending build context to Docker daemon 
+Step 0 : FROM node
+latest: Pulling from node
+87de57de6955: Pull complete 
+6a974bea7c0d: Pull complete 
+4b708e6c0f6c: Pull complete 
+313c5b9e573c: Pull complete 
+89027f845e09: Pull complete 
+43361a3a20a4: Pull complete 
+febb014eb418: Pull complete 
+20a32f7a591c: Already exists 
+64e5325c0d9d: Already exists 
+bf84c1d84a8f: Already exists 
+node:latest: The image you are pulling has been verified. Important: image verification is a tech preview feature and should not be relied on to provide security.
+Digest: sha256:7707002a5db5a39b5ea163f7e58b40e785e6c747127da47d66aad891315d1bba
+Status: Downloaded newer image for node:latest
+ ---> 20a32f7a591c
+Step 1 : RUN npm install -g cloudflare-cli
+ ---> Running in 4f7b010d3da4
+/usr/local/bin/cfcli -> /usr/local/lib/node_modules/cloudflare-cli/bin/cfcli
+cloudflare-cli@1.3.3 /usr/local/lib/node_modules/cloudflare-cli
+├── minimist@0.0.7
+├── cloudflare@0.0.8
+├── lodash@2.4.1
+├── cli-table@0.3.0 (colors@0.6.2)
+└── js-yaml@3.0.1 (esprima@1.0.4, argparse@0.1.16)
+ ---> 6b052e71d0b1
+Removing intermediate container 4f7b010d3da4
+Successfully built 6b052e71d0b1
+/root/.cfcli.yml not found
+Unable to find record www1.gregelin.net
+/root/.cfcli.yml not found
+Added A record for www1
+Enabled cloudflare for www1.gregelin.net
+
+Deployed frontend to https://www1.gregelin.net
+/root/.cfcli.yml not found
+Cache purged for domain gregelin.net
+Purging CloudFlare cache for gregelin.net
+Gregs-MBP:nebula greg$ 
+Gregs-MBP:nebula greg$ 
+Gregs-MBP:nebula greg$ # Deploy backend
+Gregs-MBP:nebula greg$ 
+Gregs-MBP:nebula greg$ ./bin/deploy backend api gregelin.net
+[deploy] Attempting to create host 87efeae-api.gregelin.net
+[deploy] Removing instances tagged as old
+[deploy] No instances tagged as old found
+Launching instance...
+To see how to connect Docker to this machine, run: docker-machine env 87efeae-api.gregelin.net
+Machine created. Waiting a few seconds before getting the IP and ID
+Cloning into '/Users/greg/nebula'...
+mysql uses an image, skipping
+Building php...
+Step 0 : FROM php:5.6-fpm
+5.6-fpm: Pulling from php
+64e5325c0d9d: Pull complete
+bf84c1d84a8f: Pull complete
+addf6a6a564c: Pull complete
+7aa4041d8445: Pull complete
+dfb0928bb61e: Pull complete
+da3d2c32f45c: Pull complete
+e5836e7aeccf: Pull complete
+639cd82c8684: Pull complete
+649acb957a51: Pull complete
+af6b5c2b451b: Pull complete
+a3239e24f789: Pull complete
+748d5422608d: Pull complete
+710614c897f2: Pull complete
+ea2380363780: Pull complete
+81487e1a7e42: Pull complete
+04fc4c80fbfb: Already exists
+php:5.6-fpm: The image you are pulling has been verified. Important: image verification is a tech preview feature and should not be relied on to provide security.
+Digest: sha256:0bff8b2a3d7e4953a1136489983afa3ea1baf704035d9596d9f906c3613673b2
+Status: Downloaded newer image for php:5.6-fpm
+ ---> 04fc4c80fbfb
+Step 1 : RUN apt-get -y update && apt-get -y install libzip-dev unzip
+ ---> Running in f5fe543f5f5e
+Get:1 http://security.debian.org jessie/updates InRelease [63.1 kB]
+Get:2 http://httpredir.debian.org jessie InRelease [134 kB]
+Get:3 http://httpredir.debian.org jessie-updates InRelease [133 kB]
+Get:4 http://security.debian.org jessie/updates/main amd64 Packages [132 kB]
+Get:5 http://httpredir.debian.org jessie/main amd64 Packages [9038 kB]
+Get:6 http://httpredir.debian.org jessie-updates/main amd64 Packages [3616 B]
+Fetched 9503 kB in 2s (4415 kB/s)
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following extra packages will be installed:
+  libzip2 zlib1g-dev
+Suggested packages:
+  zip
+The following NEW packages will be installed:
+  libzip-dev libzip2 unzip zlib1g-dev
+0 upgraded, 4 newly installed, 0 to remove and 1 not upgraded.
+Need to get 490 kB of archives.
+After this operation, 1323 kB of additional disk space will be used.
+Get:1 http://httpredir.debian.org/debian/ jessie/main libzip2 amd64 0.11.2-1.2 [32.4 kB]
+Get:2 http://httpredir.debian.org/debian/ jessie/main zlib1g-dev amd64 1:1.2.8.dfsg-2+b1 [206 kB]
+Get:3 http://httpredir.debian.org/debian/ jessie/main libzip-dev amd64 0.11.2-1.2 [90.0 kB]
+Get:4 http://httpredir.debian.org/debian/ jessie/main unzip amd64 6.0-16 [161 kB]
+debconf: delaying package configuration, since apt-utils is not installed
+Fetched 490 kB in 1s (273 kB/s)
+Selecting previously unselected package libzip2.
+(Reading database ... 12163 files and directories currently installed.)
+Preparing to unpack .../libzip2_0.11.2-1.2_amd64.deb ...
+Unpacking libzip2 (0.11.2-1.2) ...
+Selecting previously unselected package zlib1g-dev:amd64.
+Preparing to unpack .../zlib1g-dev_1%3a1.2.8.dfsg-2+b1_amd64.deb ...
+Unpacking zlib1g-dev:amd64 (1:1.2.8.dfsg-2+b1) ...
+Selecting previously unselected package libzip-dev.
+Preparing to unpack .../libzip-dev_0.11.2-1.2_amd64.deb ...
+Unpacking libzip-dev (0.11.2-1.2) ...
+Selecting previously unselected package unzip.
+Preparing to unpack .../unzip_6.0-16_amd64.deb ...
+Unpacking unzip (6.0-16) ...
+Setting up libzip2 (0.11.2-1.2) ...
+Setting up zlib1g-dev:amd64 (1:1.2.8.dfsg-2+b1) ...
+Setting up libzip-dev (0.11.2-1.2) ...
+Setting up unzip (6.0-16) ...
+Processing triggers for libc-bin (2.19-18) ...
+ ---> a358d540ce07
+Removing intermediate container f5fe543f5f5e
+Step 2 : RUN docker-php-ext-install pdo pdo_mysql zip
+ ---> Running in 4892f1e67d09
++ cd /usr/src/php/ext/pdo
++ phpize
+Configuring for:
+PHP Api Version:         20131106
+Zend Module Api No:      20131226
+Zend Extension Api No:   220131226
++ ./configure
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for a sed that does not truncate output... /bin/sed
+checking for cc... cc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether cc accepts -g... yes
+checking for cc option to accept ISO C89... none needed
+checking how to run the C preprocessor... cc -E
+checking for icc... no
+checking for suncc... no
+checking whether cc understands -c and -o together... yes
+checking for system library directory... lib
+checking if compiler supports -R... no
+checking if compiler supports -Wl,-rpath,... yes
+checking build system type... x86_64-unknown-linux-gnu
+checking host system type... x86_64-unknown-linux-gnu
+checking target system type... x86_64-unknown-linux-gnu
+checking for PHP prefix... /usr/local
+checking for PHP includes... -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib
+checking for PHP extension directory... /usr/local/lib/php/extensions/no-debug-non-zts-20131226
+checking for PHP installed headers prefix... /usr/local/include/php
+checking if debug is enabled... no
+checking if zts is enabled... no
+checking for re2c... re2c
+checking for re2c version... 0.13.5 (ok)
+checking for gawk... no
+checking for nawk... nawk
+checking if nawk is broken... no
+checking whether to enable PDO support... yes, shared
+checking for ld used by cc... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for /usr/bin/ld option to reload object files... -r
+checking for BSD-compatible nm... /usr/bin/nm -B
+checking whether ln -s works... yes
+checking how to recognize dependent libraries... pass_all
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking dlfcn.h usability... yes
+checking dlfcn.h presence... yes
+checking for dlfcn.h... yes
+checking the maximum length of command line arguments... 1572864
+checking command to parse /usr/bin/nm -B output from cc object... ok
+checking for objdir... .libs
+checking for ar... ar
+checking for ranlib... ranlib
+checking for strip... strip
+checking if cc supports -fno-rtti -fno-exceptions... no
+checking for cc option to produce PIC... -fPIC
+checking if cc PIC flag -fPIC works... yes
+checking if cc static flag -static works... yes
+checking if cc supports -c -o file.o... yes
+checking whether the cc linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... no
+
+creating libtool
+appending configuration tag "CXX" to libtool
+configure: creating ./config.status
+config.status: creating config.h
+/bin/bash /usr/src/php/ext/pdo/libtool --mode=compile cc  -I. -I/usr/src/php/ext/pdo -DPHP_ATOM_INC -I/usr/src/php/ext/pdo/include -I/usr/src/php/ext/pdo/main -I/usr/src/php/ext/pdo -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/pdo/pdo.c -o pdo.lo 
+mkdir .libs
+ cc -I. -I/usr/src/php/ext/pdo -DPHP_ATOM_INC -I/usr/src/php/ext/pdo/include -I/usr/src/php/ext/pdo/main -I/usr/src/php/ext/pdo -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/pdo/pdo.c  -fPIC -DPIC -o .libs/pdo.o
+/bin/bash /usr/src/php/ext/pdo/libtool --mode=compile cc  -I. -I/usr/src/php/ext/pdo -DPHP_ATOM_INC -I/usr/src/php/ext/pdo/include -I/usr/src/php/ext/pdo/main -I/usr/src/php/ext/pdo -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/pdo/pdo_dbh.c -o pdo_dbh.lo 
+ cc -I. -I/usr/src/php/ext/pdo -DPHP_ATOM_INC -I/usr/src/php/ext/pdo/include -I/usr/src/php/ext/pdo/main -I/usr/src/php/ext/pdo -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/pdo/pdo_dbh.c  -fPIC -DPIC -o .libs/pdo_dbh.o
+/bin/bash /usr/src/php/ext/pdo/libtool --mode=compile cc  -I. -I/usr/src/php/ext/pdo -DPHP_ATOM_INC -I/usr/src/php/ext/pdo/include -I/usr/src/php/ext/pdo/main -I/usr/src/php/ext/pdo -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/pdo/pdo_stmt.c -o pdo_stmt.lo 
+ cc -I. -I/usr/src/php/ext/pdo -DPHP_ATOM_INC -I/usr/src/php/ext/pdo/include -I/usr/src/php/ext/pdo/main -I/usr/src/php/ext/pdo -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/pdo/pdo_stmt.c  -fPIC -DPIC -o .libs/pdo_stmt.o
+/bin/bash /usr/src/php/ext/pdo/libtool --mode=compile cc  -I. -I/usr/src/php/ext/pdo -DPHP_ATOM_INC -I/usr/src/php/ext/pdo/include -I/usr/src/php/ext/pdo/main -I/usr/src/php/ext/pdo -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/pdo/pdo_sql_parser.c -o pdo_sql_parser.lo 
+ cc -I. -I/usr/src/php/ext/pdo -DPHP_ATOM_INC -I/usr/src/php/ext/pdo/include -I/usr/src/php/ext/pdo/main -I/usr/src/php/ext/pdo -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/pdo/pdo_sql_parser.c  -fPIC -DPIC -o .libs/pdo_sql_parser.o
+/bin/bash /usr/src/php/ext/pdo/libtool --mode=compile cc  -I. -I/usr/src/php/ext/pdo -DPHP_ATOM_INC -I/usr/src/php/ext/pdo/include -I/usr/src/php/ext/pdo/main -I/usr/src/php/ext/pdo -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/pdo/pdo_sqlstate.c -o pdo_sqlstate.lo 
+ cc -I. -I/usr/src/php/ext/pdo -DPHP_ATOM_INC -I/usr/src/php/ext/pdo/include -I/usr/src/php/ext/pdo/main -I/usr/src/php/ext/pdo -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/pdo/pdo_sqlstate.c  -fPIC -DPIC -o .libs/pdo_sqlstate.o
+/bin/bash /usr/src/php/ext/pdo/libtool --mode=link cc -DPHP_ATOM_INC -I/usr/src/php/ext/pdo/include -I/usr/src/php/ext/pdo/main -I/usr/src/php/ext/pdo -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib  -DHAVE_CONFIG_H  -g -O2   -o pdo.la -export-dynamic -avoid-version -prefer-pic -module -rpath /usr/src/php/ext/pdo/modules  pdo.lo pdo_dbh.lo pdo_stmt.lo pdo_sql_parser.lo pdo_sqlstate.lo 
+cc -shared  .libs/pdo.o .libs/pdo_dbh.o .libs/pdo_stmt.o .libs/pdo_sql_parser.o .libs/pdo_sqlstate.o   -Wl,-soname -Wl,pdo.so -o .libs/pdo.so
+creating pdo.la
+(cd .libs && rm -f pdo.la && ln -s ../pdo.la pdo.la)
+/bin/bash /usr/src/php/ext/pdo/libtool --mode=install cp ./pdo.la /usr/src/php/ext/pdo/modules
+cp ./.libs/pdo.so /usr/src/php/ext/pdo/modules/pdo.so
+cp ./.libs/pdo.lai /usr/src/php/ext/pdo/modules/pdo.la
+PATH="$PATH:/sbin" ldconfig -n /usr/src/php/ext/pdo/modules
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /usr/src/php/ext/pdo/modules
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the `-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the `LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the `LD_RUN_PATH' environment variable
+     during linking
+   - use the `-Wl,--rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to `/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+
+Build complete.
+Don't forget to run 'make test'.
+
+Installing shared extensions:     /usr/local/lib/php/extensions/no-debug-non-zts-20131226/
+Installing header files:          /usr/local/include/php/
+Installing PDO headers:          /usr/local/include/php/ext/pdo/
+find . -name \*.gcno -o -name \*.gcda | xargs rm -f
+find . -name \*.lo -o -name \*.o | xargs rm -f
+find . -name \*.la -o -name \*.a | xargs rm -f 
+find . -name \*.so | xargs rm -f
+find . -name .libs -a -type d|xargs rm -rf
+rm -f libphp.la       modules/* libs/*
++ cd /usr/src/php/ext/pdo_mysql
++ phpize
+Configuring for:
+PHP Api Version:         20131106
+Zend Module Api No:      20131226
+Zend Extension Api No:   220131226
++ ./configure
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for a sed that does not truncate output... /bin/sed
+checking for cc... cc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether cc accepts -g... yes
+checking for cc option to accept ISO C89... none needed
+checking how to run the C preprocessor... cc -E
+checking for icc... no
+checking for suncc... no
+checking whether cc understands -c and -o together... yes
+checking for system library directory... lib
+checking if compiler supports -R... no
+checking if compiler supports -Wl,-rpath,... yes
+checking build system type... x86_64-unknown-linux-gnu
+checking host system type... x86_64-unknown-linux-gnu
+checking target system type... x86_64-unknown-linux-gnu
+checking for PHP prefix... /usr/local
+checking for PHP includes... -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib
+checking for PHP extension directory... /usr/local/lib/php/extensions/no-debug-non-zts-20131226
+checking for PHP installed headers prefix... /usr/local/include/php
+checking if debug is enabled... no
+checking if zts is enabled... no
+checking for re2c... re2c
+checking for re2c version... 0.13.5 (ok)
+checking for gawk... no
+checking for nawk... nawk
+checking if nawk is broken... no
+checking for MySQL support for PDO... yes, shared
+checking for the location of libz... no
+checking for PDO includes... checking for PDO includes... /usr/local/include/php/ext
+checking for ld used by cc... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for /usr/bin/ld option to reload object files... -r
+checking for BSD-compatible nm... /usr/bin/nm -B
+checking whether ln -s works... yes
+checking how to recognize dependent libraries... pass_all
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking dlfcn.h usability... yes
+checking dlfcn.h presence... yes
+checking for dlfcn.h... yes
+checking the maximum length of command line arguments... 1572864
+checking command to parse /usr/bin/nm -B output from cc object... ok
+checking for objdir... .libs
+checking for ar... ar
+checking for ranlib... ranlib
+checking for strip... strip
+checking if cc supports -fno-rtti -fno-exceptions... no
+checking for cc option to produce PIC... -fPIC
+checking if cc PIC flag -fPIC works... yes
+checking if cc static flag -static works... yes
+checking if cc supports -c -o file.o... yes
+checking whether the cc linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... no
+
+creating libtool
+appending configuration tag "CXX" to libtool
+configure: creating ./config.status
+config.status: creating config.h
+/bin/bash /usr/src/php/ext/pdo_mysql/libtool --mode=compile cc -I/usr/local/include/php/ext -I -I. -I/usr/src/php/ext/pdo_mysql -DPHP_ATOM_INC -I/usr/src/php/ext/pdo_mysql/include -I/usr/src/php/ext/pdo_mysql/main -I/usr/src/php/ext/pdo_mysql -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/pdo_mysql/pdo_mysql.c -o pdo_mysql.lo 
+mkdir .libs
+ cc -I/usr/local/include/php/ext -I -I. -I/usr/src/php/ext/pdo_mysql -DPHP_ATOM_INC -I/usr/src/php/ext/pdo_mysql/include -I/usr/src/php/ext/pdo_mysql/main -I/usr/src/php/ext/pdo_mysql -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/pdo_mysql/pdo_mysql.c  -fPIC -DPIC -o .libs/pdo_mysql.o
+/bin/bash /usr/src/php/ext/pdo_mysql/libtool --mode=compile cc -I/usr/local/include/php/ext -I -I. -I/usr/src/php/ext/pdo_mysql -DPHP_ATOM_INC -I/usr/src/php/ext/pdo_mysql/include -I/usr/src/php/ext/pdo_mysql/main -I/usr/src/php/ext/pdo_mysql -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/pdo_mysql/mysql_driver.c -o mysql_driver.lo 
+ cc -I/usr/local/include/php/ext -I -I. -I/usr/src/php/ext/pdo_mysql -DPHP_ATOM_INC -I/usr/src/php/ext/pdo_mysql/include -I/usr/src/php/ext/pdo_mysql/main -I/usr/src/php/ext/pdo_mysql -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/pdo_mysql/mysql_driver.c  -fPIC -DPIC -o .libs/mysql_driver.o
+/bin/bash /usr/src/php/ext/pdo_mysql/libtool --mode=compile cc -I/usr/local/include/php/ext -I -I. -I/usr/src/php/ext/pdo_mysql -DPHP_ATOM_INC -I/usr/src/php/ext/pdo_mysql/include -I/usr/src/php/ext/pdo_mysql/main -I/usr/src/php/ext/pdo_mysql -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/pdo_mysql/mysql_statement.c -o mysql_statement.lo 
+ cc -I/usr/local/include/php/ext -I -I. -I/usr/src/php/ext/pdo_mysql -DPHP_ATOM_INC -I/usr/src/php/ext/pdo_mysql/include -I/usr/src/php/ext/pdo_mysql/main -I/usr/src/php/ext/pdo_mysql -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/pdo_mysql/mysql_statement.c  -fPIC -DPIC -o .libs/mysql_statement.o
+/bin/bash /usr/src/php/ext/pdo_mysql/libtool --mode=link cc -DPHP_ATOM_INC -I/usr/src/php/ext/pdo_mysql/include -I/usr/src/php/ext/pdo_mysql/main -I/usr/src/php/ext/pdo_mysql -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib  -DHAVE_CONFIG_H  -g -O2   -o pdo_mysql.la -export-dynamic -avoid-version -prefer-pic -module -rpath /usr/src/php/ext/pdo_mysql/modules  pdo_mysql.lo mysql_driver.lo mysql_statement.lo 
+cc -shared  .libs/pdo_mysql.o .libs/mysql_driver.o .libs/mysql_statement.o   -Wl,-soname -Wl,pdo_mysql.so -o .libs/pdo_mysql.so
+creating pdo_mysql.la
+(cd .libs && rm -f pdo_mysql.la && ln -s ../pdo_mysql.la pdo_mysql.la)
+/bin/bash /usr/src/php/ext/pdo_mysql/libtool --mode=install cp ./pdo_mysql.la /usr/src/php/ext/pdo_mysql/modules
+cp ./.libs/pdo_mysql.so /usr/src/php/ext/pdo_mysql/modules/pdo_mysql.so
+cp ./.libs/pdo_mysql.lai /usr/src/php/ext/pdo_mysql/modules/pdo_mysql.la
+PATH="$PATH:/sbin" ldconfig -n /usr/src/php/ext/pdo_mysql/modules
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /usr/src/php/ext/pdo_mysql/modules
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the `-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the `LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the `LD_RUN_PATH' environment variable
+     during linking
+   - use the `-Wl,--rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to `/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+
+Build complete.
+Don't forget to run 'make test'.
+
+Installing shared extensions:     /usr/local/lib/php/extensions/no-debug-non-zts-20131226/
+find . -name \*.gcno -o -name \*.gcda | xargs rm -f
+find . -name \*.lo -o -name \*.o | xargs rm -f
+find . -name \*.la -o -name \*.a | xargs rm -f 
+find . -name \*.so | xargs rm -f
+find . -name .libs -a -type d|xargs rm -rf
+rm -f libphp.la       modules/* libs/*
++ cd /usr/src/php/ext/zip
++ phpize
+Configuring for:
+PHP Api Version:         20131106
+Zend Module Api No:      20131226
+Zend Extension Api No:   220131226
++ ./configure
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for a sed that does not truncate output... /bin/sed
+checking for cc... cc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether cc accepts -g... yes
+checking for cc option to accept ISO C89... none needed
+checking how to run the C preprocessor... cc -E
+checking for icc... no
+checking for suncc... no
+checking whether cc understands -c and -o together... yes
+checking for system library directory... lib
+checking if compiler supports -R... no
+checking if compiler supports -Wl,-rpath,... yes
+checking build system type... x86_64-unknown-linux-gnu
+checking host system type... x86_64-unknown-linux-gnu
+checking target system type... x86_64-unknown-linux-gnu
+checking for PHP prefix... /usr/local
+checking for PHP includes... -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib
+checking for PHP extension directory... /usr/local/lib/php/extensions/no-debug-non-zts-20131226
+checking for PHP installed headers prefix... /usr/local/include/php
+checking if debug is enabled... no
+checking if zts is enabled... no
+checking for re2c... re2c
+checking for re2c version... 0.13.5 (ok)
+checking for gawk... no
+checking for nawk... nawk
+checking if nawk is broken... no
+checking for zip archive read/writesupport... yes, shared
+checking for the location of libz... no
+checking pcre install prefix... no
+checking libzip... no
+checking for the location of zlib... /usr
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking for int8_t... yes
+checking for int16_t... yes
+checking for int32_t... yes
+checking for int64_t... yes
+checking for uint8_t... yes
+checking for uint16_t... yes
+checking for uint32_t... yes
+checking for uint64_t... yes
+checking for ssize_t... yes
+checking size of short... 2
+checking size of int... 4
+checking size of long... 8
+checking size of long long... 8
+checking size of off_t... 8
+checking size of size_t... 8
+checking for touch... /usr/bin/touch
+checking for unzip... /usr/bin/unzip
+checking whether struct tm is in sys/time.h or time.h... time.h
+checking for struct tm.tm_zone... yes
+checking for ld used by cc... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for /usr/bin/ld option to reload object files... -r
+checking for BSD-compatible nm... /usr/bin/nm -B
+checking whether ln -s works... yes
+checking how to recognize dependent libraries... pass_all
+checking dlfcn.h usability... yes
+checking dlfcn.h presence... yes
+checking for dlfcn.h... yes
+checking the maximum length of command line arguments... 1572864
+checking command to parse /usr/bin/nm -B output from cc object... ok
+checking for objdir... .libs
+checking for ar... ar
+checking for ranlib... ranlib
+checking for strip... strip
+checking if cc supports -fno-rtti -fno-exceptions... no
+checking for cc option to produce PIC... -fPIC
+checking if cc PIC flag -fPIC works... yes
+checking if cc static flag -static works... yes
+checking if cc supports -c -o file.o... yes
+checking whether the cc linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... no
+
+creating libtool
+appending configuration tag "CXX" to libtool
+configure: creating ./config.status
+config.status: creating config.h
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/php_zip.c -o php_zip.lo 
+mkdir .libs
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/php_zip.c  -fPIC -DPIC -o .libs/php_zip.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/zip_stream.c -o zip_stream.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/zip_stream.c  -fPIC -DPIC -o .libs/zip_stream.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_add.c -o lib/zip_add.lo 
+mkdir lib/.libs
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_add.c  -fPIC -DPIC -o lib/.libs/zip_add.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_add_dir.c -o lib/zip_add_dir.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_add_dir.c  -fPIC -DPIC -o lib/.libs/zip_add_dir.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_add_entry.c -o lib/zip_add_entry.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_add_entry.c  -fPIC -DPIC -o lib/.libs/zip_add_entry.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_close.c -o lib/zip_close.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_close.c  -fPIC -DPIC -o lib/.libs/zip_close.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_delete.c -o lib/zip_delete.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_delete.c  -fPIC -DPIC -o lib/.libs/zip_delete.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_dir_add.c -o lib/zip_dir_add.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_dir_add.c  -fPIC -DPIC -o lib/.libs/zip_dir_add.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_dirent.c -o lib/zip_dirent.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_dirent.c  -fPIC -DPIC -o lib/.libs/zip_dirent.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_discard.c -o lib/zip_discard.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_discard.c  -fPIC -DPIC -o lib/.libs/zip_discard.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_entry.c -o lib/zip_entry.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_entry.c  -fPIC -DPIC -o lib/.libs/zip_entry.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_err_str.c -o lib/zip_err_str.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_err_str.c  -fPIC -DPIC -o lib/.libs/zip_err_str.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_error.c -o lib/zip_error.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_error.c  -fPIC -DPIC -o lib/.libs/zip_error.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_error_clear.c -o lib/zip_error_clear.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_error_clear.c  -fPIC -DPIC -o lib/.libs/zip_error_clear.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_error_get.c -o lib/zip_error_get.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_error_get.c  -fPIC -DPIC -o lib/.libs/zip_error_get.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_error_get_sys_type.c -o lib/zip_error_get_sys_type.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_error_get_sys_type.c  -fPIC -DPIC -o lib/.libs/zip_error_get_sys_type.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_error_strerror.c -o lib/zip_error_strerror.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_error_strerror.c  -fPIC -DPIC -o lib/.libs/zip_error_strerror.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_error_to_str.c -o lib/zip_error_to_str.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_error_to_str.c  -fPIC -DPIC -o lib/.libs/zip_error_to_str.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_extra_field.c -o lib/zip_extra_field.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_extra_field.c  -fPIC -DPIC -o lib/.libs/zip_extra_field.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_extra_field_api.c -o lib/zip_extra_field_api.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_extra_field_api.c  -fPIC -DPIC -o lib/.libs/zip_extra_field_api.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_fclose.c -o lib/zip_fclose.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_fclose.c  -fPIC -DPIC -o lib/.libs/zip_fclose.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_fdopen.c -o lib/zip_fdopen.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_fdopen.c  -fPIC -DPIC -o lib/.libs/zip_fdopen.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_file_add.c -o lib/zip_file_add.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_file_add.c  -fPIC -DPIC -o lib/.libs/zip_file_add.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_file_error_clear.c -o lib/zip_file_error_clear.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_file_error_clear.c  -fPIC -DPIC -o lib/.libs/zip_file_error_clear.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_file_error_get.c -o lib/zip_file_error_get.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_file_error_get.c  -fPIC -DPIC -o lib/.libs/zip_file_error_get.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_file_get_comment.c -o lib/zip_file_get_comment.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_file_get_comment.c  -fPIC -DPIC -o lib/.libs/zip_file_get_comment.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_file_get_offset.c -o lib/zip_file_get_offset.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_file_get_offset.c  -fPIC -DPIC -o lib/.libs/zip_file_get_offset.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_file_rename.c -o lib/zip_file_rename.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_file_rename.c  -fPIC -DPIC -o lib/.libs/zip_file_rename.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_file_replace.c -o lib/zip_file_replace.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_file_replace.c  -fPIC -DPIC -o lib/.libs/zip_file_replace.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_file_set_comment.c -o lib/zip_file_set_comment.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_file_set_comment.c  -fPIC -DPIC -o lib/.libs/zip_file_set_comment.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_file_strerror.c -o lib/zip_file_strerror.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_file_strerror.c  -fPIC -DPIC -o lib/.libs/zip_file_strerror.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_filerange_crc.c -o lib/zip_filerange_crc.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_filerange_crc.c  -fPIC -DPIC -o lib/.libs/zip_filerange_crc.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_fopen.c -o lib/zip_fopen.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_fopen.c  -fPIC -DPIC -o lib/.libs/zip_fopen.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_file_get_external_attributes.c -o lib/zip_file_get_external_attributes.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_file_get_external_attributes.c  -fPIC -DPIC -o lib/.libs/zip_file_get_external_attributes.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_file_set_external_attributes.c -o lib/zip_file_set_external_attributes.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_file_set_external_attributes.c  -fPIC -DPIC -o lib/.libs/zip_file_set_external_attributes.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_fopen_encrypted.c -o lib/zip_fopen_encrypted.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_fopen_encrypted.c  -fPIC -DPIC -o lib/.libs/zip_fopen_encrypted.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_fopen_index.c -o lib/zip_fopen_index.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_fopen_index.c  -fPIC -DPIC -o lib/.libs/zip_fopen_index.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_fopen_index_encrypted.c -o lib/zip_fopen_index_encrypted.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_fopen_index_encrypted.c  -fPIC -DPIC -o lib/.libs/zip_fopen_index_encrypted.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_fread.c -o lib/zip_fread.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_fread.c  -fPIC -DPIC -o lib/.libs/zip_fread.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_get_archive_comment.c -o lib/zip_get_archive_comment.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_get_archive_comment.c  -fPIC -DPIC -o lib/.libs/zip_get_archive_comment.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_get_archive_flag.c -o lib/zip_get_archive_flag.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_get_archive_flag.c  -fPIC -DPIC -o lib/.libs/zip_get_archive_flag.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_get_compression_implementation.c -o lib/zip_get_compression_implementation.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_get_compression_implementation.c  -fPIC -DPIC -o lib/.libs/zip_get_compression_implementation.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_get_encryption_implementation.c -o lib/zip_get_encryption_implementation.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_get_encryption_implementation.c  -fPIC -DPIC -o lib/.libs/zip_get_encryption_implementation.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_get_file_comment.c -o lib/zip_get_file_comment.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_get_file_comment.c  -fPIC -DPIC -o lib/.libs/zip_get_file_comment.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_get_name.c -o lib/zip_get_name.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_get_name.c  -fPIC -DPIC -o lib/.libs/zip_get_name.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_get_num_entries.c -o lib/zip_get_num_entries.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_get_num_entries.c  -fPIC -DPIC -o lib/.libs/zip_get_num_entries.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_get_num_files.c -o lib/zip_get_num_files.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_get_num_files.c  -fPIC -DPIC -o lib/.libs/zip_get_num_files.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_memdup.c -o lib/zip_memdup.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_memdup.c  -fPIC -DPIC -o lib/.libs/zip_memdup.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_name_locate.c -o lib/zip_name_locate.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_name_locate.c  -fPIC -DPIC -o lib/.libs/zip_name_locate.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_new.c -o lib/zip_new.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_new.c  -fPIC -DPIC -o lib/.libs/zip_new.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_open.c -o lib/zip_open.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_open.c  -fPIC -DPIC -o lib/.libs/zip_open.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_rename.c -o lib/zip_rename.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_rename.c  -fPIC -DPIC -o lib/.libs/zip_rename.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_replace.c -o lib/zip_replace.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_replace.c  -fPIC -DPIC -o lib/.libs/zip_replace.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_set_archive_comment.c -o lib/zip_set_archive_comment.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_set_archive_comment.c  -fPIC -DPIC -o lib/.libs/zip_set_archive_comment.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_set_archive_flag.c -o lib/zip_set_archive_flag.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_set_archive_flag.c  -fPIC -DPIC -o lib/.libs/zip_set_archive_flag.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_set_default_password.c -o lib/zip_set_default_password.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_set_default_password.c  -fPIC -DPIC -o lib/.libs/zip_set_default_password.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_set_file_comment.c -o lib/zip_set_file_comment.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_set_file_comment.c  -fPIC -DPIC -o lib/.libs/zip_set_file_comment.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_set_file_compression.c -o lib/zip_set_file_compression.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_set_file_compression.c  -fPIC -DPIC -o lib/.libs/zip_set_file_compression.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_set_name.c -o lib/zip_set_name.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_set_name.c  -fPIC -DPIC -o lib/.libs/zip_set_name.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_source_buffer.c -o lib/zip_source_buffer.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_source_buffer.c  -fPIC -DPIC -o lib/.libs/zip_source_buffer.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_source_close.c -o lib/zip_source_close.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_source_close.c  -fPIC -DPIC -o lib/.libs/zip_source_close.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_source_crc.c -o lib/zip_source_crc.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_source_crc.c  -fPIC -DPIC -o lib/.libs/zip_source_crc.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_source_deflate.c -o lib/zip_source_deflate.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_source_deflate.c  -fPIC -DPIC -o lib/.libs/zip_source_deflate.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_source_error.c -o lib/zip_source_error.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_source_error.c  -fPIC -DPIC -o lib/.libs/zip_source_error.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_source_file.c -o lib/zip_source_file.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_source_file.c  -fPIC -DPIC -o lib/.libs/zip_source_file.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_source_filep.c -o lib/zip_source_filep.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_source_filep.c  -fPIC -DPIC -o lib/.libs/zip_source_filep.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_source_free.c -o lib/zip_source_free.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_source_free.c  -fPIC -DPIC -o lib/.libs/zip_source_free.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_source_function.c -o lib/zip_source_function.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_source_function.c  -fPIC -DPIC -o lib/.libs/zip_source_function.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_source_layered.c -o lib/zip_source_layered.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_source_layered.c  -fPIC -DPIC -o lib/.libs/zip_source_layered.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_source_open.c -o lib/zip_source_open.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_source_open.c  -fPIC -DPIC -o lib/.libs/zip_source_open.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_source_pkware.c -o lib/zip_source_pkware.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_source_pkware.c  -fPIC -DPIC -o lib/.libs/zip_source_pkware.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_source_pop.c -o lib/zip_source_pop.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_source_pop.c  -fPIC -DPIC -o lib/.libs/zip_source_pop.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_source_read.c -o lib/zip_source_read.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_source_read.c  -fPIC -DPIC -o lib/.libs/zip_source_read.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_source_stat.c -o lib/zip_source_stat.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_source_stat.c  -fPIC -DPIC -o lib/.libs/zip_source_stat.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_source_window.c -o lib/zip_source_window.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_source_window.c  -fPIC -DPIC -o lib/.libs/zip_source_window.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_source_zip.c -o lib/zip_source_zip.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_source_zip.c  -fPIC -DPIC -o lib/.libs/zip_source_zip.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_source_zip_new.c -o lib/zip_source_zip_new.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_source_zip_new.c  -fPIC -DPIC -o lib/.libs/zip_source_zip_new.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_stat.c -o lib/zip_stat.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_stat.c  -fPIC -DPIC -o lib/.libs/zip_stat.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_stat_index.c -o lib/zip_stat_index.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_stat_index.c  -fPIC -DPIC -o lib/.libs/zip_stat_index.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_stat_init.c -o lib/zip_stat_init.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_stat_init.c  -fPIC -DPIC -o lib/.libs/zip_stat_init.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_strerror.c -o lib/zip_strerror.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_strerror.c  -fPIC -DPIC -o lib/.libs/zip_strerror.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_string.c -o lib/zip_string.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_string.c  -fPIC -DPIC -o lib/.libs/zip_string.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_unchange.c -o lib/zip_unchange.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_unchange.c  -fPIC -DPIC -o lib/.libs/zip_unchange.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_unchange_all.c -o lib/zip_unchange_all.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_unchange_all.c  -fPIC -DPIC -o lib/.libs/zip_unchange_all.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_unchange_archive.c -o lib/zip_unchange_archive.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_unchange_archive.c  -fPIC -DPIC -o lib/.libs/zip_unchange_archive.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_unchange_data.c -o lib/zip_unchange_data.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_unchange_data.c  -fPIC -DPIC -o lib/.libs/zip_unchange_data.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/zip_utf-8.c -o lib/zip_utf-8.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/zip_utf-8.c  -fPIC -DPIC -o lib/.libs/zip_utf-8.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=compile cc  -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -c /usr/src/php/ext/zip/lib/mkstemp.c -o lib/mkstemp.lo 
+ cc -I. -I/usr/src/php/ext/zip -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib -DHAVE_CONFIG_H -g -O2 -c /usr/src/php/ext/zip/lib/mkstemp.c  -fPIC -DPIC -o lib/.libs/mkstemp.o
+/bin/bash /usr/src/php/ext/zip/libtool --mode=link cc -DPHP_ATOM_INC -I/usr/src/php/ext/zip/include -I/usr/src/php/ext/zip/main -I/usr/src/php/ext/zip -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -I/usr/src/php/ext/zip/lib  -DHAVE_CONFIG_H  -g -O2   -o zip.la -export-dynamic -avoid-version -prefer-pic -module -rpath /usr/src/php/ext/zip/modules  php_zip.lo zip_stream.lo lib/zip_add.lo lib/zip_add_dir.lo lib/zip_add_entry.lo lib/zip_close.lo lib/zip_delete.lo lib/zip_dir_add.lo lib/zip_dirent.lo lib/zip_discard.lo lib/zip_entry.lo lib/zip_err_str.lo lib/zip_error.lo lib/zip_error_clear.lo lib/zip_error_get.lo lib/zip_error_get_sys_type.lo lib/zip_error_strerror.lo lib/zip_error_to_str.lo lib/zip_extra_field.lo lib/zip_extra_field_api.lo lib/zip_fclose.lo lib/zip_fdopen.lo lib/zip_file_add.lo lib/zip_file_error_clear.lo lib/zip_file_error_get.lo lib/zip_file_get_comment.lo lib/zip_file_get_offset.lo lib/zip_file_rename.lo lib/zip_file_replace.lo lib/zip_file_set_comment.lo lib/zip_file_strerror.lo lib/zip_filerange_crc.lo lib/zip_fopen.lo lib/zip_file_get_external_attributes.lo lib/zip_file_set_external_attributes.lo lib/zip_fopen_encrypted.lo lib/zip_fopen_index.lo lib/zip_fopen_index_encrypted.lo lib/zip_fread.lo lib/zip_get_archive_comment.lo lib/zip_get_archive_flag.lo lib/zip_get_compression_implementation.lo lib/zip_get_encryption_implementation.lo lib/zip_get_file_comment.lo lib/zip_get_name.lo lib/zip_get_num_entries.lo lib/zip_get_num_files.lo lib/zip_memdup.lo lib/zip_name_locate.lo lib/zip_new.lo lib/zip_open.lo lib/zip_rename.lo lib/zip_replace.lo lib/zip_set_archive_comment.lo lib/zip_set_archive_flag.lo lib/zip_set_default_password.lo lib/zip_set_file_comment.lo lib/zip_set_file_compression.lo lib/zip_set_name.lo lib/zip_source_buffer.lo lib/zip_source_close.lo lib/zip_source_crc.lo lib/zip_source_deflate.lo lib/zip_source_error.lo lib/zip_source_file.lo lib/zip_source_filep.lo lib/zip_source_free.lo lib/zip_source_function.lo lib/zip_source_layered.lo lib/zip_source_open.lo lib/zip_source_pkware.lo lib/zip_source_pop.lo lib/zip_source_read.lo lib/zip_source_stat.lo lib/zip_source_window.lo lib/zip_source_zip.lo lib/zip_source_zip_new.lo lib/zip_stat.lo lib/zip_stat_index.lo lib/zip_stat_init.lo lib/zip_strerror.lo lib/zip_string.lo lib/zip_unchange.lo lib/zip_unchange_all.lo lib/zip_unchange_archive.lo lib/zip_unchange_data.lo lib/zip_utf-8.lo lib/mkstemp.lo -lz
+cc -shared  .libs/php_zip.o .libs/zip_stream.o lib/.libs/zip_add.o lib/.libs/zip_add_dir.o lib/.libs/zip_add_entry.o lib/.libs/zip_close.o lib/.libs/zip_delete.o lib/.libs/zip_dir_add.o lib/.libs/zip_dirent.o lib/.libs/zip_discard.o lib/.libs/zip_entry.o lib/.libs/zip_err_str.o lib/.libs/zip_error.o lib/.libs/zip_error_clear.o lib/.libs/zip_error_get.o lib/.libs/zip_error_get_sys_type.o lib/.libs/zip_error_strerror.o lib/.libs/zip_error_to_str.o lib/.libs/zip_extra_field.o lib/.libs/zip_extra_field_api.o lib/.libs/zip_fclose.o lib/.libs/zip_fdopen.o lib/.libs/zip_file_add.o lib/.libs/zip_file_error_clear.o lib/.libs/zip_file_error_get.o lib/.libs/zip_file_get_comment.o lib/.libs/zip_file_get_offset.o lib/.libs/zip_file_rename.o lib/.libs/zip_file_replace.o lib/.libs/zip_file_set_comment.o lib/.libs/zip_file_strerror.o lib/.libs/zip_filerange_crc.o lib/.libs/zip_fopen.o lib/.libs/zip_file_get_external_attributes.o lib/.libs/zip_file_set_external_attributes.o lib/.libs/zip_fopen_encrypted.o lib/.libs/zip_fopen_index.o lib/.libs/zip_fopen_index_encrypted.o lib/.libs/zip_fread.o lib/.libs/zip_get_archive_comment.o lib/.libs/zip_get_archive_flag.o lib/.libs/zip_get_compression_implementation.o lib/.libs/zip_get_encryption_implementation.o lib/.libs/zip_get_file_comment.o lib/.libs/zip_get_name.o lib/.libs/zip_get_num_entries.o lib/.libs/zip_get_num_files.o lib/.libs/zip_memdup.o lib/.libs/zip_name_locate.o lib/.libs/zip_new.o lib/.libs/zip_open.o lib/.libs/zip_rename.o lib/.libs/zip_replace.o lib/.libs/zip_set_archive_comment.o lib/.libs/zip_set_archive_flag.o lib/.libs/zip_set_default_password.o lib/.libs/zip_set_file_comment.o lib/.libs/zip_set_file_compression.o lib/.libs/zip_set_name.o lib/.libs/zip_source_buffer.o lib/.libs/zip_source_close.o lib/.libs/zip_source_crc.o lib/.libs/zip_source_deflate.o lib/.libs/zip_source_error.o lib/.libs/zip_source_file.o lib/.libs/zip_source_filep.o lib/.libs/zip_source_free.o lib/.libs/zip_source_function.o lib/.libs/zip_source_layered.o lib/.libs/zip_source_open.o lib/.libs/zip_source_pkware.o lib/.libs/zip_source_pop.o lib/.libs/zip_source_read.o lib/.libs/zip_source_stat.o lib/.libs/zip_source_window.o lib/.libs/zip_source_zip.o lib/.libs/zip_source_zip_new.o lib/.libs/zip_stat.o lib/.libs/zip_stat_index.o lib/.libs/zip_stat_init.o lib/.libs/zip_strerror.o lib/.libs/zip_string.o lib/.libs/zip_unchange.o lib/.libs/zip_unchange_all.o lib/.libs/zip_unchange_archive.o lib/.libs/zip_unchange_data.o lib/.libs/zip_utf-8.o lib/.libs/mkstemp.o  -lz  -Wl,-soname -Wl,zip.so -o .libs/zip.so
+creating zip.la
+(cd .libs && rm -f zip.la && ln -s ../zip.la zip.la)
+/bin/bash /usr/src/php/ext/zip/libtool --mode=install cp ./zip.la /usr/src/php/ext/zip/modules
+cp ./.libs/zip.so /usr/src/php/ext/zip/modules/zip.so
+cp ./.libs/zip.lai /usr/src/php/ext/zip/modules/zip.la
+PATH="$PATH:/sbin" ldconfig -n /usr/src/php/ext/zip/modules
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /usr/src/php/ext/zip/modules
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the `-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the `LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the `LD_RUN_PATH' environment variable
+     during linking
+   - use the `-Wl,--rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to `/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+
+Build complete.
+Don't forget to run 'make test'.
+
+Installing shared extensions:     /usr/local/lib/php/extensions/no-debug-non-zts-20131226/
+find . -name \*.gcno -o -name \*.gcda | xargs rm -f
+find . -name \*.lo -o -name \*.o | xargs rm -f
+find . -name \*.la -o -name \*.a | xargs rm -f 
+find . -name \*.so | xargs rm -f
+find . -name .libs -a -type d|xargs rm -rf
+rm -f libphp.la       modules/* libs/*
+ ---> 1c9686762401
+Removing intermediate container 4892f1e67d09
+Successfully built 1c9686762401
+web uses an image, skipping
+testing uses an image, skipping
+Creating backend_mysql_1...
+Pulling image mariadb:10.0...
+10.0: Pulling from mariadb
+104de4492b99: Pull complete
+065218d54d7d: Pull complete
+9525a21bc96b: Pull complete
+c57e6d45ce1c: Pull complete
+90d681d8f338: Pull complete
+68f72caede01: Pull complete
+fe54b700d66c: Pull complete
+9099d19dcd83: Pull complete
+f0b2c143bdf9: Pull complete
+475b5f710b79: Pull complete
+ed3a24711ea5: Pull complete
+b3efba79d57b: Pull complete
+a93799f50828: Already exists
+mariadb:10.0: The image you are pulling has been verified. Important: image verification is a tech preview feature and should not be relied on to provide security.
+Digest: sha256:afd2b6ab404b304582754ca379956c52e4e055ace290c6bb45dc25bc536fdff2
+Status: Downloaded newer image for mariadb:10.0
+Creating backend_php_1...
+Creating backend_web_1...
+Pulling image nginx:1.9...
+1.9: Pulling from nginx
+aaa04ccb1cff: Pull complete
+c25a494fd450: Pull complete
+2b4392756878: Pull complete
+a58c6ba7d446: Pull complete
+6391a6648407: Pull complete
+0b6365661275: Pull complete
+5c1f0ec6cd7b: Pull complete
+36f0b0306c21: Pull complete
+107c338c1d31: Pull complete
+319d2015d149: Already exists
+64e5325c0d9d: Already exists
+bf84c1d84a8f: Already exists
+nginx:1.9: The image you are pulling has been verified. Important: image verification is a tech preview feature and should not be relied on to provide security.
+Digest: sha256:32b5248d447448859e328d2b29e5356ba6858882ad7ca359ce4878f2fa4ff104
+Status: Downloaded newer image for nginx:1.9
+Creating backend_testing_1...
+Pulling image php:5.6-cli...
+5.6-cli: Pulling from php
+1d17ea5b176f: Pull complete
+039ecb1b93df: Pull complete
+7be30c50561b: Pull complete
+cc46ba5be357: Pull complete
+f74d60fdd3de: Pull complete
+a632efc993e0: Already exists
+64e5325c0d9d: Already exists
+bf84c1d84a8f: Already exists
+addf6a6a564c: Already exists
+7aa4041d8445: Already exists
+dfb0928bb61e: Already exists
+da3d2c32f45c: Already exists
+php:5.6-cli: The image you are pulling has been verified. Important: image verification is a tech preview feature and should not be relied on to provide security.
+Digest: sha256:18d79669372af46d3c1d679d10f8d78ab2f98a223f7b3ef317ff8306b0d41011
+Status: Downloaded newer image for php:5.6-cli
+PHP Warning:  Module 'PDO' already loaded in Unknown on line 0
+Table Created
+Table Created
+AHRQ Data Extracted
+line: 50000
+line: 100000
+line: 150000
+line: 200000
+line: 250000
+line: 300000
+Prescriptions table has been populated, populating rx names table
+Removing backend_php_run_1...
+Sending build context to Docker daemon 2.048 kB
+Sending build context to Docker daemon 
+Step 0 : FROM node
+latest: Pulling from node
+87de57de6955: Pull complete 
+6a974bea7c0d: Pull complete 
+4b708e6c0f6c: Pull complete 
+313c5b9e573c: Pull complete 
+89027f845e09: Pull complete 
+43361a3a20a4: Pull complete 
+febb014eb418: Pull complete 
+20a32f7a591c: Already exists 
+64e5325c0d9d: Already exists 
+bf84c1d84a8f: Already exists 
+node:latest: The image you are pulling has been verified. Important: image verification is a tech preview feature and should not be relied on to provide security.
+Digest: sha256:7707002a5db5a39b5ea163f7e58b40e785e6c747127da47d66aad891315d1bba
+Status: Downloaded newer image for node:latest
+ ---> 20a32f7a591c
+Step 1 : RUN npm install -g cloudflare-cli
+ ---> Running in bf08453a1d80
+npm ERR! registry error parsing json
+/usr/local/bin/cfcli -> /usr/local/lib/node_modules/cloudflare-cli/bin/cfcli
+cloudflare-cli@1.3.3 /usr/local/lib/node_modules/cloudflare-cli
+├── minimist@0.0.7
+├── cloudflare@0.0.8
+├── lodash@2.4.1
+├── cli-table@0.3.0 (colors@0.6.2)
+└── js-yaml@3.0.1 (esprima@1.0.4, argparse@0.1.16)
+ ---> bd2e4758e5a3
+Removing intermediate container bf08453a1d80
+Successfully built bd2e4758e5a3
+/root/.cfcli.yml not found
+Unable to find record api.gregelin.net
+/root/.cfcli.yml not found
+Added A record for api
+Enabled cloudflare for api.gregelin.net
+
+Deployed backend to https://api.gregelin.net
+/root/.cfcli.yml not found
+[Error: Rate limit enforced for cache purge. (You can try again in 60 seconds.) If you'd like to make rapid changes to your cached resources, check out "Development Mode".]
+Purging CloudFlare cache for gregelin.net
+Gregs-MBP:nebula greg$ 
