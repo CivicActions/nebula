@@ -484,7 +484,7 @@ $('#added-meds').append('<div class="checkholder" id="' + $('#drug').val() + '">
       piechartColorOrder.shift("red");
       drawPieChart(piechartColorOrder, doublesGrab);
       
-      $('#count-symptoms').text(' -------Highest Symptom Count: ' + sessionStorage.getItem('totalcount'));
+      $('#count-symptoms').text('Highest Symptom Count: ' + sessionStorage.getItem('totalcount'));
       
     }
 

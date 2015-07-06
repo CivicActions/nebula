@@ -9,7 +9,8 @@ body {
   padding-right:55px;
 }
 #count-symptoms {
-  padding-left:55px;
+  float: right;
+  padding-right: 120px;
 }
 #error {
   color:#f00;
