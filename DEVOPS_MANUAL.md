@@ -115,6 +115,12 @@ export CLOUDFLARE_TOKEN=
 export FDA_API_KEY=
 ```
 
+*For continuous monitoring purposes, set to below environmental variables to use 18F's [Hardened FISMA-Ready Ubuntu-LTS](https://github.com/fisma-ready/ubuntu-lts) for Docker Host OS instead of Docker's default Ubuntu-LTS*
+```
+export AWS_AMI=ami-b7393887
+export AWS_ROOT_SIZE=30
+```
+
 Depending on your region and VPC selected, you may also need to set the following environment variables:
 ```
 export AWS_ZONE=
