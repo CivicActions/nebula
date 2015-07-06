@@ -140,3 +140,9 @@ Run the ./bin/deploy script to deploy the frontend and backend respectively, whe
 ./bin/deploy backend api sideeffect.io
 ```
 Will deploy to https://www.sideeffect.io/ and https://api.sideeffect.io/
+
+### Monitoring
+
+There is a simple Jenkins availability monitor that you can install. See [configuration](https://github.com/CivicActions/nebula/blob/master/devops/jenkins/sideeffect.io-ping/config.xml).
+
+For full availability, performance and API correctness multi-location monitoring and alert notifications, we use [Runscope](https://www.runscope.com/), see [devops/monitoring](https://github.com/CivicActions/nebula/tree/master/devops/monitoring) directory for configuration details.
