@@ -314,7 +314,7 @@ The technology decisions we make need to enable development teams to work effici
 
 #### answers to key questions
 
-1. Docker and Docker Compose for development, due to need for rapid developer onboarding, as well as for allowing full consistency with production environment. PHP on the backend chosen do to familiarity fo the team. API-centric for flexibility and reusability. JQuery and Bootstrap on the front end. 
+1. Docker and Docker Compose for development, due to need for rapid developer onboarding, as well as for allowing full consistency with production environment. PHP on the backend chosen do to familiarity fo the team. API-centric for flexibility and reusability. JQuery and Bootstrap on the front end. We choose all of these components as light-weight and suited to a simple application that required not session or identity management.
 2. We chose Mariadb version 10.0 as a popular and stable drop-in replacement of MySQL with strong support in the community.
 3. We had no new development team members join mid-project in this short time, but our security officer tested our sandbox setup.
 
@@ -364,16 +364,16 @@ Our services should be deployed on flexible infrastructure, where resources can 
 
 1. Amazon Web Services, US West (Oregon) data center.
 2. t2.micro for both frontend and backend. See [Instance Types](http://aws.amazon.com/ec2/instance-types/) for more details.
-3.
+3. NA - we do not yet have enough users to measure.
 4. The CloudFlare CDN is robust enough to handle a substantial surge in traffic. Also, we can scale our docker containers if necessary.
 5. With cloud computing we can scale up our capacity as much as we want.
 6. Provisioning our server instances is automated and takes under 20 minutes for a full deployment (frontend and backend).
 7. Using the docker-compose product we can easily scale any of our containers. (For example, the command `docker-compose scale web=2` would double our front end containers.)
-8.
+8. Amazon pricing, which has some fixed and some usage rates.
 9. We are using the West Coast AWS region data center. The CloudFlare CDN mirrors the site in many servers worldwide.
 10. Assuming github is online, we could be back online in a different region within 20 to 30 minutes.
 11. Our app is not storing any critical data.
-12.
+12. We are storing no data. There cannot be a catastrophic data loss.  A data loss would force us to repopulate the AHRQ data in our database in order to efficiently provide comparative prescription volume.
 13. We are using the AWS and CloudFlare APIs and web interfaces so we do not need to contact our provider for resources.
 
 
@@ -416,16 +416,16 @@ Today, developers write automated scripts that can verify thousands of scenarios
 
 #### answers to key questions
 
-1.
-2.
-3.
-4.
-5. PHPUnit tests
+1. Proably about 70% on the back end, 0% on the front end.
+2. A very very minor fix can be coded, built, tested, and deployed in 10 mintues (3 minutes to test and 7 minutes for build and deployment time.)  Coding type is often longer, of course.
+3. Our total process from conception to deployment can take as little as 3 hours.  Once fully coded, the build time is the same as for bugs.
+4. About 5 times a day during heavy development was typical---some days are slower.
+5. PHPUnit test are the basis of the automated tests. We are using Jenkins as our central tool, which uses docker, docker-compose, and docker-machine to manage the containers.
 6. We are using Jenkins as our central tool, which uses docker, docker-compose, and docker-machine to manage the containers.
-7.
-8.
-9.
-10.
+7. We target medical professionals, so there may be as many as 2 million total uses (for doctors and their staff).  There use is not likely to be bursty, but will follow working hours as a pattern.  Since we do not require session management for this application, it is more reasonable to talk about requests per second than number of concurrent users. Ideally we can imagine 10 uses per day, or 20 million uses in a 12 hour period, or 1.7 million per hour, or 472 per second.
+8. We haven't tested this.
+9. We gracefully tolerate certain failures of the OpenFDA API, although we do not inform the user as well as we should in these cases.
+10. If we ever reached high volume, we might have to start caching queries to the OpenFDA API itself.
 
 <a name="Play11"></a>
 ## Play 11
