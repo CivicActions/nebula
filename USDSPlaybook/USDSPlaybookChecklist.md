@@ -559,8 +559,7 @@ When we collaborate in the open and publish our data publicly, we can improve Go
 6. NA --- we have chosen to publish as the government does, in the public domain.  A GPL or other share-alike system would allow us to do this. We hope the government demands such licensing where legally entitled to in the future.
 7. We have done this, https://api.sideeffect.io
 8. Obviously we have done this as required by the RFQ and our principles. https://github.com/CivicActions/nebula
-9. We did do this, and in fact we reported on by [Federal Computer Weekly](http://fcw.com/articles/2015/07/06/civicactions-agile.aspx?m=1)
-9.
+9. We did do this, and in fact we reported on by [Federal Computer Weekly](http://fcw.com/articles/2015/07/06/civicactions-agile.aspx?m=1).
 
 #### key questions
 - How are you collecting user feedback for bugs and issues?
@@ -571,8 +570,8 @@ When we collaborate in the open and publish our data publicly, we can improve Go
 
 #### answers to key questions
 
-1.
-2.
-3.
-4.
-5.
+1. Of course at first we did direct interviews, then as the MVP matured, direct, observed user testing. We have an open github repository.  However, since that is mostly friendly to techies, we also placed a survey directly in the product.
+2. It is code-level documented, and provides a reasonalbe RESTful explanation if you just go to it.  It repackages the OpenFDA data and can combine it with prescription volume data from AHRQ to add value by contextualizing the data.
+3. It is open source.
+4. All.
+5. None in addition to what we are repackaging.
