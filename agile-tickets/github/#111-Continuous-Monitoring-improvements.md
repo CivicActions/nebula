@@ -3,7 +3,7 @@
 * Source: https://github.com/CivicActions/nebula/issues/111
 * Created by: gregelin
 * Created at: 2015-07-01T16:58:21Z
-* Updated at: 2015-07-01T22:04:45Z
+* Updated at: 2015-07-06T19:55:56Z
 * Closed at: 
 
 
@@ -12,7 +12,7 @@
 * Source: https://github.com/CivicActions/nebula/issues/111
 * Commented by: gregelin
 * Created at: 2015-07-01T16:58:21Z
-* Updated at: 2015-07-01T22:04:45Z
+* Updated at: 2015-07-06T19:55:56Z
 
 This issue is for the improvement of continuous monitoring as per Question 32 in the [Technical QA](https://slack-files.com/files-pri-safe/T0297RSQF-F0724GP5Z/technical_questions_and_answers.pdf?c=1435762062-5f9ea13f77b3fdd4404a03bf837c39d3c159f028), which reads:
 
@@ -24,5 +24,15 @@ The essential point here is &quot;provides visibility into assets&quot; and &quo
 
 
 
+
+
+## Comment
+
+* Source: https://github.com/CivicActions/nebula/issues/111#issuecomment-118978338
+* Commented by: gregelin
+* Created at: 2015-07-06T19:55:56Z
+* Updated at: 2015-07-06T19:55:56Z
+
+To demonstrate continuous monitoring, we created &quot;ami-b7393887&quot; in AWS region &quot;us-west-2&quot; using 18F&apos;s FISMA-READY Ubuntu-LTS to ensure our application deploys successfully on a host (e.g., server) automatically configured with security controls compatible with US Government baseline guidance.
 
 
