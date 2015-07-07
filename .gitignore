@@ -3,3 +3,5 @@ docker-compose-frontend.yml
 docker-compose-backend.yml
 .env
 .DS_Store
+frontend/tests/chrome.log
+frontend/tests/firefox.log

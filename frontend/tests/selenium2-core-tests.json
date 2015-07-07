@@ -1,0 +1,142 @@
+{
+  "type": "script",
+  "seleniumVersion": "2",
+  "formatVersion": 2,
+  "steps": [
+    {
+      "type": "get",
+      "url": "http://web/"
+    },
+    {
+      "type": "setElementText",
+      "locator": {
+        "type": "id",
+        "value": "drug"
+      },
+      "text": "TYLENOL"
+    },
+    {
+      "type": "clickElement",
+      "locator": {
+        "type": "id",
+        "value": "add-to-list"
+      }
+    },
+    {
+      "type": "verifyElementPresent",
+      "locator": {
+        "type": "id",
+        "value": "TYLENOL"
+      }
+    },
+    {
+      "type": "verifyElementPresent",
+      "locator": {
+        "type": "css selector",
+        "value": "#pie-chart > div:nth-child(1) > div:nth-child(2)"
+      }
+    },
+    {
+      "type": "verifyElementPresent",
+      "locator": {
+        "type": "css selector",
+        "value": "#drug-chart > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > table:nth-child(1) > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(2)"
+      }
+    },
+    {
+      "type": "setElementText",
+      "locator": {
+        "type": "id",
+        "value": "drug"
+      },
+      "text": "IBUPROFEN"
+    },
+    {
+      "type": "clickElement",
+      "locator": {
+        "type": "id",
+        "value": "add-to-list"
+      }
+    },
+    {
+      "type": "verifyElementPresent",
+      "locator": {
+        "type": "id",
+        "value": "TYLENOL"
+      }
+    },
+    {
+      "type": "verifyElementPresent",
+      "locator": {
+        "type": "id",
+        "value": "IBUPROFEN"
+      }
+    },
+    {
+      "type": "verifyElementPresent",
+      "locator": {
+        "type": "css selector",
+        "value": "#pie-chart > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > table:nth-child(1) > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(2)"
+      }
+    },
+    {
+      "type": "verifyElementPresent",
+      "locator": {
+        "type": "css selector",
+        "value": "#pie-chart > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > table:nth-child(1) > tbody:nth-child(2) > tr:nth-child(2) > td:nth-child(2)"
+      }
+    },
+    {
+      "type": "clickElement",
+      "locator": {
+        "type": "id",
+        "value": "clear-all"
+      }
+    },
+    {
+      "type": "verifyTextPresent",
+      "text": "https://www.sideeffect.io?saved="
+    },
+    {
+      "type": "verifyTextPresent",
+      "text": "911"
+    },
+    {
+      "type": "verifyTextPresent",
+      "text": "(800) 222-1222"
+    },
+    {
+      "type": "verifyTextPresent",
+      "text": "Report »"
+    },
+    {
+      "type": "verifyTextPresent",
+      "text": "Our website contains general information about the adverse effects reported for certain drugs. The medical information is not advice and should not be treated as such."
+    },
+    {
+      "type": "verifyTextPresent",
+      "text": "privacy policy"
+    },
+    {
+      "type": "verifyTextPresent",
+      "text": "The medical information on our website is provided without any representations or warranties, express or implied. We do not warrant or represent that the medical information on this website:"
+    },
+    {
+      "type": "verifyTextPresent",
+      "text": "You must not rely on the information on our website as an alternative to medical advice from your doctor or other professional healthcare provider. If you have any specific questions about any medical"
+    },
+    {
+      "type": "verifyElementPresent",
+      "locator": {
+        "type": "css selector",
+        "value": "a.btn"
+      }
+    }
+  ],
+  "data": {
+    "configs": {},
+    "source": "none"
+  },
+  "inputs": [],
+  "timeoutSeconds": 60
+}

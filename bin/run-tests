@@ -1,3 +1,6 @@
 #!/bin/sh
-cd "$(git rev-parse --show-toplevel)/backend"
-docker-compose run testing /usr/src/nebula/vendor/bin/phpunit --log-junit /usr/src/nebula/report.xml $@ /usr/src/nebula/tests/
+cd "$(git rev-parse --show-toplevel)"
+# Only run frontend tests if backend succeeds.
+./bin/test-backend && ./bin/test-frontend
+# Preserve exit status
+exit $?
