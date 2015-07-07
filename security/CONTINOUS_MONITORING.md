@@ -28,7 +28,7 @@ export AWS_ROOT_SIZE=30
 ## Automated Scanning with SCAP
 To automate scanning of operating system configuration we used GovReady Ubuntu 14.04 SCAP content and JOVAL's Professional scanner. 
 
-### NOTE on Ubuntu and Docker SCAP
+#### NOTE on Ubuntu and Docker SCAP
 GovReady Ubuntu 14.04 SCAP is the first open source SCAP content for Ubuntu and was developed specifically to test FISMA-Ready Ubuntu LTS. The FISMA-Ready SCAP contains OVAL (Open Vulnerability Assessment Language) schema currently being reviewed by OVAL board and can only be tested with a special version of JOVAL's Professional scanner.)
 
 ## Identification of Vulnerability Feeds
