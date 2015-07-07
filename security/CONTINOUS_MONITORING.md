@@ -11,7 +11,7 @@ This configuration includes:
 * identification of vulnerability feeds
 * monitoring of server status
 
-The purpose of this document is to provide evidence of integrating security and continuous monitoring into the agile delivery of IT services. 
+This document provides evidence of integrating security and continuous monitoring into the agile delivery of IT services. 
 
 ## 18F's FISMA-READY Ubuntu LTS 
 [18F's FISMA-READY Ubuntu LTS](https://github.com/fisma-ready/ubuntu-lts), provides guidance for a "hardened, FISMA Ready Ubuntu LTS Amazon Machine Instances (AMIs) that are suitable for use in Amazon Web Services (AWS)" that "inherit AWS controls assessed by the FedRAMP program" when instantitated in AWS's  US-East or US-West regions.
