@@ -16,6 +16,17 @@ The purpose of this document is to provide evidence of integrating security and 
 ## 18F's FISMA-READY Ubuntu LTS 
 [18F's FISMA-READY Ubuntu LTS](https://github.com/fisma-ready/ubuntu-lts), provides guidance for a "hardened, FISMA Ready Ubuntu LTS Amazon Machine Instances (AMIs) that are suitable for use in Amazon Web Services (AWS)" that "inherit AWS controls assessed by the FedRAMP program" when instantitated in AWS's  US-East or US-West regions.
 
-We created "ami-b7393887" in AWS region "us-west-2" and tested our deployment scripts worked with proper.
+We cloned the FISMA-Ready LTS Ubuntu repository and ran the `ami.sh` script to generate the publicly available FISMA-Ready LTS Ubuntu 14.04 AMI (`ami-b7393887`) in AWS region `us-west-2`.
+
+We then tested our deployment scripts using `ami-b7393887` instead of the default Docker Ubuntu 14.04 AMI through configuration settings of AWS environmental variables:
+```bash
+export AWS_DEFAULT_REGION="us-west-2"
+export AWS_AMI=ami-b7393887
+export AWS_ROOT_SIZE=30
+```
+
+
+
+
 
 ## Evidence
