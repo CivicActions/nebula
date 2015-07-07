@@ -393,11 +393,11 @@ Today, developers write automated scripts that can verify thousands of scenarios
 5. Conduct load and performance tests at regular intervals, including before public launch
 
 #### Actions
-1.
-2.
+1. We respectfully disagree on the value of through-the-browser testing of ALL user-facing functionality. We would like to have some UI testing, but have only our continuous monitoring at the deadline of this project.
+2. We automated have back-end API integration tests.
 3. The build process runs on every git push, and includes automated tests.
-4.
-5.
+4. We use automated deployment that can be initiated with a single slack command to automatically deploy both the backend and the frontend (as separate systems.)
+5. We have continually tested. We have performed performance tests, which led to refactoring. We have not yet performed load tests.
 
 
 
