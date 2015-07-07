@@ -551,14 +551,15 @@ When we collaborate in the open and publish our data publicly, we can improve Go
 9. When appropriate, share your development process and progress publicly
 
 #### Actions
-1.
-2.
-3.
-4.
-5.
-6.
-7.
-8.
+1. We have an open repository which allows issues to be created, and recently implemented an in-product survey.
+2. We offer a documented API that makes it easy to combine the AHRQ and OpenFDA data.  It is public, and others can implement it.
+3. We generate no new data, but pass the OpenFDA and AHRQ data through.
+4. NA
+5. NA --- the government can do this, but we do not.  We have place our code in the public domain.  If we paid for any sub-contracting, we would of course do this.
+6. NA --- we have chosen to publish as the government does, in the public domain.  A GPL or other share-alike system would allow us to do this. We hope the government demands such licensing where legally entitled to in the future.
+7. We have done this, https://api.sideeffect.io
+8. Obviously we have done this as required by the RFQ and our principles. https://github.com/CivicActions/nebula
+9. We did do this, and in fact we reported on by [Federal Computer Weekly](http://fcw.com/articles/2015/07/06/civicactions-agile.aspx?m=1)
 9.
 
 #### key questions
