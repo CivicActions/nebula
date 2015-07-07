@@ -1,0 +1,69 @@
+$ ./bin/run-tests 
+PHPUnit 4.7.5 by Sebastian Bergmann and contributors.
+
+.......
+
+Time: 3.56 seconds, Memory: 5.25Mb
+
+OK (7 tests, 9 assertions)
+seleniumfirefox uses an image, skipping
+seleniumchrome uses an image, skipping
+Building seinterpreter...
+Step 0 : FROM node
+ ---> 6f1869a71dfb
+Step 1 : RUN npm install -g se-interpreter
+ ---> Using cache
+ ---> 9d91e5dab0df
+Successfully built 9d91e5dab0df
+Recreating tests_seleniumfirefox_1...
+Recreating tests_seleniumchrome_1...
+SE-Interpreter 1.0.7
+selenium2-core-tests: Starting test (chrome) selenium2-core-tests
+selenium2-core-tests: Success {"type":"get","url":"http://web/"}
+selenium2-core-tests: Success {"type":"setElementText","locator":{"type":"id","value":"drug"},"text":"TYLENOL"}
+selenium2-core-tests: Success {"type":"clickElement","locator":{"type":"id","value":"add-to-list"}}
+selenium2-core-tests: Success {"type":"verifyElementPresent","locator":{"type":"id","value":"TYLENOL"}}
+selenium2-core-tests: Success {"type":"verifyElementPresent","locator":{"type":"css selector","value":"#pie-chart > div:nth-child(1) > div:nth-child(2)"}}
+selenium2-core-tests: Success {"type":"verifyElementPresent","locator":{"type":"css selector","value":"#drug-chart > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > table:nth-child(1) > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(2)"}}
+selenium2-core-tests: Success {"type":"setElementText","locator":{"type":"id","value":"drug"},"text":"IBUPROFEN"}
+selenium2-core-tests: Success {"type":"clickElement","locator":{"type":"id","value":"add-to-list"}}
+selenium2-core-tests: Success {"type":"verifyElementPresent","locator":{"type":"id","value":"TYLENOL"}}
+selenium2-core-tests: Success {"type":"verifyElementPresent","locator":{"type":"id","value":"IBUPROFEN"}}
+selenium2-core-tests: Success {"type":"verifyElementPresent","locator":{"type":"css selector","value":"#pie-chart > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > table:nth-child(1) > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(2)"}}
+selenium2-core-tests: Success {"type":"verifyElementPresent","locator":{"type":"css selector","value":"#pie-chart > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > table:nth-child(1) > tbody:nth-child(2) > tr:nth-child(2) > td:nth-child(2)"}}
+selenium2-core-tests: Success {"type":"clickElement","locator":{"type":"id","value":"clear-all"}}
+selenium2-core-tests: Success {"type":"verifyTextPresent","text":"911"}
+selenium2-core-tests: Success {"type":"verifyTextPresent","text":"(800) 222-1222"}
+selenium2-core-tests: Success {"type":"verifyTextPresent","text":"Report »"}
+selenium2-core-tests: Success {"type":"verifyTextPresent","text":"Our website contains general information about the adverse effects reported for certain drugs. The medical information is not advice and should not be treated as such."}
+selenium2-core-tests: Success {"type":"verifyTextPresent","text":"privacy policy"}
+selenium2-core-tests: Success {"type":"verifyTextPresent","text":"The medical information on our website is provided without any representations or warranties, express or implied. We do not warrant or represent that the medical information on this website:"}
+selenium2-core-tests: Success {"type":"verifyTextPresent","text":"You must not rely on the information on our website as an alternative to medical advice from your doctor or other professional healthcare provider. If you have any specific questions about any medical"}
+selenium2-core-tests: Test passed
+1/1 tests ran successfully. Exiting
+SE-Interpreter 1.0.7
+selenium2-core-tests: Starting test (firefox) selenium2-core-tests
+selenium2-core-tests: Success {"type":"get","url":"http://web/"}
+selenium2-core-tests: Success {"type":"setElementText","locator":{"type":"id","value":"drug"},"text":"TYLENOL"}
+selenium2-core-tests: Success {"type":"clickElement","locator":{"type":"id","value":"add-to-list"}}
+selenium2-core-tests: Success {"type":"verifyElementPresent","locator":{"type":"id","value":"TYLENOL"}}
+selenium2-core-tests: Success {"type":"verifyElementPresent","locator":{"type":"css selector","value":"#pie-chart > div:nth-child(1) > div:nth-child(2)"}}
+selenium2-core-tests: Success {"type":"verifyElementPresent","locator":{"type":"css selector","value":"#drug-chart > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > table:nth-child(1) > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(2)"}}
+selenium2-core-tests: Success {"type":"setElementText","locator":{"type":"id","value":"drug"},"text":"IBUPROFEN"}
+selenium2-core-tests: Success {"type":"clickElement","locator":{"type":"id","value":"add-to-list"}}
+selenium2-core-tests: Success {"type":"verifyElementPresent","locator":{"type":"id","value":"TYLENOL"}}
+selenium2-core-tests: Success {"type":"verifyElementPresent","locator":{"type":"id","value":"IBUPROFEN"}}
+selenium2-core-tests: Success {"type":"verifyElementPresent","locator":{"type":"css selector","value":"#pie-chart > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > table:nth-child(1) > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(2)"}}
+selenium2-core-tests: Success {"type":"verifyElementPresent","locator":{"type":"css selector","value":"#pie-chart > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > table:nth-child(1) > tbody:nth-child(2) > tr:nth-child(2) > td:nth-child(2)"}}
+selenium2-core-tests: Success {"type":"clickElement","locator":{"type":"id","value":"clear-all"}}
+selenium2-core-tests: Success {"type":"verifyTextPresent","text":"911"}
+selenium2-core-tests: Success {"type":"verifyTextPresent","text":"(800) 222-1222"}
+selenium2-core-tests: Success {"type":"verifyTextPresent","text":"Report »"}
+selenium2-core-tests: Success {"type":"verifyTextPresent","text":"Our website contains general information about the adverse effects reported for certain drugs. The medical information is not advice and should not be treated as such."}
+selenium2-core-tests: Success {"type":"verifyTextPresent","text":"privacy policy"}
+selenium2-core-tests: Success {"type":"verifyTextPresent","text":"The medical information on our website is provided without any representations or warranties, express or implied. We do not warrant or represent that the medical information on this website:"}
+selenium2-core-tests: Success {"type":"verifyTextPresent","text":"You must not rely on the information on our website as an alternative to medical advice from your doctor or other professional healthcare provider. If you have any specific questions about any medical"}
+selenium2-core-tests: Test passed
+1/1 tests ran successfully. Exiting
+Stopping tests_seleniumchrome_1...
+Stopping tests_seleniumfirefox_1...
