@@ -53,18 +53,29 @@ The first run will take a while. Use this command to restart containers if you r
 
 ## Testing
 
-There is a PHPUnit test framework available in the "testing" directory, with tests in the "testing/tests" directory. Guzzle is available for convenient testing of http endpoints.
-
-To execute the tests run:
+To execute all the tests (frontend and backend), build your environment as normal, then run:
 ```bash
 ./bin/run-tests
 ```
+A zero exit code (`echo $?`) indicates a successful run, a non-zero result indicates a test failure.
 
-A JUnit format report.xml is available in the "testing" directory. You can include additional PHPUnit arguments after the above command, as needed.
+### Frontend Tests
+
+The frontend tests use the (Selenium Builder)[https://saucelabs.com/builder] Selenium 2 JSON test format, which is easy to version control and edit with the open source Selenium Builder tool (which can run/debug the tests manually). The tests are in the ("frontend/tests/selenium2-core-tests.json")[https://github.com/CivicActions/nebula/tree/master/frontend/tests] file.
+
+Tests are automated using the (se-interpreter)[https://github.com/Zarkonnen/se-interpreter] which is made available as a Docker container, together with the (SeleniumHQ Chrome and Firefox Docker images)[https://github.com/SeleniumHQ/docker-selenium]. Note that these are fully automated using the "run-tests" script - there is no need to install any additional software to run the tests.
+
+Test results are recorded in chrome.log and firefox.log files in the "frontend/tests" directory.
+
+### Backend Tests
+
+There is a PHPUnit test framework available in the "backend" directory, with tests in the ("backend/tests")[https://github.com/CivicActions/nebula/tree/master/backend/tests] directory. Guzzle is available for convenient testing of http endpoints.
+
+A JUnit format report.xml is available in the "testing" directory for the backend tests. You can include additional PHPUnit arguments after the above command, as needed.
 
 ### Automated Testing
 
-A sample Jenkins configuration is available in the devops/jenkins/testing/config.xml directory. This will, upon each git push to github:
+A sample Jenkins configuration is available in the (devops/jenkins/testing/)[https://github.com/CivicActions/nebula/blob/master/devops/jenkins/testing/] directory. This will, upon each git push to github:
 * Bootstrap docker-compose and start the containers.
 * Run the tests and record the results.
 * Report the result to a Slack channel.
@@ -134,7 +145,7 @@ NOTE: Subnets must be available with in the AWS Region and Zone you are using. E
 aws ec2 describe-subnets
 ```
 
-Run the ./bin/deploy script to deploy the frontend and backend respectively, where the second parameter is the subdomain to deploy two, and the third is a Cloudflare DNS hosted domain name. For example:
+Run the ./bin/deploy script to deploy the frontend and backend respectively, where the second parameter is the subdomain to deploy to, and the third is a Cloudflare DNS hosted domain name. For example:
 ```bash
 ./bin/deploy frontend www sideeffect.io
 ./bin/deploy backend api sideeffect.io
