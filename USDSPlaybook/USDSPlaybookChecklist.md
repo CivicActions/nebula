@@ -314,7 +314,7 @@ The technology decisions we make need to enable development teams to work effici
 
 #### answers to key questions
 
-1. Docker and Docker Compose for development, due to need for rapid developer onboarding, as well as for allowing full consistency with production environment. PHP on the backend chosen do to familiarity fo the team. API-centric for flexibility and reusability. JQuery and Bootstrap on the front end.
+1. Docker and Docker Compose for development, due to need for rapid developer onboarding, as well as for allowing full consistency with production environment. PHP on the backend chosen do to familiarity fo the team. API-centric for flexibility and reusability. JQuery and Bootstrap on the front end. 
 2. We chose Mariadb version 10.0 as a popular and stable drop-in replacement of MySQL with strong support in the community.
 3. We had no new development team members join mid-project in this short time, but our security officer tested our sandbox setup.
 
@@ -517,16 +517,16 @@ At every stage of a project, we should measure how well our service is working f
 
 #### answers to key questions
 
-1.
-2.
-3.
-4.
-5.
-6.
-7.
-8.
-9.
-10.
+1. 
+2. 
+3. 
+4. 
+5. 
+6. 
+7. 
+8. 
+9. 
+10. 
 11. We are adding Google Analytics to the site so that we can gain better insight into usage and behavior. We are also planning on basic usability testing using a remote testing tool after the release of the MVP.
 12. Our MVP is rapidly evolving and we are not ready for A/B testing at this time.
 13. We have interviewed users consistently throughout our development process in order to garner their feedback on the product. And we have included a way for users to submit suggestions, issues and ideas from the site. Future plans include surveys.
