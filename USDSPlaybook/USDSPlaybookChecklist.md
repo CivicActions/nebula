@@ -16,13 +16,13 @@ We must begin digital projects by exploring and pinpointing the needs of the peo
 7. As the digital service is being built, regularly test it with potential users to ensure it meets peopleâ€™s needs
 
 #### Actions
-1. We have met with three professionals, including on the first day, to interview them about their needs around adverse effects information. See links https://www.youtube.com/user/civicactions.
-2. We used interviews
+1. We have met with three professionals, including on the first day, to interview them about their needs around adverse event information. See links https://www.youtube.com/user/civicactions.
+2. We used interviews to gather user stories and to inform prioritization, as well as to provide feedback on designs, prototypes and throughout development. We also implemented analytics and feedback systems on the site to gather ongoing feedback.
 3. We consistently groomed the user stories in order to keep MVP priorities in mind.
 4. Trello cards [here](https://trello.com/b/IlUoml5c/nebula)
 5. Results of our discussions wiht users, and determinations based on these discussions, are consistently shared with the team and agency leadership in [this folder](https://github.com/CivicActions/nebula/tree/master/user-interviews) in our repo, and in our Slack channel.
 6. Our user stories can be found on Trello [here](https://trello.com/b/IlUoml5c/nebula)
-7. We scheduled a total of [five user interviews](https://github.com/CivicActions/nebula/tree/master/user-interviews) throughout the 7 day Sprint, from day 1 to day 7.
+7. We scheduled a total of [six user interviews](https://github.com/CivicActions/nebula/tree/master/user-interviews) throughout the project, starting on day one.
 
 
 
@@ -39,11 +39,11 @@ We must begin digital projects by exploring and pinpointing the needs of the peo
 #### answers to key questions
 
 1. Health care professionals, but in particular busy doctors treating highly prescribed patients.
-2. The need to compare the adverse effects of multiple drugs.
-3. To help patients reduce side effects associated with their drug regimes.
+2. The need to compare the adverse events associated with multiple drugs.
+3. To help patients reduce adverse events or suspected side effects associated with their drug regimes.
 4. Those not facile with online tools. Those who are looking for information on non-prescription drugs (as the MVP will be targeted to prescription drugs in the AHRQ database).
 5. User interviews, and Design Studio.
-6. That healthcare professionals would benefit from being able to visually compare adverse effects across drugs.
+6. That healthcare professionals would benefit from being able to visually compare adverse events across drugs.
 7. Interviews and notes are posted [here]  (https://www.youtube.com/user/civicactions) and [here](https://github.com/CivicActions/nebula/tree/master/user-interviews), respectively.
 8. During each sprint.
 
@@ -63,9 +63,9 @@ We need to understand the different ways people will interact with our services,
 
 #### Actions
 1. On a mobile device (phone or tablet) in a doctor's office, hospital, pharmacy, medical/nursing school, nursing home. Generally used when a patient is adding or altering the medications in his or her regime.
-2. Different drugs cause different adverse effects and there is not easy to compare the effects of multiple drugs.
+2. Different drugs are associated with different adverse events, at differing frequencies and there is not an easy tool to compare this relationship with multiple drugs.
 3. Our intent is that information linking and promoting this tool could be posted in Dr's offices and medical facilities, in order grow public and professional awareness of the tool.
-4. Metrics could include lower incidence of adverse effects due to less mixing of different drugs; how often healthcare professionals access the site; how many different drug combinations are compared on the site;
+4. Metrics could include lower incidence of adverse events due to improved identification of the most likely drug in a patients regimen causing an adverse events; how often healthcare professionals access the site; how many different drug combinations are compared on the site;
 
 
 #### key questions
@@ -77,9 +77,9 @@ We need to understand the different ways people will interact with our services,
 #### answers to key questions
 
 1. Looking up individual drugs online. Some doctors use WebMD, but don't admit it.
-2. There is no way to get one comprehensive visual of all side effects produced by a drug regime.
+2. There is no way to get one comprehensive visual of all adverse events associated with a drug regime.
 3. It can fit into the beginning of the prescription experience or when drugs are being added to an existing regime. Busy doctors, particularly in gerontology, have to manage complex drug regimenes quickly.
-4. Usage will increase as trust in the information grows over time. We would like to create a "Would you recommend this to your collequges" but we did not have time to measure that in this project.
+4. Usage will increase as trust in the information grows over time. We would like to create a "Would you recommend this to your colleagues" but we did not have time to measure that in this project.
 
 <a name="Play3"></a>
 ## Play 3
@@ -99,10 +99,10 @@ Using a government service shouldnâ€™t be stressful, confusing, or daunting. Itâ
 7. Use language and design consistently throughout the service, including online and offline touch points
 
 #### Actions
-1. An expert created a simple, application specific style [guide](https://github.com/CivicActions/nebula/blob/master/GSA_AGILE_BPA_style_guide.png).
+1. An expert created a simple, application specific [style guide](https://github.com/CivicActions/nebula/blob/master/GSA_AGILE_BPA_style_guide.png). We also used [Bootstrap](http://getbootstrap.com/) as a user interface baseline and grid framework.
 2. This is a very simple application, but we are harmonizing the color palette.
-3. This simple, one page application takes a list of drugs and displays the adverse effects associated with each one. When a user adds a drug to the list the drug is displayed in the legend and its data appears in the graph, giving immediate visual feedback.
-4. We prioritized accessibility stories and use colors that make the chart easier to read for users with visual impairments. For [reference](http://accessibility.psu.edu/images/charts/#charttext) and [here](http://guides.library.duke.edu/topten)
+3. This simple, one page application takes a list of drugs and displays the adverse events associated with each one. When a user adds a drug to the list the drug is displayed in the legend and its data appears in the graph, giving immediate visual feedback.
+4. We prioritized accessibility stories and use colors that make the chart easier to read for users with visual impairments. For [reference](http://accessibility.psu.edu/images/charts/#charttext) and [here](http://guides.library.duke.edu/topten). We also completed a [detailed accessibility test](https://github.com/CivicActions/nebula/tree/master/accessibility).
 5. We are offering a "save url" option so that users may return to the chart. It will save the list of drugs but no personal information.
 6. The language will be kept to a minimum so the focus can remain on the charts. This app is geared towards health care professionals and we will ensure the copy makes sense to them. In subsequent revisions of the wireframes we've minimized or removed unnecessary text.
 7. We are currently only an online service.
@@ -117,10 +117,10 @@ Using a government service shouldnâ€™t be stressful, confusing, or daunting. Itâ
 #### answers to key questions
 
 1. The user wants to understand the adverse event implications of complicated drug regimens for highly-prescribed patiens (who sometimes have 5, 10, or 15 drugs.)
-2. We have not worked much on "plain language", especially because our intended users are professional doctors.
+2. We have not worked much on "plain language", especially because our intended users are professional doctors. We would look out for language improvements during ongoing iterations and feedback cycles.
 3. English only at present.
 4. Since this is a prototype, we have provided no help facility. Whoever forks it may wish to do so.
-5. We haven't attempted to harmonize with other government services, which are generally not a good model for this kind of mobile-friendly application.  Instead, we aimed for a more modern, Bootstrap-style responsive design.
+5. We haven't attempted to harmonize with other government services, since this is a standalone application. We aimed for a modern, Bootstrap-style responsive design.
 
 <a name="Play4"></a>
 ## Play 4
@@ -142,15 +142,15 @@ We should use an incremental, fast-paced style of software development to reduce
 9. Use code reviews to ensure quality
 
 #### Actions
-1. See url https://nebula.civicactions.com/, rendered public on day 5 of our Sprint.
+1. See url https://nebula.civicactions.com/ (subsequently moved to https://www.sideeffect.io/), rendered public on day 5 of our Sprint.
 2. User interviews run via screenshare on days 1, 3, 4 of the Sprint, and live interaction with the url solicited on day 5, with feedback immediately collected from affiliate Tomorrow Partners and from members of the CivicActions team beyond the project team. See [process journal](https://github.com/CivicActions/nebula/edit/master/ProcessJournal.md).
 3. Daily scrums, targeted sub-group meetings, chat (Slack), and Sprint rituals (retrospectives, Sprint planning meetings, backlog grooming meetings) have all constituted the central pillars of our team communication.
 4. Our project team is exactly the size required by the roles specified in the RFQ in order to qualify for Pools 1, 2, 3, and has been entirely non-hierarchical, with directives derived in consultation with all concerned members of the project team.
-5. Features are pushed to the live site multiple times each day, as evidenced by the log in github and Slack.
+5. Features are pushed to the live site multiple times each day, as evidenced by the log in Github and Slack.
 6. Features prioritized on our Trello list "Prioritized Stories"; bugs prioritized in our issue queue in github.
 8. Using Github for this - all project members and user-testers/stakeholders have access and the repository is also public.
 8. Using Trello for this - all project members and user-testers/stakeholders have access. For this project, the board is also public. We used GitHub for some bugs.
-9. We did not use public conde reviews, but we used pull requests in github to ensure expert-on-neophyte individual code reviews.
+9. We did team code and architecture design reviews of key components, and also used public pull requests in github to ensure expert-on-neophyte individual code reviews.
 
 #### key questions
 - How long did it take to ship the MVP? If it hasn't shipped yet, when will it?
@@ -165,7 +165,7 @@ We should use an incremental, fast-paced style of software development to reduce
 
 #### answers to key questions
 
-1. MVP shipped (made public) on day 5 of the Sprint. It was shown (in buggy state) to users on Days 3 and 4.
+1. MVP shipped (made public) on day 5 of the Sprint. It was shown (in buggy prototype state) to users on Days 3 and 4.
 2. Seven minutes.
 3. Sprints have been 4 days each in this initial Sprint.
 4. Git
@@ -197,15 +197,15 @@ To improve our chances of success when contracting out development work, we need
 9. Contract includes a transition of services period and transition-out plan
 
 #### Actions
-1.
-2.
-3.
-4.
-5.
-6.
-7.
-8.
-9.
+1. We managed an internal budget for this project.
+2. N/A
+3. N/A
+4. N/A
+5. N/A
+6. N/A
+7. N/A
+8. N/A
+9. N/A
 
 #### key questions
 - What is the scope of the project? What are the key deliverables?
@@ -214,9 +214,9 @@ To improve our chances of success when contracting out development work, we need
 
 #### answers to key questions
 
-1.
-2.
-3.
+1. See RFQ and related documents.
+2. See RFQ and related documents.
+3. See RFQ and related documents.
 
 <a name="Play6"></a>
 ## Play 6
@@ -235,10 +235,10 @@ There must be a single product owner who has the authority and responsibility to
 
 
 #### Actions
-1. Product owner was identified on June 17 as Rob Read. Documented [here](https://civicactions.slack.com/archives/agile-gsa/p1434582235000307)
+1. Product owner was identified on June 17 as Rob Read. Documented [here](https://github.com/CivicActions/nebula/blob/master/evidence/AppointmentOfProductOwner.md)
 2. Stakeholders in this instance are agency management, and authority as outlined was granted to product owner on day 1 of Sprint.
 3. See Read's [biography](https://civicactions.com/team/rob-read).
-4. We eearly established a labor budget matrix of peoples skills against their availability.
+4. We early established a labor budget matrix of peoples skills against their availability.
 5. Again, see [biography](https://civicactions.com/team/rob-read).
 
 
@@ -274,14 +274,14 @@ We need talented people working in government who have experience creating moder
 8. The appropriate privacy, civil liberties, and/or legal advisor for the department or agency is a partner
 
 #### Actions
-1. Yes -- though our "high-traffic" credentials might not be Google or Facebook quality.
+1. Yes -- though our "high-traffic" credentials might not be at a Google or Facebook level, we do have experience scaling complex, interactive digital services over hudreds of thousands of users.
 2. Yes
-3. Yes, we used an XUnit framework
-4. Yes, we had a run-test-after commit system using Jenkins
-5. Yes
-6. NA
-7. NA (though we had someone play this role)
-8. We assigned the CEO to play the role of Privacy and Legal officer, and an experienced Cyber guy to play the role of Security officer.
+3. Yes, we used an XUnit framework (PHPUnit), and have experience with several other technologies.
+4. Yes, we had a run-test-after commit system using Jenkins, including a full "from scratch" scripted environment build.
+5. Yes, we implemented a hardened FISMA ready Ubuntu host for this project, and have experience with OpenSCAP automated compliance scanning tools, among others.
+6. N/A
+7. N/A (though we had someone play this role)
+8. We assigned the CEO to play the role of Privacy and Legal officer, and an experienced cybersecurity/compliance expert to play the role of Security officer.
 
 
 <a name="Play8"></a>
@@ -299,10 +299,10 @@ The technology decisions we make need to enable development teams to work effici
 4. [Consider open source software solutions](http://www.whitehouse.gov/sites/default/files/omb/assets/egov_docs/memotociostechnologyneutrality.pdf) at every layer of the stack
 
 #### Actions
-1. API driven frontend. Modern lightweight PHP framework (Silex/Symphony). Bootstrap, jquery.
-2. We used Bootstrap in order to be Responsive, and tested with phones and iPad tablets.
-3. We have reproducible installation instructions, and continuous integration of unit test framework.
-4.
+1. API driven frontend. Modern lightweight PHP MVC framework (Silex/Symphony). Bootstrap, jQuery.
+2. We used Bootstrap in order to be Responsive, and tested with phones and iPad tablets using crossbrowsertesting.com and hands on device testing.
+3. We have reproducible sandbox installation instructions with minimal dependencies (self hosting), and continuous integration of unit test framework.
+4. The Docker host operating system (Ubuntu), Docker, container operating systems (minimal Debian), Nginx, PHP, MySQL and frontend frameworks are all open source licenced.
 
 
 
@@ -314,9 +314,9 @@ The technology decisions we make need to enable development teams to work effici
 
 #### answers to key questions
 
-1. PHP on the backend chosen do to familiarity fo the team. API-centric for flexibility and reusability. JQuery and Bootstrap on the front end.
+1. Docker and Docker Compose for development, due to need for rapid developer onboarding, as well as for allowing full consistency with production environment. PHP on the backend chosen do to familiarity fo the team. API-centric for flexibility and reusability. JQuery and Bootstrap on the front end.
 2. We chose Mariadb version 10.0 as a popular and stable drop-in replacement of MySQL with strong support in the community.
-3. We had no new team members join in this short time.
+3. We had no new development team members join mid-project in this short time, but our security officer tested our sandbox setup.
 
 <a name="Play9"></a>
 ## Play 9
