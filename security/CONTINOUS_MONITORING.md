@@ -33,4 +33,10 @@ GovReady Ubuntu 14.04 SCAP is the first open source SCAP content for Ubuntu and 
 
 ## Identification of Vulnerability Feeds
 
+| Vulnerability Feed | RSS Version|
+|--------------------|------------|
+|https://alas.aws.amazon.com | https://alas.aws.amazon.com/alas.rss |
+|http://www.ubuntu.com/usn/ | http://www.ubuntu.com/usn/rss.xml |
+
+
 ## Monitoring of Server Status
