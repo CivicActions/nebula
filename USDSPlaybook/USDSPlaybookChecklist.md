@@ -116,7 +116,7 @@ Using a government service shouldnâ€™t be stressful, confusing, or daunting. Itâ
 
 #### answers to key questions
 
-1. The user wants to understand the adverse event implications of complicated drug regimens for highly-prescribed patiens (who sometimes have 5, 10, or 15 drugs.)
+1. The user wants to understand the adverse event implications of complicated drug regimens for highly-prescribed patients (who sometimes have 5, 10, or 15 drugs.)
 2. We have not worked much on "plain language", especially because our intended users are professional doctors. We would look out for language improvements during ongoing iterations and feedback cycles.
 3. English only at present.
 4. Since this is a prototype, we have provided no help facility. Whoever forks it may wish to do so.
@@ -316,7 +316,7 @@ The technology decisions we make need to enable development teams to work effici
 
 1. Docker and Docker Compose for development, due to need for rapid developer onboarding, as well as for allowing full consistency with production environment. PHP on the backend chosen do to familiarity fo the team. API-centric for flexibility and reusability. JQuery and Bootstrap on the front end. We choose all of these components as light-weight and suited to a simple application that required not session or identity management.
 2. We chose Mariadb version 10.0 as a popular and stable drop-in replacement of MySQL with strong support in the community.
-3. We had no new development team members join mid-project in this short time, but our security officer tested our sandbox setup.
+3. We had no new development team members join mid-project in this short time, but our security officer tested our sandbox setup using the instructions and was ready to go in around 30 mins.
 
 <a name="Play9"></a>
 ## Play 9
@@ -336,9 +336,9 @@ Our services should be deployed on flexible infrastructure, where resources can 
 7. Application is hosted on commodity hardware
 
 #### Actions
-1. Fully automated deployment script provisions Amazon Web Services (AWS) infrastructure, and Cloudflare DNS/CDN. Docker based architecture could be horizontally scaled with minimal effort.
+1. Fully automated deployment script provisions Amazon Web Services (AWS) infrastructure, and Cloudflare DNS/CDN. Docker based container architecture runs on AWS infrastructure could be horizontally scaled with minimal effort.
 2. Deployments contain a full frontend or backend stack, so can be provisioned dynamically using AWS Cloudwatch rules.
-3. Using AWS and Cloudflare APIs.
+3. Using AWS and Cloudflare APIs - there is no need for GUI configuration of these services, beyond getting an API key and connection details.
 4. AWS region is configurable and instances are self contained (no master database needed).
 5. AWS charges by the minute.
 6. Cloudfront is used as a content delivery network.
@@ -362,18 +362,18 @@ Our services should be deployed on flexible infrastructure, where resources can 
 
 #### answers to key questions
 
-1. Amazon Web Services, US West (Oregon) data center.
-2. t2.micro for both frontend and backend. See [Instance Types](http://aws.amazon.com/ec2/instance-types/) for more details.
-3. NA - we do not yet have enough users to measure.
+1. Amazon Web Services, US West (Oregon) data center, although this can be changed with a deployment parameter, and additional regions can be added with geographic DNS balancing.
+2. t2.micro for both frontend and backend. See [Instance Types](http://aws.amazon.com/ec2/instance-types/) for more details. This is also configurable with a deployment parameter.
+3. N/A - we do not yet have enough users to measure.
 4. The CloudFlare CDN is robust enough to handle a substantial surge in traffic. Also, we can scale our docker containers if necessary.
 5. With cloud computing we can scale up our capacity as much as we want.
 6. Provisioning our server instances is automated and takes under 20 minutes for a full deployment (frontend and backend).
 7. Using the docker-compose product we can easily scale any of our containers. (For example, the command `docker-compose scale web=2` would double our front end containers.)
 8. Amazon pricing, which has some fixed and some usage rates.
 9. We are using the West Coast AWS region data center. The CloudFlare CDN mirrors the site in many servers worldwide.
-10. Assuming github is online, we could be back online in a different region within 20 to 30 minutes.
-11. Our app is not storing any critical data.
-12. We are storing no data. There cannot be a catastrophic data loss.  A data loss would force us to repopulate the AHRQ data in our database in order to efficiently provide comparative prescription volume.
+10. Assuming Github is online, we could be back online in a different region within 20 to 30 minutes.
+11. Our app is not storing any critical data - all data is loaded automatically on build, or accessed dynamically.
+12. We are storing no non-derivative data. There cannot be a catastrophic data loss.  A data loss would force us to repopulate the AHRQ data in our database in order to efficiently provide comparative prescription volume, this could be done by simply rerunning the deploy command.
 13. We are using the AWS and CloudFlare APIs and web interfaces so we do not need to contact our provider for resources.
 
 
@@ -393,10 +393,10 @@ Today, developers write automated scripts that can verify thousands of scenarios
 5. Conduct load and performance tests at regular intervals, including before public launch
 
 #### Actions
-1. We respectfully disagree on the value of through-the-browser testing of ALL user-facing functionality. We would like to have some UI testing, but have only our continuous monitoring at the deadline of this project.
-2. We automated have back-end API integration tests.
+1. We have automated front-end tests that run on every Github push, using Selenium Builder JSON format tests. These run a series of interactions and checks on the site in both Google Chrome and Mozilla Firefox browsers, and report any failures to developers.
+2. We automated have back-end API integration tests using PHPUnit.
 3. The build process runs on every git push, and includes automated tests.
-4. We use automated deployment that can be initiated with a single slack command to automatically deploy both the backend and the frontend (as separate systems.)
+4. We use automated deployment that can be initiated with a single slack command to automatically deploy both the backend and the frontend (as separate AWS instances).
 5. We have continually tested. We have performed performance tests, which led to refactoring. We have not yet performed load tests.
 
 
@@ -416,12 +416,12 @@ Today, developers write automated scripts that can verify thousands of scenarios
 
 #### answers to key questions
 
-1. Proably about 70% on the back end, 0% on the front end.
-2. A very very minor fix can be coded, built, tested, and deployed in 10 mintues (3 minutes to test and 7 minutes for build and deployment time.)  Coding type is often longer, of course.
+1. Proably about 70% on the back end, 60% on the front end.
+2. A very very minor fix can be coded, built, tested, and deployed in 10 minutes (3 minutes to test and 7 minutes for build and deployment time.)  Coding time is often longer, of course.
 3. Our total process from conception to deployment can take as little as 3 hours.  Once fully coded, the build time is the same as for bugs.
-4. About 5 times a day during heavy development was typical---some days are slower.
+4. The build/test process runs on every push - it ran 421 times during the course of this project. We also performed a complete deploy about 5 times a day during heavy development, although some days were slower.
 5. PHPUnit test are the basis of the automated tests. We are using Jenkins as our central tool, which uses docker, docker-compose, and docker-machine to manage the containers.
-6. We are using Jenkins as our central tool, which uses docker, docker-compose, and docker-machine to manage the containers.
+6. We are using Jenkins as our central tool, which uses docker, docker-compose, and docker-machine to manage the containers, as well as report and chart test results.
 7. We target medical professionals, so there may be as many as 2 million total uses (for doctors and their staff).  There use is not likely to be bursty, but will follow working hours as a pattern.  Since we do not require session management for this application, it is more reasonable to talk about requests per second than number of concurrent users. Ideally we can imagine 10 uses per day, or 20 million uses in a 12 hour period, or 1.7 million per hour, or 472 per second.
 8. We haven't tested this.
 9. We gracefully tolerate certain failures of the OpenFDA API, although we do not inform the user as well as we should in these cases.
@@ -490,14 +490,14 @@ At every stage of a project, we should measure how well our service is working f
 8. Use an experimentation tool that supports multivariate testing in production
 
 #### Actions
-1. AWS Cloudwatch provides real-time resource monitoring of instances.
-2.
-3.
-4.
-5.
-6.
-7.
-8.
+1. AWS Cloudwatch provides real-time resource monitoring of instances and resource utilization.
+2. We monitored system availability, performance (response time, latency and error rates) as well as APIj correctness using the Runscope multi-location checking service. See (devops/monitoring)[https://github.com/CivicActions/nebula/tree/master/devops/monitoring] for details. AWS CloudWatch provides monitors for network throughput.
+3. Runscope includes (median, 95th percentile, and 98th percentile performance)[https://github.com/CivicActions/nebula/blob/master/devops/monitoring/metrics.jpg]. Google Analytics also provides real user measurement (RUM) of end-user browser page load times.
+4. Runscope was configured to provide automated e-mail and text alerts when failing checks occured.
+5. (Google Analytics)[https://github.com/CivicActions/nebula/blob/master/evidence/google-analytics.jpg] was set up and tracks concurrent users in real time, as well as in aggregate.
+6. There was not enough time or traffic to gather sufficient data to provide a useful report.
+7. There was not enough time or traffic to gather sufficient data to provide a useful report.
+8. Google Analytics provides this functionality, but there was not enough time or traffic to gather sufficient data to peform multivariate testing.
 
 
 #### key questions
@@ -517,17 +517,17 @@ At every stage of a project, we should measure how well our service is working f
 
 #### answers to key questions
 
-1. 
-2. 
-3. 
-4. 
-5. 
-6. 
-7. 
-8. 
-9. 
-10. 
-11. We are adding Google Analytics to the site so that we can gain better insight into usage and behavior. We are also planning on basic usability testing using a remote testing tool after the release of the MVP.
+1. User interactions (drugs entered, toggled), user shares, system response time and error rate.
+2. There was not enough time or traffic to gather sufficient data to assess this.
+3. AWS CloudWatch, Runscope, Jenkins.
+4. For 99% of requests, page load requests should respond within 1 second, AHRQ API response should be within 2 seconds, and FDA API response within 4 seconds.
+5. There was not enough time or traffic to gather sufficient data to assess this.
+6. There was not enough time or traffic to gather sufficient data to assess this.
+7. Given rapid prototype "beta" production, we would aim for 98% uptime for the initial launch, moving upwards as user base grows and platform stabilizes.
+8. There was not enough time or traffic to gather sufficient data to assess this.
+9. Email and text.
+10. We coordinate this on Slack, assigning an owner for each incident, working closely on triage and remediation. All incidents are considered using a root cause analysis, and discussed with the entire development and operations team based on those findings to improve process and tools as needed.
+11. We are using Google Analytics on the site so that we can gain better insight into usage and behavior. We are also planning on basic usability testing using a remote testing tool after the release of the MVP.
 12. Our MVP is rapidly evolving and we are not ready for A/B testing at this time.
 13. We have interviewed users consistently throughout our development process in order to garner their feedback on the product. And we have included a way for users to submit suggestions, issues and ideas from the site. Future plans include surveys.
 
