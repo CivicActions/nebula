@@ -6,7 +6,7 @@
 CivicActions has validated the deployment of the nebula application in a configuration that includes continuous monitoring. 
 
 This configuration includes:
-* deploying the application onto 18F's FISMA-Ready Ubuntu-LTS
+* deploying the application onto 18F's FISMA-READY Ubuntu LTS (See: https://github.com/fisma-ready/ubuntu-lts)
 * automated SCAP scanning of the server
 * identification of vulnerability feeds
 * monitoring of server status
