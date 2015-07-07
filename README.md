@@ -40,7 +40,7 @@ We rapidly addressed a few bugs that our Quality Assurance process uncovered. We
 
 Our system was deployed on [(l) Amazon Web Services](https://github.com/CivicActions/nebula/blob/master/security/logical-network-topology-1.0.0.jpg) on a free operating system using [(m)(o) Docker](https://github.com/CivicActions/nebula/blob/master/DEVOPS_MANUAL.md). We released all of the project code that we wrote into the [(q) public domain](https://github.com/CivicActions/nebula/blob/master/LICENSE.md).
 
-Our users indicated that they wanted a way to tie our results to their patient files without giving us access to patient information. We decided that a portable URL was the best solution to this challenge and completed a portable URL system that allows any drug regimen to be shared as a simple query string/URL, such as [http://sideeffect.io/?saved=CRESTOR+BENICAR+ASPIRIN](http://sideeffect.io/?saved=CRESTOR+BENICAR+ASPIRIN). We later verified this functionality with our users in formal user interviews.
+Our users indicated that they wanted a way to tie our results to their patient files without giving us access to patient information. We decided that a portable URL was the best solution to this challenge and completed a portable URL system that allows any drug regimen to be shared as a simple query string/URL, such as [https://sideeffect.io/?saved=CRESTOR+BENICAR+ASPIRIN](https://sideeffect.io/?saved=CRESTOR+BENICAR+ASPIRIN). We later verified this functionality with our users in formal user interviews.
 
 Day Six: We tied the backend API to the frontend to provide normalization and make the data more consumable and readable, a major feature requested during our user interviews. Our engineers worked on additional automated tests for the backend API. 
 
