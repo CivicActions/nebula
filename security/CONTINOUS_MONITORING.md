@@ -7,7 +7,7 @@ CivicActions has validated the deployment of the nebula application in a configu
 
 This configuration includes:
 * deploying the application onto 18F's FISMA-READY Ubuntu LTS (See: https://github.com/fisma-ready/ubuntu-lts)
-* automated SCAP scanning of the server
+* automated scanning with SCAP
 * identification of vulnerability feeds
 * monitoring of server status
 
@@ -18,15 +18,18 @@ The purpose of this document is to provide evidence of integrating security and 
 
 We cloned the FISMA-Ready LTS Ubuntu repository and ran the `ami.sh` script to generate the publicly available FISMA-Ready LTS Ubuntu 14.04 AMI (`ami-b7393887`) in AWS region `us-west-2`.
 
-We then tested our deployment scripts using `ami-b7393887` instead of the default Docker Ubuntu 14.04 AMI through configuration settings of AWS environmental variables:
+We then validated our automated deployment worked using the FISMA-Ready LTS Ubuntu AMI `ami-b7393887` instead of the default Docker Ubuntu 14.04 AMI (`ami-7f675e4f`) by setting AWS environmental variables during deployment:
 ```bash
-export AWS_DEFAULT_REGION="us-west-2"
+export AWS_DEFAULT_REGION=us-west-2
 export AWS_AMI=ami-b7393887
 export AWS_ROOT_SIZE=30
 ```
 
+## Automated Scanning with SCAP
+We used GovReady Ubuntu 14.04 SCAP , which was developed 
 
 
 
+## Identification of Vulnerability Feeds
 
-## Evidence
+## Monitoring of Server Status
