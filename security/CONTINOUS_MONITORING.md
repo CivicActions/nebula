@@ -33,6 +33,7 @@ The SCAP datastream file used for the scan is `Ubuntu_14.04_LTS_Server_Datastrea
 *(NOTE: Open source licensed SCAP content for open source software is currently rare. GovReady Ubuntu 14.04 SCAP is the first open source SCAP content for Ubuntu and was developed specifically to test FISMA-Ready Ubuntu LTS. The FISMA-Ready SCAP contains OVAL (Open Vulnerability Assessment Language) schema currently being reviewed by OVAL board and can only be tested with a special version of JOVAL's Professional scanner.) No open source SCAP currently exists for Docker, although a Security Benchmark for Docker 1.6 was recently published in April 2015 by the Center for Internet Security (https://web.nvd.nist.gov/view/ncp/repository/checklistDetail?id=589). CIS's Docker Security Benchmark cannot be included in this repository due to licensing restrictions.)*
 
 The following screenshots are to provide evidence of continuous monitoring using 18F FISMA-Ready Ubuntu LTS and SCAP
+![screenshot of http://52.11.154.239 showing deployment of application](screenshot-deployed-52.11.154.239.png)
 * `screenshot-deployed-52.11.154.239.png` - screenshot of http://52.11.154.239 showing deployment of application
 * `screenshot-ssh-52.11.154.239.png` - screenshot of SSH access to `52.11.154.239` showing Docker HOST OS is 18F FISMA-Ready Ubuntu LTS
 * `screenshot-scan-benchmark-52.11.154.239.png` - screenshot of using GovReady's FISMA-Ready Unbuntu LTS Benchmark SCAP `Ubuntu_14.04_LTS_Server_Datastream_v0.0.1.xml` to scan host `52.11.154.239` using JOVAL scanner
