@@ -1,0 +1,2023 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ds:data-stream-collection schematron-version="1.0" xmlns:xmldsig="http://www.w3.org/2000/09/xmldsig#" xmlns:oval-def="http://oval.mitre.org/XMLSchema/oval-definitions-5" xmlns:freebsd-def="http://oval.mitre.org/XMLSchema/oval-definitions-5#freebsd" xmlns:pixos-def="http://oval.mitre.org/XMLSchema/oval-definitions-5#pixos" xmlns:sharepoint-def="http://oval.mitre.org/XMLSchema/oval-definitions-5#sharepoint" xmlns:win-def="http://oval.mitre.org/XMLSchema/oval-definitions-5#windows" xmlns:macos-def="http://oval.mitre.org/XMLSchema/oval-definitions-5#macos" xmlns:apache-def="http://oval.mitre.org/XMLSchema/oval-definitions-5#apache" xmlns:catos-def="http://oval.mitre.org/XMLSchema/oval-definitions-5#catos" xmlns:solaris-def="http://oval.mitre.org/XMLSchema/oval-definitions-5#solaris" xmlns:ind-def="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent" xmlns:aix-def="http://oval.mitre.org/XMLSchema/oval-definitions-5#aix" xmlns:ios-def="http://oval.mitre.org/XMLSchema/oval-definitions-5#ios" xmlns:esx-def="http://oval.mitre.org/XMLSchema/oval-definitions-5#esx" xmlns:hpux-def="http://oval.mitre.org/XMLSchema/oval-definitions-5#hpux" xmlns:linux-def="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux" xmlns:unix-def="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix" xmlns:cpe-dict="http://cpe.mitre.org/dictionary/2.0" xmlns:x-unix-def="http://oval.mitre.org/XMLSchema/oval-definitions-5#x-unix" xmlns:cdf12="http://checklists.nist.gov/xccdf/1.2" xmlns:cpe23="http://cpe.mitre.org/language/2.0" xmlns:x-windows-def="http://oval.mitre.org/XMLSchema/oval-definitions-5#x-windows" xmlns:x-linux-def="http://oval.mitre.org/XMLSchema/oval-definitions-5#x-linux" xmlns:x-macos-def="http://oval.mitre.org/XMLSchema/oval-definitions-5#x-macos" xmlns:junos-def="http://oval.mitre.org/XMLSchema/oval-definitions-5#junos" xmlns:oval="http://oval.mitre.org/XMLSchema/oval-common-5" xmlns:droid-def="http://oval.mitre.org/XMLSchema/oval-definitions-5#android" xmlns:cpe-dict-ext="http://scap.nist.gov/schema/cpe-extension/2.3" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ocil="http://scap.nist.gov/schema/ocil/2.0" xmlns:netconf-def="http://oval.mitre.org/XMLSchema/oval-definitions-5#netconf" xmlns:cat="urn:oasis:names:tc:entity:xmlns:xml:catalog" xmlns:ds="http://scap.nist.gov/schema/scap/source/1.2" xmlns:sce="http://open-scap.org/page/SCE_xccdf_stream" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="scap_org.joval_collection_Archive.zip" xsi:schemaLocation="http://oval.mitre.org/XMLSchema/oval-definitions-5 jar:file:/Users/solind/Development/jOVAL-Commercial/components/professional/dist/64/Joval-Professional.app/Contents/Resources/lib/scap-schema-1.2.jar!/scap/schemas/oval-5.10.1/oval-definitions-schema.xsd http://oval.mitre.org/XMLSchema/oval-definitions-5#x-windows jar:file:/Users/solind/Development/jOVAL-Commercial/components/professional/dist/64/Joval-Professional.app/Contents/Resources/lib/scap-schema-extensions.jar!/scapx/schemas/x-windows-definitions-schema.xsd http://oval.mitre.org/XMLSchema/oval-definitions-5#apache jar:file:/Users/solind/Development/jOVAL-Commercial/components/professional/dist/64/Joval-Professional.app/Contents/Resources/lib/scap-schema-1.2.jar!/scap/schemas/oval-5.10.1/apache-definitions-schema.xsd http://oval.mitre.org/XMLSchema/oval-definitions-5#x-unix jar:file:/Users/solind/Development/jOVAL-Commercial/components/professional/dist/64/Joval-Professional.app/Contents/Resources/lib/scap-schema-extensions.jar!/scapx/schemas/x-unix-definitions-schema.xsd http://oval.mitre.org/XMLSchema/oval-definitions-5#pixos jar:file:/Users/solind/Development/jOVAL-Commercial/components/professional/dist/64/Joval-Professional.app/Contents/Resources/lib/scap-schema-1.2.jar!/scap/schemas/oval-5.10.1/pixos-definitions-schema.xsd http://oval.mitre.org/XMLSchema/oval-definitions-5#aix jar:file:/Users/solind/Development/jOVAL-Commercial/components/professional/dist/64/Joval-Professional.app/Contents/Resources/lib/scap-schema-1.2.jar!/scap/schemas/oval-5.10.1/aix-definitions-schema.xsd http://www.w3.org/2000/09/xmldsig# jar:file:/Users/solind/Development/jOVAL-Commercial/components/professional/dist/64/Joval-Professional.app/Contents/Resources/lib/scap-schema-1.2.jar!/scap/schemas/xml/xmldsig-core-schema.xsd http://checklists.nist.gov/xccdf/1.2 jar:file:/Users/solind/Development/jOVAL-Commercial/components/professional/dist/64/Joval-Professional.app/Contents/Resources/lib/scap-schema-1.2.jar!/scap/schemas/xccdf-1.2/xccdf_1.2.xsd http://cpe.mitre.org/dictionary/2.0 jar:file:/Users/solind/Development/jOVAL-Commercial/components/professional/dist/64/Joval-Professional.app/Contents/Resources/lib/scap-schema-1.2.jar!/scap/schemas/cpe-2.3/cpe-dictionary_2.3.xsd http://oval.mitre.org/XMLSchema/oval-definitions-5#android jar:file:/Users/solind/Development/jOVAL-Commercial/components/professional/dist/64/Joval-Professional.app/Contents/Resources/lib/scap-schema-extensions.jar!/scapx/schemas/x-android-definitions-schema.xsd http://cpe.mitre.org/language/2.0 jar:file:/Users/solind/Development/jOVAL-Commercial/components/professional/dist/64/Joval-Professional.app/Contents/Resources/lib/scap-schema-1.2.jar!/scap/schemas/cpe-2.3/cpe-language_2.3.xsd http://oval.mitre.org/XMLSchema/oval-definitions-5#independent jar:file:/Users/solind/Development/jOVAL-Commercial/components/professional/dist/64/Joval-Professional.app/Contents/Resources/lib/scap-schema-1.2.jar!/scap/schemas/oval-5.10.1/independent-definitions-schema.xsd http://oval.mitre.org/XMLSchema/oval-definitions-5#junos jar:file:/Users/solind/Development/jOVAL-Commercial/components/professional/dist/64/Joval-Professional.app/Contents/Resources/lib/scap-schema-extensions.jar!/scapx/schemas/x-junos-definitions-schema.xsd http://scap.nist.gov/schema/cpe-extension/2.3 jar:file:/Users/solind/Development/jOVAL-Commercial/components/professional/dist/64/Joval-Professional.app/Contents/Resources/lib/scap-schema-1.2.jar!/scap/schemas/cpe-2.3/cpe-dictionary-extension_2.3.xsd http://scap.nist.gov/schema/scap/source/1.2 jar:file:/Users/solind/Development/jOVAL-Commercial/components/professional/dist/64/Joval-Professional.app/Contents/Resources/lib/scap-schema-1.2.jar!/scap/schemas/ds-1.2/scap-source-data-stream_1.2.xsd http://oval.mitre.org/XMLSchema/oval-definitions-5#solaris jar:file:/Users/solind/Development/jOVAL-Commercial/components/professional/dist/64/Joval-Professional.app/Contents/Resources/lib/scap-schema-1.2.jar!/scap/schemas/oval-5.10.1/solaris-definitions-schema.xsd http://oval.mitre.org/XMLSchema/oval-definitions-5#linux jar:file:/Users/solind/Development/jOVAL-Commercial/components/professional/dist/64/Joval-Professional.app/Contents/Resources/lib/scap-schema-1.2.jar!/scap/schemas/oval-5.10.1/linux-definitions-schema.xsd http://oval.mitre.org/XMLSchema/oval-definitions-5#x-macos jar:file:/Users/solind/Development/jOVAL-Commercial/components/professional/dist/64/Joval-Professional.app/Contents/Resources/lib/scap-schema-extensions.jar!/scapx/schemas/x-macos-definitions-schema.xsd http://oval.mitre.org/XMLSchema/oval-definitions-5#sharepoint jar:file:/Users/solind/Development/jOVAL-Commercial/components/professional/dist/64/Joval-Professional.app/Contents/Resources/lib/scap-schema-1.2.jar!/scap/schemas/oval-5.10.1/sharepoint-definitions-schema.xsd http://oval.mitre.org/XMLSchema/oval-definitions-5#catos jar:file:/Users/solind/Development/jOVAL-Commercial/components/professional/dist/64/Joval-Professional.app/Contents/Resources/lib/scap-schema-1.2.jar!/scap/schemas/oval-5.10.1/catos-definitions-schema.xsd http://purl.org/dc/elements/1.1/ jar:file:/Users/solind/Development/jOVAL-Commercial/components/professional/dist/64/Joval-Professional.app/Contents/Resources/lib/scap-schema-1.2.jar!/scap/schemas/dublin/simpledc20021212.xsd http://oval.mitre.org/XMLSchema/oval-definitions-5#windows jar:file:/Users/solind/Development/jOVAL-Commercial/components/professional/dist/64/Joval-Professional.app/Contents/Resources/lib/scap-schema-1.2.jar!/scap/schemas/oval-5.10.1/windows-definitions-schema.xsd http://oval.mitre.org/XMLSchema/oval-definitions-5#x-linux jar:file:/Users/solind/Development/jOVAL-Commercial/components/professional/dist/64/Joval-Professional.app/Contents/Resources/lib/scap-schema-extensions.jar!/scapx/schemas/x-linux-definitions-schema.xsd http://oval.mitre.org/XMLSchema/oval-definitions-5#netconf jar:file:/Users/solind/Development/jOVAL-Commercial/components/professional/dist/64/Joval-Professional.app/Contents/Resources/lib/scap-schema-extensions.jar!/scapx/schemas/x-netconf-definitions-schema.xsd http://oval.mitre.org/XMLSchema/oval-definitions-5#esx jar:file:/Users/solind/Development/jOVAL-Commercial/components/professional/dist/64/Joval-Professional.app/Contents/Resources/lib/scap-schema-1.2.jar!/scap/schemas/oval-5.10.1/esx-definitions-schema.xsd http://scap.nist.gov/schema/ocil/2.0 jar:file:/Users/solind/Development/jOVAL-Commercial/components/professional/dist/64/Joval-Professional.app/Contents/Resources/lib/scap-schema-1.2.jar!/scap/schemas/ocil-2.0/ocil-2.0.xsd http://www.w3.org/1999/xlink jar:file:/Users/solind/Development/jOVAL-Commercial/components/professional/dist/64/Joval-Professional.app/Contents/Resources/lib/scap-schema-1.2.jar!/scap/schemas/xml/xlink.xsd http://oval.mitre.org/XMLSchema/oval-definitions-5#unix jar:file:/Users/solind/Development/jOVAL-Commercial/components/professional/dist/64/Joval-Professional.app/Contents/Resources/lib/scap-schema-1.2.jar!/scap/schemas/oval-5.10.1/unix-definitions-schema.xsd http://oval.mitre.org/XMLSchema/oval-definitions-5#ios jar:file:/Users/solind/Development/jOVAL-Commercial/components/professional/dist/64/Joval-Professional.app/Contents/Resources/lib/scap-schema-1.2.jar!/scap/schemas/oval-5.10.1/ios-definitions-schema.xsd http://oval.mitre.org/XMLSchema/oval-definitions-5#hpux jar:file:/Users/solind/Development/jOVAL-Commercial/components/professional/dist/64/Joval-Professional.app/Contents/Resources/lib/scap-schema-1.2.jar!/scap/schemas/oval-5.10.1/hpux-definitions-schema.xsd http://open-scap.org/page/SCE_xccdf_stream jar:file:/Users/solind/Development/jOVAL-Commercial/components/professional/dist/64/Joval-Professional.app/Contents/Resources/lib/scap-schema-1.2.jar!/scap/schemas/sce-1.0/sce-1.0-xccdf-extended-component.xsd http://oval.mitre.org/XMLSchema/oval-definitions-5#freebsd jar:file:/Users/solind/Development/jOVAL-Commercial/components/professional/dist/64/Joval-Professional.app/Contents/Resources/lib/scap-schema-1.2.jar!/scap/schemas/oval-5.10.1/freebsd-definitions-schema.xsd http://oval.mitre.org/XMLSchema/oval-definitions-5#macos jar:file:/Users/solind/Development/jOVAL-Commercial/components/professional/dist/64/Joval-Professional.app/Contents/Resources/lib/scap-schema-1.2.jar!/scap/schemas/oval-5.10.1/macos-definitions-schema.xsd urn:oasis:names:tc:entity:xmlns:xml:catalog jar:file:/Users/solind/Development/jOVAL-Commercial/components/professional/dist/64/Joval-Professional.app/Contents/Resources/lib/scap-schema-1.2.jar!/scap/schemas/oasis/catalog-1.1.xsd http://oval.mitre.org/XMLSchema/oval-common-5 jar:file:/Users/solind/Development/jOVAL-Commercial/components/professional/dist/64/Joval-Professional.app/Contents/Resources/lib/scap-schema-1.2.jar!/scap/schemas/oval-5.10.1/oval-common-schema.xsd">
+    <ds:data-stream id="scap_org.joval_datastream_Archive.zip" use-case="OTHER" scap-version="1.2" timestamp="2015-01-29T15:49:17.000-06:00">
+        <ds:dictionaries>
+            <ds:component-ref id="scap_org.joval_cref_Ubuntu_14.04_LTS_Server_Benchmark_v0.0.1-cpe-dictionary.xml" xlink:href="#scap_org.joval_comp_Ubuntu_14.04_LTS_Server_Benchmark_v0.0.1-cpe-dictionary.xml">
+                <cat:catalog>
+                    <cat:uri name="Ubuntu_14.04_LTS_Server_Benchmark_v0.0.1-cpe-oval.xml" uri="#scap_org.joval_cref_Ubuntu_14.04_LTS_Server_Benchmark_v0.0.1-cpe-oval.xml"/>
+                </cat:catalog>
+            </ds:component-ref>
+        </ds:dictionaries>
+        <ds:checklists>
+            <ds:component-ref id="scap_org.joval_cref_Ubuntu_14.04_LTS_Server_Benchmark_v0.0.1.xml" xlink:href="#scap_org.joval_comp_Ubuntu_14.04_LTS_Server_Benchmark_v0.0.1.xml">
+                <cat:catalog>
+                    <cat:uri name="oval.rule.02.xml" uri="#scap_org.joval_cref_oval.rule.02.xml"/>
+                    <cat:uri name="oval.rule.10.xml" uri="#scap_org.joval_cref_oval.rule.10.xml"/>
+                    <cat:uri name="oval.rule.03.xml" uri="#scap_org.joval_cref_oval.rule.03.xml"/>
+                    <cat:uri name="oval.rule.12.xml" uri="#scap_org.joval_cref_oval.rule.12.xml"/>
+                    <cat:uri name="oval.rule.11.xml" uri="#scap_org.joval_cref_oval.rule.11.xml"/>
+                    <cat:uri name="oval.rule.09.xml" uri="#scap_org.joval_cref_oval.rule.09.xml"/>
+                    <cat:uri name="oval.rule.07.xml" uri="#scap_org.joval_cref_oval.rule.07.xml"/>
+                    <cat:uri name="oval.rule.04.xml" uri="#scap_org.joval_cref_oval.rule.04.xml"/>
+                    <cat:uri name="oval.rule.08.xml" uri="#scap_org.joval_cref_oval.rule.08.xml"/>
+                    <cat:uri name="oval.rule.01.xml" uri="#scap_org.joval_cref_oval.rule.01.xml"/>
+                    <cat:uri name="oval.rule.05.xml" uri="#scap_org.joval_cref_oval.rule.05.xml"/>
+                    <cat:uri name="oval.rule.13.xml" uri="#scap_org.joval_cref_oval.rule.13.xml"/>
+                    <cat:uri name="oval.rule.06.xml" uri="#scap_org.joval_cref_oval.rule.06.xml"/>
+                </cat:catalog>
+            </ds:component-ref>
+        </ds:checklists>
+        <ds:checks>
+            <ds:component-ref id="scap_org.joval_cref_oval.rule.07.xml" xlink:href="#scap_org.joval_comp_oval.rule.07.xml"/>
+            <ds:component-ref id="scap_org.joval_cref_Ubuntu_14.04_LTS_Server_Benchmark_v0.0.1-cpe-oval.xml" xlink:href="#scap_org.joval_comp_Ubuntu_14.04_LTS_Server_Benchmark_v0.0.1-cpe-oval.xml"/>
+            <ds:component-ref id="scap_org.joval_cref_oval.rule.06.xml" xlink:href="#scap_org.joval_comp_oval.rule.06.xml"/>
+            <ds:component-ref id="scap_org.joval_cref_oval.rule.09.xml" xlink:href="#scap_org.joval_comp_oval.rule.09.xml"/>
+            <ds:component-ref id="scap_org.joval_cref_oval.rule.05.xml" xlink:href="#scap_org.joval_comp_oval.rule.05.xml"/>
+            <ds:component-ref id="scap_org.joval_cref_oval.rule.08.xml" xlink:href="#scap_org.joval_comp_oval.rule.08.xml"/>
+            <ds:component-ref id="scap_org.joval_cref_oval.rule.01.xml" xlink:href="#scap_org.joval_comp_oval.rule.01.xml"/>
+            <ds:component-ref id="scap_org.joval_cref_oval.rule.12.xml" xlink:href="#scap_org.joval_comp_oval.rule.12.xml"/>
+            <ds:component-ref id="scap_org.joval_cref_oval.rule.03.xml" xlink:href="#scap_org.joval_comp_oval.rule.03.xml"/>
+            <ds:component-ref id="scap_org.joval_cref_oval.rule.04.xml" xlink:href="#scap_org.joval_comp_oval.rule.04.xml"/>
+            <ds:component-ref id="scap_org.joval_cref_oval.rule.02.xml" xlink:href="#scap_org.joval_comp_oval.rule.02.xml"/>
+            <ds:component-ref id="scap_org.joval_cref_oval.rule.10.xml" xlink:href="#scap_org.joval_comp_oval.rule.10.xml"/>
+            <ds:component-ref id="scap_org.joval_cref_oval.rule.13.xml" xlink:href="#scap_org.joval_comp_oval.rule.13.xml"/>
+            <ds:component-ref id="scap_org.joval_cref_oval.rule.11.xml" xlink:href="#scap_org.joval_comp_oval.rule.11.xml"/>
+        </ds:checks>
+    </ds:data-stream>
+    <ds:component id="scap_org.joval_comp_Ubuntu_14.04_LTS_Server_Benchmark_v0.0.1-cpe-dictionary.xml" timestamp="2015-01-29T15:49:17.000-06:00">
+        <cpe-dict:cpe-list>
+            <cpe-dict:cpe-item name="cpe:/o:ubuntu-trusty:linux">
+                <cpe-dict:title xml:lang="en-us">Ubuntu LTS 14.04</cpe-dict:title>
+                <cpe-dict:check system="http://oval.mitre.org/XMLSchema/oval-definitions-5" href="Ubuntu_14.04_LTS_Server_Benchmark_v0.0.1-cpe-oval.xml">oval:org.govready.ubuntu:def:50</cpe-dict:check>
+            </cpe-dict:cpe-item>
+        </cpe-dict:cpe-list>
+    </ds:component>
+    <ds:component id="scap_org.joval_comp_Ubuntu_14.04_LTS_Server_Benchmark_v0.0.1-cpe-oval.xml" timestamp="2015-01-29T15:49:17.000-06:00">
+        <oval-def:oval_definitions>
+            <oval-def:generator>
+                <oval:product_name>GovReady.org Ubuntu 14.04 LTS Server Benchmark</oval:product_name>
+                <oval:product_version>0.0.1</oval:product_version>
+                <oval:schema_version>5.10.1</oval:schema_version>
+                <oval:timestamp>2015-01-01T13:44:00</oval:timestamp>
+            </oval-def:generator>
+            <oval-def:definitions>
+                <oval-def:definition id="oval:org.govready.ubuntu:def:50" version="1" class="compliance">
+                    <oval-def:metadata>
+                        <oval-def:title>Check that Ubuntu LTS 14.04 is installed.</oval-def:title>
+                        <oval-def:description></oval-def:description>
+                    </oval-def:metadata>
+                    <oval-def:criteria>
+                        <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:50"/>
+                        <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:51"/>
+                    </oval-def:criteria>
+                </oval-def:definition>
+            </oval-def:definitions>
+            <oval-def:tests>
+                <ind-def:family_test id="oval:org.govready.ubuntu:tst:50" version="1" check_existence="at_least_one_exists" check="at least one" comment="Test that the host is part of the unix family.">
+                    <ind-def:object object_ref="oval:org.govready.ubuntu:obj:50"/>
+                    <ind-def:state state_ref="oval:org.govready.ubuntu:ste:50"/>
+                </ind-def:family_test>
+                <unix-def:uname_test id="oval:org.govready.ubuntu:tst:51" version="1" check_existence="at_least_one_exists" check="at least one" comment="Test that the host is part of the unix family.">
+                    <unix-def:object object_ref="oval:org.govready.ubuntu:obj:51"/>
+                    <unix-def:state state_ref="oval:org.govready.ubuntu:ste:51"/>
+                </unix-def:uname_test>
+            </oval-def:tests>
+            <oval-def:objects>
+                <ind-def:family_object id="oval:org.govready.ubuntu:obj:50" version="1" comment="The singleton family object."/>
+                <unix-def:uname_object id="oval:org.govready.ubuntu:obj:51" version="1" comment="The singleton uname object."/>
+            </oval-def:objects>
+            <oval-def:states>
+                <ind-def:family_state id="oval:org.govready.ubuntu:ste:50" version="1" comment="The singleton family object.">
+                    <ind-def:family>unix</ind-def:family>
+                </ind-def:family_state>
+                <unix-def:uname_state id="oval:org.govready.ubuntu:ste:51" version="1" comment="Ubuntu LTS 14.04">
+                    <unix-def:os_name>Linux</unix-def:os_name>
+                    <unix-def:os_release operation="pattern match">^3\.13\.0.*</unix-def:os_release>
+                    <unix-def:os_version operation="pattern match">Ubuntu</unix-def:os_version>
+                </unix-def:uname_state>
+            </oval-def:states>
+        </oval-def:oval_definitions>
+    </ds:component>
+    <ds:component id="scap_org.joval_comp_Ubuntu_14.04_LTS_Server_Benchmark_v0.0.1.xml" timestamp="2015-01-29T15:49:17.000-06:00">
+        <cdf12:Benchmark id="xccdf_org.govready.ubuntu_benchmark_Ubuntu_14_04_LTS_Server" style="SCAP_1.2" xml:lang="en-US">
+            <cdf12:status date="2015-01-01">incomplete</cdf12:status>
+            <cdf12:title xml:lang="en">GovReady.org Ubuntu 14.04 LTS Server Benchmark</cdf12:title>
+            <cdf12:description xml:lang="en">
+      <xhtml:p xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns="http://checklists.nist.gov/xccdf/1.2">
+         This project provides prescriptive guidance for creating hardened, 
+         FISMA-Ready configurations for Ubuntu 14.04 LTS Server.
+      </xhtml:p>
+   </cdf12:description>
+            <cdf12:notice id="terms-of-use" xml:lang="en">TBD</cdf12:notice>
+            <cdf12:platform idref="cpe:/o:ubuntu-trusty:linux"/>
+            <cdf12:version>0.0.1</cdf12:version>
+            <cdf12:Profile id="xccdf_org.govready.ubuntu_profile_default">
+                <cdf12:title xml:lang="en">Select All Generally Applicable Rules</cdf12:title>
+                <cdf12:description xml:lang="en">
+         <xhtml:p xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns="http://checklists.nist.gov/xccdf/1.2">This rule selects all rules contained in this Benchmark that are generally applicable.</xhtml:p>
+      </cdf12:description>
+                <cdf12:select idref="xccdf_org.govready.ubuntu_rule_1" selected="false"/>
+                <cdf12:select idref="xccdf_org.govready.ubuntu_rule_2" selected="true"/>
+                <cdf12:select idref="xccdf_org.govready.ubuntu_rule_3" selected="true"/>
+                <cdf12:select idref="xccdf_org.govready.ubuntu_rule_4" selected="true"/>
+                <cdf12:select idref="xccdf_org.govready.ubuntu_rule_5" selected="true"/>
+                <cdf12:select idref="xccdf_org.govready.ubuntu_rule_6" selected="true"/>
+                <cdf12:select idref="xccdf_org.govready.ubuntu_rule_7" selected="true"/>
+                <cdf12:select idref="xccdf_org.govready.ubuntu_rule_8" selected="true"/>
+                <cdf12:select idref="xccdf_org.govready.ubuntu_rule_9" selected="true"/>
+                <cdf12:select idref="xccdf_org.govready.ubuntu_rule_10" selected="true"/>
+                <cdf12:select idref="xccdf_org.govready.ubuntu_rule_11" selected="true"/>
+                <cdf12:select idref="xccdf_org.govready.ubuntu_rule_12" selected="true"/>
+                <cdf12:select idref="xccdf_org.govready.ubuntu_rule_13" selected="true"/>
+                <cdf12:refine-value idref="xccdf_org.govready_value_debian_package_repository_URI_regex_var" selector="default"/>
+            </cdf12:Profile>
+            <cdf12:Profile id="xccdf_org.govready.ubuntu_profile_vagrant">
+                <cdf12:title xml:lang="en">Select Rules for Vagrant Use Case</cdf12:title>
+                <cdf12:description xml:lang="en">
+         <xhtml:p xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns="http://checklists.nist.gov/xccdf/1.2">This rule selects all rules that are applicable to the Vagrant Use Case.</xhtml:p>
+      </cdf12:description>
+                <cdf12:select idref="xccdf_org.govready.ubuntu_rule_1" selected="true"/>
+                <cdf12:select idref="xccdf_org.govready.ubuntu_rule_2" selected="true"/>
+                <cdf12:select idref="xccdf_org.govready.ubuntu_rule_3" selected="true"/>
+                <cdf12:select idref="xccdf_org.govready.ubuntu_rule_4" selected="true"/>
+                <cdf12:select idref="xccdf_org.govready.ubuntu_rule_5" selected="true"/>
+                <cdf12:select idref="xccdf_org.govready.ubuntu_rule_6" selected="true"/>
+                <cdf12:select idref="xccdf_org.govready.ubuntu_rule_7" selected="true"/>
+                <cdf12:select idref="xccdf_org.govready.ubuntu_rule_8" selected="true"/>
+                <cdf12:select idref="xccdf_org.govready.ubuntu_rule_9" selected="true"/>
+                <cdf12:select idref="xccdf_org.govready.ubuntu_rule_10" selected="true"/>
+                <cdf12:select idref="xccdf_org.govready.ubuntu_rule_11" selected="true"/>
+                <cdf12:select idref="xccdf_org.govready.ubuntu_rule_12" selected="true"/>
+                <cdf12:select idref="xccdf_org.govready.ubuntu_rule_13" selected="true"/>
+                <cdf12:refine-value idref="xccdf_org.govready_value_virtualbox_guest_additions_version_var" selector="default"/>
+                <cdf12:refine-value idref="xccdf_org.govready_value_debian_package_repository_URI_regex_var" selector="default"/>
+            </cdf12:Profile>
+            <cdf12:Group id="xccdf_org.govready.ubuntu_group_vagrant">
+                <cdf12:title xml:lang="en">Vagrant Setup</cdf12:title>
+                <cdf12:Value id="xccdf_org.govready_value_virtualbox_guest_additions_version_var" type="string" operator="equals">
+                    <cdf12:title>Debian Binary Package Repository URI</cdf12:title>
+                    <cdf12:description>The value defines the URI for the Debian package repository which APT is configured to use.</cdf12:description>
+                    <cdf12:value selector="default">4.3.20</cdf12:value>
+                </cdf12:Value>
+                <cdf12:Rule id="xccdf_org.govready.ubuntu_rule_1" selected="false" weight="10.0">
+                    <cdf12:title>Ensure Vagrant Guest Additions are Up-to-date</cdf12:title>
+                    <cdf12:description>
+            <xhtml:p xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns="http://checklists.nist.gov/xccdf/1.2">If you are doing this work via Vagrant, before you do your first vagrant up, you might have a version mistmatch between the Guest Additions installed on the box vs your install of VirtualBox.</xhtml:p>
+         </cdf12:description>
+                    <cdf12:fixtext xml:lang="en">
+            <xhtml:p xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns="http://checklists.nist.gov/xccdf/1.2">Go to the same folder as the Vagrantfile you're about to use:</xhtml:p>
+            <xhtml:code xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns="http://checklists.nist.gov/xccdf/1.2">
+               vagrant plugin install vagrant-vbguest
+               vagrant up
+            </xhtml:code>
+         </cdf12:fixtext>
+                    <cdf12:check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+                        <cdf12:check-export value-id="xccdf_org.govready_value_virtualbox_guest_additions_version_var" export-name="oval:org.govready.ubuntu:var:100"/>
+                        <cdf12:check-content-ref href="oval.rule.01.xml" name="oval:org.govready.ubuntu:def:100"/>
+                    </cdf12:check>
+                </cdf12:Rule>
+            </cdf12:Group>
+            <cdf12:Group id="xccdf_org.govready.ubuntu_group_ubuntu_patching">
+                <cdf12:title xml:lang="en">Ubuntu Patching</cdf12:title>
+                <cdf12:Value id="xccdf_org.govready_value_debian_package_repository_URI_regex_var" type="string" operator="equals">
+                    <cdf12:title>Debian Binary Package Repository URI</cdf12:title>
+                    <cdf12:description>A regular expression to match against all debian repository URIs.</cdf12:description>
+                    <cdf12:value selector="default">ubuntu\.com</cdf12:value>
+                </cdf12:Value>
+                <cdf12:Rule id="xccdf_org.govready.ubuntu_rule_2" selected="false" weight="10.0">
+                    <cdf12:title>Ensure that Ubuntu is Up-to-date</cdf12:title>
+                    <cdf12:description>Ubuntu should be completely patched and up-to-date.</cdf12:description>
+                    <cdf12:fixtext xml:lang="en">
+            <xhtml:code xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns="http://checklists.nist.gov/xccdf/1.2">
+               apt-get update
+               apt-get upgrade
+               Y
+            </xhtml:code>
+         </cdf12:fixtext>
+                    <cdf12:check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+                        <cdf12:check-export value-id="xccdf_org.govready_value_debian_package_repository_URI_regex_var" export-name="oval:org.govready.ubuntu:var:200"/>
+                        <cdf12:check-content-ref href="oval.rule.02.xml" name="oval:org.govready.ubuntu:def:200"/>
+                    </cdf12:check>
+                </cdf12:Rule>
+            </cdf12:Group>
+            <cdf12:Group id="xccdf_org.govready.ubuntu_group_partitions_management">
+                <cdf12:title xml:lang="en">Partitions Management</cdf12:title>
+                <cdf12:Rule id="xccdf_org.govready.ubuntu_rule_3" selected="false" weight="10.0">
+                    <cdf12:title>Ensure Partitions are Set Up Securely</cdf12:title>
+                    <cdf12:description>The /run/shm, /tmp, /home, /var and /var/log/audit partitions should not reside on the same device as the system partition.</cdf12:description>
+                    <cdf12:fixtext xml:lang="en">
+            <xhtml:p xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns="http://checklists.nist.gov/xccdf/1.2">
+               See the Disk Partioning Guide in <xhtml:a href="https://github.com/GovReady/ubuntu-lts/blob/master/hardening.md">Hardening Ubuntu 14.04 to 18F standards</xhtml:a>.
+            </xhtml:p>
+         </cdf12:fixtext>
+                    <cdf12:check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+                        <cdf12:check-content-ref href="oval.rule.03.xml" name="oval:org.govready.ubuntu:def:300"/>
+                    </cdf12:check>
+                </cdf12:Rule>
+                <cdf12:Rule id="xccdf_org.govready.ubuntu_rule_4" selected="false" weight="10.0">
+                    <cdf12:title>Reduce Attack Surface</cdf12:title>
+                    <cdf12:description>Every installed application creates an potential attack surface. A hardened OS reduces this surface to the absolute minimum for system functionality.</cdf12:description>
+                    <cdf12:fixtext xml:lang="en">
+            <xhtml:p xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns="http://checklists.nist.gov/xccdf/1.2">One of the places we can reduce the attack surface is in a configuration file stored in /etc/modprobe.d</xhtml:p>
+            <xhtml:code xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns="http://checklists.nist.gov/xccdf/1.2">
+               cd /etc/modprobe.d
+               touch 18Fhardened.conf
+               vi 18Fhardened.conf
+            </xhtml:code>
+            <xhtml:p xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns="http://checklists.nist.gov/xccdf/1.2">Add:</xhtml:p>
+            <xhtml:code xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns="http://checklists.nist.gov/xccdf/1.2">
+               # Applications
+
+               install cramfs /bin/true
+               install freevxfs /bin/true
+               install jffs2 /bin/true
+               install hfs /bin/true
+               install hfsplus /bin/true
+               install squashfs /bin/true
+               install udf /bin/true
+
+               # Protocols
+
+               install dccp /bin/true
+               install sctp /bin/true
+               install rds /bin/true
+               install tipc /bin/true
+            </xhtml:code>
+         </cdf12:fixtext>
+                    <cdf12:check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+                        <cdf12:check-content-ref href="oval.rule.04.xml" name="oval:org.govready.ubuntu:def:400"/>
+                    </cdf12:check>
+                </cdf12:Rule>
+            </cdf12:Group>
+            <cdf12:Group id="xccdf_org.govready.ubuntu_group_boot_settings">
+                <cdf12:title xml:lang="en">Boot Settings</cdf12:title>
+                <cdf12:Rule id="xccdf_org.govready.ubuntu_rule_5" selected="false" weight="10.0">
+                    <cdf12:title>Boot Loaders are Protected</cdf12:title>
+                    <cdf12:description>Boot loaders need to be protected. Anyone who is not root doesn't need to write to this file.</cdf12:description>
+                    <cdf12:fixtext xml:lang="en">
+            <xhtml:code xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns="http://checklists.nist.gov/xccdf/1.2">
+               chmod og-wx /boot/grub/grub.cfg
+            </xhtml:code>
+         </cdf12:fixtext>
+                    <cdf12:check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+                        <cdf12:check-content-ref href="oval.rule.05.xml" name="oval:org.govready.ubuntu:def:500"/>
+                    </cdf12:check>
+                </cdf12:Rule>
+                <cdf12:Rule id="xccdf_org.govready.ubuntu_rule_6" selected="false" weight="10.0">
+                    <cdf12:title>grub Has a Bootloader Password</cdf12:title>
+                    <cdf12:description>We don't want anyone messing with booting, so let's create a password.</cdf12:description>
+                    <cdf12:fixtext xml:lang="en">
+            <xhtml:code xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns="http://checklists.nist.gov/xccdf/1.2">
+               grub-mkpasswd-pbkdf2
+               # keep password and encrypted version somewhere safe
+               vim /etc/grub.d/40_custom
+            </xhtml:code>
+            <xhtml:p xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns="http://checklists.nist.gov/xccdf/1.2">Add:</xhtml:p>
+            <xhtml:code xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns="http://checklists.nist.gov/xccdf/1.2">
+               set superusers=&quot;INSERT USER HERE&quot;
+               password_pbkdf2 INSERT USER HERE &lt;encrypted-password&gt;
+               EOF
+            </xhtml:code>
+            <xhtml:p xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns="http://checklists.nist.gov/xccdf/1.2">Save the file and then:</xhtml:p>
+            <xhtml:code xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns="http://checklists.nist.gov/xccdf/1.2">
+               update-grub
+            </xhtml:code>
+         </cdf12:fixtext>
+                    <cdf12:check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+                        <cdf12:check-content-ref href="oval.rule.06.xml" name="oval:org.govready.ubuntu:def:600"/>
+                    </cdf12:check>
+                </cdf12:Rule>
+            </cdf12:Group>
+            <cdf12:Group id="xccdf_org.govready.ubuntu_group_redirect_protections">
+                <cdf12:title xml:lang="en">Redirect Protections</cdf12:title>
+                <cdf12:Rule id="xccdf_org.govready.ubuntu_rule_7" selected="false" weight="10.0">
+                    <cdf12:title>Harden ICMP Redirect Handling</cdf12:title>
+                    <cdf12:description>Unless this OS is powering a router, we can harden how it handles ICMP redirects.</cdf12:description>
+                    <cdf12:fixtext xml:lang="en">
+            <xhtml:code xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns="http://checklists.nist.gov/xccdf/1.2">
+               vim /etc/sysctl.conf
+            </xhtml:code>
+            <xhtml:p xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns="http://checklists.nist.gov/xccdf/1.2">You'll find all the controls already here, but commented out. You'll want to remove the # for the following, or add these lines if they're not there:</xhtml:p>
+            <xhtml:code xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns="http://checklists.nist.gov/xccdf/1.2">
+               # Spoof protection
+               net.ipv4.conf.default.rp_filter=1
+               net.ipv4.conf.all.rp_filter=1
+
+               # Do not accept ICMP redirects (prevent MITM attacks)
+               net.ipv4.conf.all.accept_redirects=0
+               net.ipv6.conf.all.accept_redirects=0
+               net.ipv4.conf.default.accept_redirects=0
+               net.ipv6.conf.default.accept_redirects=0
+               net.ipv4.conf.all.secure_redirects=0  
+               net.ipv4.conf.default.secure_redirects=0  
+
+               # Do not send ICMP redirects (we are not a router)
+               net.ipv4.conf.all.send_redirects=0
+               net.ipv4.conf.default.send_redirects=0
+
+               # Do not accept IP source route packets (we are not a router)
+               net.ipv4.conf.all.accept_source_route=0
+               net.ipv6.conf.all.accept_source_route=0
+               net.ipv4.conf.default.accept_source_route=0
+               net.ipv6.conf.default.accept_source_route=0
+
+               # Log packets from Mars
+               net.ipv4.conf.all.log_martians=1
+               net.ipv4.conf.default.log_martians=1
+            </xhtml:code>
+            <xhtml:p xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns="http://checklists.nist.gov/xccdf/1.2">Update your kernel parameters to match - for each of these lines enter:</xhtml:p>
+            <xhtml:code xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns="http://checklists.nist.gov/xccdf/1.2">
+               /sbin/sysctl -w [INSERT LINE HERE W/ VALUE]
+            </xhtml:code>
+            <xhtml:p xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns="http://checklists.nist.gov/xccdf/1.2">Then, flush!</xhtml:p>
+            <xhtml:code xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns="http://checklists.nist.gov/xccdf/1.2">
+               /sbin/sysctl -w net.ipv4.route.flush=1
+               /sbin/sysctl -w net.ipv6.route.flush=1
+            </xhtml:code>
+         </cdf12:fixtext>
+                    <cdf12:check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+                        <cdf12:check-content-ref href="oval.rule.07.xml" name="oval:org.govready.ubuntu:def:700"/>
+                    </cdf12:check>
+                </cdf12:Rule>
+            </cdf12:Group>
+            <cdf12:Group id="xccdf_org.govready.ubuntu_group_auditing">
+                <cdf12:title>Audit Strategy</cdf12:title>
+                <cdf12:description>Audit strategy is highly environment and application specific. In the near future, we will post some overall best practices here, likey including a more standardized configuration for /etc/audit/auditd.conf</cdf12:description>
+                <cdf12:Rule id="xccdf_org.govready.ubuntu_rule_8" selected="false" weight="10.0">
+                    <cdf12:title>Auditing is Enabled During Booting</cdf12:title>
+                    <cdf12:description>auditd is great, but it can't audit processes that run before it starts - or can it?</cdf12:description>
+                    <cdf12:fixtext xml:lang="en">
+            <xhtml:code xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns="http://checklists.nist.gov/xccdf/1.2">
+               vi /etc/default/grub
+            </xhtml:code>
+            <xhtml:p xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns="http://checklists.nist.gov/xccdf/1.2">Then modify the following line to read:</xhtml:p>
+            <xhtml:code xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns="http://checklists.nist.gov/xccdf/1.2">
+               GRUB_CMDLINE_LINUX=&quot;audit=1&quot;
+            </xhtml:code>
+            <xhtml:p xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns="http://checklists.nist.gov/xccdf/1.2">And run:</xhtml:p>
+            <xhtml:code xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns="http://checklists.nist.gov/xccdf/1.2">
+               update-grub
+            </xhtml:code>
+         </cdf12:fixtext>
+                    <cdf12:check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+                        <cdf12:check-content-ref href="oval.rule.08.xml" name="oval:org.govready.ubuntu:def:800"/>
+                    </cdf12:check>
+                </cdf12:Rule>
+                <cdf12:Rule id="xccdf_org.govready.ubuntu_rule_9" selected="false" weight="10.0">
+                    <cdf12:title>Audit Rules are in Place</cdf12:title>
+                    <cdf12:description>Rules for auditd have been added for: date/time; user/passwords; networking; selinux; login &amp; logout; permission modifications; unauthorized access; filesytem mounts; file deletion; changes to sysadmin scope; and kernel loading.</cdf12:description>
+                    <cdf12:fixtext xml:lang="en">
+            <xhtml:code xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns="http://checklists.nist.gov/xccdf/1.2">
+               vi /etc/audit/audit.rules
+            </xhtml:code>
+            <xhtml:p xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns="http://checklists.nist.gov/xccdf/1.2">Add:</xhtml:p>
+            <xhtml:code xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns="http://checklists.nist.gov/xccdf/1.2">
+               # Date/time:
+               -a always,exit -F arch=b64 -S adjtimex -S settimeofday -k time-change
+               -a always,exit -F arch=b32 -S adjtimex -S settimeofday -S stime -k time-change
+               -a always,exit -F arch=b64 -S clock_settime -k time-change
+               -a always,exit -F arch=b32 -S clock_settime -k time-change
+               -w /etc/localtime -p wa -k time-change
+               
+               # User/passwords:
+               -w /etc/group -p wa -k identity
+               -w /etc/passwd -p wa -k identity
+               -w /etc/gshadow -p wa -k identity
+               -w /etc/shadow -p wa -k identity
+               -w /etc/security/opasswd -p wa -k identity
+               
+               # Network stuff:
+               -a exit,always -F arch=b64 -S sethostname -S setdomainname -k system-locale
+               -a exit,always -F arch=b32 -S sethostname -S setdomainname -k system-locale
+               -w /etc/issue -p wa -k system-locale
+               -w /etc/issue.net -p wa -k system-locale
+               -w /etc/hosts -p wa -k system-locale
+               -w /etc/network -p wa -k system-locale
+               
+               # SELinux (likely you're using AppArmor instead, but just in case you pull SELinux packages from Debian, best to have this already listed)
+               -w /etc/selinux/ -p wa -k MAC-policy
+               
+               # Login and logout:
+               -w /var/log/faillog -p wa -k logins
+               -w /var/log/lastlog -p wa -k logins
+               -w /var/log/tallylog -p wa -k logins
+               
+               # Permission modifications:
+               -a always,exit -F arch=b64 -S chmod -S fchmod -S fchmodat -F auid&gt;=500 -F auid!=4294967295 -k perm_mod
+               -a always,exit -F arch=b32 -S chmod -S fchmod -S fchmodat -F auid&gt;=500 -F auid!=4294967295 -k perm_mod
+               -a always,exit -F arch=b64 -S chown -S fchown -S fchownat -S lchown -F auid&gt;=500 -F auid!=4294967295 -k perm_mod
+               -a always,exit -F arch=b32 -S chown -S fchown -S fchownat -S lchown -F auid&gt;=500 -F auid!=4294967295 -k perm_mod
+               -a always,exit -F arch=b64 -S setxattr -S lsetxattr -S fsetxattr -S removexattr -S lremovexattr -S fremovexattr -F auid&gt;=500 -F auid!=4294967295 -k perm_mod
+               -a always,exit -F arch=b32 -S setxattr -S lsetxattr -S fsetxattr -S removexattr -S lremovexattr -S fremovexattr -F auid&gt;=500 -F auid!=4294967295 -k perm_mod
+               
+               # Unauthorized access:
+               -a always,exit -F arch=b64 -S creat -S open -S openat -S truncate -S ftruncate -F exit=-EACCES -F auid&gt;=500 -F auid!=4294967295 -k access
+               -a always,exit -F arch=b32 -S creat -S open -S openat -S truncate -S ftruncate -F exit=-EACCES -F auid&gt;=500 -F auid!=4294967295 -k access
+               -a always,exit -F arch=b64 -S creat -S open -S openat -S truncate -S ftruncate -F exit=-EPERM -F auid&gt;=500 -F auid!=4294967295 -k access
+               -a always,exit -F arch=b32 -S creat -S open -S openat -S truncate -S ftruncate -F exit=-EPERM -F auid&gt;=500 -F auid!=4294967295 -k access
+               
+               # Collect filesystem mounts:
+               -a always,exit -F arch=b32 -S mount -F auid&gt;=500 -F auid!=4294967295 -k mounts
+               -a always,exit -F arch=b64 -S mount -F auid&gt;=500 -F auid!=4294967295 -k mounts
+               
+               # File deletion:
+               -a always,exit -F arch=b64 -S unlink -S unlinkat -S rename -S renameat -F auid&gt;=500 -F auid!=4294967295 -k delete
+               -a always,exit -F arch=b32 -S unlink -S unlinkat -S rename -S renameat -F auid&gt;=500 -F auid!=4294967295 -k delete
+               
+               # Change to sysadmin scope:
+               -w /etc/sudoers -p wa -k scope
+               
+               # Kernel loading:
+               -w /sbin/insmod -p x -k modules
+               -w /sbin/rmmod -p x -k modules
+               -w /sbin/modprobe -p x -k modules
+               -a always,exit arch=b64 -S init_module -S delete_module -k modules
+               
+               # Make audit config immutable
+               -e 2
+            </xhtml:code>
+         </cdf12:fixtext>
+                    <cdf12:check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+                        <cdf12:check-content-ref href="oval.rule.09.xml" name="oval:org.govready.ubuntu:def:900"/>
+                    </cdf12:check>
+                </cdf12:Rule>
+            </cdf12:Group>
+            <cdf12:Group id="xccdf_org.govready.ubuntu_group_system_access">
+                <cdf12:title>System Access, Authentication and Authorization</cdf12:title>
+                <cdf12:Rule id="xccdf_org.govready.ubuntu_rule_10" selected="false" weight="10.0">
+                    <cdf12:title>Ensure Only Root Can Modify System Cron Jobs</cdf12:title>
+                    <cdf12:description>Only root should modify what system jobs cron runs.</cdf12:description>
+                    <cdf12:fixtext xml:lang="en">
+            <xhtml:code xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns="http://checklists.nist.gov/xccdf/1.2">
+               chown root:root /etc/crontab
+               chmod og-rwx /etc/crontab
+
+               chown root:root /etc/cron.hourly
+               chmod og-rwx /etc/cron.hourly
+
+               chown root:root /etc/cron.daily
+               chmod og-rwx /etc/cron.daily
+
+               chown root:root /etc/cron.weekly
+               chmod og-rwx /etc/cron.weekly
+
+               chown root:root /etc/cron.monthly
+               chmod og-rwx /etc/cron.monthly
+
+               chown root:root /etc/cron.d
+               chmod og-rwx /etc/cron.d
+
+               /bin/rm /etc/at.deny
+               touch /etc/cron.allow
+               touch /etc/at.allow
+
+               chmod og-rwx /etc/cron.allow
+               chmod og-rwx /etc/at.allow
+               chown root:root /etc/cron.allow
+               chown root:root /etc/at.allow
+            </xhtml:code>
+         </cdf12:fixtext>
+                    <cdf12:check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+                        <cdf12:check-content-ref href="oval.rule.10.xml" name="oval:org.govready.ubuntu:def:1000"/>
+                    </cdf12:check>
+                </cdf12:Rule>
+            </cdf12:Group>
+            <cdf12:Group id="xccdf_org.govready.ubuntu_group_password_policy">
+                <cdf12:title>Password Policy</cdf12:title>
+                <cdf12:description>Script-kiddies and crackers should find no safe harbor here. Let's prevent common cracking by improving our password polcies.</cdf12:description>
+                <cdf12:Rule id="xccdf_org.govready.ubuntu_rule_11" selected="false" weight="10.0">
+                    <cdf12:title>Password Policies Have Been Improved</cdf12:title>
+                    <cdf12:description>Password policies should be strengthened by: installing libpam-cracklib; strengthen password requirements; configure password lockouts; and configure password expiration.</cdf12:description>
+                    <cdf12:fixtext xml:lang="en">
+            <xhtml:code xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns="http://checklists.nist.gov/xccdf/1.2">
+               apt-get install libpam-cracklib
+            </xhtml:code>
+            <xhtml:p xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns="http://checklists.nist.gov/xccdf/1.2">Edit /etc/pam.d/common-password:</xhtml:p>
+            <xhtml:code xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns="http://checklists.nist.gov/xccdf/1.2">
+               # find &quot;password     requisite     pam_cracklib.so retry=3 minlen=8 difok=3&quot;
+               # change to:
+               password     requisite     pam_cracklib.so retry=3 minlen=24 dcredit=-2 ucredit=-2 ocredit=-2 lcredit=-2
+               # change next line to:
+               password     [success=1 default=ignore]     pam_unix.so obscure use_authtok try_first_pass sha512 remember=5
+            </xhtml:code>
+            <xhtml:p xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns="http://checklists.nist.gov/xccdf/1.2">Lockouts /etc/pam.d/login:</xhtml:p>
+            <xhtml:code xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns="http://checklists.nist.gov/xccdf/1.2">
+               auth required pam_tally2.so onerr=fail audit silent deny=5 unlock_time=900
+            </xhtml:code>
+            <xhtml:p xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns="http://checklists.nist.gov/xccdf/1.2">Password expiration using /etc/login.defs</xhtml:p>
+            <xhtml:code xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns="http://checklists.nist.gov/xccdf/1.2">
+               PASS_MAX_DAYS 90
+               PASS_MIN_DAYS 7
+               PASS_WARN_AGE 10
+            </xhtml:code>
+         </cdf12:fixtext>
+                    <cdf12:check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+                        <cdf12:check-content-ref href="oval.rule.11.xml" name="oval:org.govready.ubuntu:def:1100"/>
+                    </cdf12:check>
+                </cdf12:Rule>
+            </cdf12:Group>
+            <cdf12:Group id="xccdf_org.govready.ubuntu_group_ssh_settings">
+                <cdf12:title>SSH Settings</cdf12:title>
+                <cdf12:Rule id="xccdf_org.govready.ubuntu_rule_12" selected="false" weight="10.0">
+                    <cdf12:title>SSH Configuration has been Secured</cdf12:title>
+                    <cdf12:description>Modify sshd_config settings and permissions to be more secure.</cdf12:description>
+                    <cdf12:fixtext xml:lang="en">
+            <xhtml:code xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns="http://checklists.nist.gov/xccdf/1.2">
+               Modify /etc/ssh/sshd_config to include:
+            </xhtml:code>
+            <xhtml:code xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns="http://checklists.nist.gov/xccdf/1.2">
+               X11Forwarding no
+               MaxAuthTries 4
+               PermitRootLogin no
+               PermitEmptyPasswords no
+               PermitUserEnvironment no
+               Ciphers aes128-ctr,aes192-ctr,aes256-ctr
+               ClientAliveInterval 600
+               ClientAliveCountMax 0
+            </xhtml:code>
+            <xhtml:code xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns="http://checklists.nist.gov/xccdf/1.2">
+               Lock the file permissions down:
+            </xhtml:code>
+            <xhtml:code xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns="http://checklists.nist.gov/xccdf/1.2">
+               chown root:root /etc/ssh/sshd_config
+               chmod 600 /etc/ssh/sshd_config
+            </xhtml:code>
+         </cdf12:fixtext>
+                    <cdf12:check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+                        <cdf12:check-content-ref href="oval.rule.12.xml" name="oval:org.govready.ubuntu:def:1200"/>
+                    </cdf12:check>
+                </cdf12:Rule>
+            </cdf12:Group>
+            <cdf12:Group id="xccdf_org.govready.ubuntu_group_banners">
+                <cdf12:title>Banners</cdf12:title>
+                <cdf12:Rule id="xccdf_org.govready.ubuntu_rule_13" selected="false" weight="10.0">
+                    <cdf12:title>Banner is Added &amp; Has Correct Permission</cdf12:title>
+                    <cdf12:description>There should be a banner and it should have the correct permissions.</cdf12:description>
+                    <cdf12:fixtext xml:lang="en">
+            <xhtml:code xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns="http://checklists.nist.gov/xccdf/1.2">
+               chmod 644 /etc/motd
+               chmod 644 /etc/issue
+               chmod 644 /etc/issue.net
+            </xhtml:code>
+         </cdf12:fixtext>
+                    <cdf12:check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+                        <cdf12:check-content-ref href="oval.rule.13.xml" name="oval:org.govready.ubuntu:def:1300"/>
+                    </cdf12:check>
+                </cdf12:Rule>
+            </cdf12:Group>
+        </cdf12:Benchmark>
+    </ds:component>
+    <ds:component id="scap_org.joval_comp_oval.rule.01.xml" timestamp="2015-01-29T15:49:17.000-06:00">
+        <oval-def:oval_definitions>
+            <oval-def:generator>
+                <oval:product_name>GovReady.org Ubuntu 14.04 LTS Server Benchmark</oval:product_name>
+                <oval:product_version>0.0.1</oval:product_version>
+                <oval:schema_version>5.10.1</oval:schema_version>
+                <oval:timestamp>2015-01-01T13:44:00</oval:timestamp>
+            </oval-def:generator>
+            <oval-def:definitions>
+                <oval-def:definition id="oval:org.govready.ubuntu:def:100" version="1" class="compliance">
+                    <oval-def:metadata>
+                        <oval-def:title>Insure that Virtualbox guest additions are up-to-date.</oval-def:title>
+                        <oval-def:description></oval-def:description>
+                    </oval-def:metadata>
+                    <oval-def:criteria comment="Reference to the unknown_test.">
+                        <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:100"/>
+                    </oval-def:criteria>
+                </oval-def:definition>
+            </oval-def:definitions>
+            <oval-def:tests>
+                <ind-def:variable_test id="oval:org.govready.ubuntu:tst:100" version="1" check_existence="at_least_one_exists" check="all" comment="Test that VirtualBox guest additions are the indicated version.">
+                    <ind-def:object object_ref="oval:org.govready.ubuntu:obj:100"/>
+                    <ind-def:state state_ref="oval:org.govready.ubuntu:ste:100"/>
+                </ind-def:variable_test>
+            </oval-def:tests>
+            <oval-def:objects>
+                <ind-def:variable_object id="oval:org.govready.ubuntu:obj:100" version="1" comment="The version number of installed VirtualBox guest additions">
+                    <ind-def:var_ref>oval:org.govready.ubuntu:var:101</ind-def:var_ref>
+                </ind-def:variable_object>
+                <unix-def:file_object id="oval:org.govready.ubuntu:obj:101" version="1" comment="The directory containing the VirtualBox guest additions.">
+                    <unix-def:behaviors max_depth="1" recurse_direction="down"/>
+                    <unix-def:path>/opt</unix-def:path>
+                    <unix-def:filename xsi:nil="true"/>
+                    <oval-def:filter action="include">oval:org.govready.ubuntu:ste:101</oval-def:filter>
+                </unix-def:file_object>
+            </oval-def:objects>
+            <oval-def:states>
+                <ind-def:variable_state id="oval:org.govready.ubuntu:ste:100" version="1" comment="The externally-supplied desired version of the VirtualBox guest additions.">
+                    <ind-def:value datatype="version" var_ref="oval:org.govready.ubuntu:var:100"></ind-def:value>
+                </ind-def:variable_state>
+                <unix-def:file_state id="oval:org.govready.ubuntu:ste:101" version="1" comment="Filter for the subdirectory of /opt containing the VirtualBox guest additions.">
+                    <unix-def:path operation="pattern match">^/opt/VBoxGuestAdditions-.+</unix-def:path>
+                </unix-def:file_state>
+            </oval-def:states>
+            <oval-def:variables>
+                <oval-def:external_variable id="oval:org.govready.ubuntu:var:100" version="1" datatype="version" comment="The desired version of the VirtualBox guest additions."/>
+                <oval-def:local_variable id="oval:org.govready.ubuntu:var:101" version="1" datatype="version" comment="The VirtualBox guest additions version number.">
+                    <oval-def:regex_capture pattern="^/opt/VBoxGuestAdditions-(.+)$">
+                        <oval-def:object_component object_ref="oval:org.govready.ubuntu:obj:101" item_field="path"/>
+                    </oval-def:regex_capture>
+                </oval-def:local_variable>
+            </oval-def:variables>
+        </oval-def:oval_definitions>
+    </ds:component>
+    <ds:component id="scap_org.joval_comp_oval.rule.02.xml" timestamp="2015-01-29T15:49:17.000-06:00">
+        <oval-def:oval_definitions>
+            <oval-def:generator>
+                <oval:product_name>GovReady.org Ubuntu 14.04 LTS Server Benchmark</oval:product_name>
+                <oval:product_version>0.0.1</oval:product_version>
+                <oval:schema_version>5.10.1</oval:schema_version>
+                <oval:timestamp>2015-01-01T13:44:00</oval:timestamp>
+            </oval-def:generator>
+            <oval-def:definitions>
+                <oval-def:definition id="oval:org.govready.ubuntu:def:200" version="1" class="compliance">
+                    <oval-def:metadata>
+                        <oval-def:title>Insure that Ubuntu is completely patched and updated</oval-def:title>
+                        <oval-def:description></oval-def:description>
+                    </oval-def:metadata>
+                    <oval-def:criteria comment="Verify that apt is properly configured, and that there are no updates.">
+                        <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:200"/>
+                        <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:210"/>
+                    </oval-def:criteria>
+                </oval-def:definition>
+            </oval-def:definitions>
+            <oval-def:tests>
+                <ind-def:textfilecontent54_test id="oval:org.govready.ubuntu:tst:200" version="1" check_existence="at_least_one_exists" check="all" comment="Verify that apt is configured to use the desired repository.">
+                    <ind-def:object object_ref="oval:org.govready.ubuntu:obj:200"/>
+                    <ind-def:state state_ref="oval:org.govready.ubuntu:ste:200"/>
+                </ind-def:textfilecontent54_test>
+                <x-linux-def:apt_test id="oval:org.govready.ubuntu:tst:210" version="1" check_existence="none_exist" check="at least one" comment="Verify that there are no updates available.">
+                    <x-linux-def:object object_ref="oval:org.govready.ubuntu:obj:210"/>
+                </x-linux-def:apt_test>
+            </oval-def:tests>
+            <oval-def:objects>
+                <ind-def:textfilecontent54_object id="oval:org.govready.ubuntu:obj:200" version="1" comment="Object representing all Debian binary package sources for apt.">
+                    <ind-def:filepath operation="equals">/etc/apt/sources.list</ind-def:filepath>
+                    <ind-def:pattern operation="pattern match">^deb(?:-src)?\s+([^\s]+)\s.+$</ind-def:pattern>
+                    <ind-def:instance datatype="int" operation="greater than or equal">1</ind-def:instance>
+                </ind-def:textfilecontent54_object>
+                <x-linux-def:apt_object id="oval:org.govready.ubuntu:obj:210" version="1" comment="All updates available for installed packages.">
+                    <x-linux-def:behaviors mode="upgrade"/>
+                    <x-linux-def:name operation="pattern match">.*</x-linux-def:name>
+                </x-linux-def:apt_object>
+            </oval-def:objects>
+            <oval-def:states>
+                <ind-def:textfilecontent54_state id="oval:org.govready.ubuntu:ste:200" version="1" comment="Match against the externally sourced regex.">
+                    <ind-def:subexpression operation="pattern match" var_ref="oval:org.govready.ubuntu:var:200" var_check="all"></ind-def:subexpression>
+                </ind-def:textfilecontent54_state>
+            </oval-def:states>
+            <oval-def:variables>
+                <oval-def:external_variable id="oval:org.govready.ubuntu:var:200" version="1" datatype="string" comment="A regular expression to match against all debian repository URIs."/>
+            </oval-def:variables>
+        </oval-def:oval_definitions>
+    </ds:component>
+    <ds:component id="scap_org.joval_comp_oval.rule.03.xml" timestamp="2015-01-29T15:49:17.000-06:00">
+        <oval-def:oval_definitions>
+            <oval-def:generator>
+                <oval:product_name>GovReady.org Ubuntu 14.04 LTS Server Benchmark</oval:product_name>
+                <oval:product_version>0.0.1</oval:product_version>
+                <oval:schema_version>5.10.1</oval:schema_version>
+                <oval:timestamp>2015-01-01T13:44:00</oval:timestamp>
+            </oval-def:generator>
+            <oval-def:definitions>
+                <oval-def:definition id="oval:org.govready.ubuntu:def:300" version="1" class="compliance">
+                    <oval-def:metadata>
+                        <oval-def:title>Partition checks.</oval-def:title>
+                        <oval-def:description>Insure that variable-data partitions do not co-reside on the system partition's device, and insure that the proper mount options are set.</oval-def:description>
+                    </oval-def:metadata>
+                    <oval-def:criteria comment="Check for both partitioning across devices, and mount options.">
+                        <oval-def:criteria comment="Check /run/shm">
+                            <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:301"/>
+                            <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:310"/>
+                        </oval-def:criteria>
+                        <oval-def:criteria comment="Check /tmp.">
+                            <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:302"/>
+                            <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:320"/>
+                        </oval-def:criteria>
+                        <oval-def:criteria comment="Check the remaining mounts.">
+                            <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:300"/>
+                            <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:303"/>
+                            <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:304"/>
+                            <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:305"/>
+                        </oval-def:criteria>
+                    </oval-def:criteria>
+                </oval-def:definition>
+            </oval-def:definitions>
+            <oval-def:tests>
+                <linux-def:partition_test id="oval:org.govready.ubuntu:tst:300" version="1" check_existence="all_exist" check="all" comment="The root partition exists.">
+                    <linux-def:object object_ref="oval:org.govready.ubuntu:obj:300"/>
+                </linux-def:partition_test>
+                <linux-def:partition_test id="oval:org.govready.ubuntu:tst:301" version="1" check_existence="all_exist" check="all" comment="The partition /run/shm does not reside on the same device as the root partition.">
+                    <linux-def:object object_ref="oval:org.govready.ubuntu:obj:301"/>
+                    <linux-def:state state_ref="oval:org.govready.ubuntu:ste:300"/>
+                </linux-def:partition_test>
+                <linux-def:partition_test id="oval:org.govready.ubuntu:tst:302" version="1" check_existence="all_exist" check="all" comment="The partition /tmp does not reside on the same device as the root partition.">
+                    <linux-def:object object_ref="oval:org.govready.ubuntu:obj:302"/>
+                    <linux-def:state state_ref="oval:org.govready.ubuntu:ste:300"/>
+                </linux-def:partition_test>
+                <linux-def:partition_test id="oval:org.govready.ubuntu:tst:303" version="1" check_existence="all_exist" check="all" comment="The partition /home does not reside on the same device as the root partition.">
+                    <linux-def:object object_ref="oval:org.govready.ubuntu:obj:303"/>
+                    <linux-def:state state_ref="oval:org.govready.ubuntu:ste:300"/>
+                </linux-def:partition_test>
+                <linux-def:partition_test id="oval:org.govready.ubuntu:tst:304" version="1" check_existence="all_exist" check="all" comment="The partition /var does not reside on the same device as the root partition.">
+                    <linux-def:object object_ref="oval:org.govready.ubuntu:obj:304"/>
+                    <linux-def:state state_ref="oval:org.govready.ubuntu:ste:300"/>
+                </linux-def:partition_test>
+                <linux-def:partition_test id="oval:org.govready.ubuntu:tst:305" version="1" check_existence="all_exist" check="all" comment="The partition /var/log/audit does not reside on the same device as the root partition.">
+                    <linux-def:object object_ref="oval:org.govready.ubuntu:obj:305"/>
+                    <linux-def:state state_ref="oval:org.govready.ubuntu:ste:300"/>
+                </linux-def:partition_test>
+                <ind-def:variable_test id="oval:org.govready.ubuntu:tst:310" version="1" check_existence="at_least_one_exists" check="all" comment="Check the mount options for the /run/shm partition.">
+                    <ind-def:object object_ref="oval:org.govready.ubuntu:obj:310"/>
+                    <ind-def:state state_ref="oval:org.govready.ubuntu:ste:310"/>
+                </ind-def:variable_test>
+                <ind-def:variable_test id="oval:org.govready.ubuntu:tst:320" version="1" check_existence="at_least_one_exists" check="all" comment="Check the mount options for the /tmp partition.">
+                    <ind-def:object object_ref="oval:org.govready.ubuntu:obj:320"/>
+                    <ind-def:state state_ref="oval:org.govready.ubuntu:ste:320"/>
+                </ind-def:variable_test>
+            </oval-def:tests>
+            <oval-def:objects>
+                <linux-def:partition_object id="oval:org.govready.ubuntu:obj:300" version="1" comment="The root partition.">
+                    <linux-def:mount_point>/</linux-def:mount_point>
+                </linux-def:partition_object>
+                <linux-def:partition_object id="oval:org.govready.ubuntu:obj:301" version="1" comment="The /run/shm partition.">
+                    <linux-def:mount_point>/run/shm</linux-def:mount_point>
+                </linux-def:partition_object>
+                <linux-def:partition_object id="oval:org.govready.ubuntu:obj:302" version="1" comment="The /tmp partition.">
+                    <linux-def:mount_point>/tmp</linux-def:mount_point>
+                </linux-def:partition_object>
+                <linux-def:partition_object id="oval:org.govready.ubuntu:obj:303" version="1" comment="The /home partition.">
+                    <linux-def:mount_point>/home</linux-def:mount_point>
+                </linux-def:partition_object>
+                <linux-def:partition_object id="oval:org.govready.ubuntu:obj:304" version="1" comment="The /var partition.">
+                    <linux-def:mount_point>/var</linux-def:mount_point>
+                </linux-def:partition_object>
+                <linux-def:partition_object id="oval:org.govready.ubuntu:obj:305" version="1" comment="The /var/log/audit partition.">
+                    <linux-def:mount_point>/var/log/audit</linux-def:mount_point>
+                </linux-def:partition_object>
+                <ind-def:variable_object id="oval:org.govready.ubuntu:obj:310" version="1" comment="Mount options required for the /run/shm partition.">
+                    <ind-def:var_ref>oval:org.govready.ubuntu:var:310</ind-def:var_ref>
+                </ind-def:variable_object>
+                <ind-def:variable_object id="oval:org.govready.ubuntu:obj:320" version="1" comment="Mount options required for the /tmp partition.">
+                    <ind-def:var_ref>oval:org.govready.ubuntu:var:320</ind-def:var_ref>
+                </ind-def:variable_object>
+            </oval-def:objects>
+            <oval-def:states>
+                <linux-def:partition_state id="oval:org.govready.ubuntu:ste:300" version="1" comment="The partition does not reside on the root partition's device.">
+                    <linux-def:device operation="not equal" var_ref="oval:org.govready.ubuntu:var:300"></linux-def:device>
+                </linux-def:partition_state>
+                <ind-def:variable_state id="oval:org.govready.ubuntu:ste:310" version="1" comment="Check that each mount option required for the /run/shm partition is found once among each of the partition's mount options.">
+                    <ind-def:value entity_check="all" operation="equals" var_ref="oval:org.govready.ubuntu:var:301" var_check="only one"></ind-def:value>
+                </ind-def:variable_state>
+                <ind-def:variable_state id="oval:org.govready.ubuntu:ste:320" version="1" comment="Check that each mount option required for the /tmp partition is found once among each of the partition's mount options.">
+                    <ind-def:value entity_check="all" operation="equals" var_ref="oval:org.govready.ubuntu:var:302" var_check="only one"></ind-def:value>
+                </ind-def:variable_state>
+            </oval-def:states>
+            <oval-def:variables>
+                <oval-def:local_variable id="oval:org.govready.ubuntu:var:300" version="1" datatype="string" comment="The device on which the system partition resides.">
+                    <oval-def:object_component object_ref="oval:org.govready.ubuntu:obj:300" item_field="device"/>
+                </oval-def:local_variable>
+                <oval-def:local_variable id="oval:org.govready.ubuntu:var:301" version="1" datatype="string" comment="Mount options for the /run/shm partition.">
+                    <oval-def:object_component object_ref="oval:org.govready.ubuntu:obj:301" item_field="mount_options"/>
+                </oval-def:local_variable>
+                <oval-def:local_variable id="oval:org.govready.ubuntu:var:302" version="1" datatype="string" comment="Mount options for the /tmp partition.">
+                    <oval-def:object_component object_ref="oval:org.govready.ubuntu:obj:302" item_field="mount_options"/>
+                </oval-def:local_variable>
+                <oval-def:constant_variable id="oval:org.govready.ubuntu:var:310" version="1" datatype="string" comment="Required mount options for the /run/shm partition.">
+                    <oval-def:value>defaults</oval-def:value>
+                    <oval-def:value>nodev</oval-def:value>
+                    <oval-def:value>noexec</oval-def:value>
+                    <oval-def:value>nosuid</oval-def:value>
+                </oval-def:constant_variable>
+                <oval-def:constant_variable id="oval:org.govready.ubuntu:var:320" version="1" datatype="string" comment="Required mount options for the /tmp partition.">
+                    <oval-def:value>defaults</oval-def:value>
+                    <oval-def:value>nodev</oval-def:value>
+                    <oval-def:value>noexec</oval-def:value>
+                    <oval-def:value>nosuid</oval-def:value>
+                    <oval-def:value>rw</oval-def:value>
+                </oval-def:constant_variable>
+            </oval-def:variables>
+        </oval-def:oval_definitions>
+    </ds:component>
+    <ds:component id="scap_org.joval_comp_oval.rule.04.xml" timestamp="2015-01-29T15:49:17.000-06:00">
+        <oval-def:oval_definitions>
+            <oval-def:generator>
+                <oval:product_name>GovReady.org Ubuntu 14.04 LTS Server Benchmark</oval:product_name>
+                <oval:product_version>0.0.1</oval:product_version>
+                <oval:schema_version>5.10.1</oval:schema_version>
+                <oval:timestamp>2015-01-01T13:44:00</oval:timestamp>
+            </oval-def:generator>
+            <oval-def:definitions>
+                <oval-def:definition id="oval:org.govready.ubuntu:def:400" version="1" class="compliance">
+                    <oval-def:metadata>
+                        <oval-def:title>/etc/modprobe.d/18fhardened.conf includes recommended hardening directives</oval-def:title>
+                        <oval-def:description>The OS attack surface can be reduced by configuring modprobe to block uncommon file systems and protocols.</oval-def:description>
+                    </oval-def:metadata>
+                    <oval-def:criteria operator="AND">
+                        <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:400"/>
+                        <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:401"/>
+                        <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:402"/>
+                        <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:403"/>
+                        <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:404"/>
+                        <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:405"/>
+                        <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:406"/>
+                        <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:407"/>
+                        <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:408"/>
+                        <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:409"/>
+                        <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:410"/>
+                        <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:411"/>
+                    </oval-def:criteria>
+                </oval-def:definition>
+            </oval-def:definitions>
+            <oval-def:tests>
+                <unix-def:file_test id="oval:org.govready.ubuntu:tst:400" version="1" check_existence="at_least_one_exists" check="at least one" comment="The modprobe configuration file exists.">
+                    <unix-def:object object_ref="oval:org.govready.ubuntu:obj:400"/>
+                </unix-def:file_test>
+                <ind-def:textfilecontent54_test id="oval:org.govready.ubuntu:tst:401" version="1" check_existence="at_least_one_exists" check="at least one" comment="Modprobe is configured to block installation of cramfs file systems">
+                    <ind-def:object object_ref="oval:org.govready.ubuntu:obj:401"/>
+                    <ind-def:state state_ref="oval:org.govready.ubuntu:ste:401"/>
+                </ind-def:textfilecontent54_test>
+                <ind-def:textfilecontent54_test id="oval:org.govready.ubuntu:tst:402" version="1" check_existence="at_least_one_exists" check="at least one" comment="Modprobe is configured to block installation of freevxfs file systems">
+                    <ind-def:object object_ref="oval:org.govready.ubuntu:obj:401"/>
+                    <ind-def:state state_ref="oval:org.govready.ubuntu:ste:402"/>
+                </ind-def:textfilecontent54_test>
+                <ind-def:textfilecontent54_test id="oval:org.govready.ubuntu:tst:403" version="1" check_existence="at_least_one_exists" check="at least one" comment="Modprobe is configured to block installation of jffs2 file systems">
+                    <ind-def:object object_ref="oval:org.govready.ubuntu:obj:401"/>
+                    <ind-def:state state_ref="oval:org.govready.ubuntu:ste:403"/>
+                </ind-def:textfilecontent54_test>
+                <ind-def:textfilecontent54_test id="oval:org.govready.ubuntu:tst:404" version="1" check_existence="at_least_one_exists" check="at least one" comment="Modprobe is configured to block installation of hfs file systems">
+                    <ind-def:object object_ref="oval:org.govready.ubuntu:obj:401"/>
+                    <ind-def:state state_ref="oval:org.govready.ubuntu:ste:404"/>
+                </ind-def:textfilecontent54_test>
+                <ind-def:textfilecontent54_test id="oval:org.govready.ubuntu:tst:405" version="1" check_existence="at_least_one_exists" check="at least one" comment="Modprobe is configured to block installation of hfsplus file systems">
+                    <ind-def:object object_ref="oval:org.govready.ubuntu:obj:401"/>
+                    <ind-def:state state_ref="oval:org.govready.ubuntu:ste:405"/>
+                </ind-def:textfilecontent54_test>
+                <ind-def:textfilecontent54_test id="oval:org.govready.ubuntu:tst:406" version="1" check_existence="at_least_one_exists" check="at least one" comment="Modprobe is configured to block installation of squashfs file systems">
+                    <ind-def:object object_ref="oval:org.govready.ubuntu:obj:401"/>
+                    <ind-def:state state_ref="oval:org.govready.ubuntu:ste:406"/>
+                </ind-def:textfilecontent54_test>
+                <ind-def:textfilecontent54_test id="oval:org.govready.ubuntu:tst:407" version="1" check_existence="at_least_one_exists" check="at least one" comment="Modprobe is configured to block installation of udf file systems">
+                    <ind-def:object object_ref="oval:org.govready.ubuntu:obj:401"/>
+                    <ind-def:state state_ref="oval:org.govready.ubuntu:ste:407"/>
+                </ind-def:textfilecontent54_test>
+                <ind-def:textfilecontent54_test id="oval:org.govready.ubuntu:tst:408" version="1" check_existence="at_least_one_exists" check="at least one" comment="Modprobe is configured to block installation of the dccp protocol">
+                    <ind-def:object object_ref="oval:org.govready.ubuntu:obj:401"/>
+                    <ind-def:state state_ref="oval:org.govready.ubuntu:ste:408"/>
+                </ind-def:textfilecontent54_test>
+                <ind-def:textfilecontent54_test id="oval:org.govready.ubuntu:tst:409" version="1" check_existence="at_least_one_exists" check="at least one" comment="Modprobe is configured to block installation of the sctp protocol">
+                    <ind-def:object object_ref="oval:org.govready.ubuntu:obj:401"/>
+                    <ind-def:state state_ref="oval:org.govready.ubuntu:ste:409"/>
+                </ind-def:textfilecontent54_test>
+                <ind-def:textfilecontent54_test id="oval:org.govready.ubuntu:tst:410" version="1" check_existence="at_least_one_exists" check="at least one" comment="Modprobe is configured to block installation of the rds protocol">
+                    <ind-def:object object_ref="oval:org.govready.ubuntu:obj:401"/>
+                    <ind-def:state state_ref="oval:org.govready.ubuntu:ste:410"/>
+                </ind-def:textfilecontent54_test>
+                <ind-def:textfilecontent54_test id="oval:org.govready.ubuntu:tst:411" version="1" check_existence="at_least_one_exists" check="at least one" comment="Modprobe is configured to block installation of the tipc protocol">
+                    <ind-def:object object_ref="oval:org.govready.ubuntu:obj:401"/>
+                    <ind-def:state state_ref="oval:org.govready.ubuntu:ste:411"/>
+                </ind-def:textfilecontent54_test>
+            </oval-def:tests>
+            <oval-def:objects>
+                <unix-def:file_object id="oval:org.govready.ubuntu:obj:400" version="1" comment="The modprobe configuration file: '/etc/modprobe.d/18Fhardened.conf'">
+                    <unix-def:filepath>/etc/modprobe.d/18Fhardened.conf</unix-def:filepath>
+                </unix-def:file_object>
+                <ind-def:textfilecontent54_object id="oval:org.govready.ubuntu:obj:401" version="1" comment="The content of the modprobe configuration file: '/etc/modprobe.d/18Fhardened.conf'">
+                    <ind-def:behaviors multiline="false" singleline="true"/>
+                    <ind-def:filepath>/etc/modprobe.d/18Fhardened.conf</ind-def:filepath>
+                    <ind-def:pattern operation="pattern match">^.*$</ind-def:pattern>
+                    <ind-def:instance datatype="int" operation="greater than or equal">1</ind-def:instance>
+                </ind-def:textfilecontent54_object>
+            </oval-def:objects>
+            <oval-def:states>
+                <ind-def:textfilecontent54_state id="oval:org.govready.ubuntu:ste:401" version="1" comment="Matches the line: 'install cramfs /bin/true'">
+                    <ind-def:text operation="pattern match">(?&lt;=\n|^)\s*install\s*cramfs\s*/bin/true\s*(?=\n|$)</ind-def:text>
+                </ind-def:textfilecontent54_state>
+                <ind-def:textfilecontent54_state id="oval:org.govready.ubuntu:ste:402" version="1" comment="Matches the line: 'install freevxfs /bin/true'">
+                    <ind-def:text operation="pattern match">(?&lt;=\n|^)\s*install\s*freevxfs\s*/bin/true\s*(?=\n|$)</ind-def:text>
+                </ind-def:textfilecontent54_state>
+                <ind-def:textfilecontent54_state id="oval:org.govready.ubuntu:ste:403" version="1" comment="Matches the line: 'install jffs2 /bin/true'">
+                    <ind-def:text operation="pattern match">(?&lt;=\n|^)\s*install\s*jffs2\s*/bin/true\s*(?=\n|$)</ind-def:text>
+                </ind-def:textfilecontent54_state>
+                <ind-def:textfilecontent54_state id="oval:org.govready.ubuntu:ste:404" version="1" comment="Matches the line: 'install hfs /bin/true'">
+                    <ind-def:text operation="pattern match">(?&lt;=\n|^)\s*install\s*hfs\s*/bin/true\s*(?=\n|$)</ind-def:text>
+                </ind-def:textfilecontent54_state>
+                <ind-def:textfilecontent54_state id="oval:org.govready.ubuntu:ste:405" version="1" comment="Matches the line: 'install hfsplus /bin/true'">
+                    <ind-def:text operation="pattern match">(?&lt;=\n|^)\s*install\s*hfsplus\s*/bin/true\s*(?=\n|$)</ind-def:text>
+                </ind-def:textfilecontent54_state>
+                <ind-def:textfilecontent54_state id="oval:org.govready.ubuntu:ste:406" version="1" comment="Matches the line: 'install squashfs /bin/true'">
+                    <ind-def:text operation="pattern match">(?&lt;=\n|^)\s*install\s*squashfs\s*/bin/true\s*(?=\n|$)</ind-def:text>
+                </ind-def:textfilecontent54_state>
+                <ind-def:textfilecontent54_state id="oval:org.govready.ubuntu:ste:407" version="1" comment="Matches the line: 'install udf /bin/true'">
+                    <ind-def:text operation="pattern match">(?&lt;=\n|^)\s*install\s*udf\s*/bin/true\s*(?=\n|$)</ind-def:text>
+                </ind-def:textfilecontent54_state>
+                <ind-def:textfilecontent54_state id="oval:org.govready.ubuntu:ste:408" version="1" comment="Matches the line: 'install dccp /bin/true'">
+                    <ind-def:text operation="pattern match">(?&lt;=\n|^)\s*install\s*dccp\s*/bin/true\s*(?=\n|$)</ind-def:text>
+                </ind-def:textfilecontent54_state>
+                <ind-def:textfilecontent54_state id="oval:org.govready.ubuntu:ste:409" version="1" comment="Matches the line: 'install sctp /bin/true'">
+                    <ind-def:text operation="pattern match">(?&lt;=\n|^)\s*install\s*sctp\s*/bin/true\s*(?=\n|$)</ind-def:text>
+                </ind-def:textfilecontent54_state>
+                <ind-def:textfilecontent54_state id="oval:org.govready.ubuntu:ste:410" version="1" comment="Matches the line: 'install rds /bin/true'">
+                    <ind-def:text operation="pattern match">(?&lt;=\n|^)\s*install\s*rds\s*bin/true\s*(?=\n|$)</ind-def:text>
+                </ind-def:textfilecontent54_state>
+                <ind-def:textfilecontent54_state id="oval:org.govready.ubuntu:ste:411" version="1" comment="Matches the line: 'install tipc /bin/true'">
+                    <ind-def:text operation="pattern match">(?&lt;=\n|^)\s*install\s*tipc\s*/bin/true\s*(?=\n|$)</ind-def:text>
+                </ind-def:textfilecontent54_state>
+            </oval-def:states>
+        </oval-def:oval_definitions>
+    </ds:component>
+    <ds:component id="scap_org.joval_comp_oval.rule.05.xml" timestamp="2015-01-29T15:49:17.000-06:00">
+        <oval-def:oval_definitions>
+            <oval-def:generator>
+                <oval:product_name>GovReady.org Ubuntu 14.04 LTS Server Benchmark</oval:product_name>
+                <oval:product_version>0.0.1</oval:product_version>
+                <oval:schema_version>5.10.1</oval:schema_version>
+                <oval:timestamp>2015-01-01T13:44:00</oval:timestamp>
+            </oval-def:generator>
+            <oval-def:definitions>
+                <oval-def:definition id="oval:org.govready.ubuntu:def:500" version="1" class="compliance">
+                    <oval-def:metadata>
+                        <oval-def:title>Insure that the bootloader's configuration file has the proper permissions.</oval-def:title>
+                        <oval-def:description>Read/write access should be permitted only for the file's owner.</oval-def:description>
+                    </oval-def:metadata>
+                    <oval-def:criteria>
+                        <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:500"/>
+                    </oval-def:criteria>
+                </oval-def:definition>
+            </oval-def:definitions>
+            <oval-def:tests>
+                <unix-def:file_test id="oval:org.govready.ubuntu:tst:500" version="1" check_existence="all_exist" check="all" comment="Check the file permissions of /boot/grub/grub.cfg">
+                    <unix-def:object object_ref="oval:org.govready.ubuntu:obj:500"/>
+                    <unix-def:state state_ref="oval:org.govready.ubuntu:ste:500"/>
+                </unix-def:file_test>
+            </oval-def:tests>
+            <oval-def:objects>
+                <unix-def:file_object id="oval:org.govready.ubuntu:obj:500" version="1" comment="/boot/grub/grub.cfg">
+                    <unix-def:filepath>/boot/grub/grub.cfg</unix-def:filepath>
+                </unix-def:file_object>
+            </oval-def:objects>
+            <oval-def:states>
+                <unix-def:file_state id="oval:org.govready.ubuntu:ste:500" version="1" comment="Group and other write/exec mode bits are unset.">
+                    <unix-def:gwrite datatype="boolean">0</unix-def:gwrite>
+                    <unix-def:gexec datatype="boolean">0</unix-def:gexec>
+                    <unix-def:owrite datatype="boolean">0</unix-def:owrite>
+                    <unix-def:oexec datatype="boolean">0</unix-def:oexec>
+                </unix-def:file_state>
+            </oval-def:states>
+        </oval-def:oval_definitions>
+    </ds:component>
+    <ds:component id="scap_org.joval_comp_oval.rule.06.xml" timestamp="2015-01-29T15:49:17.000-06:00">
+        <oval-def:oval_definitions>
+            <oval-def:generator>
+                <oval:product_name>GovReady.org Ubuntu 14.04 LTS Server Benchmark</oval:product_name>
+                <oval:product_version>0.0.1</oval:product_version>
+                <oval:schema_version>5.10.1</oval:schema_version>
+                <oval:timestamp>2015-01-01T13:44:00</oval:timestamp>
+            </oval-def:generator>
+            <oval-def:definitions>
+                <oval-def:definition id="oval:org.govready.ubuntu:def:600" version="1" class="compliance">
+                    <oval-def:metadata>
+                        <oval-def:title>grub Has a Bootloader Password</oval-def:title>
+                        <oval-def:description>Protects booting by ensuring that grub has a password.</oval-def:description>
+                    </oval-def:metadata>
+                    <oval-def:criteria operator="AND">
+                        <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:600"/>
+                        <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:601"/>
+                        <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:603"/>
+                    </oval-def:criteria>
+                </oval-def:definition>
+            </oval-def:definitions>
+            <oval-def:tests>
+                <unix-def:file_test id="oval:org.govready.ubuntu:tst:600" version="1" check_existence="at_least_one_exists" check="at least one" comment="The grub configuration file exists.">
+                    <unix-def:object object_ref="oval:org.govready.ubuntu:obj:600"/>
+                </unix-def:file_test>
+                <ind-def:textfilecontent54_test id="oval:org.govready.ubuntu:tst:601" version="1" check_existence="at_least_one_exists" check="at least one" comment="At least one superuser is defined in the grub configuration file.">
+                    <ind-def:object object_ref="oval:org.govready.ubuntu:obj:601"/>
+                </ind-def:textfilecontent54_test>
+                <ind-def:variable_test id="oval:org.govready.ubuntu:tst:603" version="1" check_existence="at_least_one_exists" check="all" comment="Each superuser has a password set.">
+                    <ind-def:object object_ref="oval:org.govready.ubuntu:obj:602"/>
+                    <ind-def:state state_ref="oval:org.govready.ubuntu:ste:603"/>
+                </ind-def:variable_test>
+            </oval-def:tests>
+            <oval-def:objects>
+                <unix-def:file_object id="oval:org.govready.ubuntu:obj:600" version="1" comment="The grub configuration file: '/etc/grub.d/40_custom'">
+                    <unix-def:filepath>/etc/grub.d/40_custom</unix-def:filepath>
+                </unix-def:file_object>
+                <ind-def:textfilecontent54_object id="oval:org.govready.ubuntu:obj:601" version="1" comment="The value that superusers is set to.">
+                    <ind-def:behaviors multiline="true" singleline="false"/>
+                    <ind-def:filepath>/etc/grub.d/40_custom</ind-def:filepath>
+                    <ind-def:pattern operation="pattern match">^\s*set\s+superusers\s*=\s*&quot;?\s*([^&quot;]+)\s*&quot;?$</ind-def:pattern>
+                    <ind-def:instance datatype="int" operation="greater than or equal">1</ind-def:instance>
+                </ind-def:textfilecontent54_object>
+                <ind-def:variable_object id="oval:org.govready.ubuntu:obj:602" version="1" comment="Each superuser">
+                    <ind-def:var_ref>oval:org.govready.ubuntu:var:601</ind-def:var_ref>
+                </ind-def:variable_object>
+                <ind-def:textfilecontent54_object id="oval:org.govready.ubuntu:obj:603" version="1" comment="Users that have a password set.">
+                    <ind-def:behaviors multiline="true" singleline="false"/>
+                    <ind-def:filepath>/etc/grub.d/40_custom</ind-def:filepath>
+                    <ind-def:pattern operation="pattern match">^\s*password_pbkdf2\s+([^ ]+)\s+.+$</ind-def:pattern>
+                    <ind-def:instance datatype="int" operation="greater than or equal">1</ind-def:instance>
+                </ind-def:textfilecontent54_object>
+            </oval-def:objects>
+            <oval-def:states>
+                <ind-def:variable_state id="oval:org.govready.ubuntu:ste:603" version="1" comment="Each user that has a password set.">
+                    <ind-def:value entity_check="all" operation="equals" var_ref="oval:org.govready.ubuntu:var:603" var_check="only one"></ind-def:value>
+                </ind-def:variable_state>
+            </oval-def:states>
+            <oval-def:variables>
+                <oval-def:local_variable id="oval:org.govready.ubuntu:var:601" version="1" datatype="string" comment="Get each superuser by splitting superuser value on spaces, commas, semicolons, pipes, and ampersands">
+                    <oval-def:unique>
+                        <oval-def:split delimiter=" ">
+                            <oval-def:split delimiter=",">
+<oval-def:split delimiter=";">
+    <oval-def:split delimiter="|">
+        <oval-def:split delimiter="&amp;">
+            <oval-def:object_component object_ref="oval:org.govready.ubuntu:obj:601" item_field="subexpression"/>
+        </oval-def:split>
+    </oval-def:split>
+</oval-def:split>
+                            </oval-def:split>
+                        </oval-def:split>
+                    </oval-def:unique>
+                </oval-def:local_variable>
+                <oval-def:local_variable id="oval:org.govready.ubuntu:var:603" version="1" datatype="string" comment="Users that have a password set">
+                    <oval-def:unique>
+                        <oval-def:object_component object_ref="oval:org.govready.ubuntu:obj:603" item_field="subexpression"/>
+                    </oval-def:unique>
+                </oval-def:local_variable>
+            </oval-def:variables>
+        </oval-def:oval_definitions>
+    </ds:component>
+    <ds:component id="scap_org.joval_comp_oval.rule.07.xml" timestamp="2015-01-29T15:49:17.000-06:00">
+        <oval-def:oval_definitions>
+            <oval-def:generator>
+                <oval:product_name>GovReady.org Ubuntu 14.04 LTS Server Benchmark</oval:product_name>
+                <oval:product_version>0.0.1</oval:product_version>
+                <oval:schema_version>5.10.1</oval:schema_version>
+                <oval:timestamp>2015-01-01T13:44:00</oval:timestamp>
+            </oval-def:generator>
+            <oval-def:definitions>
+                <oval-def:definition id="oval:org.govready.ubuntu:def:700" version="1" class="compliance">
+                    <oval-def:metadata>
+                        <oval-def:title></oval-def:title>
+                        <oval-def:description></oval-def:description>
+                    </oval-def:metadata>
+                    <oval-def:criteria>
+                        <oval-def:extend_definition definition_ref="oval:org.govready.ubuntu:def:710"/>
+                        <oval-def:extend_definition definition_ref="oval:org.govready.ubuntu:def:720"/>
+                        <oval-def:extend_definition definition_ref="oval:org.govready.ubuntu:def:730"/>
+                        <oval-def:extend_definition definition_ref="oval:org.govready.ubuntu:def:740"/>
+                        <oval-def:extend_definition definition_ref="oval:org.govready.ubuntu:def:750"/>
+                    </oval-def:criteria>
+                </oval-def:definition>
+                <oval-def:definition id="oval:org.govready.ubuntu:def:710" version="1" class="compliance">
+                    <oval-def:metadata>
+                        <oval-def:title>Spoof protection</oval-def:title>
+                        <oval-def:description></oval-def:description>
+                    </oval-def:metadata>
+                    <oval-def:criteria>
+                        <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:710"/>
+                        <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:711"/>
+                    </oval-def:criteria>
+                </oval-def:definition>
+                <oval-def:definition id="oval:org.govready.ubuntu:def:720" version="1" class="compliance">
+                    <oval-def:metadata>
+                        <oval-def:title>Do not accept ICMP redirects</oval-def:title>
+                        <oval-def:description>This configuration prevents 'man in the middle' (MITM) attacks.</oval-def:description>
+                    </oval-def:metadata>
+                    <oval-def:criteria>
+                        <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:720"/>
+                        <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:721"/>
+                        <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:722"/>
+                        <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:723"/>
+                        <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:724"/>
+                        <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:725"/>
+                    </oval-def:criteria>
+                </oval-def:definition>
+                <oval-def:definition id="oval:org.govready.ubuntu:def:730" version="1" class="compliance">
+                    <oval-def:metadata>
+                        <oval-def:title>Do not send ICMP redirects</oval-def:title>
+                        <oval-def:description></oval-def:description>
+                    </oval-def:metadata>
+                    <oval-def:criteria>
+                        <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:730"/>
+                        <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:731"/>
+                    </oval-def:criteria>
+                </oval-def:definition>
+                <oval-def:definition id="oval:org.govready.ubuntu:def:740" version="1" class="compliance">
+                    <oval-def:metadata>
+                        <oval-def:title>Do not accept IP source route packets</oval-def:title>
+                        <oval-def:description></oval-def:description>
+                    </oval-def:metadata>
+                    <oval-def:criteria>
+                        <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:740"/>
+                        <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:741"/>
+                        <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:742"/>
+                        <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:743"/>
+                    </oval-def:criteria>
+                </oval-def:definition>
+                <oval-def:definition id="oval:org.govready.ubuntu:def:750" version="1" class="compliance">
+                    <oval-def:metadata>
+                        <oval-def:title>Log 'packets from Mars'</oval-def:title>
+                        <oval-def:description>This logs spoofed as well as &quot;source routed&quot; and &quot;redirect&quot; packets.</oval-def:description>
+                    </oval-def:metadata>
+                    <oval-def:criteria>
+                        <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:750"/>
+                        <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:751"/>
+                    </oval-def:criteria>
+                </oval-def:definition>
+            </oval-def:definitions>
+            <oval-def:tests>
+                <unix-def:sysctl_test id="oval:org.govready.ubuntu:tst:710" version="1" check_existence="at_least_one_exists" check="all" comment="Check that the kernel parameter controlling IPv4 default filtering is set to true.">
+                    <unix-def:object object_ref="oval:org.govready.ubuntu:obj:710"/>
+                    <unix-def:state state_ref="oval:org.govready.ubuntu:ste:701"/>
+                </unix-def:sysctl_test>
+                <unix-def:sysctl_test id="oval:org.govready.ubuntu:tst:711" version="1" check_existence="at_least_one_exists" check="all" comment="Check that the kernel parameter controlling IPv4 all filtering is set to true.">
+                    <unix-def:object object_ref="oval:org.govready.ubuntu:obj:711"/>
+                    <unix-def:state state_ref="oval:org.govready.ubuntu:ste:701"/>
+                </unix-def:sysctl_test>
+                <unix-def:sysctl_test id="oval:org.govready.ubuntu:tst:720" version="1" check_existence="at_least_one_exists" check="all" comment="Check that the kernel parameter controlling IPv4 default accept_redirects is set to false.">
+                    <unix-def:object object_ref="oval:org.govready.ubuntu:obj:720"/>
+                    <unix-def:state state_ref="oval:org.govready.ubuntu:ste:700"/>
+                </unix-def:sysctl_test>
+                <unix-def:sysctl_test id="oval:org.govready.ubuntu:tst:721" version="1" check_existence="at_least_one_exists" check="all" comment="Check that the kernel parameter controlling IPv4 all accept_redirects is set to false.">
+                    <unix-def:object object_ref="oval:org.govready.ubuntu:obj:721"/>
+                    <unix-def:state state_ref="oval:org.govready.ubuntu:ste:700"/>
+                </unix-def:sysctl_test>
+                <unix-def:sysctl_test id="oval:org.govready.ubuntu:tst:722" version="1" check_existence="at_least_one_exists" check="all" comment="Check that the kernel parameter controlling IPv4 default secure_redirects is set to false.">
+                    <unix-def:object object_ref="oval:org.govready.ubuntu:obj:722"/>
+                    <unix-def:state state_ref="oval:org.govready.ubuntu:ste:700"/>
+                </unix-def:sysctl_test>
+                <unix-def:sysctl_test id="oval:org.govready.ubuntu:tst:723" version="1" check_existence="at_least_one_exists" check="all" comment="Check that the kernel parameter controlling IPv4 all secure_redirects is set to false.">
+                    <unix-def:object object_ref="oval:org.govready.ubuntu:obj:723"/>
+                    <unix-def:state state_ref="oval:org.govready.ubuntu:ste:700"/>
+                </unix-def:sysctl_test>
+                <unix-def:sysctl_test id="oval:org.govready.ubuntu:tst:724" version="1" check_existence="at_least_one_exists" check="all" comment="Check that the kernel parameter controlling IPv6 default accept_redirects is set to false.">
+                    <unix-def:object object_ref="oval:org.govready.ubuntu:obj:724"/>
+                    <unix-def:state state_ref="oval:org.govready.ubuntu:ste:700"/>
+                </unix-def:sysctl_test>
+                <unix-def:sysctl_test id="oval:org.govready.ubuntu:tst:725" version="1" check_existence="at_least_one_exists" check="all" comment="Check that the kernel parameter controlling IPv6 all accept_redirects is set to false.">
+                    <unix-def:object object_ref="oval:org.govready.ubuntu:obj:725"/>
+                    <unix-def:state state_ref="oval:org.govready.ubuntu:ste:700"/>
+                </unix-def:sysctl_test>
+                <unix-def:sysctl_test id="oval:org.govready.ubuntu:tst:730" version="1" check_existence="at_least_one_exists" check="all" comment="Check that the kernel parameter controlling IPv4 default send_redirects is set to true.">
+                    <unix-def:object object_ref="oval:org.govready.ubuntu:obj:730"/>
+                    <unix-def:state state_ref="oval:org.govready.ubuntu:ste:700"/>
+                </unix-def:sysctl_test>
+                <unix-def:sysctl_test id="oval:org.govready.ubuntu:tst:731" version="1" check_existence="at_least_one_exists" check="all" comment="Check that the kernel parameter controlling IPv4 all send_redirects is set to true.">
+                    <unix-def:object object_ref="oval:org.govready.ubuntu:obj:731"/>
+                    <unix-def:state state_ref="oval:org.govready.ubuntu:ste:700"/>
+                </unix-def:sysctl_test>
+                <unix-def:sysctl_test id="oval:org.govready.ubuntu:tst:740" version="1" check_existence="at_least_one_exists" check="all" comment="Check that the kernel parameter controlling IPv4 default accept_source_route is set to false.">
+                    <unix-def:object object_ref="oval:org.govready.ubuntu:obj:740"/>
+                    <unix-def:state state_ref="oval:org.govready.ubuntu:ste:700"/>
+                </unix-def:sysctl_test>
+                <unix-def:sysctl_test id="oval:org.govready.ubuntu:tst:741" version="1" check_existence="at_least_one_exists" check="all" comment="Check that the kernel parameter controlling IPv4 all accept_source_route is set to false.">
+                    <unix-def:object object_ref="oval:org.govready.ubuntu:obj:741"/>
+                    <unix-def:state state_ref="oval:org.govready.ubuntu:ste:700"/>
+                </unix-def:sysctl_test>
+                <unix-def:sysctl_test id="oval:org.govready.ubuntu:tst:742" version="1" check_existence="at_least_one_exists" check="all" comment="Check that the kernel parameter controlling IPv6 default accept_source_route is set to false.">
+                    <unix-def:object object_ref="oval:org.govready.ubuntu:obj:742"/>
+                    <unix-def:state state_ref="oval:org.govready.ubuntu:ste:700"/>
+                </unix-def:sysctl_test>
+                <unix-def:sysctl_test id="oval:org.govready.ubuntu:tst:743" version="1" check_existence="at_least_one_exists" check="all" comment="Check that the kernel parameter controlling IPv6 all accept_source_route is set to false.">
+                    <unix-def:object object_ref="oval:org.govready.ubuntu:obj:743"/>
+                    <unix-def:state state_ref="oval:org.govready.ubuntu:ste:700"/>
+                </unix-def:sysctl_test>
+                <unix-def:sysctl_test id="oval:org.govready.ubuntu:tst:750" version="1" check_existence="at_least_one_exists" check="all" comment="Check that the kernel parameter controlling IPv4 default log_martians is set to true.">
+                    <unix-def:object object_ref="oval:org.govready.ubuntu:obj:750"/>
+                    <unix-def:state state_ref="oval:org.govready.ubuntu:ste:701"/>
+                </unix-def:sysctl_test>
+                <unix-def:sysctl_test id="oval:org.govready.ubuntu:tst:751" version="1" check_existence="at_least_one_exists" check="all" comment="Check that the kernel parameter controlling IPv4 all log_martians is set to true.">
+                    <unix-def:object object_ref="oval:org.govready.ubuntu:obj:751"/>
+                    <unix-def:state state_ref="oval:org.govready.ubuntu:ste:701"/>
+                </unix-def:sysctl_test>
+            </oval-def:tests>
+            <oval-def:objects>
+                <unix-def:sysctl_object id="oval:org.govready.ubuntu:obj:710" version="1" comment="The IPv4 RP default filtering kernel property">
+                    <unix-def:name>net.ipv4.conf.default.rp_filter</unix-def:name>
+                </unix-def:sysctl_object>
+                <unix-def:sysctl_object id="oval:org.govready.ubuntu:obj:711" version="1" comment="The IPv4 RP all filtering kernel property">
+                    <unix-def:name>net.ipv4.conf.all.rp_filter</unix-def:name>
+                </unix-def:sysctl_object>
+                <unix-def:sysctl_object id="oval:org.govready.ubuntu:obj:720" version="1" comment="The IPv4 default accept_redirects kernel property">
+                    <unix-def:name>net.ipv4.conf.default.accept_redirects</unix-def:name>
+                </unix-def:sysctl_object>
+                <unix-def:sysctl_object id="oval:org.govready.ubuntu:obj:721" version="1" comment="The IPv4 all accept_redirects kernel property">
+                    <unix-def:name>net.ipv4.conf.all.accept_redirects</unix-def:name>
+                </unix-def:sysctl_object>
+                <unix-def:sysctl_object id="oval:org.govready.ubuntu:obj:722" version="1" comment="The IPv4 default secure_redirects kernel property">
+                    <unix-def:name>net.ipv4.conf.default.secure_redirects</unix-def:name>
+                </unix-def:sysctl_object>
+                <unix-def:sysctl_object id="oval:org.govready.ubuntu:obj:723" version="1" comment="The IPv4 all secure_redirects kernel property">
+                    <unix-def:name>net.ipv4.conf.all.secure_redirects</unix-def:name>
+                </unix-def:sysctl_object>
+                <unix-def:sysctl_object id="oval:org.govready.ubuntu:obj:724" version="1" comment="The IPv6 default accept_redirects kernel property">
+                    <unix-def:name>net.ipv6.conf.default.accept_redirects</unix-def:name>
+                </unix-def:sysctl_object>
+                <unix-def:sysctl_object id="oval:org.govready.ubuntu:obj:725" version="1" comment="The IPv6 all accept_redirects kernel property">
+                    <unix-def:name>net.ipv6.conf.all.accept_redirects</unix-def:name>
+                </unix-def:sysctl_object>
+                <unix-def:sysctl_object id="oval:org.govready.ubuntu:obj:730" version="1" comment="The IPv4 default send_redirects kernel property">
+                    <unix-def:name>net.ipv4.conf.default.send_redirects</unix-def:name>
+                </unix-def:sysctl_object>
+                <unix-def:sysctl_object id="oval:org.govready.ubuntu:obj:731" version="1" comment="The IPv4 all send_redirects kernel property">
+                    <unix-def:name>net.ipv4.conf.all.send_redirects</unix-def:name>
+                </unix-def:sysctl_object>
+                <unix-def:sysctl_object id="oval:org.govready.ubuntu:obj:740" version="1" comment="The IPv4 default accept_source_route kernel property">
+                    <unix-def:name>net.ipv4.conf.default.accept_source_route</unix-def:name>
+                </unix-def:sysctl_object>
+                <unix-def:sysctl_object id="oval:org.govready.ubuntu:obj:741" version="1" comment="The IPv4 all accept_source_route kernel property">
+                    <unix-def:name>net.ipv4.conf.all.accept_source_route</unix-def:name>
+                </unix-def:sysctl_object>
+                <unix-def:sysctl_object id="oval:org.govready.ubuntu:obj:742" version="1" comment="The IPv6 default accept_source_route kernel property">
+                    <unix-def:name>net.ipv6.conf.default.accept_source_route</unix-def:name>
+                </unix-def:sysctl_object>
+                <unix-def:sysctl_object id="oval:org.govready.ubuntu:obj:743" version="1" comment="The IPv6 all accept_source_route kernel property">
+                    <unix-def:name>net.ipv6.conf.all.accept_source_route</unix-def:name>
+                </unix-def:sysctl_object>
+                <unix-def:sysctl_object id="oval:org.govready.ubuntu:obj:750" version="1" comment="The IPv4 default log_martians kernel property">
+                    <unix-def:name>net.ipv4.conf.default.log_martians</unix-def:name>
+                </unix-def:sysctl_object>
+                <unix-def:sysctl_object id="oval:org.govready.ubuntu:obj:751" version="1" comment="The IPv4 all log_martians kernel property">
+                    <unix-def:name>net.ipv4.conf.all.log_martians</unix-def:name>
+                </unix-def:sysctl_object>
+            </oval-def:objects>
+            <oval-def:states>
+                <unix-def:sysctl_state id="oval:org.govready.ubuntu:ste:700" version="1" comment="Assert that a boolean kernel configuration parameter is false.">
+                    <unix-def:value datatype="boolean">0</unix-def:value>
+                </unix-def:sysctl_state>
+                <unix-def:sysctl_state id="oval:org.govready.ubuntu:ste:701" version="1" comment="Assert that a boolean kernel configuration parameter is true.">
+                    <unix-def:value datatype="boolean">1</unix-def:value>
+                </unix-def:sysctl_state>
+            </oval-def:states>
+        </oval-def:oval_definitions>
+    </ds:component>
+    <ds:component id="scap_org.joval_comp_oval.rule.08.xml" timestamp="2015-01-29T15:49:17.000-06:00">
+        <oval-def:oval_definitions>
+            <oval-def:generator>
+                <oval:product_name>GovReady.org Ubuntu 14.04 LTS Server Benchmark</oval:product_name>
+                <oval:product_version>0.0.1</oval:product_version>
+                <oval:schema_version>5.10.1</oval:schema_version>
+                <oval:timestamp>2015-01-01T13:44:00</oval:timestamp>
+            </oval-def:generator>
+            <oval-def:definitions>
+                <oval-def:definition id="oval:org.govready.ubuntu:def:800" version="1" class="compliance">
+                    <oval-def:metadata>
+                        <oval-def:title>Grub is Configured to Enable Auditing During Booting</oval-def:title>
+                        <oval-def:description>Check to ensure that the grub configuration file includes a directive to enable auditing.</oval-def:description>
+                    </oval-def:metadata>
+                    <oval-def:criteria operator="AND">
+                        <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:800"/>
+                        <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:801"/>
+                    </oval-def:criteria>
+                </oval-def:definition>
+            </oval-def:definitions>
+            <oval-def:tests>
+                <unix-def:file_test id="oval:org.govready.ubuntu:tst:800" version="1" check_existence="at_least_one_exists" check="at least one" comment="The grub configuration file exists.">
+                    <unix-def:object object_ref="oval:org.govready.ubuntu:obj:800"/>
+                </unix-def:file_test>
+                <ind-def:textfilecontent54_test id="oval:org.govready.ubuntu:tst:801" version="1" check_existence="at_least_one_exists" check="at least one" comment="grub is configured to enable auditing on boot">
+                    <ind-def:object object_ref="oval:org.govready.ubuntu:obj:801"/>
+                    <ind-def:state state_ref="oval:org.govready.ubuntu:ste:801"/>
+                </ind-def:textfilecontent54_test>
+            </oval-def:tests>
+            <oval-def:objects>
+                <unix-def:file_object id="oval:org.govready.ubuntu:obj:800" version="1" comment="The grub configuration file: '/etc/default/grub'">
+                    <unix-def:filepath>/etc/default/grub</unix-def:filepath>
+                </unix-def:file_object>
+                <ind-def:textfilecontent54_object id="oval:org.govready.ubuntu:obj:801" version="1" comment="The GRUB_CMDLINE_LINUX directive setting in the grub configuration file: '/etc/default/grub'">
+                    <ind-def:behaviors multiline="true" singleline="false"/>
+                    <ind-def:filepath>/etc/default/grub</ind-def:filepath>
+                    <ind-def:pattern operation="pattern match">(?&lt;=\n|^)\s*GRUB_CMDLINE_LINUX\s*=.*(?=\n|$)</ind-def:pattern>
+                    <ind-def:instance datatype="int" operation="greater than or equal">1</ind-def:instance>
+                </ind-def:textfilecontent54_object>
+            </oval-def:objects>
+            <oval-def:states>
+                <ind-def:textfilecontent54_state id="oval:org.govready.ubuntu:ste:801" version="1" comment="Matches the line: 'GRUB_CMDLINE_LINUX=&quot;audit=1&quot;'">
+                    <ind-def:text operation="pattern match">^\s*GRUB_CMDLINE_LINUX\s*=\s*&quot;audit=1&quot;\s*$</ind-def:text>
+                </ind-def:textfilecontent54_state>
+            </oval-def:states>
+        </oval-def:oval_definitions>
+    </ds:component>
+    <ds:component id="scap_org.joval_comp_oval.rule.09.xml" timestamp="2015-01-29T15:49:17.000-06:00">
+        <oval-def:oval_definitions>
+            <oval-def:generator>
+                <oval:product_name>GovReady.org Ubuntu 14.04 LTS Server Benchmark</oval:product_name>
+                <oval:product_version>0.0.1</oval:product_version>
+                <oval:schema_version>5.10.1</oval:schema_version>
+                <oval:timestamp>2015-01-01T13:44:00</oval:timestamp>
+            </oval-def:generator>
+            <oval-def:definitions>
+                <oval-def:definition id="oval:org.govready.ubuntu:def:900" version="1" class="compliance">
+                    <oval-def:metadata>
+                        <oval-def:title>Audit Rules are In Place</oval-def:title>
+                        <oval-def:description>Rules for auditd have been added for: date/time; user/passwords; networking; selinux; login &amp; logout; permission modifications; unauthorized access; filesytem mounts; file deletion; changes to sysadmin scope; and kernel loading.</oval-def:description>
+                    </oval-def:metadata>
+                    <oval-def:criteria operator="AND">
+                        <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:900"/>
+                        <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:901"/>
+                        <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:910"/>
+                        <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:920"/>
+                        <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:930"/>
+                        <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:940"/>
+                        <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:950"/>
+                        <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:960"/>
+                        <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:970"/>
+                        <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:980"/>
+                        <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:990"/>
+                        <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:991"/>
+                        <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:995"/>
+                    </oval-def:criteria>
+                </oval-def:definition>
+            </oval-def:definitions>
+            <oval-def:tests>
+                <unix-def:file_test id="oval:org.govready.ubuntu:tst:900" version="1" check_existence="at_least_one_exists" check="at least one" comment="The auditd rules file exists.">
+                    <unix-def:object object_ref="oval:org.govready.ubuntu:obj:900"/>
+                </unix-def:file_test>
+                <ind-def:textfilecontent54_test id="oval:org.govready.ubuntu:tst:901" version="1" check_existence="at_least_one_exists" check="at least one" state_operator="AND" comment="Date/time auditd rules are in place">
+                    <ind-def:object object_ref="oval:org.govready.ubuntu:obj:901"/>
+                    <ind-def:state state_ref="oval:org.govready.ubuntu:ste:901"/>
+                    <ind-def:state state_ref="oval:org.govready.ubuntu:ste:902"/>
+                    <ind-def:state state_ref="oval:org.govready.ubuntu:ste:903"/>
+                    <ind-def:state state_ref="oval:org.govready.ubuntu:ste:904"/>
+                    <ind-def:state state_ref="oval:org.govready.ubuntu:ste:905"/>
+                </ind-def:textfilecontent54_test>
+                <ind-def:textfilecontent54_test id="oval:org.govready.ubuntu:tst:910" version="1" check_existence="at_least_one_exists" check="at least one" state_operator="AND" comment="User/passwords auditd rules are in place">
+                    <ind-def:object object_ref="oval:org.govready.ubuntu:obj:901"/>
+                    <ind-def:state state_ref="oval:org.govready.ubuntu:ste:910"/>
+                    <ind-def:state state_ref="oval:org.govready.ubuntu:ste:911"/>
+                    <ind-def:state state_ref="oval:org.govready.ubuntu:ste:912"/>
+                    <ind-def:state state_ref="oval:org.govready.ubuntu:ste:913"/>
+                    <ind-def:state state_ref="oval:org.govready.ubuntu:ste:914"/>
+                </ind-def:textfilecontent54_test>
+                <ind-def:textfilecontent54_test id="oval:org.govready.ubuntu:tst:920" version="1" check_existence="at_least_one_exists" check="at least one" state_operator="AND" comment="Network auditd rules are in place">
+                    <ind-def:object object_ref="oval:org.govready.ubuntu:obj:901"/>
+                    <ind-def:state state_ref="oval:org.govready.ubuntu:ste:920"/>
+                    <ind-def:state state_ref="oval:org.govready.ubuntu:ste:921"/>
+                    <ind-def:state state_ref="oval:org.govready.ubuntu:ste:922"/>
+                    <ind-def:state state_ref="oval:org.govready.ubuntu:ste:923"/>
+                    <ind-def:state state_ref="oval:org.govready.ubuntu:ste:924"/>
+                    <ind-def:state state_ref="oval:org.govready.ubuntu:ste:925"/>
+                </ind-def:textfilecontent54_test>
+                <ind-def:textfilecontent54_test id="oval:org.govready.ubuntu:tst:930" version="1" check_existence="at_least_one_exists" check="at least one" state_operator="AND" comment="SELinux auditd rules are in place">
+                    <ind-def:object object_ref="oval:org.govready.ubuntu:obj:901"/>
+                    <ind-def:state state_ref="oval:org.govready.ubuntu:ste:930"/>
+                </ind-def:textfilecontent54_test>
+                <ind-def:textfilecontent54_test id="oval:org.govready.ubuntu:tst:940" version="1" check_existence="at_least_one_exists" check="at least one" state_operator="AND" comment="Login and logout auditd rules are in place">
+                    <ind-def:object object_ref="oval:org.govready.ubuntu:obj:901"/>
+                    <ind-def:state state_ref="oval:org.govready.ubuntu:ste:940"/>
+                    <ind-def:state state_ref="oval:org.govready.ubuntu:ste:941"/>
+                    <ind-def:state state_ref="oval:org.govready.ubuntu:ste:942"/>
+                </ind-def:textfilecontent54_test>
+                <ind-def:textfilecontent54_test id="oval:org.govready.ubuntu:tst:950" version="1" check_existence="at_least_one_exists" check="at least one" state_operator="AND" comment="Permission modification auditd rules are in place">
+                    <ind-def:object object_ref="oval:org.govready.ubuntu:obj:901"/>
+                    <ind-def:state state_ref="oval:org.govready.ubuntu:ste:950"/>
+                    <ind-def:state state_ref="oval:org.govready.ubuntu:ste:951"/>
+                    <ind-def:state state_ref="oval:org.govready.ubuntu:ste:952"/>
+                    <ind-def:state state_ref="oval:org.govready.ubuntu:ste:953"/>
+                    <ind-def:state state_ref="oval:org.govready.ubuntu:ste:954"/>
+                    <ind-def:state state_ref="oval:org.govready.ubuntu:ste:955"/>
+                </ind-def:textfilecontent54_test>
+                <ind-def:textfilecontent54_test id="oval:org.govready.ubuntu:tst:960" version="1" check_existence="at_least_one_exists" check="at least one" state_operator="AND" comment="Unauthorized access auditd rules are in place">
+                    <ind-def:object object_ref="oval:org.govready.ubuntu:obj:901"/>
+                    <ind-def:state state_ref="oval:org.govready.ubuntu:ste:960"/>
+                    <ind-def:state state_ref="oval:org.govready.ubuntu:ste:961"/>
+                    <ind-def:state state_ref="oval:org.govready.ubuntu:ste:962"/>
+                    <ind-def:state state_ref="oval:org.govready.ubuntu:ste:963"/>
+                </ind-def:textfilecontent54_test>
+                <ind-def:textfilecontent54_test id="oval:org.govready.ubuntu:tst:970" version="1" check_existence="at_least_one_exists" check="at least one" state_operator="AND" comment="Collect filesystem mounts auditd rules are in place">
+                    <ind-def:object object_ref="oval:org.govready.ubuntu:obj:901"/>
+                    <ind-def:state state_ref="oval:org.govready.ubuntu:ste:970"/>
+                    <ind-def:state state_ref="oval:org.govready.ubuntu:ste:971"/>
+                </ind-def:textfilecontent54_test>
+                <ind-def:textfilecontent54_test id="oval:org.govready.ubuntu:tst:980" version="1" check_existence="at_least_one_exists" check="at least one" state_operator="AND" comment="File deletion auditd rules are in place">
+                    <ind-def:object object_ref="oval:org.govready.ubuntu:obj:901"/>
+                    <ind-def:state state_ref="oval:org.govready.ubuntu:ste:980"/>
+                    <ind-def:state state_ref="oval:org.govready.ubuntu:ste:981"/>
+                </ind-def:textfilecontent54_test>
+                <ind-def:textfilecontent54_test id="oval:org.govready.ubuntu:tst:990" version="1" check_existence="at_least_one_exists" check="at least one" state_operator="AND" comment="Changes to sysadmin scope auditd rules are in place">
+                    <ind-def:object object_ref="oval:org.govready.ubuntu:obj:901"/>
+                    <ind-def:state state_ref="oval:org.govready.ubuntu:ste:990"/>
+                </ind-def:textfilecontent54_test>
+                <ind-def:textfilecontent54_test id="oval:org.govready.ubuntu:tst:991" version="1" check_existence="at_least_one_exists" check="at least one" state_operator="AND" comment="Kernel loading auditd rules are in place">
+                    <ind-def:object object_ref="oval:org.govready.ubuntu:obj:901"/>
+                    <ind-def:state state_ref="oval:org.govready.ubuntu:ste:991"/>
+                    <ind-def:state state_ref="oval:org.govready.ubuntu:ste:992"/>
+                    <ind-def:state state_ref="oval:org.govready.ubuntu:ste:993"/>
+                    <ind-def:state state_ref="oval:org.govready.ubuntu:ste:994"/>
+                </ind-def:textfilecontent54_test>
+                <ind-def:textfilecontent54_test id="oval:org.govready.ubuntu:tst:995" version="1" check_existence="at_least_one_exists" check="at least one" state_operator="AND" comment="auditd config is immutable">
+                    <ind-def:object object_ref="oval:org.govready.ubuntu:obj:901"/>
+                    <ind-def:state state_ref="oval:org.govready.ubuntu:ste:995"/>
+                </ind-def:textfilecontent54_test>
+            </oval-def:tests>
+            <oval-def:objects>
+                <unix-def:file_object id="oval:org.govready.ubuntu:obj:900" version="1" comment="The auditd rules file: '/etc/audit/audit.rules'">
+                    <unix-def:filepath>/etc/audit/audit.rules</unix-def:filepath>
+                </unix-def:file_object>
+                <ind-def:textfilecontent54_object id="oval:org.govready.ubuntu:obj:901" version="1" comment="The content of the auditd rules file: '/etc/audit/audit.rules'">
+                    <ind-def:behaviors multiline="false" singleline="true"/>
+                    <ind-def:filepath>/etc/audit/audit.rules</ind-def:filepath>
+                    <ind-def:pattern operation="pattern match">^.*$</ind-def:pattern>
+                    <ind-def:instance datatype="int" operation="greater than or equal">1</ind-def:instance>
+                </ind-def:textfilecontent54_object>
+            </oval-def:objects>
+            <oval-def:states>
+                <ind-def:textfilecontent54_state id="oval:org.govready.ubuntu:ste:901" version="1" comment="Matches the auditd rule: '-a always,exit -F arch=b64 -S adjtimex -S settimeofday -k time-change'">
+                    <ind-def:text operation="pattern match">(?&lt;=\n|^)-a\s+always,exit\s+-F\s+arch=b64\s+-S\s+adjtimex\s+-S\s+settimeofday\s+-k\s+time-change(?=\n|$)</ind-def:text>
+                </ind-def:textfilecontent54_state>
+                <ind-def:textfilecontent54_state id="oval:org.govready.ubuntu:ste:902" version="1" comment="Matches the auditd rule: '-a always,exit -F arch=b32 -S adjtimex -S settimeofday -S stime -k time-change'">
+                    <ind-def:text operation="pattern match">(?&lt;=\n|^)-a\s+always,exit\s+-F\s+arch=b32\s+-S\s+adjtimex\s+-S\s+settimeofday\s+-S\s+stime\s+-k\s+time-change(?=\n|$)</ind-def:text>
+                </ind-def:textfilecontent54_state>
+                <ind-def:textfilecontent54_state id="oval:org.govready.ubuntu:ste:903" version="1" comment="Matches the auditd rule: '-a always,exit -F arch=b64 -S clock_settime -k time-change'">
+                    <ind-def:text operation="pattern match">(?&lt;=\n|^)-a\s+always,exit\s+-F\s+arch=b64\s+-S\s+clock_settime\s+-k\s+time-change(?=\n|$)</ind-def:text>
+                </ind-def:textfilecontent54_state>
+                <ind-def:textfilecontent54_state id="oval:org.govready.ubuntu:ste:904" version="1" comment="Matches the auditd rule: '-a always,exit -F arch=b32 -S clock_settime -k time-change'">
+                    <ind-def:text operation="pattern match">(?&lt;=\n|^)-a\s+always,exit\s+-F\s+arch=b32\s+-S\s+clock_settime\s+-k\s+time-change(?=\n|$)</ind-def:text>
+                </ind-def:textfilecontent54_state>
+                <ind-def:textfilecontent54_state id="oval:org.govready.ubuntu:ste:905" version="1" comment="Matches the auditd rule: '-w /etc/localtime -p wa -k time-change'">
+                    <ind-def:text operation="pattern match">(?&lt;=\n|^)-w\s+/etc/localtime\s+-p\s+wa\s+-k\s+time-change(?=\n|$)</ind-def:text>
+                </ind-def:textfilecontent54_state>
+                <ind-def:textfilecontent54_state id="oval:org.govready.ubuntu:ste:910" version="1" comment="Matches the auditd rule: '-w /etc/group -p wa -k identity'">
+                    <ind-def:text operation="pattern match">(?&lt;=\n|^)-w\s+/etc/group\s+-p\s+wa\s+-k\s+identity(?=\n|$)</ind-def:text>
+                </ind-def:textfilecontent54_state>
+                <ind-def:textfilecontent54_state id="oval:org.govready.ubuntu:ste:911" version="1" comment="Matches the auditd rule: '-w /etc/passwd -p wa -k identity'">
+                    <ind-def:text operation="pattern match">(?&lt;=\n|^)-w\s+/etc/passwd\s+-p\s+wa\s+-k\s+identity(?=\n|$)</ind-def:text>
+                </ind-def:textfilecontent54_state>
+                <ind-def:textfilecontent54_state id="oval:org.govready.ubuntu:ste:912" version="1" comment="Matches the auditd rule: '-w /etc/gshadow -p wa -k identity'">
+                    <ind-def:text operation="pattern match">(?&lt;=\n|^)-w\s+/etc/gshadow\s+-p\s+wa\s+-k\s+identity(?=\n|$)</ind-def:text>
+                </ind-def:textfilecontent54_state>
+                <ind-def:textfilecontent54_state id="oval:org.govready.ubuntu:ste:913" version="1" comment="Matches the auditd rule: '-w /etc/shadow -p wa -k identity'">
+                    <ind-def:text operation="pattern match">(?&lt;=\n|^)-w\s+/etc/shadow\s+-p\s+wa\s+-k\s+identity(?=\n|$)</ind-def:text>
+                </ind-def:textfilecontent54_state>
+                <ind-def:textfilecontent54_state id="oval:org.govready.ubuntu:ste:914" version="1" comment="Matches the auditd rule: '-w /etc/security/opasswd -p wa -k identity'">
+                    <ind-def:text operation="pattern match">(?&lt;=\n|^)-w\s+/etc/security/opasswd\s+-p\s+wa\s+-k\s+identity(?=\n|$)</ind-def:text>
+                </ind-def:textfilecontent54_state>
+                <ind-def:textfilecontent54_state id="oval:org.govready.ubuntu:ste:920" version="1" comment="Matches the auditd rule: '-a exit,always -F arch=b64 -S sethostname -S setdomainname -k system-locale'">
+                    <ind-def:text operation="pattern match">(?&lt;=\n|^)-a\s+exit,always\s+-F\s+arch=b64\s+-S\s+sethostname\s+-S\s+setdomainname\s+-k\s+system-locale(?=\n|$)</ind-def:text>
+                </ind-def:textfilecontent54_state>
+                <ind-def:textfilecontent54_state id="oval:org.govready.ubuntu:ste:921" version="1" comment="Matches the auditd rule: '-a exit,always -F arch=b32 -S sethostname -S setdomainname -k system-locale'">
+                    <ind-def:text operation="pattern match">(?&lt;=\n|^)-a\s+exit,always\s+-F\s+arch=b32\s+-S\s+sethostname\s+-S\s+setdomainname\s+-k\s+system-locale(?=\n|$)</ind-def:text>
+                </ind-def:textfilecontent54_state>
+                <ind-def:textfilecontent54_state id="oval:org.govready.ubuntu:ste:922" version="1" comment="Matches the auditd rule: '-w /etc/issue -p wa -k system-locale'">
+                    <ind-def:text operation="pattern match">(?&lt;=\n|^)-w\s+/etc/issue\s+-p\s+wa\s+-k\s+system-locale(?=\n|$)</ind-def:text>
+                </ind-def:textfilecontent54_state>
+                <ind-def:textfilecontent54_state id="oval:org.govready.ubuntu:ste:923" version="1" comment="Matches the auditd rule: '-w /etc/issue.net -p wa -k system-locale'">
+                    <ind-def:text operation="pattern match">(?&lt;=\n|^)-w\s+/etc/issue.net\s+-p\s+wa\s+-k\s+system-locale(?=\n|$)</ind-def:text>
+                </ind-def:textfilecontent54_state>
+                <ind-def:textfilecontent54_state id="oval:org.govready.ubuntu:ste:924" version="1" comment="Matches the auditd rule: '-w /etc/hosts -p wa -k system-locale'">
+                    <ind-def:text operation="pattern match">(?&lt;=\n|^)-w\s+/etc/hosts\s+-p\s+wa\s+-k\s+system-locale(?=\n|$)</ind-def:text>
+                </ind-def:textfilecontent54_state>
+                <ind-def:textfilecontent54_state id="oval:org.govready.ubuntu:ste:925" version="1" comment="Matches the auditd rule: '-w /etc/network -p wa -k system-locale'">
+                    <ind-def:text operation="pattern match">(?&lt;=\n|^)-w\s+/etc/network\s+-p\s+wa\s+-k\s+system-locale(?=\n|$)</ind-def:text>
+                </ind-def:textfilecontent54_state>
+                <ind-def:textfilecontent54_state id="oval:org.govready.ubuntu:ste:930" version="1" comment="Matches the auditd rule: '-w /etc/selinux/ -p wa -k MAC-policy'">
+                    <ind-def:text operation="pattern match">(?&lt;=\n|^)-w\s+/etc/selinux/\s+-p\s+wa\s+-k\s+MAC-policy(?=\n|$)</ind-def:text>
+                </ind-def:textfilecontent54_state>
+                <ind-def:textfilecontent54_state id="oval:org.govready.ubuntu:ste:940" version="1" comment="Matches the auditd rule: '-w /var/log/faillog -p wa -k logins'">
+                    <ind-def:text operation="pattern match">(?&lt;=\n|^)-w\s*/var/log/faillog\s*-p\s*wa\s*-k\s*logins(?=\n|$)</ind-def:text>
+                </ind-def:textfilecontent54_state>
+                <ind-def:textfilecontent54_state id="oval:org.govready.ubuntu:ste:941" version="1" comment="Matches the auditd rule: '-w /var/log/lastlog -p wa -k logins'">
+                    <ind-def:text operation="pattern match">(?&lt;=\n|^)-w\s*/var/log/lastlog\s*-p\s*wa\s*-k\s*logins(?=\n|$)</ind-def:text>
+                </ind-def:textfilecontent54_state>
+                <ind-def:textfilecontent54_state id="oval:org.govready.ubuntu:ste:942" version="1" comment="Matches the auditd rule: '-w /var/log/tallylog -p wa -k logins'">
+                    <ind-def:text operation="pattern match">(?&lt;=\n|^)-w\s*/var/log/tallylog\s*-p\s*wa\s*-k\s*logins(?=\n|$)</ind-def:text>
+                </ind-def:textfilecontent54_state>
+                <ind-def:textfilecontent54_state id="oval:org.govready.ubuntu:ste:950" version="1" comment="Matches the auditd rule: '-a always,exit -F arch=b64 -S chmod -S fchmod -S fchmodat -F auid&gt;=500 -F auid!=4294967295 -k perm_mod'">
+                    <ind-def:text operation="pattern match">(?&lt;=\n|^)-a\s+always,exit\s+-F\s+arch=b64\s+-S\s+chmod\s+-S\s+fchmod\s+-S\s+fchmodat\s+-F\s+auid&gt;=500\s+-F\s+auid!=4294967295\s+-k\s+perm_mod(?=\n|$)</ind-def:text>
+                </ind-def:textfilecontent54_state>
+                <ind-def:textfilecontent54_state id="oval:org.govready.ubuntu:ste:951" version="1" comment="Matches the auditd rule: '-a always,exit -F arch=b32 -S chmod -S fchmod -S fchmodat -F auid&gt;=500 -F auid!=4294967295 -k perm_mod'">
+                    <ind-def:text operation="pattern match">(?&lt;=\n|^)-a\s+always,exit\s+-F\s+arch=b32\s+-S\s+chmod\s+-S\s+fchmod\s+-S\s+fchmodat\s+-F\s+auid&gt;=500\s+-F\s+auid!=4294967295\s+-k\s+perm_mod(?=\n|$)</ind-def:text>
+                </ind-def:textfilecontent54_state>
+                <ind-def:textfilecontent54_state id="oval:org.govready.ubuntu:ste:952" version="1" comment="Matches the auditd rule: '-a always,exit -F arch=b64 -S chown -S fchown -S fchownat -S lchown -F auid&gt;=500 -F auid!=4294967295 -k perm_mod'">
+                    <ind-def:text operation="pattern match">(?&lt;=\n|^)-a\s+always,exit\s+-F\s+arch=b64\s+-S\s+chown\s+-S\s+fchown\s+-S\s+fchownat\s+-S\s+lchown\s+-F\s+auid&gt;=500\s+-F\s+auid!=4294967295\s+-k\s+perm_mod(?=\n|$)</ind-def:text>
+                </ind-def:textfilecontent54_state>
+                <ind-def:textfilecontent54_state id="oval:org.govready.ubuntu:ste:953" version="1" comment="Matches the auditd rule: '-a always,exit -F arch=b32 -S chown -S fchown -S fchownat -S lchown -F auid&gt;=500 -F auid!=4294967295 -k perm_mod'">
+                    <ind-def:text operation="pattern match">(?&lt;=\n|^)-a\s+always,exit\s+-F\s+arch=b32\s+-S\s+chown\s+-S\s+fchown\s+-S\s+fchownat\s+-S\s+lchown\s+-F\s+auid&gt;=500\s+-F\s+auid!=4294967295\s+-k\s+perm_mod(?=\n|$)</ind-def:text>
+                </ind-def:textfilecontent54_state>
+                <ind-def:textfilecontent54_state id="oval:org.govready.ubuntu:ste:954" version="1" comment="Matches the auditd rule: '-a always,exit -F arch=b64 -S setxattr -S lsetxattr -S fsetxattr -S removexattr -S lremovexattr -S fremovexattr -F auid&gt;=500 -F auid!=4294967295 -k perm_mod'">
+                    <ind-def:text operation="pattern match">(?&lt;=\n|^)-a\s+always,exit\s+-F\s+arch=b64\s+-S\s+setxattr\s+-S\s+lsetxattr\s+-S\s+fsetxattr\s+-S\s+removexattr\s+-S\s+lremovexattr\s+-S\s+fremovexattr\s+-F\s+auid&gt;=500\s+-F\s+auid!=4294967295\s+-k\s+perm_mod(?=\n|$)</ind-def:text>
+                </ind-def:textfilecontent54_state>
+                <ind-def:textfilecontent54_state id="oval:org.govready.ubuntu:ste:955" version="1" comment="Matches the auditd rule: '-a always,exit -F arch=b32 -S setxattr -S lsetxattr -S fsetxattr -S removexattr -S lremovexattr -S fremovexattr -F auid&gt;=500 -F auid!=4294967295 -k perm_mod'">
+                    <ind-def:text operation="pattern match">(?&lt;=\n|^)-a\s+always,exit\s+-F\s+arch=b32\s+-S\s+setxattr\s+-S\s+lsetxattr\s+-S\s+fsetxattr\s+-S\s+removexattr\s+-S\s+lremovexattr\s+-S\s+fremovexattr\s+-F\s+auid&gt;=500\s+-F\s+auid!=4294967295\s+-k\s+perm_mod(?=\n|$)</ind-def:text>
+                </ind-def:textfilecontent54_state>
+                <ind-def:textfilecontent54_state id="oval:org.govready.ubuntu:ste:960" version="1" comment="Matches the auditd rule: '-a always,exit -F arch=b64 -S creat -S open -S openat -S truncate -S ftruncate -F exit=-EACCES -F auid&gt;=500 -F auid!=4294967295 -k access'">
+                    <ind-def:text operation="pattern match">(?&lt;=\n|^)-a\s+always,exit\s+-F\s+arch=b64\s+-S\s+creat\s+-S\s+open\s+-S\s+openat\s+-S\s+truncate\s+-S\s+ftruncate\s+-F\s+exit=-EACCES\s+-F\s+auid&gt;=500\s+-F\s+auid!=4294967295\s+-k\s+access(?=\n|$)</ind-def:text>
+                </ind-def:textfilecontent54_state>
+                <ind-def:textfilecontent54_state id="oval:org.govready.ubuntu:ste:961" version="1" comment="Matches the auditd rule: '-a always,exit -F arch=b32 -S creat -S open -S openat -S truncate -S ftruncate -F exit=-EACCES -F auid&gt;=500 -F auid!=4294967295 -k access'">
+                    <ind-def:text operation="pattern match">(?&lt;=\n|^)-a\s+always,exit\s+-F\s+arch=b32\s+-S\s+creat\s+-S\s+open\s+-S\s+openat\s+-S\s+truncate\s+-S\s+ftruncate\s+-F\s+exit=-EACCES\s+-F\s+auid&gt;=500\s+-F\s+auid!=4294967295\s+-k\s+access(?=\n|$)</ind-def:text>
+                </ind-def:textfilecontent54_state>
+                <ind-def:textfilecontent54_state id="oval:org.govready.ubuntu:ste:962" version="1" comment="Matches the auditd rule: '-a always,exit -F arch=b64 -S creat -S open -S openat -S truncate -S ftruncate -F exit=-EPERM -F auid&gt;=500 -F auid!=4294967295 -k access'">
+                    <ind-def:text operation="pattern match">(?&lt;=\n|^)-a\s+always,exit\s+-F\s+arch=b64\s+-S\s+creat\s+-S\s+open\s+-S\s+openat\s+-S\s+truncate\s+-S\s+ftruncate\s+-F\s+exit=-EPERM\s+-F\s+auid&gt;=500\s+-F\s+auid!=4294967295\s+-k\s+access(?=\n|$)</ind-def:text>
+                </ind-def:textfilecontent54_state>
+                <ind-def:textfilecontent54_state id="oval:org.govready.ubuntu:ste:963" version="1" comment="Matches the auditd rule: '-a always,exit -F arch=b32 -S creat -S open -S openat -S truncate -S ftruncate -F exit=-EPERM -F auid&gt;=500 -F auid!=4294967295 -k access'">
+                    <ind-def:text operation="pattern match">(?&lt;=\n|^)-a\s+always,exit\s+-F\s+arch=b32\s+-S\s+creat\s+-S\s+open\s+-S\s+openat\s+-S\s+truncate\s+-S\s+ftruncate\s+-F\s+exit=-EPERM\s+-F\s+auid&gt;=500\s+-F\s+auid!=4294967295\s+-k\s+access(?=\n|$)</ind-def:text>
+                </ind-def:textfilecontent54_state>
+                <ind-def:textfilecontent54_state id="oval:org.govready.ubuntu:ste:970" version="1" comment="Matches the auditd rule: '-a always,exit -F arch=b32 -S mount -F auid&gt;=500 -F auid!=4294967295 -k mounts'">
+                    <ind-def:text operation="pattern match">(?&lt;=\n|^)-a\s+always,exit\s+-F\s+arch=b32\s+-S\s+mount\s+-F\s+auid&gt;=500\s+-F\s+auid!=4294967295\s+-k\s+mounts(?=\n|$)</ind-def:text>
+                </ind-def:textfilecontent54_state>
+                <ind-def:textfilecontent54_state id="oval:org.govready.ubuntu:ste:971" version="1" comment="Matches the auditd rule: '-a always,exit -F arch=b64 -S mount -F auid&gt;=500 -F auid!=4294967295 -k mounts'">
+                    <ind-def:text operation="pattern match">(?&lt;=\n|^)-a\s+always,exit\s+-F\s+arch=b64\s+-S\s+mount\s+-F\s+auid&gt;=500\s+-F\s+auid!=4294967295\s+-k\s+mounts(?=\n|$)</ind-def:text>
+                </ind-def:textfilecontent54_state>
+                <ind-def:textfilecontent54_state id="oval:org.govready.ubuntu:ste:980" version="1" comment="Matches the auditd rule: '-a always,exit -F arch=b64 -S unlink -S unlinkat -S rename -S renameat -F auid&gt;=500 -F auid!=4294967295 -k delete'">
+                    <ind-def:text operation="pattern match">(?&lt;=\n|^)-a\s+always,exit\s+-F\s+arch=b64\s+-S\s+unlink\s+-S\s+unlinkat\s+-S\s+rename\s+-S\s+renameat\s+-F\s+auid&gt;=500\s+-F\s+auid!=4294967295\s+-k\s+delete(?=\n|$)</ind-def:text>
+                </ind-def:textfilecontent54_state>
+                <ind-def:textfilecontent54_state id="oval:org.govready.ubuntu:ste:981" version="1" comment="Matches the auditd rule: '-a always,exit -F arch=b32 -S unlink -S unlinkat -S rename -S renameat -F auid&gt;=500 -F auid!=4294967295 -k delete'">
+                    <ind-def:text operation="pattern match">(?&lt;=\n|^)-a\s+always,exit\s+-F\s+arch=b32\s+-S\s+unlink\s+-S\s+unlinkat\s+-S\s+rename\s+-S\s+renameat\s+-F\s+auid&gt;=500\s+-F\s+auid!=4294967295\s+-k\s+delete(?=\n|$)</ind-def:text>
+                </ind-def:textfilecontent54_state>
+                <ind-def:textfilecontent54_state id="oval:org.govready.ubuntu:ste:990" version="1" comment="Matches the auditd rule: '-w /etc/sudoers -p wa -k scope'">
+                    <ind-def:text operation="pattern match">(?&lt;=\n|^)-w\s+/etc/sudoers\s+-p\s+wa\s+-k\s+scope(?=\n|$)</ind-def:text>
+                </ind-def:textfilecontent54_state>
+                <ind-def:textfilecontent54_state id="oval:org.govready.ubuntu:ste:991" version="1" comment="Matches the auditd rule: '-w /sbin/insmod -p x -k modules'">
+                    <ind-def:text operation="pattern match">(?&lt;=\n|^)-w\s+/sbin/insmod\s+-p\s+x\s+-k\s+modules(?=\n|$)</ind-def:text>
+                </ind-def:textfilecontent54_state>
+                <ind-def:textfilecontent54_state id="oval:org.govready.ubuntu:ste:992" version="1" comment="Matches the auditd rule: '-w /sbin/rmmod -p x -k modules'">
+                    <ind-def:text operation="pattern match">(?&lt;=\n|^)-w\s+/sbin/rmmod\s+-p\s+x\s+-k\s+modules(?=\n|$)</ind-def:text>
+                </ind-def:textfilecontent54_state>
+                <ind-def:textfilecontent54_state id="oval:org.govready.ubuntu:ste:993" version="1" comment="Matches the auditd rule: '-w /sbin/modprobe -p x -k modules'">
+                    <ind-def:text operation="pattern match">(?&lt;=\n|^)-w\s+/sbin/modprobe\s+-p\s+x\s+-k\s+modules(?=\n|$)</ind-def:text>
+                </ind-def:textfilecontent54_state>
+                <ind-def:textfilecontent54_state id="oval:org.govready.ubuntu:ste:994" version="1" comment="Matches the auditd rule: '-a always,exit arch=b64 -S init_module -S delete_module -k modules'">
+                    <ind-def:text operation="pattern match">(?&lt;=\n|^)-a\s+always,exit\s+arch=b64\s+-S\s+init_module\s+-S\s+delete_module\s+-k\s+modules(?=\n|$)</ind-def:text>
+                </ind-def:textfilecontent54_state>
+                <ind-def:textfilecontent54_state id="oval:org.govready.ubuntu:ste:995" version="1" comment="Matches the auditd rule: '-e 2'">
+                    <ind-def:text operation="pattern match">(?&lt;=\n|^)-e\s+2(?=\n|$)</ind-def:text>
+                </ind-def:textfilecontent54_state>
+            </oval-def:states>
+        </oval-def:oval_definitions>
+    </ds:component>
+    <ds:component id="scap_org.joval_comp_oval.rule.10.xml" timestamp="2015-01-29T15:49:17.000-06:00">
+        <oval-def:oval_definitions>
+            <oval-def:generator>
+                <oval:product_name>GovReady.org Ubuntu 14.04 LTS Server Benchmark</oval:product_name>
+                <oval:product_version>0.0.1</oval:product_version>
+                <oval:schema_version>5.10.1</oval:schema_version>
+                <oval:timestamp>2015-01-01T13:44:00</oval:timestamp>
+            </oval-def:generator>
+            <oval-def:definitions>
+                <oval-def:definition id="oval:org.govready.ubuntu:def:1000" version="1" class="compliance">
+                    <oval-def:metadata>
+                        <oval-def:title>Ensure Only Root Can Modify System Cron Jobs</oval-def:title>
+                        <oval-def:description>Only root should modify what system jobs cron runs.</oval-def:description>
+                    </oval-def:metadata>
+                    <oval-def:criteria operator="AND">
+                        <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:1000"/>
+                        <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:1001"/>
+                        <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:1002"/>
+                        <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:1003"/>
+                        <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:1004"/>
+                        <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:1005"/>
+                        <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:1006"/>
+                        <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:1007"/>
+                    </oval-def:criteria>
+                </oval-def:definition>
+            </oval-def:definitions>
+            <oval-def:tests>
+                <unix-def:file_test id="oval:org.govready.ubuntu:tst:1000" version="1" check_existence="all_exist" check="all" comment="'/etc/crontab' should be owned by root:root and non-owners should have no access permissions.">
+                    <unix-def:object object_ref="oval:org.govready.ubuntu:obj:1000"/>
+                    <unix-def:state state_ref="oval:org.govready.ubuntu:ste:1000"/>
+                </unix-def:file_test>
+                <unix-def:file_test id="oval:org.govready.ubuntu:tst:1001" version="1" check_existence="all_exist" check="all" comment="'/etc/cron.hourly' should be owned by root:root and non-owners should have no access permissions.">
+                    <unix-def:object object_ref="oval:org.govready.ubuntu:obj:1001"/>
+                    <unix-def:state state_ref="oval:org.govready.ubuntu:ste:1000"/>
+                </unix-def:file_test>
+                <unix-def:file_test id="oval:org.govready.ubuntu:tst:1002" version="1" check_existence="all_exist" check="all" comment="'/etc/cron.daily' should be owned by root:root and non-owners should have no access permissions.">
+                    <unix-def:object object_ref="oval:org.govready.ubuntu:obj:1002"/>
+                    <unix-def:state state_ref="oval:org.govready.ubuntu:ste:1000"/>
+                </unix-def:file_test>
+                <unix-def:file_test id="oval:org.govready.ubuntu:tst:1003" version="1" check_existence="all_exist" check="all" comment="'/etc/cron.weekly' should be owned by root:root and non-owners should have no access permissions.">
+                    <unix-def:object object_ref="oval:org.govready.ubuntu:obj:1003"/>
+                    <unix-def:state state_ref="oval:org.govready.ubuntu:ste:1000"/>
+                </unix-def:file_test>
+                <unix-def:file_test id="oval:org.govready.ubuntu:tst:1004" version="1" check_existence="all_exist" check="all" comment="'/etc/cron.monthly' should be owned by root:root and non-owners should have no access permissions.">
+                    <unix-def:object object_ref="oval:org.govready.ubuntu:obj:1004"/>
+                    <unix-def:state state_ref="oval:org.govready.ubuntu:ste:1000"/>
+                </unix-def:file_test>
+                <unix-def:file_test id="oval:org.govready.ubuntu:tst:1005" version="1" check_existence="all_exist" check="all" comment="'/etc/cron.d' should be owned by root:root and non-owners should have no access permissions.">
+                    <unix-def:object object_ref="oval:org.govready.ubuntu:obj:1005"/>
+                    <unix-def:state state_ref="oval:org.govready.ubuntu:ste:1000"/>
+                </unix-def:file_test>
+                <unix-def:file_test id="oval:org.govready.ubuntu:tst:1006" version="1" check_existence="all_exist" check="all" comment="'/etc/cron.allow' should be owned by root:root and non-owners should have no access permissions.">
+                    <unix-def:object object_ref="oval:org.govready.ubuntu:obj:1006"/>
+                    <unix-def:state state_ref="oval:org.govready.ubuntu:ste:1000"/>
+                </unix-def:file_test>
+                <unix-def:file_test id="oval:org.govready.ubuntu:tst:1007" version="1" check_existence="all_exist" check="all" comment="'/etc/at.allow' should be owned by root:root and non-owners should have no access permissions.">
+                    <unix-def:object object_ref="oval:org.govready.ubuntu:obj:1007"/>
+                    <unix-def:state state_ref="oval:org.govready.ubuntu:ste:1000"/>
+                </unix-def:file_test>
+            </oval-def:tests>
+            <oval-def:objects>
+                <unix-def:file_object id="oval:org.govready.ubuntu:obj:1000" version="1" comment="/etc/crontab">
+                    <unix-def:filepath>/etc/crontab</unix-def:filepath>
+                </unix-def:file_object>
+                <unix-def:file_object id="oval:org.govready.ubuntu:obj:1001" version="1" comment="/etc/cron.hourly">
+                    <unix-def:filepath>/etc/cron.hourly</unix-def:filepath>
+                </unix-def:file_object>
+                <unix-def:file_object id="oval:org.govready.ubuntu:obj:1002" version="1" comment="/etc/cron.daily">
+                    <unix-def:filepath>/etc/cron.daily</unix-def:filepath>
+                </unix-def:file_object>
+                <unix-def:file_object id="oval:org.govready.ubuntu:obj:1003" version="1" comment="/etc/cron.weekly">
+                    <unix-def:filepath>/etc/cron.weekly</unix-def:filepath>
+                </unix-def:file_object>
+                <unix-def:file_object id="oval:org.govready.ubuntu:obj:1004" version="1" comment="/etc/cron.monthly">
+                    <unix-def:filepath>/etc/cron.monthly</unix-def:filepath>
+                </unix-def:file_object>
+                <unix-def:file_object id="oval:org.govready.ubuntu:obj:1005" version="1" comment="/etc/cron.d">
+                    <unix-def:filepath>/etc/cron.d</unix-def:filepath>
+                </unix-def:file_object>
+                <unix-def:file_object id="oval:org.govready.ubuntu:obj:1006" version="1" comment="/etc/cron.allow">
+                    <unix-def:filepath>/etc/cron.allow</unix-def:filepath>
+                </unix-def:file_object>
+                <unix-def:file_object id="oval:org.govready.ubuntu:obj:1007" version="1" comment="/etc/at.allow">
+                    <unix-def:filepath>/etc/at.allow</unix-def:filepath>
+                </unix-def:file_object>
+            </oval-def:objects>
+            <oval-def:states>
+                <unix-def:file_state id="oval:org.govready.ubuntu:ste:1000" version="1" comment="File is owned by root:root; group and other read/write/exec mode bits are unset.">
+                    <unix-def:group_id datatype="int">0</unix-def:group_id>
+                    <unix-def:user_id datatype="int">0</unix-def:user_id>
+                    <unix-def:gread datatype="boolean">0</unix-def:gread>
+                    <unix-def:gwrite datatype="boolean">0</unix-def:gwrite>
+                    <unix-def:gexec datatype="boolean">0</unix-def:gexec>
+                    <unix-def:oread datatype="boolean">0</unix-def:oread>
+                    <unix-def:owrite datatype="boolean">0</unix-def:owrite>
+                    <unix-def:oexec datatype="boolean">0</unix-def:oexec>
+                </unix-def:file_state>
+            </oval-def:states>
+        </oval-def:oval_definitions>
+    </ds:component>
+    <ds:component id="scap_org.joval_comp_oval.rule.11.xml" timestamp="2015-01-29T15:49:17.000-06:00">
+        <oval-def:oval_definitions>
+            <oval-def:generator>
+                <oval:product_name>GovReady.org Ubuntu 14.04 LTS Server Benchmark</oval:product_name>
+                <oval:product_version>0.0.1</oval:product_version>
+                <oval:schema_version>5.10.1</oval:schema_version>
+                <oval:timestamp>2015-01-01T13:44:00</oval:timestamp>
+            </oval-def:generator>
+            <oval-def:definitions>
+                <oval-def:definition id="oval:org.govready.ubuntu:def:1100" version="1" class="compliance">
+                    <oval-def:metadata>
+                        <oval-def:title>Password Policies Have Been Improved</oval-def:title>
+                        <oval-def:description>Password policies should be strengthened by: installing libpam-cracklib; strengthen password requirements; configure password lockouts; and configure password expiration.</oval-def:description>
+                    </oval-def:metadata>
+                    <oval-def:criteria operator="AND">
+                        <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:1100"/>
+                        <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:1110"/>
+                        <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:1111"/>
+                        <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:1118"/>
+                        <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:1120"/>
+                        <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:1121"/>
+                        <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:1130"/>
+                        <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:1131"/>
+                        <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:1132"/>
+                        <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:1133"/>
+                    </oval-def:criteria>
+                </oval-def:definition>
+            </oval-def:definitions>
+            <oval-def:tests>
+                <linux-def:dpkginfo_test id="oval:org.govready.ubuntu:tst:1100" version="1" check_existence="at_least_one_exists" check="all" comment="The 'libpam-cracklib' package is installed.">
+                    <linux-def:object object_ref="oval:org.govready.ubuntu:obj:1100"/>
+                </linux-def:dpkginfo_test>
+                <unix-def:file_test id="oval:org.govready.ubuntu:tst:1110" version="1" check_existence="at_least_one_exists" check="at least one" comment="The PAM cracklib configuration file exists.">
+                    <unix-def:object object_ref="oval:org.govready.ubuntu:obj:1110"/>
+                </unix-def:file_test>
+                <ind-def:textfilecontent54_test id="oval:org.govready.ubuntu:tst:1111" version="1" check_existence="at_least_one_exists" check="all" comment="PAM cracklib implements the prescribed retry, length and complexity settings.">
+                    <ind-def:object object_ref="oval:org.govready.ubuntu:obj:1111"/>
+                    <ind-def:state state_ref="oval:org.govready.ubuntu:ste:1111"/>
+                    <ind-def:state state_ref="oval:org.govready.ubuntu:ste:1112"/>
+                    <ind-def:state state_ref="oval:org.govready.ubuntu:ste:1113"/>
+                    <ind-def:state state_ref="oval:org.govready.ubuntu:ste:1114"/>
+                    <ind-def:state state_ref="oval:org.govready.ubuntu:ste:1115"/>
+                    <ind-def:state state_ref="oval:org.govready.ubuntu:ste:1116"/>
+                    <ind-def:state state_ref="oval:org.govready.ubuntu:ste:1117"/>
+                </ind-def:textfilecontent54_test>
+                <ind-def:textfilecontent54_test id="oval:org.govready.ubuntu:tst:1118" version="1" check_existence="at_least_one_exists" check="all" comment="PAM cracklib implements the prescribed password rotation settings.">
+                    <ind-def:object object_ref="oval:org.govready.ubuntu:obj:1118"/>
+                    <ind-def:state state_ref="oval:org.govready.ubuntu:ste:1118"/>
+                </ind-def:textfilecontent54_test>
+                <unix-def:file_test id="oval:org.govready.ubuntu:tst:1120" version="1" check_existence="at_least_one_exists" check="at least one" comment="The Login PAM configuration file exists.">
+                    <unix-def:object object_ref="oval:org.govready.ubuntu:obj:1120"/>
+                </unix-def:file_test>
+                <ind-def:textfilecontent54_test id="oval:org.govready.ubuntu:tst:1121" version="1" check_existence="at_least_one_exists" check="all" comment="The Login PAM implements prescribed lockouts.">
+                    <ind-def:object object_ref="oval:org.govready.ubuntu:obj:1121"/>
+                    <ind-def:state state_ref="oval:org.govready.ubuntu:ste:1121"/>
+                </ind-def:textfilecontent54_test>
+                <unix-def:file_test id="oval:org.govready.ubuntu:tst:1130" version="1" check_existence="at_least_one_exists" check="at least one" comment="The Shadow Password Suite configuration configuration file exists.">
+                    <unix-def:object object_ref="oval:org.govready.ubuntu:obj:1130"/>
+                </unix-def:file_test>
+                <ind-def:textfilecontent54_test id="oval:org.govready.ubuntu:tst:1131" version="1" check_existence="at_least_one_exists" check="all" comment="The Shadow Password Suite's 'PASS_MAX_DAYS' configuration value is 90.">
+                    <ind-def:object object_ref="oval:org.govready.ubuntu:obj:1131"/>
+                    <ind-def:state state_ref="oval:org.govready.ubuntu:ste:1131"/>
+                </ind-def:textfilecontent54_test>
+                <ind-def:textfilecontent54_test id="oval:org.govready.ubuntu:tst:1132" version="1" check_existence="at_least_one_exists" check="all" comment="The Shadow Password Suite's 'PASS_MIN_DAYS' configuration value is 7.">
+                    <ind-def:object object_ref="oval:org.govready.ubuntu:obj:1132"/>
+                    <ind-def:state state_ref="oval:org.govready.ubuntu:ste:1132"/>
+                </ind-def:textfilecontent54_test>
+                <ind-def:textfilecontent54_test id="oval:org.govready.ubuntu:tst:1133" version="1" check_existence="at_least_one_exists" check="all" comment="The Shadow Password Suite's 'PASS_WARN_AGE' configuration value is 10.">
+                    <ind-def:object object_ref="oval:org.govready.ubuntu:obj:1133"/>
+                    <ind-def:state state_ref="oval:org.govready.ubuntu:ste:1133"/>
+                </ind-def:textfilecontent54_test>
+            </oval-def:tests>
+            <oval-def:objects>
+                <linux-def:dpkginfo_object id="oval:org.govready.ubuntu:obj:1100" version="1" comment="The 'libpam-cracklib' package.">
+                    <linux-def:name>libpam-cracklib</linux-def:name>
+                </linux-def:dpkginfo_object>
+                <unix-def:file_object id="oval:org.govready.ubuntu:obj:1110" version="1" comment="The PAM cracklib configuration file: '/etc/pam.d/common-password'">
+                    <unix-def:filepath>/etc/pam.d/common-password</unix-def:filepath>
+                </unix-def:file_object>
+                <ind-def:textfilecontent54_object id="oval:org.govready.ubuntu:obj:1111" version="1" comment="The PAM cracklib password retry, length and complexity settings.">
+                    <ind-def:behaviors ignore_case="false" multiline="true" singleline="false"/>
+                    <ind-def:filepath>/etc/pam.d/common-password</ind-def:filepath>
+                    <ind-def:pattern operation="pattern match">^password\s+requisite\s+pam_cracklib\.so(.*)\s*$</ind-def:pattern>
+                    <ind-def:instance datatype="int" operation="greater than or equal">1</ind-def:instance>
+                </ind-def:textfilecontent54_object>
+                <ind-def:textfilecontent54_object id="oval:org.govready.ubuntu:obj:1118" version="1" comment="The PAM cracklib password rotation setting.">
+                    <ind-def:behaviors ignore_case="false" multiline="true" singleline="false"/>
+                    <ind-def:filepath>/etc/pam.d/common-password</ind-def:filepath>
+                    <ind-def:pattern operation="pattern match">^password\s+\[success=1 default=ignore\]\s+pam_unix\.so(.*)\s*$</ind-def:pattern>
+                    <ind-def:instance datatype="int" operation="greater than or equal">1</ind-def:instance>
+                </ind-def:textfilecontent54_object>
+                <unix-def:file_object id="oval:org.govready.ubuntu:obj:1120" version="1" comment="The Login PAM configuration file: '/etc/pam.d/login'">
+                    <unix-def:filepath>/etc/pam.d/login</unix-def:filepath>
+                </unix-def:file_object>
+                <ind-def:textfilecontent54_object id="oval:org.govready.ubuntu:obj:1121" version="1" comment="The Login PAM lockout settings.">
+                    <ind-def:behaviors ignore_case="false" multiline="true" singleline="false"/>
+                    <ind-def:filepath>/etc/pam.d/login</ind-def:filepath>
+                    <ind-def:pattern operation="pattern match">^auth\s+required\s+pam_tally2.so\s*(.*)\s*$</ind-def:pattern>
+                    <ind-def:instance datatype="int" operation="greater than or equal">1</ind-def:instance>
+                </ind-def:textfilecontent54_object>
+                <unix-def:file_object id="oval:org.govready.ubuntu:obj:1130" version="1" comment="The Shadow Password Suite configuration file: '/etc/login.defs'">
+                    <unix-def:filepath>/etc/login.defs</unix-def:filepath>
+                </unix-def:file_object>
+                <ind-def:textfilecontent54_object id="oval:org.govready.ubuntu:obj:1131" version="1" comment="The Shadow Password Suite 'PASS_MAX_DAYS' configuration value.">
+                    <ind-def:behaviors ignore_case="false" multiline="true" singleline="false"/>
+                    <ind-def:filepath>/etc/login.defs</ind-def:filepath>
+                    <ind-def:pattern operation="pattern match">^PASS_MAX_DAYS\s+\s*(\w+)\s*$</ind-def:pattern>
+                    <ind-def:instance datatype="int" operation="greater than or equal">1</ind-def:instance>
+                </ind-def:textfilecontent54_object>
+                <ind-def:textfilecontent54_object id="oval:org.govready.ubuntu:obj:1132" version="1" comment="The Shadow Password Suite 'PASS_MIN_DAYS' configuration value.">
+                    <ind-def:behaviors ignore_case="false" multiline="true" singleline="false"/>
+                    <ind-def:filepath>/etc/login.defs</ind-def:filepath>
+                    <ind-def:pattern operation="pattern match">^PASS_MIN_DAYS\s+\s*(\w+)\s*$</ind-def:pattern>
+                    <ind-def:instance datatype="int" operation="greater than or equal">1</ind-def:instance>
+                </ind-def:textfilecontent54_object>
+                <ind-def:textfilecontent54_object id="oval:org.govready.ubuntu:obj:1133" version="1" comment="The Shadow Password Suite 'PASS_WARN_AGE' configuration value.">
+                    <ind-def:behaviors ignore_case="false" multiline="true" singleline="false"/>
+                    <ind-def:filepath>/etc/login.defs</ind-def:filepath>
+                    <ind-def:pattern operation="pattern match">^PASS_WARN_AGE\s+\s*(\w+)\s*$</ind-def:pattern>
+                    <ind-def:instance datatype="int" operation="greater than or equal">1</ind-def:instance>
+                </ind-def:textfilecontent54_object>
+            </oval-def:objects>
+            <oval-def:states>
+                <ind-def:textfilecontent54_state id="oval:org.govready.ubuntu:ste:1111" version="1" comment="Matches the value: 'retry=3'">
+                    <ind-def:subexpression operation="pattern match">\sretry=3(\s|$)</ind-def:subexpression>
+                </ind-def:textfilecontent54_state>
+                <ind-def:textfilecontent54_state id="oval:org.govready.ubuntu:ste:1112" version="1" comment="Matches the value: 'minlen=24'">
+                    <ind-def:subexpression operation="pattern match">\sminlen=24(\s|$)</ind-def:subexpression>
+                </ind-def:textfilecontent54_state>
+                <ind-def:textfilecontent54_state id="oval:org.govready.ubuntu:ste:1113" version="1" comment="Matches the value: 'dcredit=-2'">
+                    <ind-def:subexpression operation="pattern match">\sdcredit=-2(\s|$)</ind-def:subexpression>
+                </ind-def:textfilecontent54_state>
+                <ind-def:textfilecontent54_state id="oval:org.govready.ubuntu:ste:1114" version="1" comment="Matches the value: 'ucredit=-2'">
+                    <ind-def:subexpression operation="pattern match">\sucredit=-2(\s|$)</ind-def:subexpression>
+                </ind-def:textfilecontent54_state>
+                <ind-def:textfilecontent54_state id="oval:org.govready.ubuntu:ste:1115" version="1" comment="Matches the value: 'ocredit=-2'">
+                    <ind-def:subexpression operation="pattern match">\socredit=-2(\s|$)</ind-def:subexpression>
+                </ind-def:textfilecontent54_state>
+                <ind-def:textfilecontent54_state id="oval:org.govready.ubuntu:ste:1116" version="1" comment="Matches the value: 'lcredit=-2'">
+                    <ind-def:subexpression operation="pattern match">\slcredit=-2(\s|$)</ind-def:subexpression>
+                </ind-def:textfilecontent54_state>
+                <ind-def:textfilecontent54_state id="oval:org.govready.ubuntu:ste:1117" version="1" comment="Matches the value: 'lcredit=-2'">
+                    <ind-def:subexpression operation="pattern match">\slcredit=-2(\s|$)</ind-def:subexpression>
+                </ind-def:textfilecontent54_state>
+                <ind-def:textfilecontent54_state id="oval:org.govready.ubuntu:ste:1118" version="1" comment="Matches the value: 'remember=5'">
+                    <ind-def:subexpression operation="pattern match">\sremember=5(\s|$)</ind-def:subexpression>
+                </ind-def:textfilecontent54_state>
+                <ind-def:textfilecontent54_state id="oval:org.govready.ubuntu:ste:1121" version="1" comment="Matches the value: 'onerr=fail audit silent deny=5 unlock_time=900'">
+                    <ind-def:subexpression operation="pattern match">\s*onerr=fail audit silent deny=5 unlock_time=900\s*</ind-def:subexpression>
+                </ind-def:textfilecontent54_state>
+                <ind-def:textfilecontent54_state id="oval:org.govready.ubuntu:ste:1131" version="1" comment="Equals '90'">
+                    <ind-def:subexpression operation="equals">90</ind-def:subexpression>
+                </ind-def:textfilecontent54_state>
+                <ind-def:textfilecontent54_state id="oval:org.govready.ubuntu:ste:1132" version="1" comment="Equals '7'">
+                    <ind-def:subexpression operation="equals">7</ind-def:subexpression>
+                </ind-def:textfilecontent54_state>
+                <ind-def:textfilecontent54_state id="oval:org.govready.ubuntu:ste:1133" version="1" comment="Equals '10'">
+                    <ind-def:subexpression operation="equals">10</ind-def:subexpression>
+                </ind-def:textfilecontent54_state>
+            </oval-def:states>
+        </oval-def:oval_definitions>
+    </ds:component>
+    <ds:component id="scap_org.joval_comp_oval.rule.12.xml" timestamp="2015-01-29T15:49:17.000-06:00">
+        <oval-def:oval_definitions>
+            <oval-def:generator>
+                <oval:product_name>GovReady.org Ubuntu 14.04 LTS Server Benchmark</oval:product_name>
+                <oval:product_version>0.0.1</oval:product_version>
+                <oval:schema_version>5.10.1</oval:schema_version>
+                <oval:timestamp>2015-01-01T13:44:00</oval:timestamp>
+            </oval-def:generator>
+            <oval-def:definitions>
+                <oval-def:definition id="oval:org.govready.ubuntu:def:1200" version="1" class="compliance">
+                    <oval-def:metadata>
+                        <oval-def:title>SSH Configuration has been Secured</oval-def:title>
+                        <oval-def:description>Modify sshd_config settings and permissions to be more secure.</oval-def:description>
+                    </oval-def:metadata>
+                    <oval-def:criteria operator="AND">
+                        <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:1200"/>
+                        <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:1201"/>
+                        <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:1202"/>
+                        <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:1203"/>
+                        <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:1204"/>
+                        <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:1205"/>
+                        <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:1206"/>
+                        <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:1207"/>
+                        <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:1208"/>
+                    </oval-def:criteria>
+                </oval-def:definition>
+            </oval-def:definitions>
+            <oval-def:tests>
+                <unix-def:file_test id="oval:org.govready.ubuntu:tst:1200" version="1" check_existence="at_least_one_exists" check="at least one" comment="The ssh configuration file exists, it's owned by root:root and permissions are set to 600.">
+                    <unix-def:object object_ref="oval:org.govready.ubuntu:obj:1200"/>
+                    <unix-def:state state_ref="oval:org.govready.ubuntu:ste:1200"/>
+                </unix-def:file_test>
+                <ind-def:textfilecontent54_test id="oval:org.govready.ubuntu:tst:1201" version="1" check_existence="at_least_one_exists" check="all" comment="The ssh 'X11Forwarding' setting is set to 'no'">
+                    <ind-def:object object_ref="oval:org.govready.ubuntu:obj:1201"/>
+                    <ind-def:state state_ref="oval:org.govready.ubuntu:ste:1201"/>
+                </ind-def:textfilecontent54_test>
+                <ind-def:textfilecontent54_test id="oval:org.govready.ubuntu:tst:1202" version="1" check_existence="at_least_one_exists" check="all" comment="The ssh 'MaxAuthTries' setting is set to '4'">
+                    <ind-def:object object_ref="oval:org.govready.ubuntu:obj:1202"/>
+                    <ind-def:state state_ref="oval:org.govready.ubuntu:ste:1202"/>
+                </ind-def:textfilecontent54_test>
+                <ind-def:textfilecontent54_test id="oval:org.govready.ubuntu:tst:1203" version="1" check_existence="at_least_one_exists" check="all" comment="The ssh 'PermitRootLogin' setting is set to 'no'">
+                    <ind-def:object object_ref="oval:org.govready.ubuntu:obj:1203"/>
+                    <ind-def:state state_ref="oval:org.govready.ubuntu:ste:1201"/>
+                </ind-def:textfilecontent54_test>
+                <ind-def:textfilecontent54_test id="oval:org.govready.ubuntu:tst:1204" version="1" check_existence="at_least_one_exists" check="all" comment="The ssh 'PermitEmptyPasswords' setting is set to 'no'">
+                    <ind-def:object object_ref="oval:org.govready.ubuntu:obj:1204"/>
+                    <ind-def:state state_ref="oval:org.govready.ubuntu:ste:1201"/>
+                </ind-def:textfilecontent54_test>
+                <ind-def:textfilecontent54_test id="oval:org.govready.ubuntu:tst:1205" version="1" check_existence="at_least_one_exists" check="all" comment="The ssh 'PermitUserEnvironment' setting is set to 'no'">
+                    <ind-def:object object_ref="oval:org.govready.ubuntu:obj:1205"/>
+                    <ind-def:state state_ref="oval:org.govready.ubuntu:ste:1201"/>
+                </ind-def:textfilecontent54_test>
+                <ind-def:textfilecontent54_test id="oval:org.govready.ubuntu:tst:1206" version="1" check_existence="at_least_one_exists" check="all" comment="The ssh 'Ciphers' setting is set to 'aes128-ctr,aes192-ctr,aes256-ctr'">
+                    <ind-def:object object_ref="oval:org.govready.ubuntu:obj:1206"/>
+                    <ind-def:state state_ref="oval:org.govready.ubuntu:ste:1203"/>
+                </ind-def:textfilecontent54_test>
+                <ind-def:textfilecontent54_test id="oval:org.govready.ubuntu:tst:1207" version="1" check_existence="at_least_one_exists" check="all" comment="The ssh 'ClientAliveInterval' setting is set to '600'">
+                    <ind-def:object object_ref="oval:org.govready.ubuntu:obj:1207"/>
+                    <ind-def:state state_ref="oval:org.govready.ubuntu:ste:1204"/>
+                </ind-def:textfilecontent54_test>
+                <ind-def:textfilecontent54_test id="oval:org.govready.ubuntu:tst:1208" version="1" check_existence="at_least_one_exists" check="all" comment="The ssh 'ClientAliveCountMax' setting is set to '0'">
+                    <ind-def:object object_ref="oval:org.govready.ubuntu:obj:1208"/>
+                    <ind-def:state state_ref="oval:org.govready.ubuntu:ste:1205"/>
+                </ind-def:textfilecontent54_test>
+            </oval-def:tests>
+            <oval-def:objects>
+                <unix-def:file_object id="oval:org.govready.ubuntu:obj:1200" version="1" comment="The ssh configuration file: '/etc/ssh/sshd_config'">
+                    <unix-def:filepath>/etc/ssh/sshd_config</unix-def:filepath>
+                </unix-def:file_object>
+                <ind-def:textfilecontent54_object id="oval:org.govready.ubuntu:obj:1201" version="1" comment="The content of the sshd_config setting 'X11Forwarding'">
+                    <ind-def:behaviors ignore_case="true" multiline="true" singleline="false"/>
+                    <ind-def:filepath>/etc/ssh/sshd_config</ind-def:filepath>
+                    <ind-def:pattern operation="pattern match">^X11Forwarding\s+&quot;?\s*(.*)\s*&quot;?\s*$</ind-def:pattern>
+                    <ind-def:instance datatype="int" operation="greater than or equal">1</ind-def:instance>
+                </ind-def:textfilecontent54_object>
+                <ind-def:textfilecontent54_object id="oval:org.govready.ubuntu:obj:1202" version="1" comment="The content of the sshd_config setting 'MaxAuthTries'">
+                    <ind-def:behaviors ignore_case="true" multiline="true" singleline="false"/>
+                    <ind-def:filepath>/etc/ssh/sshd_config</ind-def:filepath>
+                    <ind-def:pattern operation="pattern match">^MaxAuthTries\s+&quot;?\s*(.*)\s*&quot;?\s*$</ind-def:pattern>
+                    <ind-def:instance datatype="int" operation="greater than or equal">1</ind-def:instance>
+                </ind-def:textfilecontent54_object>
+                <ind-def:textfilecontent54_object id="oval:org.govready.ubuntu:obj:1203" version="1" comment="The content of the sshd_config setting 'PermitRootLogin'">
+                    <ind-def:behaviors ignore_case="true" multiline="true" singleline="false"/>
+                    <ind-def:filepath>/etc/ssh/sshd_config</ind-def:filepath>
+                    <ind-def:pattern operation="pattern match">^PermitRootLogin\s+&quot;?\s*(.*)\s*&quot;?\s*$</ind-def:pattern>
+                    <ind-def:instance datatype="int" operation="greater than or equal">1</ind-def:instance>
+                </ind-def:textfilecontent54_object>
+                <ind-def:textfilecontent54_object id="oval:org.govready.ubuntu:obj:1204" version="1" comment="The content of the sshd_config setting 'PermitEmptyPasswords'">
+                    <ind-def:behaviors ignore_case="true" multiline="true" singleline="false"/>
+                    <ind-def:filepath>/etc/ssh/sshd_config</ind-def:filepath>
+                    <ind-def:pattern operation="pattern match">^PermitEmptyPasswords\s+&quot;?\s*(.*)\s*&quot;?\s*$</ind-def:pattern>
+                    <ind-def:instance datatype="int" operation="greater than or equal">1</ind-def:instance>
+                </ind-def:textfilecontent54_object>
+                <ind-def:textfilecontent54_object id="oval:org.govready.ubuntu:obj:1205" version="1" comment="The content of the sshd_config setting 'PermitUserEnvironment'">
+                    <ind-def:behaviors ignore_case="true" multiline="true" singleline="false"/>
+                    <ind-def:filepath>/etc/ssh/sshd_config</ind-def:filepath>
+                    <ind-def:pattern operation="pattern match">^PermitUserEnvironment\s+&quot;?\s*(.*)\s*&quot;?\s*$</ind-def:pattern>
+                    <ind-def:instance datatype="int" operation="greater than or equal">1</ind-def:instance>
+                </ind-def:textfilecontent54_object>
+                <ind-def:textfilecontent54_object id="oval:org.govready.ubuntu:obj:1206" version="1" comment="The content of the sshd_config setting 'Ciphers'">
+                    <ind-def:behaviors ignore_case="true" multiline="true" singleline="false"/>
+                    <ind-def:filepath>/etc/ssh/sshd_config</ind-def:filepath>
+                    <ind-def:pattern operation="pattern match">^Ciphers\s+&quot;?\s*(.*)\s*&quot;?\s*$</ind-def:pattern>
+                    <ind-def:instance datatype="int" operation="greater than or equal">1</ind-def:instance>
+                </ind-def:textfilecontent54_object>
+                <ind-def:textfilecontent54_object id="oval:org.govready.ubuntu:obj:1207" version="1" comment="The content of the sshd_config setting 'ClientAliveInterval'">
+                    <ind-def:behaviors ignore_case="true" multiline="true" singleline="false"/>
+                    <ind-def:filepath>/etc/ssh/sshd_config</ind-def:filepath>
+                    <ind-def:pattern operation="pattern match">^ClientAliveInterval\s+&quot;?\s*(.*)\s*&quot;?\s*$</ind-def:pattern>
+                    <ind-def:instance datatype="int" operation="greater than or equal">1</ind-def:instance>
+                </ind-def:textfilecontent54_object>
+                <ind-def:textfilecontent54_object id="oval:org.govready.ubuntu:obj:1208" version="1" comment="The content of the sshd_config setting 'ClientAliveCountMax'">
+                    <ind-def:behaviors ignore_case="true" multiline="true" singleline="false"/>
+                    <ind-def:filepath>/etc/ssh/sshd_config</ind-def:filepath>
+                    <ind-def:pattern operation="pattern match">^ClientAliveCountMax\s+&quot;?\s*(.*)\s*&quot;?\s*$</ind-def:pattern>
+                    <ind-def:instance datatype="int" operation="greater than or equal">1</ind-def:instance>
+                </ind-def:textfilecontent54_object>
+            </oval-def:objects>
+            <oval-def:states>
+                <unix-def:file_state id="oval:org.govready.ubuntu:ste:1200" version="1" comment="File is owned by root:root and permissions are 600 (rw- --- ---).">
+                    <unix-def:group_id datatype="int">0</unix-def:group_id>
+                    <unix-def:user_id datatype="int">0</unix-def:user_id>
+                    <unix-def:uread datatype="boolean">1</unix-def:uread>
+                    <unix-def:uwrite datatype="boolean">1</unix-def:uwrite>
+                    <unix-def:uexec datatype="boolean">0</unix-def:uexec>
+                    <unix-def:gread datatype="boolean">0</unix-def:gread>
+                    <unix-def:gwrite datatype="boolean">0</unix-def:gwrite>
+                    <unix-def:gexec datatype="boolean">0</unix-def:gexec>
+                    <unix-def:oread datatype="boolean">0</unix-def:oread>
+                    <unix-def:owrite datatype="boolean">0</unix-def:owrite>
+                    <unix-def:oexec datatype="boolean">0</unix-def:oexec>
+                </unix-def:file_state>
+                <ind-def:textfilecontent54_state id="oval:org.govready.ubuntu:ste:1201" version="1" comment="Matches the value: 'no'">
+                    <ind-def:subexpression operation="pattern match">\s*no\s*</ind-def:subexpression>
+                </ind-def:textfilecontent54_state>
+                <ind-def:textfilecontent54_state id="oval:org.govready.ubuntu:ste:1202" version="1" comment="Matches the value: '4'">
+                    <ind-def:subexpression operation="pattern match">\s*4\s*</ind-def:subexpression>
+                </ind-def:textfilecontent54_state>
+                <ind-def:textfilecontent54_state id="oval:org.govready.ubuntu:ste:1203" version="1" comment="Matches the value: 'aes128-ctr,aes192-ctr,aes256-ctr'">
+                    <ind-def:subexpression operation="pattern match">\s*aes128-ctr,aes192-ctr,aes256-ctr\s*</ind-def:subexpression>
+                </ind-def:textfilecontent54_state>
+                <ind-def:textfilecontent54_state id="oval:org.govready.ubuntu:ste:1204" version="1" comment="Matches the value: '600'">
+                    <ind-def:subexpression operation="pattern match">\s*600\s*</ind-def:subexpression>
+                </ind-def:textfilecontent54_state>
+                <ind-def:textfilecontent54_state id="oval:org.govready.ubuntu:ste:1205" version="1" comment="Matches the value: '0'">
+                    <ind-def:subexpression operation="pattern match">\s*0\s*</ind-def:subexpression>
+                </ind-def:textfilecontent54_state>
+            </oval-def:states>
+        </oval-def:oval_definitions>
+    </ds:component>
+    <ds:component id="scap_org.joval_comp_oval.rule.13.xml" timestamp="2015-01-29T15:49:17.000-06:00">
+        <oval-def:oval_definitions>
+            <oval-def:generator>
+                <oval:product_name>GovReady.org Ubuntu 14.04 LTS Server Benchmark</oval:product_name>
+                <oval:product_version>0.0.1</oval:product_version>
+                <oval:schema_version>5.10.1</oval:schema_version>
+                <oval:timestamp>2015-01-01T13:44:00</oval:timestamp>
+            </oval-def:generator>
+            <oval-def:definitions>
+                <oval-def:definition id="oval:org.govready.ubuntu:def:1300" version="1" class="compliance">
+                    <oval-def:metadata>
+                        <oval-def:title>Banner Exists &amp; Has Correct Permission</oval-def:title>
+                        <oval-def:description>There should be a banner and it should have 644 file permissions.</oval-def:description>
+                    </oval-def:metadata>
+                    <oval-def:criteria operator="AND">
+                        <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:1300"/>
+                        <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:1301"/>
+                        <oval-def:criterion test_ref="oval:org.govready.ubuntu:tst:1302"/>
+                    </oval-def:criteria>
+                </oval-def:definition>
+            </oval-def:definitions>
+            <oval-def:tests>
+                <unix-def:file_test id="oval:org.govready.ubuntu:tst:1300" version="1" check_existence="at_least_one_exists" check="all" comment="The Message of the Day configuration file has permissions set to 644 (rw- r-- r--).">
+                    <unix-def:object object_ref="oval:org.govready.ubuntu:obj:1300"/>
+                    <unix-def:state state_ref="oval:org.govready.ubuntu:ste:1300"/>
+                </unix-def:file_test>
+                <unix-def:file_test id="oval:org.govready.ubuntu:tst:1301" version="1" check_existence="at_least_one_exists" check="all" comment="The Login Banner configuration file has permissions set to 644 (rw- r-- r--).">
+                    <unix-def:object object_ref="oval:org.govready.ubuntu:obj:1301"/>
+                    <unix-def:state state_ref="oval:org.govready.ubuntu:ste:1300"/>
+                </unix-def:file_test>
+                <unix-def:file_test id="oval:org.govready.ubuntu:tst:1302" version="1" check_existence="at_least_one_exists" check="all" comment="The Telnet Login Banner configuration file has permissions set to 644 (rw- r-- r--).">
+                    <unix-def:object object_ref="oval:org.govready.ubuntu:obj:1302"/>
+                    <unix-def:state state_ref="oval:org.govready.ubuntu:ste:1300"/>
+                </unix-def:file_test>
+            </oval-def:tests>
+            <oval-def:objects>
+                <unix-def:file_object id="oval:org.govready.ubuntu:obj:1300" version="1" comment="The Message of the Day configuration file: '/etc/motd'">
+                    <unix-def:filepath>/etc/motd</unix-def:filepath>
+                </unix-def:file_object>
+                <unix-def:file_object id="oval:org.govready.ubuntu:obj:1301" version="1" comment="The Login Banner configuration file: '/etc/issue'">
+                    <unix-def:filepath>/etc/issue</unix-def:filepath>
+                </unix-def:file_object>
+                <unix-def:file_object id="oval:org.govready.ubuntu:obj:1302" version="1" comment="The Telnet Login Banner configuration file: '/etc/issue.net'">
+                    <unix-def:filepath>/etc/issue.net</unix-def:filepath>
+                </unix-def:file_object>
+            </oval-def:objects>
+            <oval-def:states>
+                <unix-def:file_state id="oval:org.govready.ubuntu:ste:1300" version="1" comment="File permissions are 644 (rw- r-- r--).">
+                    <unix-def:uread datatype="boolean">1</unix-def:uread>
+                    <unix-def:uwrite datatype="boolean">1</unix-def:uwrite>
+                    <unix-def:uexec datatype="boolean">0</unix-def:uexec>
+                    <unix-def:gread datatype="boolean">1</unix-def:gread>
+                    <unix-def:gwrite datatype="boolean">0</unix-def:gwrite>
+                    <unix-def:gexec datatype="boolean">0</unix-def:gexec>
+                    <unix-def:oread datatype="boolean">1</unix-def:oread>
+                    <unix-def:owrite datatype="boolean">0</unix-def:owrite>
+                    <unix-def:oexec datatype="boolean">0</unix-def:oexec>
+                </unix-def:file_state>
+            </oval-def:states>
+        </oval-def:oval_definitions>
+    </ds:component>
+</ds:data-stream-collection>
