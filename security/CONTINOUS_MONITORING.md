@@ -33,12 +33,9 @@ The SCAP datastream file used for the scan is `datastream/Ubuntu_14.04_LTS_Serve
 *(NOTE: Open source licensed SCAP content for open source software is currently rare. GovReady Ubuntu 14.04 SCAP is the first open source SCAP content for Ubuntu and was developed specifically to test FISMA-Ready Ubuntu LTS. The FISMA-Ready SCAP contains OVAL (Open Vulnerability Assessment Language) schema currently being reviewed by OVAL board and can only be tested with a special version of JOVAL's Professional scanner.) No open source SCAP currently exists for Docker, although a Security Benchmark for Docker 1.6 was recently published in April 2015 by the Center for Internet Security (https://web.nvd.nist.gov/view/ncp/repository/checklistDetail?id=589). CIS's Docker Security Benchmark cannot be included in this repository due to licensing restrictions.)*
 
 ## Identification of Vulnerability Feeds
-
-| Vulnerability Feed | RSS Version|
-|--------------------|------------|
-|https://alas.aws.amazon.com | https://alas.aws.amazon.com/alas.rss |
-|http://www.ubuntu.com/usn/ | http://www.ubuntu.com/usn/rss.xml |
-|http://www.cvedetails.com/vulnerability-list/vendor_id-13534/product_id-28125/Docker-Docker.html| -- |
+* http://www.ubuntu.com/usn/ (RSS: http://www.ubuntu.com/usn/rss.xml) provides CVE feed for Ubuntu, the operating system
+* https://alas.aws.amazon.com (RSS: https://alas.aws.amazon.com/alas.rss) provides a CVE feed for Amazon Linux and is useful for its inclusion of upstream open source libray CVE's that may impact software included in Nebula
+* http://www.cvedetails.com/vulnerability-list/vendor_id-13534/product_id-28125/Docker-Docker.html is a way to watch for Docker-related CVEs. 
 
 ## Monitoring of Server Status
 We installed https://www.runscope.com a service to continously monitor and test our APIs.
