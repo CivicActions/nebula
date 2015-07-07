@@ -30,8 +30,7 @@ To automate scanning of operating system configuration we used GovReady Ubuntu 1
 
 The SCAP datastream file used for the scan is `datastream/Ubuntu_14.04_LTS_Server_Datastream_v0.0.1.xml`.
 
-#### *NOTE on Ubuntu and Docker SCAP, Security Benchmarks*
-*Open source licensed SCAP content for open source software is currently rare. GovReady Ubuntu 14.04 SCAP is the first open source SCAP content for Ubuntu and was developed specifically to test FISMA-Ready Ubuntu LTS. The FISMA-Ready SCAP contains OVAL (Open Vulnerability Assessment Language) schema currently being reviewed by OVAL board and can only be tested with a special version of JOVAL's Professional scanner.) No open source SCAP currently exists for Docker, although a Security Benchmark for Docker 1.6 was recently published in April 2015 by the Center for Internet Security (https://web.nvd.nist.gov/view/ncp/repository/checklistDetail?id=589). CIS's Docker Security Benchmark cannot be included in this repository due to licensing restrictions.*
+*(NOTE: Open source licensed SCAP content for open source software is currently rare. GovReady Ubuntu 14.04 SCAP is the first open source SCAP content for Ubuntu and was developed specifically to test FISMA-Ready Ubuntu LTS. The FISMA-Ready SCAP contains OVAL (Open Vulnerability Assessment Language) schema currently being reviewed by OVAL board and can only be tested with a special version of JOVAL's Professional scanner.) No open source SCAP currently exists for Docker, although a Security Benchmark for Docker 1.6 was recently published in April 2015 by the Center for Internet Security (https://web.nvd.nist.gov/view/ncp/repository/checklistDetail?id=589). CIS's Docker Security Benchmark cannot be included in this repository due to licensing restrictions.)*
 
 ## Identification of Vulnerability Feeds
 
