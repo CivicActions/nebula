@@ -95,10 +95,6 @@
     },
     {
       "type": "verifyTextPresent",
-      "text": "https://www.sideeffect.io?saved="
-    },
-    {
-      "type": "verifyTextPresent",
       "text": "911"
     },
     {
@@ -124,13 +120,6 @@
     {
       "type": "verifyTextPresent",
       "text": "You must not rely on the information on our website as an alternative to medical advice from your doctor or other professional healthcare provider. If you have any specific questions about any medical"
-    },
-    {
-      "type": "verifyElementPresent",
-      "locator": {
-        "type": "css selector",
-        "value": "a.btn"
-      }
     }
   ],
   "data": {
